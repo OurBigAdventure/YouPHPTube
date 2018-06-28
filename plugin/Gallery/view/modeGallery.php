@@ -83,7 +83,7 @@ $contentSearchFound = false;
             <div class="row text-center" style="padding: 10px;">
                 <?php echo $config->getAdsense(); ?>
             </div>
-            <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-sm-10 col-sm-offset-1 container-fluid">
 
                 <div class="mainArea">
                     <?php
