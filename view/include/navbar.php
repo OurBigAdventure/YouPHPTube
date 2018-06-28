@@ -1,4 +1,29 @@
 <style>
+
+@media (max-height : 480px) {
+  #sidebar1 {
+    max-height: 400px;
+  }
+}
+
+@media (max-height : 700px) {
+  #sidebar1 {
+    max-height: 600px;
+  }
+}
+
+@media (max-height : 900px) {
+  #sidebar1 {
+    max-height: 800px;
+  }
+}
+
+@media (max-height : 1100px) {
+  #sidebar1 {
+    max-height: 900px;
+  }
+}
+
 @media (max-width : 990px) {
 #mysearch {
   position: absolute;
@@ -15,7 +40,9 @@
 #mysearch input {
 width: 65%;
 }
+
 }
+
 </style>
 <script>
 $( document ).ready(function() {
@@ -66,8 +93,8 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
       <div>
       <button class="btn-light btn" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="navbar-toggler-icon"></span></button>
 
-        <div id="sidebar1" class="dropdown" style="position: absolute; height: 100%; top:0;">
-                <ul class="dropdown-menu  dropdown-menu-left" aria-labelledby="buttonMenu1" style="overflow-y: auto; max-height: 400px;">
+        <div id="sidebar1" class="dropdown" >
+                <ul class="dropdown-menu span6 dropdown-menu-left" aria-labelledby="buttonMenu1" >
                     <?php
                     if (User::isLogged()) {
                         ?>
@@ -77,7 +104,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
         <?php echo __("Logoff"); ?>
                                 </a>
                         </li>
-                        <li class="dropdown-item" style="min-height: 60px;">
+                        <li class="dropdown-item span3" style="min-height: 60px;">
                             <div class="text-center" style="margin-left: 10px;">
                                 <img src="<?php echo User::getPhoto(); ?>" style="max-width: 55px;"  class="img align-middle img-fluid img-thumbnail"/>
                             </div>
@@ -87,7 +114,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
 
                             </div>
                         </li>
-                        <li class="dropdown-item">
+                        <li class="dropdown-item span3">
 
                             <div>
                                 <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-primary btn-block" style="border-radius: 4px 4px 0 0;">
