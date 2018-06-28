@@ -54,7 +54,7 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
                     $url = VideoLogoOverlay::getLink();
                     ?>
                     <div style="<?php echo $style; ?>">
-                        <a href="<?php echo $url; ?>"> <img src="<?php echo $global['webSiteRootURL']; ?>videos/logoOverlay.png" class="img-responsive col-lg-12 col-md-8 col-sm-7 col-xs-6"></a>
+                        <a href="<?php echo $url; ?>"> <img src="<?php echo $global['webSiteRootURL']; ?>videos/logoOverlay.png" class="img-fluid col-lg-12 col-md-8 col-sm-7 col-xs-6"></a>
                     </div>
                 <?php } ?>
 
@@ -62,12 +62,12 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
         </div>
         <?php if ($config->getAllow_download()) { ?>
             <?php if ($playNowVideo['type'] == "video") { ?>
-                <a class="btn btn-xs btn-default pull-right " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
+                <a class="btn btn-xs btn-default float-right " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>
             <?php } else { ?>
-                <a class="btn btn-xs btn-default pull-right " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
+                <a class="btn btn-xs btn-default float-right " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>      

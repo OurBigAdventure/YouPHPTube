@@ -22,7 +22,7 @@ if (User::canSeeCommentTextarea()) {
                 <a class="input-group-addon btn btn-success" href="<?php echo $global['webSiteRootURL']; ?>user"><span class="glyphicon glyphicon-log-in"></span> <?php echo __("You must login to be able to comment on videos"); ?></a>
             <?php } ?>
         </div>
-        <div class="pull-right" id="count_message"></div>
+        <div class="float-right" id="count_message"></div>
         <script>
             $(document).ready(function () {
                 var text_max = <?php echo empty($advancedCustom->commentsMaxLength)?"200":$advancedCustom->commentsMaxLength ?>;
@@ -62,10 +62,10 @@ if (User::canSeeCommentTextarea()) {
             <button class="btn btn-default no-outline allReplies btn-xs hideAllReplies" style="display: none"> 
                 <?php echo __("Hide Replies"); ?> <i class="fa fa-chevron-up" aria-hidden="true"></i>
             </button> 
-            <button class="btn btn-default no-outline btn-xs pull-right delete userCanAdminComment"> 
+            <button class="btn btn-default no-outline btn-xs float-right delete userCanAdminComment"> 
                 <i class="fa fa-trash" aria-hidden="true"></i>
             </button> 
-            <button class="btn btn-default no-outline btn-xs pull-right edit userCanAdminComment"> 
+            <button class="btn btn-default no-outline btn-xs float-right edit userCanAdminComment"> 
                 <i class="fas fa-edit" aria-hidden="true"></i>
             </button> 
         </div>
@@ -148,7 +148,7 @@ if (User::canSeeCommentTextarea()) {
                                 "video": function (column, row) {
                                     var image;
                                     if (row.video) {
-                                        image = '<img src="' + row.poster.thumbsJpg + '" class="img img-thumbnail img-responsive"><br><a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.video.clean_title + '" class="btn btn-default btn-xs">' + row.video.title + '</a>';
+                                        image = '<img src="' + row.poster.thumbsJpg + '" class="img img-thumbnail img-fluid"><br><a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.video.clean_title + '" class="btn btn-default btn-xs">' + row.video.title + '</a>';
                                     } else {
                                         image = 'Not found';
                                     }

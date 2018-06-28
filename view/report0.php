@@ -15,8 +15,8 @@
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
                 <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -37,8 +37,8 @@
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
                 <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -59,8 +59,8 @@
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>users">
                 <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -81,8 +81,8 @@
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>subscribes">
                 <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -105,8 +105,8 @@
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>comments">
                 <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -127,8 +127,8 @@
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
                 <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -149,8 +149,8 @@
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
                 <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -171,8 +171,8 @@
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
                 <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -182,12 +182,12 @@
 <nav class="navbar navbar-default nav-chart">
     <div class="container-fluid">
         <div class="btn-group">
-            <button class="btn btn-primary navbar-btn active" id="btnAll" ><?php echo __("Total Views"); ?></button>
-            <button class="btn btn-warning navbar-btn" id="btnToday"><?php echo __("Today Views"); ?></button>
-            <button class="btn btn-default navbar-btn" id="btn7"><?php echo __("Last 7 Days"); ?></button>
-            <button class="btn btn-default navbar-btn" id="btn30" ><?php echo __("Last 30 Days"); ?></button>
+            <button class="btn btn-primary nav-item active" id="btnAll" ><?php echo __("Total Views"); ?></button>
+            <button class="btn btn-warning nav-item" id="btnToday"><?php echo __("Today Views"); ?></button>
+            <button class="btn btn-default nav-item" id="btn7"><?php echo __("Last 7 Days"); ?></button>
+            <button class="btn btn-default nav-item" id="btn30" ><?php echo __("Last 30 Days"); ?></button>
             <!--
-            <button class="btn btn-default navbar-btn" id="btnUnique" ><?php echo __("Unique Users"); ?></button>
+            <button class="btn btn-default nav-item" id="btnUnique" ><?php echo __("Unique Users"); ?></button>
             --></div>
     </div>
 </nav>

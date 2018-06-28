@@ -96,7 +96,7 @@ $obj = $plugin->getDataObject();
                             return editBtn + history;
                         },
                         "user": function (column, row) {
-                            var photo = "<br><img src='" + row.photo + "' class='img img-responsive img-rounded img-thumbnail' style='max-width:50px;'/>";
+                            var photo = "<br><img src='" + row.photo + "' class='img img-fluid img-rounded img-thumbnail' style='max-width:50px;'/>";
                             return row.user + photo;
                         }
                     }

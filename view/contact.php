@@ -36,7 +36,7 @@ if (User::isLogged()) {
                 </div>
                 <a class="btn btn-success btn-block" href="<?php echo $global['webSiteRootURL']; ?>"><?php echo __("Go back to the main page"); ?></a>
             </div>
-            <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+            <form class="well " action=" " method="post"  id="contact_form">
                 <fieldset>
 
                     <!-- Form Name -->
@@ -44,7 +44,7 @@ if (User::isLogged()) {
 
                     <!-- Text input-->
 
-                    <div class="form-group">
+                    <div class=" ">
                         <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
@@ -56,7 +56,7 @@ if (User::isLogged()) {
 
 
                     <!-- Text input-->
-                    <div class="form-group">
+                    <div class=" ">
                         <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
@@ -68,7 +68,7 @@ if (User::isLogged()) {
 
 
                     <!-- Text input-->
-                    <div class="form-group <?php echo empty($advancedCustom->doNotShowWebsiteOnContactForm) ? "" : "hidden" ?>">
+                    <div class="  <?php echo empty($advancedCustom->doNotShowWebsiteOnContactForm) ? "" : "hidden" ?>">
                         <label class="col-md-4 control-label"><?php echo __("Website"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
@@ -79,7 +79,7 @@ if (User::isLogged()) {
                     </div>
                     <!-- Text area -->
 
-                    <div class="form-group">
+                    <div class=" ">
                         <label class="col-md-4 control-label"><?php echo __("Message"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
@@ -90,7 +90,7 @@ if (User::isLogged()) {
                     </div>
 
 
-                    <div class="form-group">
+                    <div class=" ">
                         <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
@@ -101,7 +101,7 @@ if (User::isLogged()) {
                         </div>
                     </div>
                     <!-- Button -->
-                    <div class="form-group">
+                    <div class=" ">
                         <label class="col-md-4 control-label"></label>
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>

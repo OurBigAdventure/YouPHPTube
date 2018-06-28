@@ -276,7 +276,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                         <table class="table">
                             <tr >
                                 <td>
-                                    <img src="" class="img img-responsive img-rounded img-thumbnail zoom" style="height: 70px;">
+                                    <img src="" class="img img-fluid img-rounded img-thumbnail zoom" style="height: 70px;">
                                 </td>
                             </tr>
                             <tr class="active">
@@ -303,7 +303,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                     var label;
                     var input;
                     if (typeof (val) === "object") {// checkbox
-                        div = $('<div />', {"class": 'form-group'});
+                        div = $('<div />', {"class": ' '});
                         label = $('<label />', {"text": i + ": "});
                         if(val.type === 'textarea'){
                             input = $('<textarea />', {"class": 'form-control jsonElement', "name": i, "pluginType":"object"});
@@ -315,14 +315,14 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                         div.append(label);
                         div.append(input);
                     } else if (typeof (val) === "boolean") {// checkbox
-                        div = $('<div />', {"class": 'form-group'});
+                        div = $('<div />', {"class": ' '});
                         label = $('<label />', {"class": "checkbox-inline"});
                         input = $('<input />', {"class": 'jsonElement', "type": 'checkbox', "name": i, "value": 1, "checked": val});
                         label.append(input);
                         label.append(" " + i);
                         div.append(label);
                     } else {
-                        div = $('<div />', {"class": 'form-group'});
+                        div = $('<div />', {"class": ' '});
                         label = $('<label />', {"text": i + ": "});
                         input = $('<input />', {"class": 'form-control jsonElement', "name": i, "type": 'text', "value": val});
                         div.append(label);

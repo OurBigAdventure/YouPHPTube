@@ -12,9 +12,9 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                     $poster = $images->poster;
                     ?>
                     <div class="aspectRatio16_9">
-                        <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $poster; ?>" alt="<?php echo $video['title']; ?>" class="thumbsJPG img img-responsive <?php echo ($poster!=$images->thumbsJpgSmall)?"blur":""; ?>" style="height: auto; width: 100%;" id="thumbsJPG<?php echo $video['id']; ?>" />
+                        <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $poster; ?>" alt="<?php echo $video['title']; ?>" class="thumbsJPG img img-fluid <?php echo ($poster!=$images->thumbsJpgSmall)?"blur":""; ?>" style="height: auto; width: 100%;" id="thumbsJPG<?php echo $video['id']; ?>" />
                         <?php if (!empty($imgGif)) { ?>
-                            <img src="<?php echo $global['webSiteRootURL']; ?>view/img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $video['title']; ?>" id="thumbsGIF<?php echo $video['id']; ?>" class="thumbsGIF img-responsive <?php echo @$img_portrait; ?>  rotate<?php echo $video['rotation']; ?>" height="130" />
+                            <img src="<?php echo $global['webSiteRootURL']; ?>view/img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $video['title']; ?>" id="thumbsGIF<?php echo $video['id']; ?>" class="thumbsGIF img-fluid <?php echo @$img_portrait; ?>  rotate<?php echo $video['rotation']; ?>" height="130" />
     <?php } ?>
                     </div>
                     <span class="duration"><?php echo Video::getCleanDuration($video['duration']); ?></span>

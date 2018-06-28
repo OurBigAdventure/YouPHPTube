@@ -119,7 +119,7 @@ if (($video['type'] !== "audio")&&($video['type'] !== "linkAudio")) {
                 <?php
             } else if ($video['type'] == "audio" && !file_exists("{$global['systemRootPath']}videos/{$video['filename']}.mp4")) {
                 ?>
-                <audio id="mainAudio" controls class="center-block video-js vjs-default-skin vjs-big-play-centered"  id="mainAudio"  data-setup='{ "fluid": true }'
+                <audio id="mainAudio" controls class="mx-auto.d-block video-js vjs-default-skin vjs-big-play-centered"  id="mainAudio"  data-setup='{ "fluid": true }'
                        poster="<?php echo $global['webSiteRootURL']; ?>view/img/recorder.gif">
                 <?php
                 $ext = "";

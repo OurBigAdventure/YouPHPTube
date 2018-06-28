@@ -17,7 +17,7 @@
                $poster = $global['webSiteRootURL']."videos/".$video['filename'].".jpg"; 
             }
         ?>
-        <audio controls class="center-block video-js vjs-default-skin " <?php if($waveSurferEnabled==false){ ?> autoplay data-setup='{"controls": true}' <?php } ?> id="mainAudio" poster="<?php echo $poster; ?>">
+        <audio controls class="mx-auto.d-block video-js vjs-default-skin " <?php if($waveSurferEnabled==false){ ?> autoplay data-setup='{"controls": true}' <?php } ?> id="mainAudio" poster="<?php echo $poster; ?>">
             <?php
             $ext = "";
 	if($video['type']=="audio"){ 

@@ -65,7 +65,7 @@ class LiveLinks extends PluginAbstract {
     }
 
     /**
-     * 
+     *
      * @return type array(array("key"=>'live key', "users"=>false, "name"=>$userName, "user"=>$user, "photo"=>$photo, "UserPhoto"=>$UserPhoto, "title"=>''));
      */
     public function getLiveApplicationArray() {
@@ -88,7 +88,7 @@ class LiveLinks extends PluginAbstract {
         );
         $content = file_get_contents($filename);
         $contentExtra = file_get_contents($filenameExtra);
-        
+
         if(empty($_GET['requestComesFromVideoPage'])){
             $regex = "/".addcslashes($global['webSiteRootURL'],"/")."video\/.*/";
             $requestComesFromVideoPage = preg_match($regex, @$_SERVER["HTTP_REFERER"]);
@@ -96,7 +96,7 @@ class LiveLinks extends PluginAbstract {
             $requestComesFromVideoPage = 1;
         }
         foreach ($row as $value) {
-            
+
             if($value['type']=='unlisted'){
                 continue;
             }
@@ -105,7 +105,7 @@ class LiveLinks extends PluginAbstract {
                     continue;
                 }
             }
-            $UserPhoto = User::getPhoto($value['users_id']);   
+            $UserPhoto = User::getPhoto($value['users_id']);
             $name = User::getNameIdentificationById($value['users_id']);
             $replace = array(
                 $value['id'],
@@ -114,8 +114,8 @@ class LiveLinks extends PluginAbstract {
                 $name,
                 str_replace('"', "", $value['description']),
                 "{$global['webSiteRootURL']}plugin/LiveLinks/view/Live.php?link={$value['id']}",
-                '<img src="'."{$global['webSiteRootURL']}plugin/LiveLinks/getImage.php?id={$value['id']}&format=jpg".'" class="thumbsJPG img-responsive" height="130">',
-                empty($obj->disableGifThumbs)?('<img src="'."{$global['webSiteRootURL']}plugin/LiveLinks/getImage.php?id={$value['id']}&format=gif".'" style="position: absolute; top: 0px; height: 0px; width: 0px; display: none;" class="thumbsGIF img-responsive" height="130">'):"",
+                '<img src="'."{$global['webSiteRootURL']}plugin/LiveLinks/getImage.php?id={$value['id']}&format=jpg".'" class="thumbsJPG img-fluid" height="130">',
+                empty($obj->disableGifThumbs)?('<img src="'."{$global['webSiteRootURL']}plugin/LiveLinks/getImage.php?id={$value['id']}&format=gif".'" style="position: absolute; top: 0px; height: 0px; width: 0px; display: none;" class="thumbsGIF img-fluid" height="130">'):"",
                 ($requestComesFromVideoPage)?"col-xs-6":"col-lg-2 col-md-4 col-sm-4 col-xs-6"
             );
 

@@ -11,7 +11,7 @@ require_once '../objects/functions.php';
         <title>Install YouPHPTube</title>
         <link rel="icon" href="../view/img/favicon.png">
         <link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        
+
         <link href="../view/bootstrap/bootstrapSelectPicker/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
         <link href="../view/js/seetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
         <script src="../view/js/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -27,17 +27,17 @@ require_once '../objects/functions.php';
                     <span class="glyphicon glyphicon-ok-circle"></span>
                     Your system is installed, remove the <code><?php echo $global['systemRootPath']; ?>install</code> directory to continue
                     <hr>
-                    <a href="<?php echo $global['webSiteRootURL']; ?>" class="btn btn-success btn-lg center-block">Go to the main page</a>
+                    <a href="<?php echo $global['webSiteRootURL']; ?>" class="btn btn-success btn-lg mx-auto.d-block">Go to the main page</a>
                 </h3>
             </div>
             <?php
         } else {
             ?>
             <div class="container">
-                <img src="../view/img/logo.png" alt="Logo" class="img img-responsive center-block"/>
+                <img src="../view/img/logo.png" alt="Logo" class="img img-fluid mx-auto.d-block"/>
                 <div class="row">
                     <div class="col-md-6">
-                        
+
                         <?php
                         if (isApache()) {
                             ?>
@@ -70,7 +70,7 @@ require_once '../objects/functions.php';
                             <div class="alert alert-warning">
                                 <span class="glyphicon glyphicon-exclamation-sign"></span>
                                 <strong>Your PHP version is <?php echo PHP_VERSION; ?>, we recommend install PHP 5.6.x or greater</strong>
-                            </div>                  
+                            </div>
                             <?php
                         }
                         ?>
@@ -164,43 +164,43 @@ require_once '../objects/functions.php';
                     </div>
                     <div class="col-md-6">
                         <form id="configurationForm">
-                            <div class="form-group">
+                            <div class="">
                                 <label for="webSiteRootURL">Your Site URL</label>
                                 <input type="text" class="form-control" id="webSiteRootURL" placeholder="Enter your URL (http://yoursite.com)" value="<?php echo getURLToApplication(); ?>" required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="systemRootPath">System Path to Application</label>
                                 <input type="text" class="form-control" id="systemRootPath" placeholder="System Path to Application (/var/www/[application_path])" value="<?php echo getPathToApplication(); ?>" required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="webSiteTitle">Title of your Web Site</label>
                                 <input type="text" class="form-control" id="webSiteTitle" placeholder="Enter the title of your Web Site" value="YouPHPTube" required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="contactEmail">Contact E-mail</label>
                                 <input type="email" class="form-control" id="contactEmail" placeholder="Enter e-mail contact of your Web Site" required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="databaseHost">Database Host</label>
                                 <input type="text" class="form-control" id="databaseHost" placeholder="Enter Database Host" value="localhost" required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="databasePort">Database Port</label>
                                 <input type="text" class="form-control" id="databasePort" placeholder="Enter Database Port" value="3306" required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="databaseUser">Database User</label>
                                 <input type="text" class="form-control" id="databaseUser" placeholder="Enter Database User" value="root" required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="databasePass">Database Password</label>
                                 <input type="password" class="form-control" id="databasePass" placeholder="Enter Database Password">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="databaseName">Database Name</label>
                                 <input type="text" class="form-control" id="databaseName" placeholder="Enter Database Name" value="youPHPTube" required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="createTables">Do you want to create database and tables?</label>
 
                                 <select class="" id="createTables">
@@ -209,7 +209,7 @@ require_once '../objects/functions.php';
                                     <option value="0">Do not create any, I will import the script manually</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="mainLanguage">Select the main Language</label>
 
                                 <select class="selectpicker" data-width="fit" id="mainLanguage">
@@ -222,11 +222,11 @@ require_once '../objects/functions.php';
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                            <div class="">
                                 <label for="systemAdminPass">System Admin password</label>
                                 <input type="password" class="form-control" id="systemAdminPass" placeholder="Enter System Admin password"  required="required">
                             </div>
-                            <div class="form-group">
+                            <div class="">
                                 <label for="confirmSystemAdminPass">Confirm System Admin password</label>
                                 <input type="password" class="form-control" id="confirmSystemAdminPass" placeholder="Confirm System Admin password"  required="required">
                             </div>

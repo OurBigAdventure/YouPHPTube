@@ -100,15 +100,15 @@ if(empty($channelName)){
                 <div class="panel panel-default">
                     <div class="panel-heading"><i class="fa fa-share"></i> <?php echo __("Share Info"); ?></div>
                     <div class="panel-body">          
-                        <div class="form-group">
+                        <div class=" ">
                             <label for="playerURL"><i class="fa fa-play-circle"></i> <?php echo __("Player URL"); ?>:</label>
                             <input type="text" class="form-control" id="playerURL" value="<?php echo $p->getPlayerServer(); ?>/<?php echo $trasnmition['key']; ?>/index.m3u8"  readonly="readonly">
                         </div>       
-                        <div class="form-group">
+                        <div class=" ">
                             <label for="youphptubeURL"><i class="fa fa-circle"></i> <?php echo __("Live URL"); ?>:</label>
                             <input type="text" class="form-control" id="youphptubeURL" value="<?php echo $global['webSiteRootURL']; ?>plugin/Live/?c=<?php echo urlencode($channelName); ?>"  readonly="readonly">
                         </div>   
-                        <div class="form-group">
+                        <div class=" ">
                             <label for="embedStream"><i class="fa fa-code"></i> <?php echo __("Embed Stream"); ?>:</label>
                             <input type="text" class="form-control" id="embedStream" value='<iframe width="640" height="480" style="max-width: 100%;max-height: 100%;" src="<?php echo $global['webSiteRootURL']; ?>plugin/Live/?c=<?php echo urlencode($channelName); ?>&embed=1" frameborder="0" allowfullscreen="allowfullscreen" class="YouPHPTubeIframe"></iframe>'  readonly="readonly">
                         </div>
@@ -117,12 +117,12 @@ if(empty($channelName)){
                 <div class="panel panel-default">
                     <div class="panel-heading"><i class="fa fa-hdd-o"></i> <?php echo __("Devices Stream Info"); ?></div>
                     <div class="panel-body">
-                        <div class="form-group">
+                        <div class=" ">
                             <label for="server"><i class="fa fa-server"></i> <?php echo __("Server URL"); ?>:</label>
                             <input type="text" class="form-control" id="server" value="<?php echo $p->getServer(); ?>?p=<?php echo User::getUserPass(); ?>" readonly="readonly">
                             <small class="label label-info"><i class="fa fa-warning"></i> <?php echo __("If you change your password the Server URL parameters will be changed too."); ?></small>
                         </div>
-                        <div class="form-group">
+                        <div class=" ">
                             <label for="streamkey"><i class="fa fa-key"></i> <?php echo __("Stream name/key"); ?>:</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="streamkey" value="<?php echo $trasnmition['key']; ?>" readonly="readonly">
@@ -159,20 +159,20 @@ if(empty($channelName)){
                 <div class="panel panel-default">
                     <div class="panel-heading"><?php echo __("Stream Settings"); ?></div>
                     <div class="panel-body"> 
-                        <div class="form-group">
+                        <div class=" ">
                             <label for="title"><?php echo __("Title"); ?>:</label>
                             <input type="text" class="form-control" id="title" value="<?php echo $trasnmition['title'] ?>">
                         </div>    
-                        <div class="form-group">
+                        <div class=" ">
                             <label for="description"><?php echo __("Description"); ?>:</label>
                             <textarea class="form-control" id="description"><?php echo $trasnmition['description'] ?></textarea>
                         </div>
                         <!--
                         -->
                         <hr>
-                        <div class="form-group">
+                        <div class=" ">
                             <span class="fa fa-globe"></span> <?php echo __("Listed Transmition"); ?> 
-                            <div class="material-switch pull-right">
+                            <div class="material-switch float-right">
                                 <input id="listed" type="checkbox" value="1" <?php echo!empty($trasnmition['public']) ? "checked" : ""; ?>/>
                                 <label for="listed" class="label-success"></label> 
                             </div>
@@ -186,9 +186,9 @@ if(empty($channelName)){
                         $ug = UserGroups::getAllUsersGroups();
                         foreach ($ug as $value) {
                             ?>
-                            <div class="form-group">
+                            <div class=" ">
                                 <span class="fa fa-users"></span> <?php echo $value['group_name']; ?>
-                                <div class="material-switch pull-right">
+                                <div class="material-switch float-right">
                                     <input id="group<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="userGroups" <?php echo (in_array($value['id'], $groups) ? "checked" : "") ?>/>
                                     <label for="group<?php echo $value['id']; ?>" class="label-success"></label>
                                 </div>

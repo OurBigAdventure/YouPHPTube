@@ -379,14 +379,14 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     </li>
                 </ul>
         </div>
-        <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-responsive "></a>
+        <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
       </div>
 
         <div>
           <ul class="items-container mr-auto navbar-brand" style="">
               <li style="margin-right: 0px; " class="nav-item">
                   <div class="">
-                      <button type="button" id="buttonSearch" class="visible-xs navbar-toggler" data-toggle="collapse" data-target="#mysearch" style="padding: 6px 12px;">
+                      <button type="button" id="buttonSearch" class="d-none.d-sm-block.d-md-none navbar-toggler" data-toggle="collapse" data-target="#mysearch" style="padding: 6px 12px;">
                           <span class="fa fa-search"></span>
                       </button>
                   </div>
@@ -417,7 +417,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                               ?>
                               <li class="nav-item">
                                   <div class="btn-group">
-                                      <button type="button" class="btn btn-default  dropdown-toggle navbar-btn pull-left"  data-toggle="dropdown">
+                                      <button type="button" class="btn btn-default  dropdown-toggle nav-item float-left"  data-toggle="dropdown">
                                           <i class="<?php echo isset($advancedCustom->uploadButtonDropdownIcon) ? $advancedCustom->uploadButtonDropdownIcon : "fas fa-video"; ?>"></i> <?php echo!empty($advancedCustom->uploadButtonDropdownText) ? $advancedCustom->uploadButtonDropdownText : ""; ?> <span class="caret"></span>
                                       </button>
                                       <?php
@@ -525,7 +525,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                       $("#navBarFlag").flagStrap({
                                           countries: <?php echo json_encode($objFlag); ?>,
                                           inputName: 'country',
-                                          buttonType: "btn-default navbar-btn",
+                                          buttonType: "btn-default nav-item",
                                           onSelect: function (value, element) {
                                               window.location.href = "<?php echo $global['webSiteRootURL']; ?>?lang=" + value;
                                           },

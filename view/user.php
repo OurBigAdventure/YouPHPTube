@@ -36,14 +36,14 @@ $advancedCustom = json_decode($json_file);
                 ?>
                 <div class="row">
                     <div>
-                        <form class="form-compact well form-horizontal"  id="updateUserForm" onsubmit="">
+                        <form class="form-compact well "  id="updateUserForm" onsubmit="">
                             <?php echo $tagsStr; ?>
                             <fieldset>
                                 <legend>
                                     <?php echo __("Update your user") ?>
 
                                 </legend>
-                                <div class="form-group">
+                                <div class=" ">
                                     <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
@@ -53,7 +53,7 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class=" ">
                                     <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
@@ -63,7 +63,7 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class=" ">
                                     <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
                                     <div class="col-md-6 inputGroupContainer">
                                         <div class="input-group">
@@ -108,7 +108,7 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class=" ">
                                     <label class="col-md-4 control-label"><?php echo __("New Password"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
@@ -118,7 +118,7 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class=" ">
                                     <label class="col-md-4 control-label"><?php echo __("Confirm New Password"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
@@ -128,7 +128,7 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class=" ">
                                     <label class="col-md-4 control-label"><?php echo __("Channel Name"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
@@ -138,7 +138,7 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class=" ">
                                     <label class="col-md-4 control-label"><?php echo __("Analytics Code"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
@@ -149,13 +149,13 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class=" ">
                                     <label class="col-md-4 control-label"><?php echo __("About"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <textarea id="textAbout" placeholder="<?php echo __("About"); ?>" class="form-control"  ><?php echo $user->getAbout(); ?></textarea>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class=" ">
                                     <div class="col-md-12 ">
                                         <div id="croppie"></div>
                                         <center>
@@ -165,7 +165,7 @@ $advancedCustom = json_decode($json_file);
                                     <input type="file" id="upload" value="Choose a file" accept="image/*" style="display: none;" />
                                 </div>
 
-                                <div class="form-group">
+                                <div class=" ">
                                     <div class="col-md-12 ">
                                         <div id="croppieBg"></div>
                                         <center>
@@ -177,7 +177,7 @@ $advancedCustom = json_decode($json_file);
 
 
                                 <!-- Button -->
-                                <div class="form-group">
+                                <div class=" ">
                                     <hr>
                                     <div class="col-md-12">
                                         <center>
@@ -351,9 +351,9 @@ $advancedCustom = json_decode($json_file);
                             <?php
                             if (empty($advancedCustom->disableNativeSignIn)) {
                                 ?>
-                                <form class="form-compact well form-horizontal"  id="loginForm">
+                                <form class="form-compact well "  id="loginForm">
 
-                                    <div class="form-group">
+                                    <div class=" ">
                                         <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
@@ -364,7 +364,7 @@ $advancedCustom = json_decode($json_file);
                                     </div>
 
 
-                                    <div class="form-group">
+                                    <div class=" ">
                                         <label class="col-md-4 control-label"><?php echo __("Password"); ?></label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
@@ -381,7 +381,7 @@ $advancedCustom = json_decode($json_file);
                                         </div>
                                     </div>
                                     <!-- Button -->
-                                    <div class="form-group">
+                                    <div class=" ">
                                         <div class="col-md-12">
                                             <button type="submit" class="btn btn-success  btn-block" id="mainButton" ><span class="fas fa-sign-in-alt"></span> <?php echo __("Sign in"); ?></button>
                                         </div>

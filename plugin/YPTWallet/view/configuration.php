@@ -32,7 +32,7 @@ $wallet->setUsers_id(User::getId());
                     <div class="panel-heading"><?php echo __("Configurations"); ?></div>
                     <div class="panel-body">
                         <form id="form">
-                            <div class="form-group">
+                            <div class=" ">
                                 <label for="CryptoWallet"><?php echo $obj->CryptoWalletName; ?>:</label>
                                 <input type="text" class="form-control" name="CryptoWallet" value="<?php echo $wallet->getCrypto_wallet_address(); ?>">
                             </div>

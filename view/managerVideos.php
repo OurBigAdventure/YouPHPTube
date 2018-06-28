@@ -149,7 +149,7 @@ if (!empty($_GET['video_id'])) {
                 <?php
             }
             ?>
-            <div class="pull-left btn-group">       
+            <div class="float-left btn-group">       
                 <button class="btn btn-secondary" id="checkBtn">
                     <i class="far fa-square" aria-hidden="true" id="chk"></i>
                 </button>
@@ -253,14 +253,14 @@ if (!empty($_GET['video_id'])) {
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <span class="fa fa-globe"></span> <?php echo __("Public Video"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input id="public" type="checkbox" value="0" class="userGroups"/>
                                             <label for="public" class="label-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item active non-public">
                                         <?php echo __("Groups that can see this video"); ?>
-                                        <a href="#" class="btn btn-info btn-xs pull-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
+                                        <a href="#" class="btn btn-info btn-xs float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                     </li>
                                     <?php
                                     foreach ($userGroups as $value) {
@@ -269,7 +269,7 @@ if (!empty($_GET['video_id'])) {
                                             <span class="fa fa-lock"></span>
                                             <?php echo $value['group_name']; ?>
                                             <span class="label label-info"><?php echo $value['total_users']; ?> Users linked</span>
-                                            <div class="material-switch pull-right">
+                                            <div class="material-switch float-right">
                                                 <input id="videoGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="videoGroups"/>
                                                 <label for="videoGroup<?php echo $value['id']; ?>" class="label-warning"></label>
                                             </div>
@@ -334,7 +334,7 @@ if (!empty($_GET['video_id'])) {
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-            <div class="btn-group pull-right" role="group">
+            <div class="btn-group float-right" role="group">
                 <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php?type=seo" target="_blank" class="btn btn-default btn-sm">
                     <i class="fas fa-download"></i> <?php echo __("Download your videos list"); ?> (SEO .txt file)
                 </a>
@@ -851,11 +851,11 @@ if (User::isAdmin()) {
                                                     var type, img, is_portrait;
                                                     if (row.type === "audio") {
                                                         type = "<span class='fa fa-headphones' style='font-size:14px;'></span> ";
-                                                        img = "<img class='img img-responsive img-thumbnail pull-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "' style='max-height:80px; margin-right: 5px;'> ";
+                                                        img = "<img class='img img-fluid img-thumbnail float-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "' style='max-height:80px; margin-right: 5px;'> ";
                                                     } else {
                                                         type = "<span class='fa fa-film' style='font-size:14px;'></span> ";
                                                         is_portrait = (row.rotation === "90" || row.rotation === "270") ? "img-portrait" : "";
-                                                        img = "<img class='img img-responsive " + is_portrait + " img-thumbnail pull-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
+                                                        img = "<img class='img img-fluid " + is_portrait + " img-thumbnail float-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
                                                     }
                                                     return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn btn-default btn-xs">' + type + row.title + "</a>" + tags + "" + yt;
                                                 }

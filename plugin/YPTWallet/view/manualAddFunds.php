@@ -57,7 +57,7 @@ $options = json_decode($obj->addFundsOptions);
                                 <?php
                             }
                             ?>
-                            <div class="form-group">
+                            <div class=" ">
                                 <label for="value"><?php echo __("Specify Ammount"); ?> <?php echo $obj->currency_symbol; ?> <?php echo $obj->currency; ?></label>
                                 <select class="form-control" id="value" >
                                     <?php
@@ -69,7 +69,7 @@ $options = json_decode($obj->addFundsOptions);
                                     ?>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class=" ">
                                 <label for="informations"><?php echo __("Informations"); ?></label>
                                 <textarea class="form-control" id="informations" name="informations"></textarea>
                             </div>

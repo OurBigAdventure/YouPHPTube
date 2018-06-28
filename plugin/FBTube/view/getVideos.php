@@ -30,7 +30,7 @@ $videos = Video::getAllVideos("viewable");
 foreach ($videos as $key => $value) {
     $videos[$key] = Video::getVideo($value['id']);
     $name = empty($value['name']) ? $value['user'] : $value['name'];
-    $videos[$key]['creator'] = '<div class="pull-left"><img src="' . User::getPhoto($value['users_id']) . '" alt="" class="img img-responsive img-circle" style="max-width: 50px;"/></div><div class="commentDetails" style="margin-left:60px;"><div class="commenterName"><strong><a href="' . User::getChannelLink($value['users_id']) . '/">' . $name . '</a></strong><br><span class="text-muted">' . humanTiming(strtotime($value['videoCreation'])) . '</span></div></div>';
+    $videos[$key]['creator'] = '<div class="float-left"><img src="' . User::getPhoto($value['users_id']) . '" alt="" class="img img-fluid rounded-circle" style="max-width: 50px;"/></div><div class="commentDetails" style="margin-left:60px;"><div class="commenterName"><strong><a href="' . User::getChannelLink($value['users_id']) . '/">' . $name . '</a></strong><br><span class="text-muted">' . humanTiming(strtotime($value['videoCreation'])) . '</span></div></div>';
 }
 $count = 0;
 if (!empty($videos)) {
@@ -71,8 +71,8 @@ if (!empty($videos)) {
                         <?php
                     } else {
                         ?>
-                        <video poster="<?php echo $poster; ?>" controls 
-                               class="embed-responsive-item video-js vjs-default-skin <?php echo $vjsClass; ?> vjs-big-play-centered" 
+                        <video poster="<?php echo $poster; ?>" controls
+                               class="embed-responsive-item video-js vjs-default-skin <?php echo $vjsClass; ?> vjs-big-play-centered"
                                id="mainVideo<?php echo $video['id']; ?>"  data-setup='{ "aspectRatio": "<?php echo $aspectRatio; ?>" }'>
                                    <?php
                                    echo getSources($playNowVideo['filename']);
@@ -106,7 +106,7 @@ if (!empty($videos)) {
                 }
                 ?>
 
-                <span class="watch-view-count pull-right text-muted" itemprop="interactionCount"><?php echo number_format($video['views_count'], 0); ?> <?php echo __("Views"); ?></span>
+                <span class="watch-view-count float-right text-muted" itemprop="interactionCount"><?php echo number_format($video['views_count'], 0); ?> <?php echo __("Views"); ?></span>
 
                 <div class="row">
                     <div class="col-md-12 col-lg-12 watch8-action-buttons text-muted">
@@ -118,7 +118,7 @@ if (!empty($videos)) {
                             if (User::isLogged()) {
                                 ?>
                                 <form role="form">
-                                    <div class="form-group">
+                                    <div class=" ">
                                         <input class="form-control" id="searchinput<?php echo $video['id']; ?>" type="search" placeholder="Search..." />
                                     </div>
                                     <div id="searchlist<?php echo $video['id']; ?>" class="list-group">
@@ -127,17 +127,17 @@ if (!empty($videos)) {
                                 </form>
                                 <div >
                                     <hr>
-                                    <div class="form-group">
+                                    <div class=" ">
                                         <input id="playListName<?php echo $video['id']; ?>" class="form-control" placeholder="<?php echo __("Create a New Play List"); ?>"  >
                                     </div>
-                                    <div class="form-group">
+                                    <div class=" ">
                                         <?php echo __("Make it public"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input id="publicPlayList<?php echo $video['id']; ?>" name="publicPlayList" type="checkbox" checked="checked"/>
                                             <label for="publicPlayList" class="label-success"></label>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class=" ">
                                         <button class="btn btn-success btn-block" id="addPlayList<?php echo $video['id']; ?>" ><?php echo __("Create a New Play List"); ?></button>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@ if (!empty($videos)) {
                                                 }
                                             }
 
-                                            $("#searchlist<?php echo $video['id']; ?>").append('<a class="list-group-item"><i class="fa fa-' + icon + '"></i> <span>' + response[i].name + '</span><div class="material-switch pull-right"><input id="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="' + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" class="label-success"></label></div></a>');
+                                            $("#searchlist<?php echo $video['id']; ?>").append('<a class="list-group-item"><i class="fa fa-' + icon + '"></i> <span>' + response[i].name + '</span><div class="material-switch float-right"><input id="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="' + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" class="label-success"></label></div></a>');
                                         }
                                         $('#searchlist<?php echo $video['id']; ?>').btsListFilter('#searchinput<?php echo $video['id']; ?>', {itemChild: 'span'});
                                         $('.playListsIds').change(function () {
@@ -237,15 +237,15 @@ if (!empty($videos)) {
                         <a href="#" class="btn btn-default no-outline" id="commentBtn<?php echo $video['id']; ?>">
                             <span class="fa fa-comment"></span> <?php echo __("Comment"); ?>
                         </a>
-                        <a href="#" class="btn btn-default no-outline pull-right <?php echo ($video['myVote'] == -1) ? "myVote" : "" ?>" id="dislikeBtn<?php echo $video['id']; ?>"
+                        <a href="#" class="btn btn-default no-outline float-right <?php echo ($video['myVote'] == -1) ? "myVote" : "" ?>" id="dislikeBtn<?php echo $video['id']; ?>"
                         <?php
                         if (!User::isLogged()) {
                             ?>
                                data-toggle="tooltip" title="<?php echo __("Don´t like this video? Sign in to make your opinion count."); ?>"
                            <?php } ?>>
                             <span class="fa fa-thumbs-down"></span> <small><?php echo $video['dislikes']; ?></small>
-                        </a>			
-                        <a href="#" class="btn btn-default no-outline pull-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn<?php echo $video['id']; ?>"
+                        </a>
+                        <a href="#" class="btn btn-default no-outline float-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn<?php echo $video['id']; ?>"
                         <?php
                         if (!User::isLogged()) {
                             ?>
@@ -352,10 +352,10 @@ if (!empty($videos)) {
                                         <?php
                                     } else {
                                         ?>
-                                        <form class="well form-horizontal" action="<?php echo $global['webSiteRootURL']; ?>sendEmail" method="post"  id="contact_form<?php echo $video['id']; ?>">
+                                        <form class="well " action="<?php echo $global['webSiteRootURL']; ?>sendEmail" method="post"  id="contact_form<?php echo $video['id']; ?>">
                                             <fieldset>
                                                 <!-- Text input-->
-                                                <div class="form-group">
+                                                <div class=" ">
                                                     <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
@@ -367,7 +367,7 @@ if (!empty($videos)) {
 
                                                 <!-- Text area -->
 
-                                                <div class="form-group">
+                                                <div class=" ">
                                                     <label class="col-md-4 control-label"><?php echo __("Message"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
@@ -378,7 +378,7 @@ if (!empty($videos)) {
                                                 </div>
 
 
-                                                <div class="form-group">
+                                                <div class=" ">
                                                     <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
@@ -389,7 +389,7 @@ if (!empty($videos)) {
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <div class="form-group">
+                                                <div class=" ">
                                                     <label class="col-md-4 control-label"></label>
                                                     <div class="col-md-8">
                                                         <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>
@@ -456,7 +456,7 @@ if (!empty($videos)) {
                             <a class="input-group-addon btn btn-success" href="<?php echo $global['webSiteRootURL']; ?>user"><span class="glyphicon glyphicon-log-in"></span> <?php echo __("You must login to be able to comment on videos"); ?></a>
                         <?php } ?>
                     </div>
-                    <div class="pull-right" id="count_message<?php echo $video['id']; ?>"></div>
+                    <div class="float-right" id="count_message<?php echo $video['id']; ?>"></div>
                     <script>
                         $(document).ready(function () {
                             var text_max = 200;

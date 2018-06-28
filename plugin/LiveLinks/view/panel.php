@@ -1,54 +1,54 @@
-<link rel="stylesheet" type="text/css" href="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.css"/> 
+<link rel="stylesheet" type="text/css" href="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.css"/>
 <link href="<?php echo $global['webSiteRootURL']; ?>js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
 <div class="panel panel-default">
     <div class="panel-heading"><i class="fas fa-link"></i> <?php echo __("Add an external Live Link"); ?></div>
-    <div class="panel-body"> 
+    <div class="panel-body">
         <div class="row">
             <div class="col-sm-4">
                 <form id="liveLinksForm">
                     <div class="row">
                         <input type="hidden" name="linkId" id="linkId" value="" >
-                        <div class="form-group col-sm-12">
+                        <div class="  col-sm-12">
                             <label for="linkTitle"><?php echo __("Title"); ?>:</label>
-                            <input type="text" id="linkTitle" name="title" class="form-control input-sm" placeholder="<?php echo __("Title"); ?>" required="true">
+                            <input type="text" id="linkTitle" name="title" class="form-control form-control-sm" placeholder="<?php echo __("Title"); ?>" required="true">
                         </div>
-                        <div class="form-group col-sm-12">
+                        <div class="  col-sm-12">
                             <label for="linkLink"><?php echo __("Link"); ?> (m3u8):</label>
-                            <input type="text" id="linkLink" name="link" class="form-control input-sm" placeholder="HLS .m3u8 Link" required="true">
+                            <input type="text" id="linkLink" name="link" class="form-control form-control-sm" placeholder="HLS .m3u8 Link" required="true">
                         </div>
-                        <div class="form-group col-sm-12">
+                        <div class="  col-sm-12">
                             <label for="linkDescription"><?php echo __("Description"); ?>:</label>
-                            <textarea id="linkDescription" name="description" class="form-control input-sm" placeholder="<?php echo __("Description"); ?>" required="true"></textarea>
+                            <textarea id="linkDescription" name="description" class="form-control form-control-sm" placeholder="<?php echo __("Description"); ?>" required="true"></textarea>
                         </div>
-                        <div class="form-group col-sm-6">
+                        <div class="  col-sm-6">
                             <label for="inputLinkStarts"><?php echo __("Starts on"); ?>:</label>
-                            <input type="text" id="inputLinkStarts" name="start_date" class="form-control datepickerLink input-sm" placeholder="<?php echo __("Starts on"); ?>" required >
+                            <input type="text" id="inputLinkStarts" name="start_date" class="form-control datepickerLink form-control-sm" placeholder="<?php echo __("Starts on"); ?>" required >
                         </div>
-                        <div class="form-group col-sm-6">
+                        <div class="  col-sm-6">
                             <label for="inputLinkEnd"><?php echo __("End on"); ?>:</label>
-                            <input type="text" id="inputLinkEnd" name="end_date" class="form-control datepickerLink input-sm" placeholder="<?php echo __("End on"); ?>" required>
+                            <input type="text" id="inputLinkEnd" name="end_date" class="form-control datepickerLink form-control-sm" placeholder="<?php echo __("End on"); ?>" required>
                         </div>
-                        <div class="form-group col-sm-6">
+                        <div class="  col-sm-6">
                             <label for="linkType"><?php echo __("Type"); ?>:</label>
-                            <select class="form-control input-sm" name="type" id="linkType">
+                            <select class="form-control form-control-sm" name="type" id="linkType">
                                 <option value="public"><?php echo __("Public"); ?></option>
                                 <option value="unlisted"><?php echo __("Unlisted"); ?></option>
                                 <option value="logged_only"><?php echo __("Logged Users Only"); ?></option>
                             </select>
-                        </div> 
-                        <div class="form-group col-sm-6">
+                        </div>
+                        <div class="  col-sm-6">
                             <label for="linkStatus"><?php echo __("Status"); ?>:</label>
-                            <select class="form-control input-sm" name="status" id="linkStatus">
+                            <select class="form-control form-control-sm" name="status" id="linkStatus">
                                 <option value="a"><?php echo __("Active"); ?></option>
                                 <option value="i"><?php echo __("Inactive"); ?></option>
                             </select>
-                        </div> 
-                        <div class="form-group col-sm-12">
-                            <div class="btn-group pull-right">
+                        </div>
+                        <div class="  col-sm-12">
+                            <div class="btn-group float-right">
                                 <span class="btn btn-success" id="newLiveLink"><i class="fas fa-plus"></i> <?php echo __("New"); ?></span>
                                 <button class="btn btn-primary" id="addLiveLink" type="submit"><i class="fas fa-save"></i> <?php echo __("Save"); ?></button>
-                            </div> 
-                        </div> 
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -85,14 +85,14 @@
     </div>
 </div>
 <div id="btnModelLinks" style="display: none;">
-    <div class="btn-group pull-right"> 
+    <div class="btn-group float-right">
         <button href="" class="editor_edit_link btn btn-default btn-xs">
             <i class="fa fa-edit"></i>
         </button>
         <button href="" class="editor_delete_link btn btn-danger btn-xs">
             <i class="fa fa-trash"></i>
         </button>
-    </div>    
+    </div>
 </div>
 <script type="text/javascript" src="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.js"></script>
 <script src="<?php echo $global['webSiteRootURL']; ?>js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>

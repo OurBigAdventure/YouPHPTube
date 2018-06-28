@@ -72,14 +72,14 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
         <div class="container">
             <div class="bgWhite list-group-item gallery clear clearfix" >
                 <div class="row bg-info profileBg" style="background-image: url('<?php echo $global['webSiteRootURL'], $user->getBackgroundURL(); ?>')">
-                    <img src="<?php echo User::getPhoto($user_id); ?>" alt="<?php echo $user->_getName(); ?>" class="img img-responsive img-thumbnail" style="max-width: 100px;"/>
+                    <img src="<?php echo User::getPhoto($user_id); ?>" alt="<?php echo $user->_getName(); ?>" class="img img-fluid img-thumbnail" style="max-width: 100px;"/>
                 </div>
                 <div class="row"><div class="col-6 col-md-12">
-                    <h1 class="pull-left">
+                    <h1 class="float-left">
                    <?php
                             echo $user->getNameIdentificationBd();
                         ?></h1>
-                    <span class="pull-right">
+                    <span class="float-right">
                         <?php
                         echo Subscribe::getButton($user_id);
                         ?>
@@ -168,7 +168,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                             $("#sortable<?php echo $playlist['id']; ?>").disableSelection();
                                         });
                                     </script>
-                                    <div class="pull-right btn-group">
+                                    <div class="float-right btn-group">
                                         <button class="btn btn-xs btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>
                                         <button class="btn btn-xs btn-danger deletePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-trash-o"></span> <?php echo __("Delete"); ?></button>
                                         <button class="btn btn-xs btn-primary renamePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-pencil"></span> <?php echo __("Rename"); ?></button>
@@ -191,7 +191,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                         ?>
                                         <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6 galleryVideo " id="<?php echo $value['id']; ?>">
                                             <a class="aspectRatio16_9" href="<?php echo $global['webSiteRootURL']; ?>video/<?php echo $value['clean_title']; ?>" title="<?php echo $value['title']; ?>" style="margin: 0;" >
-                                                <img src="<?php echo $poster; ?>" alt="<?php echo $value['title']; ?>" class="img img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" />
+                                                <img src="<?php echo $poster; ?>" alt="<?php echo $value['title']; ?>" class="img img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" />
                                                 <span class="duration"><?php echo Video::getCleanDuration($value['duration']); ?></span>
                                             </a>
                                             <a href="<?php echo $global['webSiteRootURL']; ?>video/<?php echo $value['clean_title']; ?>" title="<?php echo $value['title']; ?>">

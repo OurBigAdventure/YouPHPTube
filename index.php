@@ -73,7 +73,7 @@ if (!file_exists('.htaccess')) { ?>
       <body marginwidth="0" marginheight="0">
 
           <div id="block_error">
-              <img src="view/img/logo.png" class="img img-responsive center-block"/>
+              <img src="view/img/logo.png" class="img img-fluid mx-auto.d-block"/>
               <div>
                   <h2>Error. Oops you've encountered an error</h2>
                   <p>

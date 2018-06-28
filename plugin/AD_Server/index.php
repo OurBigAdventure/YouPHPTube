@@ -40,7 +40,7 @@ if (!User::isAdmin()) {
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="fas fa-link"></i> <?php echo __("Configure your Ads"); ?>
-                    <div class="pull-right" style="width: 200px;">
+                    <div class="float-right" style="width: 200px;">
                         <div class="material-switch ">
                             <?php echo __("Enable Ads Plugin"); ?> &nbsp;&nbsp;&nbsp;
                             <input name="enable1" id="enable1" type="checkbox" value="0" class="pluginSwitch" <?php
@@ -61,40 +61,40 @@ if (!User::isAdmin()) {
                                     <form id="panelForm">
                                         <div class="row">
                                             <input type="hidden" name="campId" id="campId" value="" >
-                                            <div class="form-group col-sm-12">
+                                            <div class="  col-sm-12">
                                                 <label for="name"><?php echo __("Name"); ?>:</label>
-                                                <input type="text" id="name" name="name" class="form-control input-sm" placeholder="<?php echo __("Name"); ?>" required="true">
+                                                <input type="text" id="name" name="name" class="form-control form-control-sm" placeholder="<?php echo __("Name"); ?>" required="true">
                                             </div>
-                                            <div class="form-group col-sm-6">
+                                            <div class="  col-sm-6">
                                                 <label for="startDate"><?php echo __("Starts on"); ?>:</label>
-                                                <input type="text" id="startDate" name="start_date" class="form-control datepickerLink input-sm" placeholder="<?php echo __("Starts on"); ?>" required >
+                                                <input type="text" id="startDate" name="start_date" class="form-control datepickerLink form-control-sm" placeholder="<?php echo __("Starts on"); ?>" required >
                                             </div>
-                                            <div class="form-group col-sm-6">
+                                            <div class="  col-sm-6">
                                                 <label for="endDate"><?php echo __("End on"); ?>:</label>
-                                                <input type="text" id="endDate" name="end_date" class="form-control datepickerLink input-sm" placeholder="<?php echo __("End on"); ?>" required>
+                                                <input type="text" id="endDate" name="end_date" class="form-control datepickerLink form-control-sm" placeholder="<?php echo __("End on"); ?>" required>
                                             </div>
-                                            <div class="form-group col-sm-6">
+                                            <div class="  col-sm-6">
                                                 <label for="maxPrints"><?php echo __("Max Prints"); ?>:</label>
-                                                <input type="number" id="maxPrints" name="maxPrints" class="form-control input-sm" placeholder="<?php echo __("End on"); ?>" required>
+                                                <input type="number" id="maxPrints" name="maxPrints" class="form-control form-control-sm" placeholder="<?php echo __("End on"); ?>" required>
                                             </div>
-                                            <div class="form-group col-sm-6">
+                                            <div class="  col-sm-6">
                                                 <label for="status"><?php echo __("Status"); ?>:</label>
-                                                <select class="form-control input-sm" name="status" id="status">
+                                                <select class="form-control form-control-sm" name="status" id="status">
                                                     <option value="a"><?php echo __("Active"); ?></option>
                                                     <option value="i"><?php echo __("Inactive"); ?></option>
                                                 </select>
-                                            </div> 
+                                            </div>
                                             <!--
-                                            <div class="form-group col-sm-6">
+                                            <div class="  col-sm-6">
                                                 <label for="visibility"><?php echo __("Visibility"); ?>:</label>
-                                                <select class="form-control input-sm" name="visibility" id="visibility">
+                                                <select class="form-control form-control-sm" name="visibility" id="visibility">
                                                     <option value="listed"><?php echo __("Listed"); ?></option>
                                                     <option value="unlisted"><?php echo __("Unlisted"); ?></option>
                                                 </select>
                                             </div>
                                             -->
-                                            <div class="form-group col-sm-12">
-                                                <div class="btn-group pull-right">
+                                            <div class="  col-sm-12">
+                                                <div class="btn-group float-right">
                                                     <span class="btn btn-success" id="newLiveLink"><i class="fas fa-plus"></i> <?php echo __("New"); ?></span>
                                                     <button class="btn btn-primary" id="addLiveLink" type="submit"><i class="fas fa-save"></i> <?php echo __("Save"); ?></button>
                                                 </div>
@@ -106,9 +106,9 @@ if (!User::isAdmin()) {
                         </div>
                         <div class="col-sm-8">
                             <div class="row">
-                                <div class="form-group col-sm-6">
+                                <div class="  col-sm-6">
                                     <label><?php echo __("VMAP Link"); ?>:</label>
-                                    <input type="text" class="form-control input-sm" readonly value="<?php echo $global['webSiteRootURL']; ?>plugin/AD_Server/VMAP.php" >
+                                    <input type="text" class="form-control form-control-sm" readonly value="<?php echo $global['webSiteRootURL']; ?>plugin/AD_Server/VMAP.php" >
                                 </div>
                             </div>
                             <div class="panel panel-default ">
@@ -154,7 +154,7 @@ if (!User::isAdmin()) {
                             <div class="row">
                                 <h3><?php echo __("Add Videos into Campaign"); ?> - <strong id="campaignName"></strong></h3>
                                 <div class="col-md-4">
-                                    <img id="inputVideo-poster" src="<?php echo $global['webSiteRootURL']; ?>img/notfound.jpg" class="ui-state-default img-responsive" alt="">
+                                    <img id="inputVideo-poster" src="<?php echo $global['webSiteRootURL']; ?>img/notfound.jpg" class="ui-state-default img-fluid" alt="">
                                 </div>
                                 <div class="col-md-8">
                                     <input id="inputVideo" placeholder="<?php echo __("Video"); ?>" class="form-control">
@@ -223,7 +223,7 @@ if (!User::isAdmin()) {
             </div>
 
             <div id="btnModelLinks" style="display: none;">
-                <div class="btn-group pull-right">
+                <div class="btn-group float-right">
                     <button href="" class="editor_add_video btn btn-success btn-xs">
                         <i class="fa fa-video"></i> Add Video
                     </button>
@@ -352,7 +352,7 @@ if (!User::isAdmin()) {
                             sortable: false,
                             data: null,
                             "render": function (data, type, full, meta) {
-                                return '<img src="' + full.poster.thumbsJpg + '" class="ui-state-default img-responsive" alt="">';
+                                return '<img src="' + full.poster.thumbsJpg + '" class="ui-state-default img-fluid" alt="">';
                             }, "width": "20%"
                         },
                         {

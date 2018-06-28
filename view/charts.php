@@ -156,7 +156,7 @@ foreach ($videos as $value) {
                 </ul>
 
                 <div class="tab-content">
-                    <div id="dashboard" class="tab-pane fade in active" style="padding: 10px;">
+                    <div id="dashboard" class="tab-pane fade show active" style="padding: 10px;">
                         <?php
                             include $global['systemRootPath'].'view/report0.php';
                         ?>

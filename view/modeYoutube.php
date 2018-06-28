@@ -109,7 +109,7 @@ if (!empty($_GET['playlist_id'])) {
 
     if (!empty($autoPlayVideo)) {
         $name2 = User::getNameIdentificationById($autoPlayVideo['users_id']);
-        $autoPlayVideo['creator'] = '<div class="pull-left"><img src="' . User::getPhoto($autoPlayVideo['users_id']) . '" alt="" class="img img-responsive img-circle zoom" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName"><strong>' . $name2 . '</strong> <small>' . humanTiming(strtotime($autoPlayVideo['videoCreation'])) . '</small></div></div>';
+        $autoPlayVideo['creator'] = '<div class="float-left"><img src="' . User::getPhoto($autoPlayVideo['users_id']) . '" alt="" class="img img-fluid rounded-circle zoom" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName"><strong>' . $name2 . '</strong> <small>' . humanTiming(strtotime($autoPlayVideo['videoCreation'])) . '</small></div></div>';
         $autoPlayVideo['tags'] = Video::getTags($autoPlayVideo['id']);
         $autoPlayVideo['url'] = $global['webSiteRootURL'] . $catLink . "video/" . $autoPlayVideo['clean_title'];
     }
@@ -119,7 +119,7 @@ if (!empty($video)) {
     $name = User::getNameIdentificationById($video['users_id']);
     $name = "<a href='" . User::getChannelLink($video['users_id']) . "' class='btn btn-xs btn-default'>{$name}</a>";
     $subscribe = Subscribe::getButton($video['users_id']);
-    $video['creator'] = '<div class="pull-left"><img src="' . User::getPhoto($video['users_id']) . '" alt="" class="img img-responsive img-circle zoom" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName text-muted"><strong>' . $name . '</strong><br />' . $subscribe . '<br /><small>' . humanTiming(strtotime($video['videoCreation'])) . '</small></div></div>';
+    $video['creator'] = '<div class="float-left"><img src="' . User::getPhoto($video['users_id']) . '" alt="" class="img img-fluid rounded-circle zoom" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName text-muted"><strong>' . $name . '</strong><br />' . $subscribe . '<br /><small>' . humanTiming(strtotime($video['videoCreation'])) . '</small></div></div>';
     $obj = new Video("", "", $video['id']);
 
     // dont need because have one embeded video on this page
@@ -215,7 +215,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                         <div class="row bgWhite list-group-item">
                             <div class="row divMainVideo">
                                 <div class="col-xs-4 col-sm-4 col-md-4">
-                                    <img src="<?php echo $poster; ?>" alt="<?php echo str_replace('"', '', $video['title']); ?>" class="img img-responsive <?php echo $img_portrait; ?> rotate<?php echo $video['rotation']; ?>" height="130" itemprop="thumbnail" />
+                                    <img src="<?php echo $poster; ?>" alt="<?php echo str_replace('"', '', $video['title']); ?>" class="img img-fluid <?php echo $img_portrait; ?> rotate<?php echo $video['rotation']; ?>" height="130" itemprop="thumbnail" />
                                     <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($video['duration']); ?>" ><?php echo Video::getCleanDuration($video['duration']); ?></time>
                                     <meta itemprop="thumbnailUrl" content="<?php echo $img; ?>" />
                                     <meta itemprop="contentURL" content="<?php echo Video::getLink($video['id'], $video['clean_title']); ?>" />
@@ -251,7 +251,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <?php echo $video['creator']; ?>
                                     </div>
-                                    <span class="watch-view-count pull-right text-muted" itemprop="interactionCount"><span class="view-count<?php echo $video['id']; ?>"><?php echo number_format($video['views_count'], 0); ?></span> <?php echo __("Views"); ?></span>
+                                    <span class="watch-view-count float-right text-muted" itemprop="interactionCount"><span class="view-count<?php echo $video['id']; ?>"><?php echo number_format($video['views_count'], 0); ?></span> <?php echo __("Views"); ?></span>
                                 </div>
                             </div>
 
@@ -264,7 +264,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                         <div class="webui-popover-content">
                                             <?php if (User::isLogged()) { ?>
                                                 <form role="form">
-                                                    <div class="form-group">
+                                                    <div class=" ">
                                                         <input class="form-control" id="searchinput" type="search" placeholder="Search..." />
                                                     </div>
                                                     <div id="searchlist" class="list-group">
@@ -272,17 +272,17 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                 </form>
                                                 <div>
                                                     <hr>
-                                                    <div class="form-group">
+                                                    <div class=" ">
                                                         <input id="playListName" class="form-control" placeholder="<?php echo __("Create a New Play List"); ?>"  >
                                                     </div>
-                                                    <div class="form-group">
+                                                    <div class=" ">
                                                         <?php echo __("Make it public"); ?>
-                                                        <div class="material-switch pull-right">
+                                                        <div class="material-switch float-right">
                                                             <input id="publicPlayList" name="publicPlayList" type="checkbox" checked="checked"/>
                                                             <label for="publicPlayList" class="label-success"></label>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group">
+                                                    <div class=" ">
                                                         <button class="btn btn-success btn-block" id="addPlayList" ><?php echo __("Create a New Play List"); ?></button>
                                                     </div>
                                                 </div>
@@ -322,7 +322,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                             }
 
                                                             $("#searchlist").append('<a class="list-group-item"><i class="fa fa-' + icon + '"></i> <span>'
-                                                                    + response[i].name + '</span><div class="material-switch pull-right"><input id="someSwitchOptionDefault'
+                                                                    + response[i].name + '</span><div class="material-switch float-right"><input id="someSwitchOptionDefault'
                                                                     + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="'
                                                                     + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault'
                                                                     + response[i].id + '" class="label-success"></label></div></a>');
@@ -380,10 +380,10 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                             <span class="fa fa-share"></span> <?php echo __("Share"); ?>
                                         </a>
                                     <?php } echo YouPHPTubePlugin::getWatchActionButton(); ?>
-                                    <a href="#" class="btn btn-default no-outline pull-right <?php echo ($video['myVote'] == - 1) ? "myVote" : "" ?>" id="dislikeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("DonÂ´t like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
+                                    <a href="#" class="btn btn-default no-outline float-right <?php echo ($video['myVote'] == - 1) ? "myVote" : "" ?>" id="dislikeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("DonÂ´t like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
                                         <span class="fa fa-thumbs-down"></span> <small><?php echo $video['dislikes']; ?></small>
                                     </a>
-                                    <a href="#" class="btn btn-default no-outline pull-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("Like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
+                                    <a href="#" class="btn btn-default no-outline float-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("Like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
                                         <span class="fa fa-thumbs-up"></span>
                                         <small><?php echo $video['likes']; ?></small>
                                     </a>
@@ -483,10 +483,10 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                         <a href="<?php echo $global['webSiteRootURL']; ?>user"><?php echo __("Sign in now!"); ?></a>
                                                     </strong>
                                                 <?php } else { ?>
-                                                    <form class="well form-horizontal" action="<?php echo $global['webSiteRootURL']; ?>sendEmail" method="post"  id="contact_form">
+                                                    <form class="well " action="<?php echo $global['webSiteRootURL']; ?>sendEmail" method="post"  id="contact_form">
                                                         <fieldset>
                                                             <!-- Text input-->
-                                                            <div class="form-group">
+                                                            <div class=" ">
                                                                 <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
@@ -498,7 +498,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
 
                                                             <!-- Text area -->
 
-                                                            <div class="form-group">
+                                                            <div class=" ">
                                                                 <label class="col-md-4 control-label"><?php echo __("Message"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
@@ -507,7 +507,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
+                                                            <div class=" ">
                                                                 <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
@@ -518,7 +518,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                 </div>
                                                             </div>
                                                             <!-- Button -->
-                                                            <div class="form-group">
+                                                            <div class=" ">
                                                                 <label class="col-md-4 control-label"></label>
                                                                 <div class="col-md-8">
                                                                     <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>
@@ -558,13 +558,13 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                             </div>
 
                                             <div class="tab-pane" id="tabPermaLink">
-                                                <div class="form-group">
+                                                <div class=" ">
                                                     <label class="control-label"><?php echo __("Permanent Link") ?></label>
                                                     <div class="">
                                                         <input value="<?php echo Video::getPermaLink($video['id']); ?>" class="form-control" readonly="readonly"/>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class=" ">
                                                     <label class="control-label"><?php echo __("URL Friendly") ?> (SEO)</label>
                                                     <div class="">
                                                         <input value="<?php echo Video::getURLFriendly($video['id']); ?>" class="form-control" readonly="readonly"/>
@@ -617,7 +617,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             ?>
                             <div class="col-lg-12 col-sm-12 col-xs-12 autoplay text-muted" >
                                 <strong><?php echo __("Autoplay ended"); ?></strong>
-                                <span class="pull-right">
+                                <span class="float-right">
                                     <span><?php echo __("Autoplay"); ?></span>
                                     <span>
                                         <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom"  title="<?php echo __("When autoplay is enabled, a suggested video will automatically play next."); ?>"></i>
@@ -628,7 +628,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                         <?php } else if (!empty($autoPlayVideo)) { ?>
                             <div class="col-lg-12 col-sm-12 col-xs-12 autoplay text-muted" style="display: none;">
                                 <strong><?php echo __("Up Next"); ?></strong>
-                                <span class="pull-right">
+                                <span class="float-right">
                                     <span><?php echo __("Autoplay"); ?></span>
                                     <span>
                                         <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom"  title="<?php echo __("When autoplay is enabled, a suggested video will automatically play next."); ?>"></i>
@@ -652,9 +652,9 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                             $img_portrait = "";
                                         }
                                         ?>
-                                        <img src="<?php echo $img; ?>" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" class="img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" itemprop="thumbnail" />
+                                        <img src="<?php echo $img; ?>" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" class="img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" itemprop="thumbnail" />
                                         <?php if (!empty($imgGif)) { ?>
-                                            <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" id="thumbsGIF<?php echo $autoPlayVideo['id']; ?>" class="thumbsGIF img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" />
+                                            <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" id="thumbsGIF<?php echo $autoPlayVideo['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" />
                                         <?php } ?>
                                         <meta itemprop="thumbnailUrl" content="<?php echo $img; ?>" />
                                         <meta itemprop="contentURL" content="<?php echo Video::getLink($autoPlayVideo['id'], $autoPlayVideo['clean_title']); ?>" />

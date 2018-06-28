@@ -16,9 +16,9 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
                 if (!empty($_GET['catName'])) {
                     ?>
                     <div>
-                        <a class="btn btn-default btn-sm pull-right"  href="<?php echo $global['webSiteRootURL']; ?>">
+                        <a class="btn btn-default btn-sm float-right"  href="<?php echo $global['webSiteRootURL']; ?>">
                             <i class="fa fa-backward"></i>
-                            <?php echo __("Back to startpage"); ?> 
+                            <?php echo __("Back to startpage"); ?>
                         </a>
                         <hr>
                     </div>
@@ -27,9 +27,9 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
             } else if (!empty($parentCat)) {
                 ?>
                 <div>
-                    <a class="btn btn-default btn-sm pull-right" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $parentCat['clean_name']; ?>">
+                    <a class="btn btn-default btn-sm float-right" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $parentCat['clean_name']; ?>">
                         <i class="fa fa-backward"></i>
-                        <?php echo __("Back to") . " " . $parentCat['name']; ?> 
+                        <?php echo __("Back to") . " " . $parentCat['name']; ?>
                     </a>
                     <hr>
                 </div>
@@ -43,7 +43,7 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
             <?php
         }
         if ((!empty($childCategories)) && ((($currentCat['parentId'] != "0") || ($currentCat['parentId'] != "-1")))) {
-            ?>         
+            ?>
             <div class="clear clearfix">
                 <h3 class="galleryTitle"><i class="glyphicon glyphicon-download"></i>
                     <?php echo __("Sub-Category-Gallery"); ?>
@@ -80,9 +80,9 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
                                             $images = Video::getImageFromFilename($value['filename'], $value['type']);
                                             $poster = $images->thumbsJpg;
                                             ?>
-                                            <img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" id="thumbsJPG<?php echo $value['id']; ?>" />
+                                            <img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" id="thumbsJPG<?php echo $value['id']; ?>" />
                                             <?php if ((!empty($imgGif)) && (!$o->LiteGalleryNoGifs)) { ?>
-                                                <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
+                                                <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
                                                 <?php
                                             }
                                             $sql = "SELECT COUNT(title) FROM videos WHERE categories_id = ?;";
@@ -94,7 +94,7 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
                                     } else {
                                         $poster = $global['webSiteRootURL'] . "view/img/notfound.jpg";
                                         ?>
-                                        <img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-responsive" id="thumbsJPG<?php echo $cat['id']; ?>" />
+                                        <img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-fluid" id="thumbsJPG<?php echo $cat['id']; ?>" />
                                         <?php
                                         $sql = "SELECT COUNT(title) FROM videos WHERE categories_id = ?;";
                                         $res = sqlDAL::readSql($sql,"i",array($cat['id']));
@@ -115,10 +115,10 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
                                     <?php echo $cat['name']; ?>
                                 </div>
                             </a>
-                        </div>          
+                        </div>
 
                         <?php
-                    } // end of foreach-cat       
+                    } // end of foreach-cat
                     unset($_POST['sort']);
                     if (!empty($originalCat)) {
                         $_GET['catName'] = $originalCat;

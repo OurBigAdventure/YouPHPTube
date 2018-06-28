@@ -34,11 +34,11 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
             <div class="row">
                 <div class="col-xs-1 col-sm-1 col-lg-2"></div>
                 <div class="col-xs-10 col-sm-10 col-lg-8">
-                    <form class="form-compact well form-horizontal"  id="updateUserForm" onsubmit="">
+                    <form class="form-compact well "  id="updateUserForm" onsubmit="">
                         <fieldset>
                             <legend><?php echo __("Sign Up"); ?></legend>
 
-                            <div class="form-group">
+                            <div class=" ">
                                 <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
@@ -48,7 +48,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class=" ">
                                 <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
@@ -58,7 +58,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class=" ">
                                 <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
@@ -68,7 +68,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class=" ">
                                 <label class="col-md-4 control-label"><?php echo __("New Password"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
@@ -78,7 +78,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class=" ">
                                 <label class="col-md-4 control-label"><?php echo __("Confirm New Password"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
@@ -94,7 +94,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             }
                             ?>
 
-                            <div class="form-group">
+                            <div class=" ">
                                 <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
@@ -107,7 +107,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
 
 
                             <!-- Button -->
-                            <div class="form-group">
+                            <div class=" ">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-8">
                                     <button type="submit" class="btn btn-primary" ><?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>

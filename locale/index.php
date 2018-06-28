@@ -63,13 +63,13 @@ sort($vars);
                         $(function () {
                             $("#navBarFlag2").flagStrap({
                                 inputName: 'country2',
-                                buttonType: "btn-default navbar-btn",
+                                buttonType: "btn-default nav-item",
                             });
                         });
                     </script>
                 </div>
                 <div class="col-lg-2">   
-                    <button class="btn btn-success center-block" id="btnSaveFile" disabled><?php echo __("Save File"); ?></button>
+                    <button class="btn btn-success mx-auto.d-block" id="btnSaveFile" disabled><?php echo __("Save File"); ?></button>
                 </div>
                 <div class="col-lg-4"></div>
             </div>
