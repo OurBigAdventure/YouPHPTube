@@ -355,14 +355,14 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                 <button class="btn btn-success my-2 my-sm-0"   type="submit"><span class="fa fa-search"></span></button>
             </form>
         </li>
-              <li style="margin-right: 0px; padding-left: 0px;">
+              <li class="nav-item" style="margin-right: 0px; padding-left: 0px;">
                   <div class="navbar-header">
                       <button type="button" class="navbar-toggler" id="buttonMyNavbar" data-toggle="collapse" data-target="#myNavbar">
                           <span class="navbar-toggler-icon"></span>
                       </button>
                   </div>
-                  <div class="collapse navbar-collapse bg-light text-center" style="padding-left: 10px;padding-bottom: 10px;" id="myNavbar">
-                      <ul class="navbar-default" style="padding-left: 0;">
+                  <div class="collapse navbar-collapse bg-light  navbar-default" style="white-space: nowrap; padding-left: 10px;padding-bottom: 10px;" id="myNavbar">
+                      <ul class="nav" style="">
                           <?php
                           if (!empty($advancedCustom->menuBarHTMLCode->value)) {
                               echo $advancedCustom->menuBarHTMLCode->value;
@@ -375,7 +375,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                           <?php
                           if (User::canUpload()) {
                               ?>
-                              <li>
+                              <li class="nav-item">
                                   <div class="btn-group">
                                       <button type="button" class="btn btn-default  dropdown-toggle navbar-btn pull-left"  data-toggle="dropdown">
                                           <i class="<?php echo isset($advancedCustom->uploadButtonDropdownIcon) ? $advancedCustom->uploadButtonDropdownIcon : "fas fa-video"; ?>"></i> <?php echo!empty($advancedCustom->uploadButtonDropdownText) ? $advancedCustom->uploadButtonDropdownText : ""; ?> <span class="caret"></span>
@@ -462,7 +462,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                               <?php
                           }
                           ?>
-                          <li>
+                          <li class="nav-item">
                               <?php
                               $flags = getEnabledLangs();
                               $objFlag = new stdClass();
