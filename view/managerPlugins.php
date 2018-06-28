@@ -152,17 +152,17 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
 
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top:10px;">
                     <?php
         include $global['systemRootPath'] . 'view/include/updateCheck.php';
         ?>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#menu0"><i class="fa fa-plug"></i> Installed Plugins</a></li>
-                <li><a data-toggle="tab" href="#menu1"><i class="fa fa-cart-plus"></i> Plugins Store</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu0"><i class="fa fa-plug"></i> Installed Plugins</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1"><i class="fa fa-cart-plus"></i> Plugins Store</a></li>
             </ul>
 
             <div class="tab-content">
-                <div id="menu0" class="tab-pane fade in active">
+                <div id="menu0" class="tab-pane fade show active">
                     <div class="list-group-item">
                         <div class="btn-group" >
                             <button type="button" class="btn btn-default" id="upload">
@@ -178,7 +178,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                 </tr>
                             </thead>
                         </table>
-                        <div id="pluginsFormModal" class="modal fade" tabindex="-1" role="dialog">
+                        <div id="pluginsFormModal" class="modal" tabindex="-1" role="dialog">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -261,7 +261,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
             </div>
 
 
-            <li class="list-group-item hidden col-md-3" id="pluginStoreListModel">
+            <li class="list-group-item d-none col-md-3" id="pluginStoreListModel">
 
                 <div class="panel panel-warning panel-sm">
                     <div class="panel-heading">

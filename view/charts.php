@@ -148,10 +148,10 @@ foreach ($videos as $value) {
         <div class="container-fluid">
             <div class="list-group-item clear clearfix">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#dashboard"><i class="fas fa-tachometer-alt"></i> <?php echo __("Dashboard"); ?></a></li>
-                    <li><a data-toggle="tab" id="viewperchannel" href="#menu1"><i class="fab fa-youtube"></i> <i class="fa fa-eye"></i> <?php echo __("Video views - per Channel"); ?></a></li>
-                    <li><a data-toggle="tab" id="commentthumbs" href="#menu2"><i class="fa fa-comments"></i> <i class="fa fa-thumbs-up"></i> <?php echo __("Comment thumbs up - per Person"); ?></a></li>
-                    <li><a data-toggle="tab" id="videothumbs" href="#menu3"><i class="fab fa-youtube"></i> <i class="fa fa-thumbs-up"></i> <?php echo __("Video thumbs up - per Channel"); ?></a></li>
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="fas fa-tachometer-alt"></i> <?php echo __("Dashboard"); ?></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" id="viewperchannel" href="#menu1"><i class="fab fa-youtube"></i> <i class="fa fa-eye"></i> <?php echo __("Video views - per Channel"); ?></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" id="commentthumbs" href="#menu2"><i class="fa fa-comments"></i> <i class="fa fa-thumbs-up"></i> <?php echo __("Comment thumbs up - per Person"); ?></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" id="videothumbs" href="#menu3"><i class="fab fa-youtube"></i> <i class="fa fa-thumbs-up"></i> <?php echo __("Video thumbs up - per Channel"); ?></a></li>
                     <?php echo YouPHPTubePlugin::getChartTabs(); ?>
                 </ul>
 
