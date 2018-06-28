@@ -4,7 +4,8 @@
   position: absolute;
   top: 50px;
   left: 25%;
-  right: 25%;
+  right: 10px;
+  width: 50%;
 }
 #myNavbar {
   position: absolute;
@@ -12,7 +13,7 @@
   right: 10px;
 }
 #mysearch input {
-  width: 80%;
+width: 65%;
 }
 }
 </style>
@@ -350,7 +351,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                           <span class="fa fa-search"></span>
                       </button>
                   </div>
-            <form class="form-inline collapse navbar-collapse bg-light text-center justify-content-between" id="mysearch"  action="<?php echo $global['webSiteRootURL']; ?>" >
+            <form class="form-inline collapse navbar-collapse" style="padding-left: 10px; " id="mysearch"  action="<?php echo $global['webSiteRootURL']; ?>" >
                 <input class="form-control mr-sm-2" type="search" value="<?php if (!empty($_GET['search'])) {echo $_GET['search'];} ?>" name="search" placeholder="<?php echo __("Search"); ?>" />
                 <button class="btn btn-success my-2 my-sm-0"   type="submit"><span class="fa fa-search"></span></button>
             </form>
