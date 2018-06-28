@@ -11,7 +11,7 @@ $theme = $config->getTheme();
 ?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="<?php echo $custom; ?>">
 <link rel="icon" href="<?php echo $global['webSiteRootURL']; ?>view/img/favicon.png">
 <!-- <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 768px)" href="view/css/mobile.css" /> -->

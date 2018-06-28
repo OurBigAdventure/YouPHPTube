@@ -80,11 +80,11 @@ $thisScriptFile = pathinfo($_SERVER["SCRIPT_FILENAME"]);
 if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
     $updateFiles = getUpdatesFilesArray();
     ?>
-    <nav class="navbar navbar-default navbar-fixed-top ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
         <ul class="items-container">
             <li>
-                <ul class="left-side">
-                    <li>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
                         <button class="btn btn-default navbar-btn pull-left" id="buttonMenu" ><span class="fa fa-bars"></span></button>
                         <script>
                         $( document ).ready(function() {
@@ -131,7 +131,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             });
                         </script>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>" >
                             <img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-responsive ">
                         </a>
@@ -139,9 +139,9 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
 
                 </ul>
             </li>
-            <li style="margin-right: 0px; ">
+            <li style="margin-right: 0px; " class="nav-item">
                 <div class="navbar-header">
-                    <button type="button" id="buttonSearch" class="visible-xs navbar-toggle btn btn-default navbar-btn" data-toggle="collapse" data-target="#mysearch" style="padding: 6px 12px;">
+                    <button type="button" id="buttonSearch" class="visible-xs navbar-toggler" data-toggle="collapse" data-target="#mysearch" style="padding: 6px 12px;">
                         <span class="fa fa-search"></span>
                     </button>
                 </div>
@@ -154,7 +154,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             <span><input class="form-control globalsearchfield" type="text" value="<?php if (!empty($_GET['search'])) {
             echo $_GET['search'];
         } ?>" name="search" placeholder="<?php echo __("Search"); ?>">
-                            <button class="input-group-addon form-control"  style="width: 50px;" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
+                            <button class="navbar-toggler"  style="width: 50px;" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
                         </div>
                     </div>
                 </form>
@@ -164,7 +164,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
       </li>
             <li style="margin-right: 0px; padding-left: 0px;">
                 <div class="navbar-header">
-                    <button type="button" id="buttonMyNavbar" class=" navbar-toggle btn btn-default navbar-btn" data-toggle="collapse" data-target="#myNavbar" style="padding: 6px 12px;">
+                    <button type="button" id="buttonMyNavbar" class=" navbar-toggler" data-toggle="collapse" data-target="#myNavbar" style="padding: 6px 12px;">
                         <span class="fa fa-bars"></span>
                     </button>
                 </div>
