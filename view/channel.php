@@ -179,7 +179,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                             </div>
                             <div class="card-body">
 
-                                <div id="sortable<?php echo $playlist['id']; ?>" style="list-style: none;">
+                                <div id="sortable<?php echo $playlist['id']; ?>" class="row" style="list-style: none;">
                                     <?php
                                     foreach ($videos as $value) {
                                         $img_portrait = ($value['rotation'] === "90" || $value['rotation'] === "270") ? "img-portrait" : "";
