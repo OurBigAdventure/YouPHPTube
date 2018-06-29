@@ -134,7 +134,7 @@ unset($_SESSION['type']);
                             </div>
 			    <div class="videoInfo">
                             <?php if (!empty($videoCount)) { ?>
-                                <span class="badge badge-default" style="top: 10px !important; position: absolute;"><i class="glyphicon glyphicon-cd"></i> <?php echo $videoCount[0]; ?></span>
+                                <span class="badge badge-primary" style="top: 10px !important; position: absolute;"><i class="glyphicon glyphicon-cd"></i> <?php echo $videoCount[0]; ?></span>
                             <?php } ?>
                         </div>
 						<div data-toggle="tooltip" title="<?php echo $description; ?>" class="tile__title" style="margin-left: 10%; width: 80% !important; bottom: 40% !important; opacity: 0.8 !important; text-align: center;">

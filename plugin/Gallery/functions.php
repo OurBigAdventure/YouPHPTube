@@ -23,7 +23,7 @@ function createGallery($title, $sort, $rowCount, $getName, $mostWord, $lessWord,
     <div class="clear clearfix">
         <h3 class="galleryTitle">
             <a class="btn-default" href="<?php echo $global['webSiteRootURL']; ?>?showOnly=<?php echo $getName; ?>">
-                <i class="glyphicon glyphicon-list-alt"></i>
+                <i class="fa fa-list-alt"></i>
                 <?php
                 if (empty($_GET[$getName])) {
                     $_GET[$getName] = $defaultSort;
@@ -85,7 +85,7 @@ function createOrderInfo($getName, $mostWord, $lessWord, $orderString) {
             $tmpOrderString .= $getName . "=ASC";
         }
 
-        $upDown = "<span class='glyphicon glyphicon-arrow-up' >" . __("Up") . "</span>";
+        $upDown = "<span class='fa fa-arrow-up' >" . __("Up") . "</span>";
         $mostLess = $mostWord;
     } else {
         if (strpos($orderString, $getName . "=ASC")) {
@@ -94,7 +94,7 @@ function createOrderInfo($getName, $mostWord, $lessWord, $orderString) {
             $tmpOrderString .= $getName . "=DESC";
         }
 
-        $upDown = "<span class='glyphicon glyphicon-arrow-down'>" . __("Down") . "</span>";
+        $upDown = "<span class='fa fa-arrow-down'>" . __("Down") . "</span>";
         $mostLess = $lessWord;
     }
 
@@ -141,7 +141,7 @@ function createGallerySection($videos) {
             <div class="text-muted galeryDetails">
                 <div>
                     <?php if (empty($_GET['catName'])) { ?>
-                        <a class="badge badge-default" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $value['clean_category']; ?>/">
+                        <a class="badge badge-primary" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $value['clean_category']; ?>/">
                             <?php
                             if (!empty($value['iconClass'])) {
                                 ?>
@@ -181,7 +181,7 @@ function createGallerySection($videos) {
                         <?php echo $name; ?>
                     </a>
                     <?php if ((!empty($value['description'])) && !empty($obj->Description)) { ?>
-                        <button type="button" data-trigger="focus" class="label label-danger" data-toggle="popover" data-placement="top" data-html="true" title="<?php echo $value['title']; ?>" data-content="<div> <?php echo str_replace('"', '&quot;', nl2br(textToLink($value['description']))); ?> </div>" ><?php echo __("Description"); ?></button>
+                        <button type="button" data-trigger="focus" class="badge badge-danger" data-toggle="popover" data-placement="top" data-html="true" title="<?php echo $value['title']; ?>" data-content="<div> <?php echo str_replace('"', '&quot;', nl2br(textToLink($value['description']))); ?> </div>" ><?php echo __("Description"); ?></button>
                     <?php } ?>
                 </div>
                 <?php if (Video::canEdit($value['id'])) { ?>
@@ -203,7 +203,7 @@ function createGallerySection($videos) {
                         }
                     }
                     ?>
-                    <div><a class="label label-default " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'] . $ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></div>
+                    <div><a class="badge badge-primary " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'] . $ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></div>
                 <?php } ?>
 
             </div>

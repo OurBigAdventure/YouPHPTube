@@ -36,6 +36,9 @@ $cssURL = combineFiles($cssFiles, "css");
 <script>
     var webSiteRootURL = '<?php echo $global['webSiteRootURL']; ?>';
 </script>
+<style>
+
+</style>
 <?php
 if (!$config->getDisable_analytics()) {
     ?>
