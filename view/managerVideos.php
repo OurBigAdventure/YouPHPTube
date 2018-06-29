@@ -831,7 +831,7 @@ if (User::isAdmin()) {
                                                         if (row.youtubeId) {
                                                             //youTubeLink += '<a href=\'https://youtu.be/' + row.youtubeId + '\' target=\'_blank\'  class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Watch on YouTube")); ?>"><span class="fas fa-external-link-alt " aria-hidden="true"></span></a>';
                                                         }
-                                                        var yt = '<br><div class="btn-group" role="group" ><a class="btn btn-default  btn-xs" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
+                                                        var yt = '<br><div class="btn-group" role="group" ><a class="btn-default btn-xs" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
                                                         if (row.status == "d" || row.status == "e") {
                                                             yt = "";
                                                         }
@@ -857,7 +857,7 @@ if (User::isAdmin()) {
                                                         is_portrait = (row.rotation === "90" || row.rotation === "270") ? "img-portrait" : "";
                                                         img = "<img class='img img-fluid " + is_portrait + " img-thumbnail float-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
                                                     }
-                                                    return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn btn-default btn-xs">' + type + row.title + "</a>" + tags + "" + yt;
+                                                    return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn-default btn-xs">' + type + row.title + "</a>" + tags + "" + yt;
                                                 }
 
 
