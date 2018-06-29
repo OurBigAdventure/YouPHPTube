@@ -3,9 +3,7 @@
 #mysearch {
   position: absolute;
   top: 50px;
-  left: 25%;
-  right: 10px;
-  width: 50%;
+  right: 50px;
 }
 #myNavbar {
   position: absolute;
@@ -14,6 +12,17 @@
 }
 #mysearch input {
 width: 65%;
+z-index:520 !important;
+}
+#buttonSearch {
+  position:absolute;
+  right: 50px;
+  top: 0px;
+}
+#buttonMyNavbar {
+  position:absolute;
+  right: 10px;
+  top: 0px;
 }
 #sidebar1 {
   bottom: 50px;
@@ -104,9 +113,9 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top justify-content-between">
       <div>
       <button class="btn-light btn" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="navbar-toggler-icon"></span></button>
-
+      <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
         <div id="sidebar1" class="dropdown" style="position: absolute; height: 100%; top:0;">
-                <ul class="dropdown-menu  dropdown-menu-left" aria-labelledby="buttonMenu1" >
+                <ul class="dropdown-menu  dropdown-menu-left bg-light" style="" aria-labelledby="buttonMenu1" >
                     <?php
                     if (User::isLogged()) {
                         ?>
@@ -277,19 +286,19 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         <li>
                             <hr>
                         </li>
-                        <li class="nav-item <?php echo empty($_SESSION['type']) ? "active" : ""; ?>">
+                        <li class="dropdown-item <?php echo empty($_SESSION['type']) ? "active" : ""; ?>">
                             <a class="nav-link " href="<?php echo $global['webSiteRootURL']; ?>?type=all">
                                 <span class="glyphicon glyphicon-star"></span>
         <?php echo __("Audios and Videos"); ?>
                             </a>
                         </li>
-                        <li class="nav-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'video' && empty($_GET['catName'])) ? "active" : ""; ?>">
+                        <li class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'video' && empty($_GET['catName'])) ? "active" : ""; ?>">
                             <a class="nav-link " href="<?php echo $global['webSiteRootURL']; ?>videoOnly">
                                 <span class="glyphicon glyphicon-facetime-video"></span>
         <?php echo __("Videos"); ?>
                             </a>
                         </li>
-                        <li class="nav-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'audio' && empty($_GET['catName'])) ? "active" : ""; ?>">
+                        <li class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'audio' && empty($_GET['catName'])) ? "active" : ""; ?>">
                             <a class="nav-link" href="<?php echo $global['webSiteRootURL']; ?>audioOnly">
                                 <span class="glyphicon glyphicon-headphones"></span>
                         <?php echo __("Audios"); ?>
@@ -379,14 +388,15 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     </li>
                 </ul>
         </div>
-        <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
+
+
       </div>
 
         <div>
           <ul class="items-container mr-auto navbar-brand" style="">
               <li style="margin-right: 0px; " class="nav-item">
                   <div class="">
-                      <button type="button" id="buttonSearch" class="d-none.d-sm-block.d-md-none navbar-toggler" data-toggle="collapse" data-target="#mysearch" style="padding: 6px 12px;">
+                      <button type="button" id="buttonSearch" class="d-none.d-sm-block.d-md-none navbar-toggler float-right" data-toggle="collapse" data-target="#mysearch" style="padding: 6px 12px;">
                           <span class="fa fa-search"></span>
                       </button>
                   </div>
@@ -397,7 +407,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
         </li>
               <li class="nav-item" style="margin-right: 0px; padding-left: 0px;">
                   <div class="navbar-header">
-                      <button type="button" class="navbar-toggler" id="buttonMyNavbar" data-toggle="collapse" data-target="#myNavbar">
+                      <button type="button" class="navbar-toggler float-right" id="buttonMyNavbar" data-toggle="collapse" data-target="#myNavbar">
                           <span class="navbar-toggler-icon"></span>
                       </button>
                   </div>

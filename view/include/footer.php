@@ -62,6 +62,7 @@ if (!empty($_GET['msg'])) {
 <?php
     $jsFiles = array();
     $jsFiles[] = "view/bootstrap/js/bootstrap.bundle.js";
+    $jsFiles[] = "view/css/material/js/material.js";
     $jsFiles[] = "view/js/seetalert/sweetalert.min.js";
     $jsFiles[] = "view/js/bootpag/jquery.bootpag.min.js";
     $jsFiles[] = "view/js/bootgrid/jquery.bootgrid.js";
