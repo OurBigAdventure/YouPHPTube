@@ -132,7 +132,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                                         <li class="list-group-item">
                                             <span class="fa fa-unlock"></span>
                                             <?php echo $value['group_name']; ?>
-                                            <span class="label label-info"><?php echo $value['total_videos']; ?> <?php echo __("Videos linked"); ?></span>
+                                            <span class="badge badge-info"><?php echo $value['total_videos']; ?> <?php echo __("Videos linked"); ?></span>
                                             <div class="material-switch float-right">
                                                 <input id="userGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="userGroups"/>
                                                 <label for="userGroup<?php echo $value['id']; ?>" class="label-warning"></label>
@@ -191,7 +191,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                                 if (typeof row.tags[i].type == "undefined") {
                                     continue;
                                 }
-                                tags += "<span class=\"label label-" + row.tags[i].type + " fix-width\">" + row.tags[i].text + "</span><br>";
+                                tags += "<span class=\"badge badge-" + row.tags[i].type + " fix-width\">" + row.tags[i].text + "</span><br>";
                             }
                             return tags;
                         },

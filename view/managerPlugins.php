@@ -419,7 +419,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                         cl = 'info';
                                     }
 
-                                    tags += '<span class="label label-' + cl + '">' + row.tags[i] + '</span> ';
+                                    tags += '<span class="badge badge-' + cl + '">' + row.tags[i] + '</span> ';
                                 }
                             }
 

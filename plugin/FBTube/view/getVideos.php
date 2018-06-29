@@ -100,7 +100,7 @@ if (!empty($videos)) {
                 foreach ($video['tags'] as $value) {
                     if ($value->label === __("Group")) {
                         ?>
-                        <span class="label label-<?php echo $value->type; ?>"><?php echo $value->text; ?></span>
+                        <span class="badge badge-<?php echo $value->type; ?>"><?php echo $value->text; ?></span>
                         <?php
                     }
                 }

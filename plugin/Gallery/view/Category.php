@@ -105,7 +105,7 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
                                 </div>
                                 <div class="videoInfo">
                                     <?php if (!empty($videoCount)) { ?>
-                                        <span class="label label-default" style="top: 1px !important; position: absolute;">
+                                        <span class="badge badge-default" style="top: 1px !important; position: absolute;">
                                             <i class="glyphicon glyphicon-cd"></i>
                                             <?php echo $videoCount[0]; ?>
                                         </span>

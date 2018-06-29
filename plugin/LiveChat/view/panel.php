@@ -41,7 +41,7 @@ $canSendMessage = $p->canSendMessage();
     <div class="message_template">
         <li class="message">
             <div class="text_wrapper alert alert-info float-left">
-                <div class="name label label-info"><?php echo User::getNameIdentification(); ?></div>
+                <div class="name badge badge-info"><?php echo User::getNameIdentification(); ?></div>
                 <div class="text"></div>
             </div>
             <div class="avatar float-right"><img src="<?php echo User::getPhoto(); ?>" class="img-fluid rounded-circle photo"></div>

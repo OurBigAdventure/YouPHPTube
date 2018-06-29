@@ -141,7 +141,7 @@ function createGallerySection($videos) {
             <div class="text-muted galeryDetails">
                 <div>
                     <?php if (empty($_GET['catName'])) { ?>
-                        <a class="label label-default" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $value['clean_category']; ?>/">
+                        <a class="badge badge-default" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $value['clean_category']; ?>/">
                             <?php
                             if (!empty($value['iconClass'])) {
                                 ?>
@@ -158,7 +158,7 @@ function createGallerySection($videos) {
                         foreach ($value['tags'] as $value2) {
                             if ($value2->label === __("Group")) {
                                 ?>
-                                <span class="label label-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
+                                <span class="badge badge-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
                                 <?php
                             }
                         }

@@ -268,7 +268,7 @@ if (!empty($_GET['video_id'])) {
                                         <li class="list-group-item non-public">
                                             <span class="fa fa-lock"></span>
                                             <?php echo $value['group_name']; ?>
-                                            <span class="label label-info"><?php echo $value['total_users']; ?> Users linked</span>
+                                            <span class="badge badge-info"><?php echo $value['total_users']; ?> Users linked</span>
                                             <div class="material-switch float-right">
                                                 <input id="videoGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="videoGroups"/>
                                                 <label for="videoGroup<?php echo $value['id']; ?>" class="label-warning"></label>
@@ -794,7 +794,7 @@ if (User::isAdmin()) {
 
                                                     var nextIsSet;
                                                     if (row.next_video == null || row.next_video.length == 0) {
-                                                        nextIsSet = "<span class='label label-danger'>Next video NOT set</span>";
+                                                        nextIsSet = "<span class='badge badge-danger'>Next video NOT set</span>";
                                                     } else {
                                                         var nextVideoTitle;
                                                         if (row.next_video.title.length > 20) {
@@ -802,7 +802,7 @@ if (User::isAdmin()) {
                                                         } else {
                                                             nextVideoTitle = row.next_video.title;
                                                         }
-                                                        nextIsSet = "<span class='label label-success' data-toggle='tooltip' title='" + row.next_video.title + "'>Next video: " + nextVideoTitle + "</span>";
+                                                        nextIsSet = "<span class='badge badge-success' data-toggle='tooltip' title='" + row.next_video.title + "'>Next video: " + nextVideoTitle + "</span>";
                                                     }
                                                     return editBtn + deleteBtn + status + suggestBtn + rotateBtn + pluginsButtons + "<br>" + download + nextIsSet;
 
@@ -813,9 +813,9 @@ if (User::isAdmin()) {
                                                         if (typeof row.tags[i].type == "undefined") {
                                                             continue;
                                                         }
-                                                        tags += "<span class='label label-primary fix-width'>" + row.tags[i].label + ": </span><span class=\"label label-" + row.tags[i].type + " fix-width\">" + row.tags[i].text + "</span><br>";
+                                                        tags += "<span class='badge badge-primary fix-width'>" + row.tags[i].label + ": </span><span class=\"badge badge-" + row.tags[i].type + " fix-width\">" + row.tags[i].text + "</span><br>";
                                                     }
-                                                    tags += "<span class='label label-primary fix-width'><?php echo __("Type") . ":"; ?> </span><span class=\"label label-default fix-width\">" + row.type + "</span><br>";
+                                                    tags += "<span class='badge badge-primary fix-width'><?php echo __("Type") . ":"; ?> </span><span class=\"badge badge-default fix-width\">" + row.type + "</span><br>";
                                                     return tags;
                                                 },
                                                 "checkbox": function (column, row) {

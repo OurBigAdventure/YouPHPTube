@@ -134,7 +134,7 @@ unset($_SESSION['type']);
                             </div>
 			    <div class="videoInfo">
                             <?php if (!empty($videoCount)) { ?>
-                                <span class="label label-default" style="top: 10px !important; position: absolute;"><i class="glyphicon glyphicon-cd"></i> <?php echo $videoCount[0]; ?></span>
+                                <span class="badge badge-default" style="top: 10px !important; position: absolute;"><i class="glyphicon glyphicon-cd"></i> <?php echo $videoCount[0]; ?></span>
                             <?php } ?>
                         </div>
 						<div data-toggle="tooltip" title="<?php echo $description; ?>" class="tile__title" style="margin-left: 10%; width: 80% !important; bottom: 40% !important; opacity: 0.8 !important; text-align: center;">
@@ -194,9 +194,9 @@ unset($_SESSION['type']);
                         </div>
 						<div class="tile__details">
 							<div class="videoInfo">
-								<span class="label label-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
-                                <span class="label label-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
-                                <span class="label label-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
+								<span class="badge badge-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
+                                <span class="badge badge-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
+                                <span class="badge badge-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
                             <?php if ($config->getAllow_download()) {
                                             $ext = ".mp4";
                                             if($value['type']=="audio"){
@@ -206,7 +206,7 @@ unset($_SESSION['type']);
                                                         $ext = ".mp3";
                                                     }
                                         } ?>
-                            <span><a class="label label-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
+                            <span><a class="badge badge-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
 							</div>
 							<div class="tile__title">
                                 <?php echo $value['title']; ?>
@@ -286,9 +286,9 @@ unset($_SESSION['type']);
                         </div>
 						<div class="tile__details">
 							<div class="videoInfo">
-								<span class="label label-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
-                                <span class="label label-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
-                                <span class="label label-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category'];?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
+								<span class="badge badge-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
+                                <span class="badge badge-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
+                                <span class="badge badge-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category'];?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
                             <?php if ($config->getAllow_download()) {
                                             $ext = ".mp4";
                                             if($value['type']=="audio"){
@@ -298,7 +298,7 @@ unset($_SESSION['type']);
                                                         $ext = ".mp3";
                                                     }
                                         } ?>
-                            <span><a class="label label-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
+                            <span><a class="badge badge-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
 							</div>
 							<div class="tile__title">
                                         <?php echo $value['title'];?>
@@ -364,9 +364,9 @@ unset($_SESSION['type']);
                                 </div>
                                 <div class="tile__details">
                                     <div class="videoInfo">
-                                        <span class="label label-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
-                                        <span class="label label-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
-                                        <span class="label label-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" .$value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
+                                        <span class="badge badge-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
+                                        <span class="badge badge-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
+                                        <span class="badge badge-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" .$value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
                                     <?php if ($config->getAllow_download()) {
                                             $ext = ".mp4";
                                             if($value['type']=="audio"){
@@ -376,7 +376,7 @@ unset($_SESSION['type']);
                                                         $ext = ".mp3";
                                                     }
                                         } ?>
-                            <span><a class="label label-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
+                            <span><a class="badge badge-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
                                     </div>
                                     <div class="tile__title">
                                         <?php echo $value['title']; ?>
@@ -447,9 +447,9 @@ unset($_SESSION['type']);
                         </div>
 						<div class="tile__details">
 							<div class="videoInfo">
-								<span class="label label-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
-                                <span class="label label-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
-                                <span class="label label-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
+								<span class="badge badge-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
+                                <span class="badge badge-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
+                                <span class="badge badge-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
                             <?php if ($config->getAllow_download()) {
                                             $ext = ".mp4";
                                             if($value['type']=="audio"){
@@ -459,7 +459,7 @@ unset($_SESSION['type']);
                                                         $ext = ".mp3";
                                                     }
                                         } ?>
-                            <span><a class="label label-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
+                            <span><a class="badge badge-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
 							</div>
 							<div class="tile__title">
                                 <?php echo $value['title']; ?>
@@ -558,9 +558,9 @@ unset($_SESSION['type']);
                 </div>
 						<div class="tile__details">
 							<div class="videoInfo">
-								<span class="label label-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
-                                <span class="label label-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
-                                <span class="label label-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
+								<span class="badge badge-default"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
+                                <span class="badge badge-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
+                                <span class="badge badge-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
                                                             <?php if ($config->getAllow_download()) {
                                             $ext = ".mp4";
                                             if($value['type']=="audio"){
@@ -570,7 +570,7 @@ unset($_SESSION['type']);
                                                         $ext = ".mp3";
                                                     }
                                         } ?>
-                            <span><a class="label label-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
+                            <span><a class="badge badge-default " href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'].$ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></span><?php } ?>
 							</div>
 							<div class="tile__title">
                                         <?php echo $value['title']; ?>
@@ -707,7 +707,7 @@ unset($_SESSION['type']);
                                 </div>
                             <div class="videoInfo">
                             <?php if (!empty($videoCount)) { ?>
-                                <span class="label label-default" style="top: 10px !important; position: absolute;"> <?php
+                                <span class="badge badge-default" style="top: 10px !important; position: absolute;"> <?php
                                     if($catType){
                                         if(($catType['type']==0)||($catType['type']==2)){
                                             echo '<i class="glyphicon glyphicon-cd"></i>';
@@ -771,7 +771,7 @@ unset($_SESSION['type']);
                         <?php
                             if (!empty($videoCount)) {
                                 ?>
-                            <span class="label label-default" style="top: 10px !important; position: absolute;"> <?php
+                            <span class="badge badge-default" style="top: 10px !important; position: absolute;"> <?php
                                 if($catType){
                                     if(($catType['type']==0)||($catType['type']==2)){
                                         echo '<i class="glyphicon glyphicon-cd"></i>';

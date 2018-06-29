@@ -50,7 +50,7 @@ if(empty($channelName)){
     $channelName = uniqid();
     $user = new User(User::getId());
     $user->setChannelName($channelName);
-    $user->save();    
+    $user->save();
 }
 ?>
 <!DOCTYPE html>
@@ -86,7 +86,7 @@ if(empty($channelName)){
                                 <div class="alert alert-warning">
                                     <i class="fa fa-warning"><?php echo __("We will check if there is a stream conflict before stream"); ?></i>
                                 </div>
-                                
+
                                 <div class="alert alert-info">
                                     <?php echo __("This is an experimental resource"); ?>
                                 </div>
@@ -99,15 +99,15 @@ if(empty($channelName)){
                 ?>
                 <div class="panel panel-default">
                     <div class="panel-heading"><i class="fa fa-share"></i> <?php echo __("Share Info"); ?></div>
-                    <div class="panel-body">          
+                    <div class="panel-body">
                         <div class=" ">
                             <label for="playerURL"><i class="fa fa-play-circle"></i> <?php echo __("Player URL"); ?>:</label>
                             <input type="text" class="form-control" id="playerURL" value="<?php echo $p->getPlayerServer(); ?>/<?php echo $trasnmition['key']; ?>/index.m3u8"  readonly="readonly">
-                        </div>       
+                        </div>
                         <div class=" ">
                             <label for="youphptubeURL"><i class="fa fa-circle"></i> <?php echo __("Live URL"); ?>:</label>
                             <input type="text" class="form-control" id="youphptubeURL" value="<?php echo $global['webSiteRootURL']; ?>plugin/Live/?c=<?php echo urlencode($channelName); ?>"  readonly="readonly">
-                        </div>   
+                        </div>
                         <div class=" ">
                             <label for="embedStream"><i class="fa fa-code"></i> <?php echo __("Embed Stream"); ?>:</label>
                             <input type="text" class="form-control" id="embedStream" value='<iframe width="640" height="480" style="max-width: 100%;max-height: 100%;" src="<?php echo $global['webSiteRootURL']; ?>plugin/Live/?c=<?php echo urlencode($channelName); ?>&embed=1" frameborder="0" allowfullscreen="allowfullscreen" class="YouPHPTubeIframe"></iframe>'  readonly="readonly">
@@ -120,7 +120,7 @@ if(empty($channelName)){
                         <div class=" ">
                             <label for="server"><i class="fa fa-server"></i> <?php echo __("Server URL"); ?>:</label>
                             <input type="text" class="form-control" id="server" value="<?php echo $p->getServer(); ?>?p=<?php echo User::getUserPass(); ?>" readonly="readonly">
-                            <small class="label label-info"><i class="fa fa-warning"></i> <?php echo __("If you change your password the Server URL parameters will be changed too."); ?></small>
+                            <small class="badge badge-info"><i class="fa fa-warning"></i> <?php echo __("If you change your password the Server URL parameters will be changed too."); ?></small>
                         </div>
                         <div class=" ">
                             <label for="streamkey"><i class="fa fa-key"></i> <?php echo __("Stream name/key"); ?>:</label>
@@ -130,7 +130,7 @@ if(empty($channelName)){
                                     <a class="btn btn-default" href="<?php echo $global['webSiteRootURL']; ?>plugin/Live/?resetKey=1"><i class="fa fa-refresh"></i> <?php echo __("Reset Key"); ?></a>
                                 </span>
                             </div>
-                            <span class="label label-warning"><i class="fa fa-warning"></i> <?php echo __("Anyone with this key can watch your live stream."); ?></span>
+                            <span class="badge badge-warning"><i class="fa fa-warning"></i> <?php echo __("Anyone with this key can watch your live stream."); ?></span>
                         </div>
                     </div>
                 </div>
@@ -146,10 +146,10 @@ if(empty($channelName)){
                         include $global['systemRootPath'].'plugin/Live/view/onlineLabel.php';
                         ?>
                     </div>
-                    <div class="panel-body">          
+                    <div class="panel-body">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <video poster="<?php echo $global['webSiteRootURL']; ?>plugin/Live/view/OnAir.jpg" controls 
-                                   class="embed-responsive-item video-js vjs-default-skin <?php echo $vjsClass; ?> vjs-big-play-centered" 
+                            <video poster="<?php echo $global['webSiteRootURL']; ?>plugin/Live/view/OnAir.jpg" controls
+                                   class="embed-responsive-item video-js vjs-default-skin <?php echo $vjsClass; ?> vjs-big-play-centered"
                                    id="mainVideo" data-setup='{ aspectRatio: "<?php echo $aspectRatio; ?>",  "techorder" : ["flash", "html5"] }'>
                                 <source src="<?php echo $p->getPlayerServer(); ?>/<?php echo $trasnmition['key']; ?>/index.m3u8" type='application/x-mpegURL'>
                             </video>
@@ -158,11 +158,11 @@ if(empty($channelName)){
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading"><?php echo __("Stream Settings"); ?></div>
-                    <div class="panel-body"> 
+                    <div class="panel-body">
                         <div class=" ">
                             <label for="title"><?php echo __("Title"); ?>:</label>
                             <input type="text" class="form-control" id="title" value="<?php echo $trasnmition['title'] ?>">
-                        </div>    
+                        </div>
                         <div class=" ">
                             <label for="description"><?php echo __("Description"); ?>:</label>
                             <textarea class="form-control" id="description"><?php echo $trasnmition['description'] ?></textarea>
@@ -171,17 +171,17 @@ if(empty($channelName)){
                         -->
                         <hr>
                         <div class=" ">
-                            <span class="fa fa-globe"></span> <?php echo __("Listed Transmition"); ?> 
+                            <span class="fa fa-globe"></span> <?php echo __("Listed Transmition"); ?>
                             <div class="material-switch float-right">
                                 <input id="listed" type="checkbox" value="1" <?php echo!empty($trasnmition['public']) ? "checked" : ""; ?>/>
-                                <label for="listed" class="label-success"></label> 
+                                <label for="listed" class="label-success"></label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading"><?php echo __("Groups That Can See This Stream"); ?><br><small><?php echo __("Uncheck all to make it public"); ?></small></div>
-                    <div class="panel-body"> 
+                    <div class="panel-body">
                         <?php
                         $ug = UserGroups::getAllUsersGroups();
                         foreach ($ug as $value) {
@@ -236,15 +236,15 @@ if(empty($channelName)){
                         }
                     });
                 }
-				
+
                 function saveStream() {
                     modal.showPleaseWait();
-					
+
                     var selectedUserGroups = [];
                     $('.userGroups:checked').each(function () {
                         selectedUserGroups.push($(this).val());
                     });
-					
+
                     $.ajax({
                         url: 'saveLive.php',
                         data: {

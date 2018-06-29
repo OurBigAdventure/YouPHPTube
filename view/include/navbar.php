@@ -13,6 +13,7 @@
 #mysearch input {
 width: 65%;
 z-index:520 !important;
+background-color: white;
 }
 #buttonSearch {
   position:absolute;
@@ -401,7 +402,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                       </button>
                   </div>
             <form class="form-inline collapse navbar-collapse" style="padding-left: 10px; " id="mysearch"  action="<?php echo $global['webSiteRootURL']; ?>" >
-                <input class="form-control mr-sm-2" type="search" value="<?php if (!empty($_GET['search'])) {echo $_GET['search'];} ?>" name="search" placeholder="<?php echo __("Search"); ?>" />
+                <input class="form-control searchfield" type="search" value="<?php if (!empty($_GET['search'])) {echo $_GET['search'];} ?>" name="search" placeholder="<?php echo __("Search"); ?>" />
                 <button class="btn btn-success my-2 my-sm-0"   type="submit"><span class="fa fa-search"></span></button>
             </form>
         </li>

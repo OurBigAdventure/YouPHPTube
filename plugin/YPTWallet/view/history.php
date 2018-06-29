@@ -72,11 +72,11 @@ if (!empty($_GET['users_id'])) {
                                     "status": function (column, row) {
                                         var status = "";
                                         if (row.type == "<?php echo YPTWallet::MANUAL_ADD; ?>" || row.type == "<?php echo YPTWallet::MANUAL_WITHDRAW; ?>") {
-                                            status = "<span class='label label-success'>Success</span>";
+                                            status = "<span class='badge badge-success'>Success</span>";
                                             if (row.status == 'pending') {
-                                                status = "<span class='label label-warning'>Pending</span>";
+                                                status = "<span class='badge badge-warning'>Pending</span>";
                                             } else if (row.status == 'canceled') {
-                                                status = "<span class='label label-danger'>Canceled</span>";
+                                                status = "<span class='badge badge-danger'>Canceled</span>";
                                             }
 <?php
 if (User::isAdmin()) {

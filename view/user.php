@@ -8,7 +8,7 @@ require_once $global['systemRootPath'] . 'objects/user.php';
 $tags = User::getTags(User::getId());
 $tagsStr = "";
 foreach ($tags as $value) {
-    $tagsStr .= "<span class=\"label label-{$value->type} fix-width\">{$value->text}</span>";
+    $tagsStr .= "<span class=\"badge badge-{$value->type} fix-width\">{$value->text}</span>";
 }
 $json_file = url_get_contents("{$global['webSiteRootURL']}plugin/CustomizeAdvanced/advancedCustom.json.php");
 // convert the string to a json object

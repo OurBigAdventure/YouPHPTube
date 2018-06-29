@@ -30,7 +30,7 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                 <div class="text-muted galeryDetails">
                     <div>
                             <?php if (empty($_GET['catName'])) { ?>
-                            <a class="label label-default" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>/">
+                            <a class="badge badge-default" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>/">
                                 <?php
                                 if (!empty($video['iconClass'])) {
                                     ?>
@@ -47,7 +47,7 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                             foreach ($video['tags'] as $value2) {
                                 if ($value2->label === __("Group")) {
                                     ?>
-                                    <span class="label label-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
+                                    <span class="badge badge-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
                                     <?php
                                 }
                             }
@@ -84,7 +84,7 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                             }
                         }
                         ?>
-                        <div><a class="label label-default " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $video['filename'] . $ext; ?>" download="<?php echo $video['title'] . $ext; ?>"><?php echo __("Download"); ?></a></div>
+                        <div><a class="badge badge-default " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $video['filename'] . $ext; ?>" download="<?php echo $video['title'] . $ext; ?>"><?php echo __("Download"); ?></a></div>
     <?php } ?>
                 </div>
             </div>

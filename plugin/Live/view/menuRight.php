@@ -36,7 +36,7 @@ if (User::canStream()) {
         </div>
         <div style="margin-left: 40px;">
             <i class="fas fa-video"></i> <strong class="liveTitle"><?php echo __("Title"); ?></strong> <br>
-            <span class="label label-success liveUser"><?php echo __("User"); ?></span> <span class="label label-danger liveNow faa-flash faa-slow animated hidden"><?php echo __("LIVE NOW"); ?></span>
+            <span class="badge badge-success liveUser"><?php echo __("User"); ?></span> <span class="badge badge-danger liveNow faa-flash faa-slow animated hidden"><?php echo __("LIVE NOW"); ?></span>
         </div>
     </a>
 </li>
@@ -45,7 +45,7 @@ if (User::canStream()) {
         <div class="col-lg-5 col-sm-5 col-xs-5 nopadding thumbsImage" style="min-height: 70px; position:relative;" >
             <img src="" class="thumbsJPG img-fluid" height="130" />
             <img src="" style="position: absolute; top: 0; display: none;" class="thumbsGIF img-fluid" height="130" />
-            <span class="label label-danger liveNow faa-flash faa-slow animated"><?php echo __("LIVE NOW"); ?></span>
+            <span class="badge badge-danger liveNow faa-flash faa-slow animated"><?php echo __("LIVE NOW"); ?></span>
         </div>
         <div class="col-lg-7 col-sm-7 col-xs-7 videosDetails">
             <div class="text-uppercase row"><strong itemprop="name" class="title liveTitle"><?php echo __("Title"); ?></strong></div>
@@ -62,8 +62,8 @@ if (User::canStream()) {
             // the live users plugin
             if (YouPHPTubePlugin::isEnabled("cf145581-7d5e-4bb6-8c12-48fc37c0630d")) {
                 ?>
-                <span class="label label-primary"  data-toggle="tooltip" title="<?php echo __("Watching Now"); ?>" data-placement="bottom" ><i class="fa fa-user"></i> <b class="liveUsersOnline">0</b></span>
-                <span class="label label-default"  data-toggle="tooltip" title="<?php echo __("Total Views"); ?>" data-placement="bottom" ><i class="fa fa-eye"></i> <b class="liveUsersViews">0</b></span>
+                <span class="badge badge-primary"  data-toggle="tooltip" title="<?php echo __("Watching Now"); ?>" data-placement="bottom" ><i class="fa fa-user"></i> <b class="liveUsersOnline">0</b></span>
+                <span class="badge badge-default"  data-toggle="tooltip" title="<?php echo __("Total Views"); ?>" data-placement="bottom" ><i class="fa fa-eye"></i> <b class="liveUsersViews">0</b></span>
                 <?php
             }
             ?>
