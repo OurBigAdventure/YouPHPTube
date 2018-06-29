@@ -95,8 +95,9 @@ foreach ($videos as $value) {
         include $global['systemRootPath'] . 'view/include/head.php';
         ?>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/Chart.bundle.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $global['webSiteRootURL']; ?>view/js/datatables/css/dataTables.bootstrap4.css"/>
         <link href="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+
         <style>
             /* Custom Colored Panels */
             .dashboard .panel-heading {
@@ -180,7 +181,8 @@ foreach ($videos as $value) {
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.js"></script>
+        <script type="text/javascript" src="<?php echo $global['webSiteRootURL']; ?>view/js/datatables/js/jquery.dataTables.js"></script>
+
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.js" type="text/javascript"></script>
         <?php
         include $global['systemRootPath'] . 'view/include/footer.php';
