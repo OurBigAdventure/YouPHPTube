@@ -352,24 +352,24 @@ $advancedCustom = json_decode($json_file);
                             <?php
                             if (empty($advancedCustom->disableNativeSignIn)) {
                                 ?>
-                                <form class="form-compact well "  id="loginForm">
+                                <form class=" "  id="loginForm">
 
-                                    <div class=" ">
+                                    <div class="form-row">
                                         <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <span class="input-group-addon"><i class="fas fa-user"></i></span>
                                                 <input  id="inputUser" placeholder="<?php echo __("User"); ?>" class="form-control"  type="text" value="" required >
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <div class=" ">
+                                    <div class="form-row ">
                                         <label class="col-md-4 col-form-label"><?php echo __("Password"); ?></label>
-                                        <div class="col-md-8 inputGroupContainer">
+                                        <div class="col-md-8">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <span class=" input-group-addon"  id="inputGroup-sizing-default"><i class="fas fa-lock"></i></span>
                                                 <input  id="inputPassword" placeholder="<?php echo __("Password"); ?>" class="form-control"  type="password" value="" >
                                             </div>
                                             <?php
@@ -382,7 +382,7 @@ $advancedCustom = json_decode($json_file);
                                         </div>
                                     </div>
                                     <!-- Button -->
-                                    <div class=" ">
+                                    <div class="form-row mb-3">
                                         <div class="col-md-12">
                                             <button type="submit" class="btn btn-success  btn-block" id="mainButton" ><span class="fas fa-sign-in-alt"></span> <?php echo __("Sign in"); ?></button>
                                         </div>
