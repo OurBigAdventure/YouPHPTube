@@ -39,7 +39,9 @@ $(document).ready(function () {
                 pleaseWaitDiv.modal();
             },
             hidePleaseWait: function () {
+              pleaseWaitDiv.on('shown.bs.modal', function (e) {
                 pleaseWaitDiv.modal('hide');
+              });
             },
             setProgress: function (valeur) {
                 pleaseWaitDiv.find('.progress-bar').css('width', valeur + '%').attr('aria-valuenow', valeur);
