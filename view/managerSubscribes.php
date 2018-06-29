@@ -33,7 +33,7 @@ if (!User::canUpload()) {
                     <span class="fa fa-envelope-o" aria-hidden="true"></span> <?php echo __("Notify Subscribers"); ?>
                 </button>
             </div>
-            <table id="grid" class="table table-condensed table-hover table-striped">
+            <table id="grid" class="table table-sm table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-column-id="identification" ><?php echo __("Subscribed to"); ?></th>

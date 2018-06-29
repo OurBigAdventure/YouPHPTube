@@ -39,7 +39,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             <legend><?php echo __("Sign Up"); ?></legend>
 
                             <div class=" ">
-                                <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
+                                <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -49,7 +49,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             </div>
 
                             <div class=" ">
-                                <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
+                                <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -59,7 +59,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             </div>
 
                             <div class=" ">
-                                <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
+                                <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -69,7 +69,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             </div>
 
                             <div class=" ">
-                                <label class="col-md-4 control-label"><?php echo __("New Password"); ?></label>
+                                <label class="col-md-4 col-form-label"><?php echo __("New Password"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -79,7 +79,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             </div>
 
                             <div class=" ">
-                                <label class="col-md-4 control-label"><?php echo __("Confirm New Password"); ?></label>
+                                <label class="col-md-4 col-form-label"><?php echo __("Confirm New Password"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -95,7 +95,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             ?>
 
                             <div class=" ">
-                                <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
+                                <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
@@ -108,7 +108,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
 
                             <!-- Button -->
                             <div class=" ">
-                                <label class="col-md-4 control-label"></label>
+                                <label class="col-md-4 col-form-label"></label>
                                 <div class="col-md-8">
                                     <button type="submit" class="btn btn-primary" ><?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>
                                 </div>

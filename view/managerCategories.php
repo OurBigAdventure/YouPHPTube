@@ -27,7 +27,7 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <?php echo __("New Category"); ?>
             </button>
 
-            <table id="grid" class="table table-condensed table-hover table-striped">
+            <table id="grid" class="table table-sm table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-column-id="id" data-type="numeric" data-identifier="true"><?php echo __("ID"); ?></th>

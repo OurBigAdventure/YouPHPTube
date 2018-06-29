@@ -36,7 +36,7 @@ if (!empty($_GET['users_id'])) {
                 </div>
                 <div class="panel-body">
                     <div class="row bgWhite list-group-item">
-                        <table id="grid" class="table table-condensed table-hover table-striped">
+                        <table id="grid" class="table table-sm table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th data-column-id="valueText"  data-width="150px"><?php echo __("Value"); ?></th>

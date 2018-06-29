@@ -487,7 +487,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                         <fieldset>
                                                             <!-- Text input-->
                                                             <div class=" ">
-                                                                <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
+                                                                <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -499,7 +499,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                             <!-- Text area -->
 
                                                             <div class=" ">
-                                                                <label class="col-md-4 control-label"><?php echo __("Message"); ?></label>
+                                                                <label class="col-md-4 col-form-label"><?php echo __("Message"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -508,7 +508,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                 </div>
                                                             </div>
                                                             <div class=" ">
-                                                                <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
+                                                                <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
@@ -519,7 +519,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                             </div>
                                                             <!-- Button -->
                                                             <div class=" ">
-                                                                <label class="col-md-4 control-label"></label>
+                                                                <label class="col-md-4 col-form-label"></label>
                                                                 <div class="col-md-8">
                                                                     <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>
                                                                 </div>
@@ -559,13 +559,13 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
 
                                             <div class="tab-pane" id="tabPermaLink">
                                                 <div class=" ">
-                                                    <label class="control-label"><?php echo __("Permanent Link") ?></label>
+                                                    <label class="col-form-label"><?php echo __("Permanent Link") ?></label>
                                                     <div class="">
                                                         <input value="<?php echo Video::getPermaLink($video['id']); ?>" class="form-control" readonly="readonly"/>
                                                     </div>
                                                 </div>
                                                 <div class=" ">
-                                                    <label class="control-label"><?php echo __("URL Friendly") ?> (SEO)</label>
+                                                    <label class="col-form-label"><?php echo __("URL Friendly") ?> (SEO)</label>
                                                     <div class="">
                                                         <input value="<?php echo Video::getURLFriendly($video['id']); ?>" class="form-control" readonly="readonly"/>
                                                     </div>

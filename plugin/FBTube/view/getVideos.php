@@ -356,7 +356,7 @@ if (!empty($videos)) {
                                             <fieldset>
                                                 <!-- Text input-->
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -368,7 +368,7 @@ if (!empty($videos)) {
                                                 <!-- Text area -->
 
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("Message"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("Message"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -379,7 +379,7 @@ if (!empty($videos)) {
 
 
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha<?php echo $video['id']; ?>"></span>
@@ -390,7 +390,7 @@ if (!empty($videos)) {
                                                 </div>
                                                 <!-- Button -->
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"></label>
+                                                    <label class="col-md-4 col-form-label"></label>
                                                     <div class="col-md-8">
                                                         <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>
                                                     </div>
@@ -469,7 +469,7 @@ if (!empty($videos)) {
                         });
                     </script>
                     <h4><?php echo __("Comments"); ?>:</h4>
-                    <table id="grid<?php echo $video['id']; ?>" class="table table-condensed table-hover table-striped nowrapCell">
+                    <table id="grid<?php echo $video['id']; ?>" class="table table-sm table-hover table-striped nowrapCell">
                         <thead>
                             <tr>
                                 <th data-column-id="comment" ><?php echo __("Comment"); ?></th>

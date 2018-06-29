@@ -89,8 +89,8 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                     <?php echo nl2br(htmlentities($user->getAbout())); ?>
                 </div>
                 <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
+                    <div class="card card-default">
+                        <div class="card-heading">
                             <?php
                             if ($isMyChannel) {
                                 ?>
@@ -106,7 +106,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                             echo YouPHPTubePlugin::getChannelButton();
                             ?>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                                 <?php
                                 if(!empty($uploadedVideos[0])){
                                     $video = $uploadedVideos[0];
@@ -138,8 +138,8 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                         $playListButtons=YouPHPTubePlugin::getPlayListButtons($playlist['id']);
                         ?>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
+                        <div class="card card-default">
+                            <div class="card-heading">
 
                                 <strong style="font-size: 1em;" class="playlistName"><?php echo $playlist['name']; ?> </strong>
                                 <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist['id']; ?>" class="btn btn-xs btn-default playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a><?php echo $playListButtons;?>
@@ -177,7 +177,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                 }
                                 ?>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
 
                                 <div id="sortable<?php echo $playlist['id']; ?>" style="list-style: none;">
                                     <?php
@@ -213,7 +213,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                                     foreach ($value['tags'] as $value2) {
                                                         if ($value2->label === __("Group")) {
                                                             ?>
-                                                            <span class="label label-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
+                                                            <span class="badge badge-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
                                                             <?php
                                                         }
                                                     }

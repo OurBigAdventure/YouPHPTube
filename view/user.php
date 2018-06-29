@@ -43,8 +43,8 @@ $advancedCustom = json_decode($json_file);
                                     <?php echo __("Update your user") ?>
 
                                 </legend>
-                                <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
+                                <div class="row">
+                                    <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -53,8 +53,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
+                                <div class="row">
+                                    <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -63,8 +63,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
+                                <div class="row">
+                                    <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                                     <div class="col-md-6 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -108,8 +108,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("New Password"); ?></label>
+                                <div class="row">
+                                    <label class="col-md-4 col-form-label"><?php echo __("New Password"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -118,8 +118,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("Confirm New Password"); ?></label>
+                                <div class="row">
+                                    <label class="col-md-4 col-form-label"><?php echo __("Confirm New Password"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -128,8 +128,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("Channel Name"); ?></label>
+                                <div class="row">
+                                    <label class="col-md-4 col-form-label"><?php echo __("Channel Name"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fab fa-youtube"></i></span>
@@ -138,8 +138,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("Analytics Code"); ?></label>
+                                <div class="row">
+                                    <label class="col-md-4 col-form-label"><?php echo __("Analytics Code"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fas fa-chart-line"></i></span>
@@ -149,13 +149,14 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("About"); ?></label>
+                                <div class="row">
+                                    <label class="col-md-4 col-form-label"><?php echo __("About"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <textarea id="textAbout" placeholder="<?php echo __("About"); ?>" class="form-control"  ><?php echo $user->getAbout(); ?></textarea>
                                     </div>
                                 </div>
-                                <div class=" ">
+                                <div class="row">
+                                <div class="container-fluid">
                                     <div class="col-md-12 ">
                                         <div id="croppie"></div>
                                         <center>
@@ -164,8 +165,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                     <input type="file" id="upload" value="Choose a file" accept="image/*" style="display: none;" />
                                 </div>
-
-                                <div class=" ">
+                              </div>
+                                <div class="container-fluid">
                                     <div class="col-md-12 ">
                                         <div id="croppieBg"></div>
                                         <center>
@@ -177,7 +178,7 @@ $advancedCustom = json_decode($json_file);
 
 
                                 <!-- Button -->
-                                <div class=" ">
+                                <div class="container-fluid">
                                     <hr>
                                     <div class="col-md-12">
                                         <center>
@@ -354,7 +355,7 @@ $advancedCustom = json_decode($json_file);
                                 <form class="form-compact well "  id="loginForm">
 
                                     <div class=" ">
-                                        <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
+                                        <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -365,7 +366,7 @@ $advancedCustom = json_decode($json_file);
 
 
                                     <div class=" ">
-                                        <label class="col-md-4 control-label"><?php echo __("Password"); ?></label>
+                                        <label class="col-md-4 col-form-label"><?php echo __("Password"); ?></label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>

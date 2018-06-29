@@ -78,7 +78,7 @@ if (User::canSeeCommentTextarea()) {
                 </span>
             </div>
             <div class="replyGrid" style="display: none;">
-                <table class="table table-condensed table-hover table-striped nowrapCell grid">
+                <table class="table table-sm table-hover table-striped nowrapCell grid">
                     <thead>
                         <tr>
                             <th data-column-id="comment"  data-formatter="commands" ><?php echo __("Comment"); ?></th>
@@ -89,7 +89,7 @@ if (User::canSeeCommentTextarea()) {
         </div>
     </div>
     <h4><?php echo __("Comments"); ?>:</h4>
-    <table id="grid" class="table table-condensed table-hover table-striped nowrapCell">
+    <table id="grid" class="table table-sm table-hover table-striped nowrapCell">
         <thead>
             <tr>
                 <?php

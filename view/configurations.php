@@ -273,7 +273,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 <legend><?php echo __("Update the site configuration"); ?></legend>
 
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label">
+                                                    <label class="col-md-4 col-form-label">
                                                         <?php echo __("Your Logo"); ?>
                                                     </label>
                                                     <div class="col-md-8 ">
@@ -283,7 +283,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     <input type="file" id="logo" value="Choose a Logo" accept="image/*" style="display: none;" />
                                                 </div>
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label">
+                                                    <label class="col-md-4 col-form-label">
                                                         <?php echo __("Your Small Logo"); ?>  (32x32)
                                                     </label>
                                                     <div class="col-md-8 ">
@@ -294,7 +294,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 </div>
 
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("First Page Mode"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("First Page Mode"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="fa fa-sitemap"></i></span>
@@ -306,7 +306,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 </div>
 
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("Web site title"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("Web site title"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
@@ -315,7 +315,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                 </div>
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("Language"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("Language"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
@@ -325,7 +325,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                 </div>
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -336,7 +336,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 </div>
 
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("Authenticated users can upload videos"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("Authenticated users can upload videos"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
@@ -349,7 +349,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 </div>
 
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("Authenticated users can view chart"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("Authenticated users can view chart"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
@@ -362,7 +362,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 </div>
 
                                                 <div class=" ">
-                                                    <label class="col-md-4 control-label"><?php echo __("Authenticated users can comment videos"); ?></label>
+                                                    <label class="col-md-4 col-form-label"><?php echo __("Authenticated users can comment videos"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="fa fa-commenting"></i></span>
@@ -376,7 +376,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 </div>
 
                                                 <div class=" ">
-                                                    <label class="col-md-4  control-label"><?php echo __("Autoplay Video on Load Page"); ?></label>
+                                                    <label class="col-md-4  col-form-label"><?php echo __("Autoplay Video on Load Page"); ?></label>
                                                     <div class="col-md-8">
                                                         <input data-toggle="toggle" type="checkbox" name="autoplay" id="autoplay" value="1" <?php
                                                         if (!empty($config->getAutoplay())) {
@@ -564,7 +564,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                 </div>
                                 <!-- Button -->
                                 <div class=" ">
-                                    <label class="col-md-4 control-label"></label>
+                                    <label class="col-md-4 col-form-label"></label>
                                     <div class="col-md-8">
                                         <button type="submit" class="btn btn-primary" ><?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>
                                     </div>

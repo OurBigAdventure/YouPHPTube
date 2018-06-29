@@ -185,7 +185,7 @@ if (!empty($_GET['video_id'])) {
                     <i class="fa fa-trash" aria-hidden="true"></i> <?php echo __('Delete'); ?>
                 </button>
             </div>
-            <table id="grid" class="table table-condensed table-hover table-striped">
+            <table id="grid" class="table table-sm table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-formatter="checkbox" data-width="25px" ></th>

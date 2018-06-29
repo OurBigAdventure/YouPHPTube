@@ -39,7 +39,7 @@ require_once $global['systemRootPath'] . 'objects/userGroups.php';
                 <a href="#" class="btn btn-info float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("This is where you can create groups and associate them with your videos and users.
 This will make your videos private. Only users who are in the same group as the videos can view them"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("What is User Groups"); ?></a>
             </div>
-            <table id="grid" class="table table-condensed table-hover table-striped">
+            <table id="grid" class="table table-sm table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-column-id="group_name" data-order="asc"><?php echo __("Name"); ?></th>

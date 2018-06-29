@@ -226,7 +226,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                             <?php echo __("Update version"); ?>
                                             <?php
                                             if (!empty($updateFiles)) {
-                                                ?><span class="label label-danger"><?php echo count($updateFiles); ?></span><?php
+                                                ?><span class="badge badge-danger"><?php echo count($updateFiles); ?></span><?php
                             }
                             ?>
                                         </a>

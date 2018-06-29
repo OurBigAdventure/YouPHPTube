@@ -45,7 +45,7 @@ if (User::isLogged()) {
                     <!-- Text input-->
 
                     <div class=" ">
-                        <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
+                        <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -57,7 +57,7 @@ if (User::isLogged()) {
 
                     <!-- Text input-->
                     <div class=" ">
-                        <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
+                        <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -69,7 +69,7 @@ if (User::isLogged()) {
 
                     <!-- Text input-->
                     <div class="  <?php echo empty($advancedCustom->doNotShowWebsiteOnContactForm) ? "" : "hidden" ?>">
-                        <label class="col-md-4 control-label"><?php echo __("Website"); ?></label>
+                        <label class="col-md-4 col-form-label"><?php echo __("Website"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
@@ -80,7 +80,7 @@ if (User::isLogged()) {
                     <!-- Text area -->
 
                     <div class=" ">
-                        <label class="col-md-4 control-label"><?php echo __("Message"); ?></label>
+                        <label class="col-md-4 col-form-label"><?php echo __("Message"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -91,7 +91,7 @@ if (User::isLogged()) {
 
 
                     <div class=" ">
-                        <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
+                        <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
@@ -102,7 +102,7 @@ if (User::isLogged()) {
                     </div>
                     <!-- Button -->
                     <div class=" ">
-                        <label class="col-md-4 control-label"></label>
+                        <label class="col-md-4 col-form-label"></label>
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>
                         </div>

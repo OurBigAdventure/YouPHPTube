@@ -40,7 +40,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                     <span class="fa fa-film"></span> <?php echo __("Videos"); ?>
                 </a>
             </div>
-            <table id="grid" class="table table-condensed table-hover table-striped">
+            <table id="grid" class="table table-sm table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-column-id="user" data-formatter="user"><?php echo __("User"); ?></th>

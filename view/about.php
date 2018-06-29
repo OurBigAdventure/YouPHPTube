@@ -40,15 +40,15 @@ if(!isset($global['systemRootPath'])){
                     <a href="https://tutorials.youphptube.com/" class="btn btn-primary">Tutorials Site</a>
                     <a href="https://github.com/DanielnetoDotCom/YouPHPTube/issues" class="btn btn-warning">Issues and requests Site</a>
                 </div>
-                <span class="label label-success"><?php printf(__("You are running YouPHPTube version %s!"), $config->getVersion()); ?></span>
+                <span class="badge badge-success"><?php printf(__("You are running YouPHPTube version %s!"), $config->getVersion()); ?></span>
 
-                <span class="label label-success">
+                <span class="badge badge-success">
                     <?php printf(__("You can upload max of %s!"), get_max_file_size()); ?>
                 </span>
-                <span class="label label-success">
+                <span class="badge badge-success">
                     <?php printf(__("You can storage %s minutes of videos!"), (empty($global['videoStorageLimitMinutes']) ? "unlimited" : $global['videoStorageLimitMinutes'])); ?>
                 </span>
-                <span class="label label-success">
+                <span class="badge badge-success">
                     <?php printf(__("You have %s minutes of videos!"), number_format(getSecondsTotalVideosLength() / 6, 2)); ?>
                 </span>
                 <?php

@@ -56,7 +56,7 @@ function isYoutubeDl() {
                                 <legend><?php echo __("Download Video"); ?></legend>
 
                                 <div class=" ">
-                                    <label class="col-md-4 control-label"><?php echo __("Video URL"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("Video URL"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-film"></i></span>
@@ -66,7 +66,7 @@ function isYoutubeDl() {
                                 </div>
                                 <!-- TODO audio only -->
                                 <div class=" " style="display: none">
-                                    <label class="col-md-4 control-label"><?php echo __("Audio only"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("Audio only"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-headphones"></i></span>
@@ -77,7 +77,7 @@ function isYoutubeDl() {
 
                                 <!-- Button -->
                                 <div class=" ">
-                                    <label class="col-md-4 control-label"></label>
+                                    <label class="col-md-4 col-form-label"></label>
                                     <div class="col-md-8">
                                         <button type="submit" class="btn btn-primary" ><?php echo __("Download"); ?> <span class="glyphicon glyphicon-download"></span></button>
                                     </div>

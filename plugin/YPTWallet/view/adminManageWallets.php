@@ -31,7 +31,7 @@ $obj = $plugin->getDataObject();
                 <div class="panel-heading">Total Site Balance: <b><?php echo YPTWallet::getTotalBalanceText(); ?></b></div>
                 <div class="panel-body">
 
-                    <table id="grid" class="table table-condensed table-hover table-striped">
+                    <table id="grid" class="table table-sm table-hover table-striped">
                         <thead>
                             <tr>
                                 <th data-column-id="user" data-formatter="user"><?php echo __("User"); ?></th>

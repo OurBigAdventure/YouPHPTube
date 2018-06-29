@@ -169,7 +169,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
                             </button>
                         </div>
-                        <table id="grid" class="table table-condensed table-hover table-striped">
+                        <table id="grid" class="table table-sm table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th data-column-id="name" data-formatter="name" data-width="300px" ><?php echo __("Name"); ?></th>
@@ -406,7 +406,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                             if (row.enabled) {
                                 checked = " checked='checked' ";
                             }
-                            var switchBtn = '<div class="material-switch"><input name="enable' + row.uuid + '" id="enable' + row.uuid + '" type="checkbox" value="0" class="pluginSwitch" ' + checked + ' /><label for="enable' + row.uuid + '" class="label-success"></label></div>';
+                            var switchBtn = '<div class="material-switch"><input name="enable' + row.uuid + '" id="enable' + row.uuid + '" type="checkbox" value="0" class="pluginSwitch" ' + checked + ' /><label for="enable' + row.uuid + '" class="badge-success"></label></div>';
                             var tags = '';
                             if (row.tags) {
                                 for (i = 0; i < row.tags.length; i++) {
