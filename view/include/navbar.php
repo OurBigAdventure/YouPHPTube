@@ -1,4 +1,7 @@
 <style>
+#menuSpacer {
+  margin-bottom: 40px;
+}
 @media (max-width : 990px) {
 #mysearch {
   position: absolute;
@@ -566,3 +569,4 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
     header("Location: {$global['webSiteRootURL']}user");
 }
 ?>
+<div id="menuSpacer"></div>
