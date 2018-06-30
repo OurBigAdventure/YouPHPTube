@@ -88,9 +88,6 @@ unset($_SESSION['type']);
             }
         if (($o->SubCategorys) && (! empty($_GET['catName']))) {
             ?>
-       <script>
-    		setTimeout(function(){ document.getElementById('mainContainer').style="display: block;";document.getElementById('loading').style="display: none;" }, 1000);
-	   </script>
 
 		<div class="clear clearfix">
 			<div class="row">
@@ -627,9 +624,6 @@ unset($_SESSION['type']);
             $_GET['parentsOnly'] = "1";
             $liteGalleryCategory = Category::getAllCategories();
             ?>
-        <script>
-    		  setTimeout(function(){ document.getElementById('mainContainer').style="display: block;";document.getElementById('loading').style="display: none;" }, 1000);
-	    </script>
 		<div class="clear clearfix">
 			<div class="row">
 				<h2 style="margin-top: 30px;">
