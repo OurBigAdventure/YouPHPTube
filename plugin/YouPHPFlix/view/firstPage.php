@@ -47,7 +47,8 @@ unset($_SESSION['type']);
             left: initial;
             width: initial;
             margin-left: initial;
-            overflow: visible;
+            overflow-y: visible;
+            overflow-x:auto;
         }
         .carousel-caption {
           right: 60px !important;
@@ -56,8 +57,8 @@ unset($_SESSION['type']);
           left: unset !important;
         }
         .carousel .carousel-indicators > li {
-            width: initial;
-            height: initial;
+            width: 100px;
+            height: 75px;
             text-indent: initial;
         }
 
@@ -211,7 +212,7 @@ unset($_SESSION['type']);
                 </h2>
                 <div class="">
                   <div class="row">
-    <div class="col-lg-8 offset-lg-2" id="slider">
+    <div class="col-lg-12" id="slider">
 			<div id="dateAddedCarousel" class=" carousel slide" data-ride="carousel" ><div  class="carousel-inner" role="listbox">
                     <?php
                     $first = "active";
@@ -227,13 +228,16 @@ unset($_SESSION['type']);
                       $bg = "bg-primary";
                     }
                     ?>
-                <div class="item <?php echo $bg; ?> carousel-item <?php echo $first; ?>" style="height: 130px;" data-slide-number="<?php echo $i; ?>">
+                <div class="item <?php echo $bg; ?> carousel-item <?php echo $first; ?>" style="height: 160px;" data-slide-number="<?php echo $i; ?>">
 
             	     <img src="<?php echo $poster; ?>" alt="<?php echo $value['title']; ?>" style="" class="ml-5 mt-1 mb-1 rounded float-left d-block img img-fluid" />
-                   <div class="carousel-caption float-right text-right" style="overflow-y: auto; max-height: 90px; ">
+                   <div class=" col-lg-8 carousel-caption  " style="opacity: 0.8; overflow-y: auto; max-height: 140px; ">
+                     <div class="d-block mx-auto bg-dark">
                      <h2><?php echo $value['title']; ?></h2>
-                     <div>
-                       <?php echo $value['description']; ?>
+                     <p><?php echo $value['description']; ?></p>
+                    </div>
+                     <div class="float: right;">
+
                        <a class="btn btn-danger playBtn" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $value['clean_category']; ?>/video/<?php echo $value['clean_title']; ?>"><i class="fa fa-play"></i> <?php echo __("Play"); ?></a>
                      </div>
                    </div>
@@ -258,9 +262,9 @@ unset($_SESSION['type']);
                   <span class="sr-only">Next</span>
                 </a>
               </div>
-              <?php echo $indicators."</ul>"; ?>
 
-            </div></div></div>
+
+            </div><?php echo $indicators."</ul>"; ?></div></div>
 		</div>
 
             <?php
@@ -362,7 +366,7 @@ unset($_SESSION['type']);
             		</h2>
                 <div class="">
                   <div class="row">
-    <div class="col-lg-8 offset-lg-2" id="slider">
+    <div class="col-lg-12" id="slider">
 			<div id="mostWatchedCarousel" class=" carousel slide" data-ride="carousel" ><div  class="carousel-inner" role="listbox">
                     <?php
                     $first = "active";
@@ -378,7 +382,7 @@ unset($_SESSION['type']);
                       $bg = "bg-primary";
                     }
                     ?>
-                <div class="item <?php echo $bg; ?> carousel-item <?php echo $first; ?>" style="height: 130px;" data-slide-number="<?php echo $i; ?>">
+                <div class="item <?php echo $bg; ?> carousel-item <?php echo $first; ?>" style="height: 160px;" data-slide-number="<?php echo $i; ?>">
 
             	     <img src="<?php echo $poster; ?>" alt="<?php echo $value['title']; ?>" style="" class="ml-5 mt-1 mb-1 rounded float-left d-block img img-fluid" />
                    <div class="carousel-caption float-right text-right" style="overflow-y: auto; max-height: 90px; ">
@@ -409,9 +413,9 @@ unset($_SESSION['type']);
                   <span class="sr-only">Next</span>
                 </a>
               </div>
-              <?php echo $indicators."</ul>"; ?>
 
-            </div></div></div>
+
+            </div><?php echo $indicators."</ul>"; ?></div></div>
 		</div>
                 <?php } ?>
         <?php
