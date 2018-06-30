@@ -3,6 +3,17 @@ var cat;
 var videos_id;
 var $carousel;
 
+function isFlickityEnabled(selector){
+    var isEnabled = $(selector).hasClass('flickity-enabled');
+    if(isEnabled){
+        $('#loading').fadeOut();
+        $('.container-fluid').fadeIn('slow', function () {
+            $carousel.flickity('resize');
+        });
+    }else{
+        setTimeout(function(){isFlickityEnabled(selector)}, 500);
+    }
+}
 
 function loadPlayLists() {
     $.ajax({
@@ -79,10 +90,11 @@ $(function () {
         $(".thumbsImage").removeClass('active');
         $(this).addClass('active');
         $(this).parent().find(".arrow-down").fadeIn('slow');
-
+        console.log("clicked.."+row.find('.poster'));
         $('.poster').not(poster).slideUp();
         $(row).find('.poster').slideDown('slow', function () {
             var top = row.offset().top;
+            console.log("slide down..");
             $('html, body').animate({
                 scrollTop: top - myEleTop
             }, 'slow');
@@ -111,6 +123,13 @@ $(function () {
         loadPlayLists();
     });
 
+    $carousel = $('.flickity-carousel').flickity({
+        lazyLoad: 7,
+        setGallerySize: false,
+        cellAlign: 'left',
+        pageDots: pageDots
+    });
+    isFlickityEnabled('.flickity-carousel');
 
     $('.myList').webuiPopover({
         style: 'inverse',
