@@ -166,7 +166,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                     <div class="list-group-item">
                         <div class="btn-group" >
                             <button type="button" class="btn btn-default" id="upload">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
+                                <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
                             </button>
                         </div>
                         <table id="grid" class="table table-sm table-hover table-striped">
@@ -389,7 +389,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                             var editBtn = '';
 
                             if (row.id && !$.isEmptyObject(row.data_object)) {
-                                editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit parameters</button>';
+                                editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span> Edit parameters</button>';
                             }
                             var sqlBtn = '';
                             if (row.databaseScript) {

@@ -235,7 +235,7 @@ function createChannelItem($users_id, $photoURL = "", $identification = "", $row
                 echo $identification;
                 ?>
             </span>
-            <a class="btn btn-xs btn-default" href="<?php echo User::getChannelLink($users_id); ?>" style="margin: 0 10px;">
+            <a class="btn-xs btn-default" href="<?php echo User::getChannelLink($users_id); ?>" style="margin: 0 10px;">
                 <i class="fas fa-external-link-alt"></i>
             </a>
             <?php

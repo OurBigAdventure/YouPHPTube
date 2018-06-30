@@ -38,36 +38,36 @@ if (User::canSeeCommentTextarea()) {
     }
     ?>
     <div class="replySet hidden" id="replyTemplate" comments_id="0">
-        <div>        
+        <div>
             <?php
             if (User::canComment()) {
                 ?>
-                <button class="btn btn-default no-outline reply btn-xs"> 
+                <button class="btn-default no-outline reply btn-xs">
                     <?php echo __("Reply"); ?>
                 </button>
                 <?php
             }
             ?>
-            <button class="btn btn-default no-outline btn-xs replyLikeBtn"> 
+            <button class="btn-default no-outline btn-xs replyLikeBtn">
                 <span class="fa fa-thumbs-up"></span>
                 <small>0</small>
-            </button> 
-            <button class="btn btn-default no-outline btn-xs replyDislikeBtn"> 
+            </button>
+            <button class="btn-default no-outline btn-xs replyDislikeBtn">
                 <span class="fa fa-thumbs-down"></span>
                 <small>0</small>
-            </button>           
-            <button class="btn btn-default no-outline allReplies btn-xs viewAllReplies">  
+            </button>
+            <button class="btn-default no-outline allReplies btn-xs viewAllReplies">
                 <?php echo __("View all replies"); ?> (<span class="total_replies">0</span>) <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </button> 
-            <button class="btn btn-default no-outline allReplies btn-xs hideAllReplies" style="display: none"> 
+            </button>
+            <button class="btn-default no-outline allReplies btn-xs hideAllReplies" style="display: none">
                 <?php echo __("Hide Replies"); ?> <i class="fa fa-chevron-up" aria-hidden="true"></i>
-            </button> 
-            <button class="btn btn-default no-outline btn-xs float-right delete userCanAdminComment"> 
+            </button>
+            <button class="btn-default no-outline btn-xs float-right delete userCanAdminComment">
                 <i class="fa fa-trash" aria-hidden="true"></i>
-            </button> 
-            <button class="btn btn-default no-outline btn-xs float-right edit userCanAdminComment"> 
+            </button>
+            <button class="btn-default no-outline btn-xs float-right edit userCanAdminComment">
                 <i class="fas fa-edit" aria-hidden="true"></i>
-            </button> 
+            </button>
         </div>
         <div style="padding-left: 50px;">
             <div class="input-group formRepy" style="display: none;">
@@ -111,7 +111,7 @@ if (User::canSeeCommentTextarea()) {
                 </div>
                 <div class="modal-body">
                     <input type="hidden" value="" id="inputEditCommentId"/>
-                    <textarea id="inputEditComment" class="form-control" placeholder="<?php echo __("Comment"); ?>" required></textarea>                                
+                    <textarea id="inputEditComment" class="form-control" placeholder="<?php echo __("Comment"); ?>" required></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>

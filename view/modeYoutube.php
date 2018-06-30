@@ -117,7 +117,7 @@ if (!empty($_GET['playlist_id'])) {
 
 if (!empty($video)) {
     $name = User::getNameIdentificationById($video['users_id']);
-    $name = "<a href='" . User::getChannelLink($video['users_id']) . "' class='btn btn-xs btn-default'>{$name}</a>";
+    $name = "<a href='" . User::getChannelLink($video['users_id']) . "' class='btn-xs btn-default'>{$name}</a>";
     $subscribe = Subscribe::getButton($video['users_id']);
     $video['creator'] = '<div class="float-left"><img src="' . User::getPhoto($video['users_id']) . '" alt="" class="img img-fluid rounded-circle zoom" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName text-muted"><strong>' . $name . '</strong><br />' . $subscribe . '<br /><small>' . humanTiming(strtotime($video['videoCreation'])) . '</small></div></div>';
     $obj = new Video("", "", $video['id']);
@@ -229,7 +229,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                         echo $video['title'];
                                         if (Video::canEdit($video['id'])) {
                                             ?>
-                                            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos?video_id=<?php echo $video['id']; ?>" class="btn btn-primary btn-xs" data-toggle="tooltip" title="<?php echo __("Edit Video"); ?>"><i class="fa fa-edit"></i> <?php echo __("Edit Video"); ?></a>
+                                            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos?video_id=<?php echo $video['id']; ?>" class="btn-primary btn-sm btn" data-toggle="tooltip" title="<?php echo __("Edit Video"); ?>"><i class="fa fa-edit"></i> <?php echo __("Edit Video"); ?></a>
                                         <?php } ?>
                                         <small>
                                             <?php
@@ -292,7 +292,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                 Sign in to add this video to a playlist.
 
                                                 <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-primary">
-                                                    <span class="glyphicon glyphicon-log-in"></span>
+                                                    <span class="fas fa-sign-in-alt"></span>
                                                     <?php echo __("Login"); ?>
                                                 </a>
                                             <?php } ?>
@@ -466,7 +466,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                 ?>
                                             </div>
                                             <div class="tab-pane" id="tabEmbed">
-                                                <h4><span class="glyphicon glyphicon-share"></span> <?php echo __("Share Video"); ?>:</h4>
+                                                <h4><span class="fas fa-share"></span> <?php echo __("Share Video"); ?>:</h4>
                                                 <textarea class="form-control" style="min-width: 100%" rows="5"><?php
                                                     if ($video['type'] == 'video' || $video['type'] == 'embed') {
                                                         $code = '<iframe width="640" height="480" style="max-width: 100%;max-height: 100%;" src="' . Video::getLink($video['id'], $video['clean_title'], true) . '" frameborder="0" allowfullscreen="allowfullscreen" class="YouPHPTubeIframe"></iframe>';
@@ -490,7 +490,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                 <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
-                                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                                        <span class="input-group-addon"><i class="fas fa-envelope"></i></span>
                                                                         <input name="email" placeholder="<?php echo __("E-mail Address"); ?>" class="form-control"  type="text">
                                                                     </div>
                                                                 </div>
@@ -502,7 +502,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                 <label class="col-md-4 col-form-label"><?php echo __("Message"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
-                                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                                                        <span class="input-group-addon"><i class="fas fa-pencil-alt"></i></span>
                                                                         <textarea class="form-control" name="comment" placeholder="<?php echo __("Message"); ?>"><?php echo __("I would like to share this video with you:"); ?> <?php echo Video::getLink($video['id'], $video['clean_title']); ?></textarea>
                                                                     </div>
                                                                 </div>
@@ -512,7 +512,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                                                        <span class="input-group-addon"><span class="btn btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
+                                                                        <span class="input-group-addon"><span class="btn-xs btn-success" id="btnReloadCapcha"><span class="fas fa-sync"></span></span></span>
                                                                         <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
                                                                     </div>
                                                                 </div>
@@ -521,7 +521,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                             <div class=" ">
                                                                 <label class="col-md-4 col-form-label"></label>
                                                                 <div class="col-md-8">
-                                                                    <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>
+                                                                    <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="fas fa-share-square"></span></button>
                                                                 </div>
                                                             </div>
 
@@ -580,7 +580,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-lg-12">
                                     <div class="col-xs-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Category"); ?>:</strong></div>
-                                    <div class="col-xs-8 col-sm-10 col-lg-10"><a class="btn btn-xs btn-default"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
+                                    <div class="col-xs-8 col-sm-10 col-lg-10"><a class="btn-xs btn-default"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
                                     <div class="col-xs-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Description"); ?>:</strong></div>
                                     <div class="col-xs-8 col-sm-10 col-lg-10" itemprop="description"><?php echo nl2br(textToLink(htmlentities($video['description']))); ?></div>
                                 </div>

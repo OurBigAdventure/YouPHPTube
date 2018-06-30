@@ -217,23 +217,23 @@ if (!User::isAdmin()) {
             </div><!-- /.modal -->
 
             <div id="btnModelVideos" style="display: none;">
-                <button href="" class="editor_delete_video btn btn-danger btn-xs">
+                <button href="" class="editor_delete_video btn-danger btn-xs">
                     <i class="fa fa-trash"></i>
                 </button>
             </div>
 
             <div id="btnModelLinks" style="display: none;">
                 <div class="btn-group float-right">
-                    <button href="" class="editor_add_video btn btn-success btn-xs">
+                    <button href="" class="editor_add_video btn-success btn-xs">
                         <i class="fa fa-video"></i> Add Video
                     </button>
-                    <button href="" class="editor_chart btn btn-info btn-xs">
+                    <button href="" class="editor_chart btn-info btn-xs">
                         <i class="fas fa-chart-area "></i>
                     </button>
-                    <button href="" class="editor_edit_link btn btn-default btn-xs">
+                    <button href="" class="editor_edit_link btn-default btn-xs">
                         <i class="fa fa-edit"></i>
                     </button>
-                    <button href="" class="editor_delete_link btn btn-danger btn-xs">
+                    <button href="" class="editor_delete_link btn-danger btn-xs">
                         <i class="fa fa-trash"></i>
                     </button>
                 </div>
@@ -243,8 +243,8 @@ if (!User::isAdmin()) {
         include $global['systemRootPath'] . 'view/include/footer.php';
         ?>
         <script type="text/javascript" src="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.js"></script>
-        <script src="<?php echo $global['webSiteRootURL']; ?>js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-        <script src="<?php echo $global['webSiteRootURL']; ?>js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+        <script src="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/Chart.bundle.min.js"></script>
 
         <script type="text/javascript">

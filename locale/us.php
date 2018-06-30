@@ -229,7 +229,7 @@ $t['No results found!']  = "No results found!";
 $t['Notify Subscribers'] = "Notify Subscribers";
 $t['Off']  = "Off";
 $t['On']  = "On";
-$t['Only verified users can upload'] = "Only verified users can upload media"; 
+$t['Only verified users can upload'] = "Only verified users can upload media";
 $t['Opacity'] = "Opacity";
 $t['Original words found'] = "Original words found";
 $t['Page'] = "Page";
@@ -349,7 +349,7 @@ $t['This creates a download-button under your video, suggest you title.mp4 as do
 $t['This e-mail will be used for this web site notifications'] = "This e-mail will be used for this web site notifications";
 $t['This help us to track and dettect errors'] = "This help us to track and dettect errors";
 $t['This is an experimental resource'] = "This is an experimental resource";
-$t['This page works only with a MP4 File, if you have or need any other format, try to install your own <a href=\'https://github.com/DanielnetoDotCom/YouPHPTube-Encoder\' class=\'btn btn-warning btn-xs\'>encoder</a> or use the <a href=\'https://encoder.youphptube.com/\' class=\'btn btn-warning btn-xs\'>public</a> one'] = "This page works only with a MP4 File, if you have or need any other format, try to install your own <a href='https://github.com/DanielnetoDotCom/YouPHPTube-Encoder' class='btn btn-warning btn-xs'>encoder</a> or use the <a href='https://encoder.youphptube.com/' class='btn btn-warning btn-xs'>public</a> one";
+$t['This page works only with a MP4 File, if you have or need any other format, try to install your own <a href=\'https://github.com/DanielnetoDotCom/YouPHPTube-Encoder\' class=\'btn-warning btn-xs\'>encoder</a> or use the <a href=\'https://encoder.youphptube.com/\' class=\'btn-warning btn-xs\'>public</a> one'] = "This page works only with a MP4 File, if you have or need any other format, try to install your own <a href='https://github.com/DanielnetoDotCom/YouPHPTube-Encoder' class=' btn-warning btn-xs'>encoder</a> or use the <a href='https://encoder.youphptube.com/' class='btn-warning btn-xs'>public</a> one";
 $t['This plugin is not available for you'] = "This plugin is not available for you";
 $t['This value must match with the language files on'] = "This value must match with the language files on";
 $t['This video will cost you %s point(s)'] = "This video will cost you %s point(s)";
