@@ -44,7 +44,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                 <div class="tabbable-line">
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item">
-                                            <a class="nav-link " href="#tabTheme" data-toggle="tab">
+                                            <a class="nav-link" href="#tabTheme" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
                                                 <?php echo __("Themes"); ?>
                                             </a>
@@ -55,8 +55,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 <?php echo __("Compatibility Check"); ?>
                                             </a>
                                         </li>
-                                        <li class="nav-item active">
-                                            <a class="nav-link " href="#tabRegular" id="tabRegularLink" data-toggle="tab">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#tabRegular" id="tabRegularLink" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
                                                 <?php echo __("Regular Configuration"); ?>
                                             </a>
@@ -375,7 +375,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                 </div>
 
-                                                <div class=" ">
+                                                <div class="btn-group-toggle" data-toggle="buttons">
                                                     <label class="col-md-4  col-form-label"><?php echo __("Autoplay Video on Load Page"); ?></label>
                                                     <div class="col-md-8">
                                                         <input data-toggle="toggle" type="checkbox" name="autoplay" id="autoplay" value="1" <?php

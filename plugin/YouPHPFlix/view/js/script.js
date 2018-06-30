@@ -82,21 +82,19 @@ $(function () {
         var details = $(this).find(".videoInfo").html();
         var title = $(this).find(".tile__title").text();
 
-        var row = $(this).closest('.row');
+        var row = $(this).closest('.the-carousel-content');
         var poster = $(row).find('.poster');
-        var myEleTop = $('.navbar-fixed-top .items-container').outerHeight(true);
+        var myEleTop = row.outerHeight(true);
 
         $(".arrow-down").fadeOut();
         $(".thumbsImage").removeClass('active');
         $(this).addClass('active');
         $(this).parent().find(".arrow-down").fadeIn('slow');
-        console.log("clicked.."+row.find('.poster'));
-        $('.poster').not(poster).slideUp();
+        $('.poster').slideUp();
         $(row).find('.poster').slideDown('slow', function () {
             var top = row.offset().top;
-            console.log("slide down..");
             $('html, body').animate({
-                scrollTop: top - myEleTop
+                scrollTop: top - myEleTop + 260
             }, 'slow');
         });
 

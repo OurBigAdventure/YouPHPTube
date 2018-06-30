@@ -187,15 +187,15 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                     </div>
                                     <div class="modal-body">
                                         <ul class="nav nav-tabs">
-                                            <li class="active"><a data-toggle="tab" href="#visual">Visual</a></li>
-                                            <li><a data-toggle="tab" href="#code">Code</a></li>
+                                            <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#visual">Visual</a></li>
+                                            <li class="nav-item" ><a class="nav-link" data-toggle="tab" href="#code">Code</a></li>
                                         </ul>
                                         <div class="tab-content">
-                                            <div id="visual" class="tab-pane fade in active">
+                                            <div id="visual" class="tab-pane fade show active">
                                                 <div class="row" id="jsonElements" style="padding: 10px;">Some content.</div>
                                             </div>
                                             <div id="code" class="tab-pane fade">
-                                                <form class="form-compact"  id="updatePluginForm" onsubmit="">
+                                                <form class="form-group"  id="updatePluginForm" onsubmit="">
                                                     <input type="hidden" id="inputPluginId"  >
                                                     <label for="inputData" class="sr-only">Object Data</label>
                                                     <textarea class="form-control" id="inputData"  rows="5"  placeholder="Object Data"></textarea>

@@ -183,7 +183,7 @@ unset($_SESSION['type']);
                 unset($_SESSION['type']);
 		if(!empty($videos)){
                 ?>
-            <div class="">
+            <div class="the-carousel-content">
                 <h2>
                     <i class="glyphicon glyphicon-sort-by-attributes"></i> <?php
                     echo __("Date added (newest)");
@@ -272,7 +272,7 @@ unset($_SESSION['type']);
                 } }
                 if($ok){
                 ?>
-            <div class="">
+            <div class="the-carousel-content">
 			<h2>
 				<i class="glyphicon glyphicon-music"></i> <?php
                 echo __("Audio-Gallery by Date");
@@ -344,7 +344,7 @@ unset($_SESSION['type']);
             } //there
             if ($o->MostWatched) { ?>
             <span class="md-col-12">&nbsp;</span>
-            <div class="">
+            <div class="the-carousel-content">
 			<h2>
 				<i class="glyphicon glyphicon-eye-open"></i> <?php echo __("Most watched"); ?>
             		</h2>
@@ -427,7 +427,7 @@ unset($_SESSION['type']);
 
             if ($o->MostPopular) {
                 ?>
-            <div class="">
+            <div class="the-carousel-content">
             <span class="md-col-12">&nbsp;</span>
 			<h2>
 				<i class="glyphicon glyphicon-thumbs-up"></i> <?php echo __("Most popular"); ?>
@@ -547,7 +547,7 @@ unset($_SESSION['type']);
                 }
 
                     ?>
-                <div class="">
+                <div class="the-carousel-content">
 			<a style="z-index: 9999;" href='<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $cat['clean_name']; ?>'>
 				<h2 style="margin-top: 30px;">
 					<i class="<?php echo $cat['iconClass']; ?>"></i><?php echo $cat['name']; ?>
@@ -635,7 +635,7 @@ unset($_SESSION['type']);
     		  setTimeout(function(){ document.getElementById('mainContainer').style="display: block;";document.getElementById('loading').style="display: none;" }, 1000);
 	    </script>
 		<div class="clear clearfix">
-			<div class="row">
+			<div class="the-carousel-content">
 				<h2 style="margin-top: 30px;">
                     <?php echo __("Category-Gallery"); ?>
                     <span class="badge"><?php echo Category::getTotalCategories()?></span>

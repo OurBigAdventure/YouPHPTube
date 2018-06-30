@@ -115,8 +115,8 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
     $updateFiles = getUpdatesFilesArray();
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top justify-content-between">
-      <div>
-      <button class="btn-light btn" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="navbar-toggler-icon"></span></button>
+      <div class="my-nav-finder">
+      <button class="btn-light btn nav-item align-top" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="navbar-toggler-icon"></span></button>
       <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
         <div id="sidebar1" class="dropdown" style="position: absolute; height: 100%; top:0;">
                 <ul class="dropdown-menu  dropdown-menu-left bg-light" style="" aria-labelledby="buttonMenu1" >
