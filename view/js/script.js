@@ -28,6 +28,9 @@ function clean_name(str) {
     return str.replace(/\W+/g, "-");
 }
 $(document).ready(function () {
+  //make bootpag compatible with Bootstrap 4.0
+$('#pagination li').addClass('page-item');
+$('#pagination a').addClass('page-link');
     modal = modal || (function () {
         var pleaseWaitDiv = $("#pleaseWaitDialog");
         if (pleaseWaitDiv.length === 0) {
