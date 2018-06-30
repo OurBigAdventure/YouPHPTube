@@ -68,9 +68,6 @@ unset($_SESSION['type']);
             }
         if (($o->SubCategorys) && (! empty($_GET['catName']))) {
             ?>
-       <script>
-    		setTimeout(function(){ document.getElementById('mainContainer').style="display: block;";document.getElementById('loading').style="display: none;" }, 1000);
-	   </script>
 		<div class="clear clearfix">
 			<div class="row">
             <?php
@@ -631,11 +628,8 @@ unset($_SESSION['type']);
             $_GET['parentsOnly'] = "1";
             $liteGalleryCategory = Category::getAllCategories();
             ?>
-        <script>
-    		  setTimeout(function(){ document.getElementById('mainContainer').style="display: block;";document.getElementById('loading').style="display: none;" }, 1000);
-	    </script>
 		<div class="clear clearfix">
-			<div class="the-carousel-content">
+			<div class="row">
 				<h2 style="margin-top: 30px;">
                     <?php echo __("Category-Gallery"); ?>
                     <span class="badge"><?php echo Category::getTotalCategories()?></span>
@@ -816,7 +810,7 @@ unset($_SESSION['type']);
                 </div>
 		</div>
         <?php } if ($o->LiteDesign) { ?>
-            <div class="row">
+            <div class="">
                 <h2 style="margin-top: 30px;"><?php echo __("Categories"); ?> <span class="badge"><?php echo count($category); ?></span></h2>
                 <div class="carousel">
                     <?php
