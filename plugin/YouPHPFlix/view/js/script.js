@@ -3,17 +3,6 @@ var cat;
 var videos_id;
 var $carousel;
 
-function isFlickityEnabled(selector){
-    var isEnabled = $(selector).hasClass('flickity-enabled');
-    if(isEnabled){
-        $('#loading').fadeOut();
-        $('.container-fluid').fadeIn('slow', function () {
-            $carousel.flickity('resize');
-        });       
-    }else{
-        setTimeout(function(){isFlickityEnabled(selector)}, 500);
-    }
-}
 
 function loadPlayLists() {
     $.ajax({
@@ -122,14 +111,7 @@ $(function () {
         loadPlayLists();
     });
 
-    $carousel = $('.carousel').flickity({
-        lazyLoad: 7,
-        setGallerySize: false,
-        cellAlign: 'left',
-        pageDots: pageDots
-    });   
-    isFlickityEnabled('.carousel');
-    
+
     $('.myList').webuiPopover({
         style: 'inverse',
         url: '#popover'
@@ -159,4 +141,3 @@ $(function () {
     });
 
 });
-
