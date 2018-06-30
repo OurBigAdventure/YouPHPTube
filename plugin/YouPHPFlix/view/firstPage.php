@@ -33,7 +33,8 @@ unset($_SESSION['type']);
         <style>
         .carousel .list-inline {
             white-space:nowrap;
-            overflow-x:auto;
+            /*overflow-x:auto;*/
+            margin-top: 10px;
         }
 
         .img-mod:hover {
@@ -46,6 +47,7 @@ unset($_SESSION['type']);
             left: initial;
             width: initial;
             margin-left: initial;
+            overflow: visible;
         }
         .carousel-caption {
           right: 60px !important;
