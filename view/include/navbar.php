@@ -1,6 +1,6 @@
 <style>
 #menuSpacer {
-  margin-bottom: 40px;
+  margin-bottom: 5px;
 }
 @media (max-width : 990px) {
 #mysearch {
