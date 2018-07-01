@@ -98,7 +98,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     if (User::isLogged()) {
                         ?>
                         <li class="dropdown-item">
-                            <a href="<?php echo $global['webSiteRootURL']; ?>logoff" class="btn btn-light btn-block" >
+                            <a href="<?php echo $global['webSiteRootURL']; ?>logoff" class="btn btn-outline-danger btn-block" >
                                 <i class="fas fa-sign-out-alt"></i>
                                 <?php echo __("Logoff"); ?>
                             </a>
