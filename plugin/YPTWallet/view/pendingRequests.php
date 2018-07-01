@@ -30,7 +30,7 @@ if (!User::isAdmin()) {
                 </div>
                 <div class="panel-body">
                     <div class="row bgWhite list-group-item">
-                        <table id="grid" class="table table-condensed table-hover table-striped">
+                        <table id="grid" class="table table-sm table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th data-column-id="user"  data-width="150px"><?php echo __("User"); ?></th>
@@ -66,8 +66,8 @@ if (!User::isAdmin()) {
                     formatters: {
                         "status": function (column, row) {
                             var status = "";
-                            status = "<div class=\"btn-group\"><button class='btn btn-success btn-xs command-status-success'>Confirm</button>";
-                            status += "<button class='btn btn-danger btn-xs command-status-canceled'>Cancel</button><div>";
+                            status = "<div class=\"btn-group\"><button class='btn-success btn-xs command-status-success'>Confirm</button>";
+                            status += "<button class='btn-danger btn-xs command-status-canceled'>Cancel</button><div>";
                             return status;
                         }
                     }

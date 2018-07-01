@@ -3,15 +3,15 @@
     <div class="col-sm-8 col-md-8 secC">
         <div id="videoContainer">
             <div id="floatButtons" style="display: none;">
-                <p class="btn btn-outline btn-xs move">
+                <p class="btn-outline btn-xs move">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </p>
-                <button type="button" class="btn btn-outline btn-xs" onclick="closeFloatVideo();floatClosed = 1;">
+                <button type="button" class="btn-outline btn-xs" onclick="closeFloatVideo();floatClosed = 1;">
                     <i class="far fa-window-close"></i>
                 </button>
             </div>
-            
-                <?php 
+
+                <?php
             /*$autoPlayVideo = Video::getVideo($video['next_videos_id']);
             if($video==$autoPlayVideo){
                 unset($autoPlayVideo);
@@ -31,7 +31,7 @@
                     $disableYoutubeIntegration = $disableYoutubeIntegration->disableYoutubePlayerIntegration;
                 }
                 $_GET['isEmbedded'] = "";
-                if(((strpos($video['videoLink'],"youtube.com")==false)&&(strpos($video['videoLink'],"vimeo.com")==false))||($disableYoutubeIntegration)){ 
+                if(((strpos($video['videoLink'],"youtube.com")==false)&&(strpos($video['videoLink'],"vimeo.com")==false))||($disableYoutubeIntegration)){
                 $_GET['isEmbedded'] = "e";
                 ?>
                 <div id="main-video" class="embed-responsive embed-responsive-16by9">
@@ -42,7 +42,7 @@
                 }
                 ?>"></iframe>
 
-                <?php } else {     
+                <?php } else {
                     // youtube!
                     if((strpos($video['videoLink'],"youtube.com")!=false)){
                         $_GET['isEmbedded'] = "y";
@@ -50,7 +50,7 @@
                         $_GET['isEmbedded'] = "v";
                     }
                     $_GET['isMediaPlaySite'] = $video['id'];
-                ?>      
+                ?>
                     <div id="main-video" class="embed-responsive embed-responsive-16by9">
                         <video id="mainVideo" class="embed-responsive-item video-js vjs-default-skin <?php echo $vjsClass; ?> vjs-big-play-centered" controls <?php if ($config->getAutoplay()) { echo " autoplay "; } ?> data-setup='{"aspectRatio": "16:9", "techOrder": ["<?php if($_GET['isEmbedded']=="y"){ echo "youtube"; } else { echo "vimeo"; } ?>"], "sources": [{ "type": "video/<?php if($_GET['isEmbedded']=="y"){ echo "youtube"; } else { echo "vimeo"; } ?>", "src": "<?php echo $video['videoLink']; ?>"}] }' ></video>
                         <script>
@@ -62,7 +62,7 @@
                                     return false;
                                 });
                             <?php } ?>
-                
+
                             $(document).ready(function () {
                                 player = videojs('mainVideo');
                                 player.ready(function () {
@@ -70,7 +70,7 @@
 	                                   echo "setTimeout(function () { if(typeof player === 'undefined'){ player = videojs('mainVideo');} player.play(); }, 150);";
                                     } else { ?>
                                         if (Cookies.get('autoplay') && Cookies.get('autoplay') !== 'false') {
-                                            setTimeout(function () { if(typeof player === 'undefined'){ player = videojs('mainVideo');} player.play();}, 150);                    
+                                            setTimeout(function () { if(typeof player === 'undefined'){ player = videojs('mainVideo');} player.play();}, 150);
                                         }
                                 <?php } ?>
                                         num = $('#videosList').find('.pagination').find('li.active').attr('data-lp');
@@ -123,8 +123,8 @@
 
                                     });
                                 <?php } ?>
-                                
-        
+
+
                                 <?php if (!empty($logId)){
 	                               $sources = getSources($video['filename'], true); ?>
                                     $('#adButton').click(function () {
@@ -139,7 +139,7 @@
                                 <?php } ?>
                                 });
                         </script>
-                
+
                 <?php
                 } // youtube! end
                 require_once $global['systemRootPath'] . 'plugin/YouPHPTubePlugin.php';

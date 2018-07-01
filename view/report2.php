@@ -1,17 +1,17 @@
 <div class="row">
-    <div class="form-group col-sm-3">
+    <div class="  col-sm-3">
         <label for="datefrom2" class="col-sm-2 col-form-label"><?php echo __('From'); ?>:</label>
         <div class="col-sm-10">
             <input type="text" class="form-control datepicker" id="datefrom2">
         </div>
     </div>
-    <div class="form-group col-sm-3">
+    <div class="  col-sm-3">
         <label for="dateto2" class="col-sm-2 col-form-label"><?php echo __('To'); ?>:</label>
         <div class="col-sm-10">
             <input type="text" class="form-control datepicker" id="dateto2">
         </div>
     </div>
-    <div class="form-group col-sm-3">
+    <div class="  col-sm-3">
         <button class="btn btn-primary" id="refresh2"><i class="fa fa-refresh"></i> <?php echo __('Refresh'); ?></button>
     </div>
 </div>

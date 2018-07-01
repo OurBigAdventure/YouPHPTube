@@ -8,7 +8,7 @@ require_once $global['systemRootPath'] . 'objects/user.php';
 $tags = User::getTags(User::getId());
 $tagsStr = "";
 foreach ($tags as $value) {
-    $tagsStr .= "<span class=\"label label-{$value->type} fix-width\">{$value->text}</span>";
+    $tagsStr .= "<span class=\"badge badge-{$value->type} fix-width\">{$value->text}</span>";
 }
 $json_file = url_get_contents("{$global['webSiteRootURL']}plugin/CustomizeAdvanced/advancedCustom.json.php");
 // convert the string to a json object
@@ -34,9 +34,8 @@ $advancedCustom = json_decode($json_file);
                 $user = new User("");
                 $user->loadSelfUser();
                 ?>
-                <div class="row">
-                    <div>
-                        <form class="form-compact well form-horizontal"  id="updateUserForm" onsubmit="">
+                <div class="">
+                        <form class=""  id="updateUserForm" onsubmit="">
                             <?php echo $tagsStr; ?>
                             <fieldset>
                                 <legend>
@@ -44,7 +43,7 @@ $advancedCustom = json_decode($json_file);
 
                                 </legend>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -54,7 +53,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -64,52 +63,54 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
-                                    <div class="col-md-6 inputGroupContainer">
+                                    <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
+                                    <div class="col-md-6 inputGroupContainer form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                                             <input  id="inputEmail" placeholder="<?php echo __("E-mail"); ?>" class="form-control"  type="email" value="<?php echo $user->getEmail(); ?>" required >
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php
-                                        if ($user->getEmailVerified()) {
-                                            ?>
-                                            <span class="btn btn-success"><i class="fa fa-check"></i> <?php echo __("E-mail Verified"); ?></span>
-                                            <?php
-                                        } else {
-                                            ?>
-                                            <button class="btn btn-warning" id="verifyEmail"><i class="fa fa-envelope"></i> <?php echo __("Verify e-mail"); ?></button>
+                                            <div class="">
+                                                <?php
+                                                if ($user->getEmailVerified()) {
+                                                    ?>
+                                                    <span class="btn btn-success"><i class="fa fa-check"></i> <?php echo __("E-mail Verified"); ?></span>
+                                                    <?php
+                                                } else {
+                                                    ?>
+                                                    <button class="btn btn-warning" id="verifyEmail"><i class="fa fa-envelope"></i> <?php echo __("Verify e-mail"); ?></button>
 
-                                            <script>
-                                                $(document).ready(function () {
+                                                    <script>
+                                                        $(document).ready(function () {
 
-                                                    $('#verifyEmail').click(function (e) {
-                                                        e.preventDefault();
-                                                        modal.showPleaseWait();
-                                                        $.ajax({
-                                                            type: "POST",
-                                                            url: "<?php echo $global['webSiteRootURL'] ?>objects/userVerifyEmail.php?users_id=<?php echo $user->getBdId(); ?>"
-                                                        }).done(function (response) {
-                                                            if(response.error){
-                                                                swal("<?php echo __("Sorry!"); ?>", response.msg, "error");
-                                                            }else{
-                                                                swal("<?php echo __("Congratulations!"); ?>", "<?php echo __("Verification Sent"); ?>", "success");
-                                                            }
-                                                            modal.hidePleaseWait();
+                                                            $('#verifyEmail').click(function (e) {
+                                                                e.preventDefault();
+                                                                modal.showPleaseWait();
+                                                                $.ajax({
+                                                                    type: "POST",
+                                                                    url: "<?php echo $global['webSiteRootURL'] ?>objects/userVerifyEmail.php?users_id=<?php echo $user->getBdId(); ?>"
+                                                                }).done(function (response) {
+                                                                    if(response.error){
+                                                                        swal("<?php echo __("Sorry!"); ?>", response.msg, "error");
+                                                                    }else{
+                                                                        swal("<?php echo __("Congratulations!"); ?>", "<?php echo __("Verification Sent"); ?>", "success");
+                                                                    }
+                                                                    modal.hidePleaseWait();
+                                                                });
+                                                            });
+
                                                         });
-                                                    });
+                                                    </script>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
 
-                                                });
-                                            </script>
-                                            <?php
-                                        }
-                                        ?>
                                     </div>
+
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("New Password"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("New Password"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -119,7 +120,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("Confirm New Password"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("Confirm New Password"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -129,7 +130,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("Channel Name"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("Channel Name"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fab fa-youtube"></i></span>
@@ -139,7 +140,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("Analytics Code"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("Analytics Code"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fas fa-chart-line"></i></span>
@@ -150,7 +151,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("About"); ?></label>
+                                    <label class="col-md-4 col-form-label"><?php echo __("About"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <textarea id="textAbout" placeholder="<?php echo __("About"); ?>" class="form-control"  ><?php echo $user->getAbout(); ?></textarea>
                                     </div>
@@ -163,8 +164,8 @@ $advancedCustom = json_decode($json_file);
                                         </center>
                                     </div>
                                     <input type="file" id="upload" value="Choose a file" accept="image/*" style="display: none;" />
-                                </div>
 
+                              </div>
                                 <div class="form-group">
                                     <div class="col-md-12 ">
                                         <div id="croppieBg"></div>
@@ -177,7 +178,7 @@ $advancedCustom = json_decode($json_file);
 
 
                                 <!-- Button -->
-                                <div class="form-group">
+                                <div class="container-fluid">
                                     <hr>
                                     <div class="col-md-12">
                                         <center>
@@ -189,7 +190,6 @@ $advancedCustom = json_decode($json_file);
                         </form>
 
                     </div>
-                </div>
                 <script>
                     var uploadCrop;
 
@@ -351,24 +351,24 @@ $advancedCustom = json_decode($json_file);
                             <?php
                             if (empty($advancedCustom->disableNativeSignIn)) {
                                 ?>
-                                <form class="form-compact well form-horizontal"  id="loginForm">
+                                <form class=" "  id="loginForm">
 
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
+                                    <div class="form-row">
+                                        <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <span class="input-group-addon"><i class="fas fa-user"></i></span>
                                                 <input  id="inputUser" placeholder="<?php echo __("User"); ?>" class="form-control"  type="text" value="" required >
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label"><?php echo __("Password"); ?></label>
-                                        <div class="col-md-8 inputGroupContainer">
+                                    <div class="form-row ">
+                                        <label class="col-md-4 col-form-label"><?php echo __("Password"); ?></label>
+                                        <div class="col-md-8">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <span class=" input-group-addon"  id="inputGroup-sizing-default"><i class="fas fa-lock"></i></span>
                                                 <input  id="inputPassword" placeholder="<?php echo __("Password"); ?>" class="form-control"  type="password" value="" >
                                             </div>
                                             <?php
@@ -381,7 +381,7 @@ $advancedCustom = json_decode($json_file);
                                         </div>
                                     </div>
                                     <!-- Button -->
-                                    <div class="form-group">
+                                    <div class="form-row mb-3">
                                         <div class="col-md-12">
                                             <button type="submit" class="btn btn-success  btn-block" id="mainButton" ><span class="fas fa-sign-in-alt"></span> <?php echo __("Sign in"); ?></button>
                                         </div>
@@ -459,7 +459,7 @@ $advancedCustom = json_decode($json_file);
                                 swal("<?php echo __("Sorry!"); ?>", "<?php echo __("You need to inform what is your user!"); ?>", "error");
                                 return false;
                             }
-                            var capcha = '<span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span><span class="input-group-addon"><span class="btn btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span><input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">';
+                            var capcha = '<span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span><span class="input-group-addon"><span class="btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span><input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">';
                             swal({
                                 title: user + ", <?php echo __("Are you sure?"); ?>",
                                 text: "<?php echo __("We will send you a link, to your e-mail, to recover your password!"); ?>" + capcha,

@@ -31,7 +31,7 @@ $userGroups = UserGroups::getAllUsersGroups();
         ?>
             <div class="btn-group" >
                 <button type="button" class="btn btn-default" id="addUserBtn">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <?php echo __("New User"); ?>
+                    <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("New User"); ?>
                 </button>
                 <a href="<?php echo $global['webSiteRootURL']; ?>usersGroups" class="btn btn-warning">
                     <span class="fa fa-users"></span> <?php echo __("User Groups"); ?>
@@ -40,7 +40,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                     <span class="fa fa-film"></span> <?php echo __("Videos"); ?>
                 </a>
             </div>
-            <table id="grid" class="table table-condensed table-hover table-striped">
+            <table id="grid" class="table table-sm table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-column-id="user" data-formatter="user"><?php echo __("User"); ?></th>
@@ -49,7 +49,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                         <th data-column-id="created" ><?php echo __("Created"); ?></th>
                         <th data-column-id="modified" ><?php echo __("Modified"); ?></th>
                         <th data-column-id="tags" data-formatter="tags"  data-sortable="false" ><?php echo __("Tags"); ?></th>
-                        <th data-column-id="commands" data-formatter="commands" data-sortable="false" data-width="50px"></th>
+                        <th data-column-id="commands" data-formatter="commands" data-sortable="false" ></th>
                     </tr>
                 </thead>
             </table>
@@ -80,42 +80,42 @@ $userGroups = UserGroups::getAllUsersGroups();
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <?php echo __("is Admin"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input type="checkbox" value="isAdmin" id="isAdmin"/>
                                             <label for="isAdmin" class="label-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("Can Stream Videos"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input type="checkbox" value="canStream" id="canStream"/>
                                             <label for="canStream" class="label-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("Can Upload Videos"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input type="checkbox" value="canUpload" id="canUpload"/>
                                             <label for="canUpload" class="label-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("Can view chart"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input type="checkbox" value="canViewChart" id="canViewChart"/>
                                             <label for="canViewChart" class="label-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("E-mail Verified"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input type="checkbox" value="isEmailVerified" id="isEmailVerified"/>
                                             <label for="isEmailVerified" class="label-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("is Active"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input type="checkbox" value="status" id="status"/>
                                             <label for="status" class="label-success"></label>
                                         </div>
@@ -124,7 +124,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                                 <ul class="list-group">
                                     <li class="list-group-item active">
                                         <?php echo __("User Groups"); ?>
-                                        <a href="#" class="btn btn-info btn-xs pull-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By associating groups with this user, they will be able to see all the videos that are related to this group"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
+                                        <a href="#" class="btn-info btn-xs float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By associating groups with this user, they will be able to see all the videos that are related to this group"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                     </li>
                                     <?php
                                     foreach ($userGroups as $value) {
@@ -132,8 +132,8 @@ $userGroups = UserGroups::getAllUsersGroups();
                                         <li class="list-group-item">
                                             <span class="fa fa-unlock"></span>
                                             <?php echo $value['group_name']; ?>
-                                            <span class="label label-info"><?php echo $value['total_videos']; ?> <?php echo __("Videos linked"); ?></span>
-                                            <div class="material-switch pull-right">
+                                            <span class="badge badge-info"><?php echo $value['total_videos']; ?> <?php echo __("Videos linked"); ?></span>
+                                            <div class="material-switch float-right">
                                                 <input id="userGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="userGroups"/>
                                                 <label for="userGroup<?php echo $value['id']; ?>" class="label-warning"></label>
                                             </div>
@@ -180,8 +180,8 @@ $userGroups = UserGroups::getAllUsersGroups();
                     url: "<?php echo $global['webSiteRootURL'] . "objects/users.json.php"; ?>",
                     formatters: {
                         "commands": function (column, row) {
-                            var editBtn = '<button type="button" class="btn btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>'
-                            //var deleteBtn = '<button type="button" class="btn btn-default btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="Delete""><span class="glyphicon glyphicon-erase" aria-hidden="true"></span></button>';
+                            var editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                            //var deleteBtn = '<button type="button" class="btn-default btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="Delete""><span class="glyphicon glyphicon-erase" aria-hidden="true"></span></button>';
                             //return editBtn + deleteBtn;
                             return editBtn;
                         },
@@ -191,14 +191,14 @@ $userGroups = UserGroups::getAllUsersGroups();
                                 if (typeof row.tags[i].type == "undefined") {
                                     continue;
                                 }
-                                tags += "<span class=\"label label-" + row.tags[i].type + " fix-width\">" + row.tags[i].text + "</span><br>";
+                                tags += "<span class=\"badge badge-" + row.tags[i].type + " fix-width\">" + row.tags[i].text + "</span><br>";
                             }
                             return tags;
                         },
                         "user": function (column, row) {
                             var photo = "";
                             if (row.photoURL) {
-                                photo = "<br><img src='" + row.photoURL + "' class='img img-responsive img-rounded img-thumbnail' style='max-width:50px;'/>";
+                                photo = "<br><img src='" + row.photoURL + "' class='img img-fluid img-rounded img-thumbnail' style='max-width:50px;'/>";
                             }
                             return row.user + photo;
                         }

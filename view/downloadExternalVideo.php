@@ -51,12 +51,12 @@ function isYoutubeDl() {
                 <div class="row">
                     <div class="col-xs-1 col-sm-1 col-lg-2"></div>
                     <div class="col-xs-10 col-sm-10 col-lg-8">
-                        <form class="form-compact well form-horizontal"  id="updateUserForm" onsubmit="">
+                        <form class="form-compact well "  id="updateUserForm" onsubmit="">
                             <fieldset>
                                 <legend><?php echo __("Download Video"); ?></legend>
 
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label"><?php echo __("Video URL"); ?></label>
+                                <div class=" ">
+                                    <label class="col-md-4 col-form-label"><?php echo __("Video URL"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-film"></i></span>
@@ -65,8 +65,8 @@ function isYoutubeDl() {
                                     </div>
                                 </div>
                                 <!-- TODO audio only -->
-                                <div class="form-group" style="display: none">
-                                    <label class="col-md-4 control-label"><?php echo __("Audio only"); ?></label>
+                                <div class=" " style="display: none">
+                                    <label class="col-md-4 col-form-label"><?php echo __("Audio only"); ?></label>
                                     <div class="col-md-8 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-headphones"></i></span>
@@ -76,8 +76,8 @@ function isYoutubeDl() {
                                 </div>
 
                                 <!-- Button -->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label"></label>
+                                <div class=" ">
+                                    <label class="col-md-4 col-form-label"></label>
                                     <div class="col-md-8">
                                         <button type="submit" class="btn btn-primary" ><?php echo __("Download"); ?> <span class="glyphicon glyphicon-download"></span></button>
                                     </div>

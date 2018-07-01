@@ -10,11 +10,16 @@ require_once '../objects/functions.php';
     <head>
         <title>Install YouPHPTube</title>
         <link rel="icon" href="../view/img/favicon.png">
-        <link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        
+<link href="../view/css/material/css/material.css" rel="stylesheet" type="text/css"/>
+<link href="../view/css/font-awesome-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"/>
         <link href="../view/bootstrap/bootstrapSelectPicker/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
         <link href="../view/js/seetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <link href="../view/css/flagstrap/css/flags.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../view/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+
     </head>
 
     <body>
@@ -24,32 +29,32 @@ require_once '../objects/functions.php';
             ?>
             <div class="container">
                 <h3 class="alert alert-success">
-                    <span class="glyphicon glyphicon-ok-circle"></span>
+                    <span class="fas fa-check-circle"></span>
                     Your system is installed, remove the <code><?php echo $global['systemRootPath']; ?>install</code> directory to continue
                     <hr>
-                    <a href="<?php echo $global['webSiteRootURL']; ?>" class="btn btn-success btn-lg center-block">Go to the main page</a>
+                    <a href="<?php echo $global['webSiteRootURL']; ?>" class="btn btn-success btn-lg mx-auto.d-block">Go to the main page</a>
                 </h3>
             </div>
             <?php
         } else {
             ?>
             <div class="container">
-                <img src="../view/img/logo.png" alt="Logo" class="img img-responsive center-block"/>
+                <img src="../view/img/logo.png" alt="Logo" class="img img-fluid mx-auto.d-block"/>
                 <div class="row">
                     <div class="col-md-6">
-                        
+
                         <?php
                         if (isApache()) {
                             ?>
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-check"></span>
+                                <span class="fas fa-check-circle"></span>
                                 <strong><?php echo $_SERVER['SERVER_SOFTWARE']; ?> is Present</strong>
                             </div>
                             <?php
                         } else {
                             ?>
                             <div class="alert alert-danger">
-                                <span class="glyphicon glyphicon-unchecked"></span>
+                                <span class="fas fa-circle"></span>
                                 <strong>Your server is <?php echo $_SERVER['SERVER_SOFTWARE']; ?>, you must install Apache</strong>
                             </div>
                             <?php
@@ -61,7 +66,7 @@ require_once '../objects/functions.php';
                         if (isPHP("5.6")) {
                             ?>
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-check"></span>
+                                <span class="fas fa-check-circle"></span>
                                 <strong>PHP <?php echo PHP_VERSION; ?> is Present</strong>
                             </div>
                             <?php
@@ -70,7 +75,7 @@ require_once '../objects/functions.php';
                             <div class="alert alert-warning">
                                 <span class="glyphicon glyphicon-exclamation-sign"></span>
                                 <strong>Your PHP version is <?php echo PHP_VERSION; ?>, we recommend install PHP 5.6.x or greater</strong>
-                            </div>                  
+                            </div>
                             <?php
                         }
                         ?>
@@ -79,14 +84,14 @@ require_once '../objects/functions.php';
                         if (checkVideosDir()) {
                             ?>
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-check"></span>
+                                <span class="fas fa-check-circle"></span>
                                 <strong>Your videos directory is writable</strong>
                             </div>
                             <?php
                         } else {
                             ?>
                             <div class="alert alert-danger">
-                                <span class="glyphicon glyphicon-unchecked"></span>
+                                <span class="fas fa-circle"></span>
                                 <strong>Your videos directory must be writable</strong>
                                 <details>
                                     <?php
@@ -117,14 +122,14 @@ require_once '../objects/functions.php';
                         if (check_post_max_size()) {
                             ?>
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-check"></span>
+                                <span class="fas fa-check-circle"></span>
                                 <strong>Your post_max_size is <?php echo ini_get('post_max_size'); ?></strong>
                             </div>
                             <?php
                         } else {
                             ?>
                             <div class="alert alert-danger">
-                                <span class="glyphicon glyphicon-unchecked"></span>
+                                <span class="fas fa-circle"></span>
                                 <strong>Your post_max_size is <?php echo ini_get('post_max_size'); ?>, it must be at least 100M</strong>
 
                                 <details>
@@ -141,14 +146,14 @@ require_once '../objects/functions.php';
                         if (check_upload_max_filesize()) {
                             ?>
                             <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-check"></span>
+                                <span class="fas fa-check-circle"></span>
                                 <strong>Your upload_max_filesize is <?php echo ini_get('upload_max_filesize'); ?></strong>
                             </div>
                             <?php
                         } else {
                             ?>
                             <div class="alert alert-danger">
-                                <span class="glyphicon glyphicon-unchecked"></span>
+                                <span class="fas fa-circle"></span>
                                 <strong>Your upload_max_filesize is <?php echo ini_get('upload_max_filesize'); ?>, it must be at least 100M</strong>
 
                                 <details>
@@ -211,15 +216,21 @@ require_once '../objects/functions.php';
                             </div>
                             <div class="form-group">
                                 <label for="mainLanguage">Select the main Language</label>
+                                <script>
+                                    $(function () {
+                                        $("#navBarFlagInstall").flagStrap({
+                                            inputName: 'mainLanguage',
+                                            buttonType: "btn-default bg-light nav-item",
+                                        });
+                                    });
+                                </script>
+                                <style>
+                                  #navBarFlagInstall ul {
+                                    background-color: white;
+                                  }
+                                </style>
+                                <div id="navBarFlagInstall" class="dropdown bg-light" data-background-color="white" data-input-name="country" data-selected-country="us"></div>
 
-                                <select class="selectpicker" data-width="fit" id="mainLanguage">
-                                    <option data-content='<span class="flag-icon flag-icon-us"></span> English' value="en">English</option>
-                                    <option  data-content='<span class="flag-icon flag-icon-es"></span> Spanish' value="es">Spanish</option>
-                                    <option  data-content='<span class="flag-icon flag-icon-de"></span> German' value="de">German</option>
-                                    <option  data-content='<span class="flag-icon flag-icon-tr"></span> Turkish' value="tr">Turkish</option>
-                                    <option  data-content='<span class="flag-icon flag-icon-fr"></span> French' value="fr">French</option>
-                                    <option  data-content='<span class="flag-icon flag-icon-br"></span> Brazilian Portuguese' value="pt_BR">Brazilian Portuguese</option>
-                                </select>
                             </div>
 
                             <div class="form-group">
@@ -238,7 +249,8 @@ require_once '../objects/functions.php';
 
             </div>
         <?php } ?>
-        <script src="../view/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../view/bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
+        <script src="../view/css/material/js/material.js" type="text/javascript"></script>
         <script src="../view/css/flagstrap/js/jquery.flagstrap.min.js" type="text/javascript"></script>
         <script src="../view/bootstrap/bootstrapSelectPicker/js/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="../view/js/seetalert/sweetalert.min.js" type="text/javascript"></script>

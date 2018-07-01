@@ -11,7 +11,7 @@ $canSendMessage = $p->canSendMessage();
 </div>
 <div style="display: none" id="chatOnline">
     <div class="panel panel-default liveChat">
-        <div class="panel-heading"><i class="fa fa-comments-o"></i> <?php echo __("Live Chat"); ?> <button class="btn btn-xs btn-default pull-right" id="collapseBtn"><i class="fa fa-minus-square"></i></button></div>
+        <div class="panel-heading"><i class="fa fa-comments-o"></i> <?php echo __("Live Chat"); ?> <button class="btn btn-xs btn-default float-right" id="collapseBtn"><i class="fa fa-minus-square"></i></button></div>
         <div class="colapsibleArea">
             <div class="panel-body">
                 <ul class="messages"></ul>
@@ -40,11 +40,11 @@ $canSendMessage = $p->canSendMessage();
 
     <div class="message_template">
         <li class="message">
-            <div class="text_wrapper alert alert-info pull-left">
-                <div class="name label label-info"><?php echo User::getNameIdentification(); ?></div>
+            <div class="text_wrapper alert alert-info float-left">
+                <div class="name badge badge-info"><?php echo User::getNameIdentification(); ?></div>
                 <div class="text"></div>
             </div>
-            <div class="avatar pull-right"><img src="<?php echo User::getPhoto(); ?>" class="img-responsive img-circle photo"></div>
+            <div class="avatar float-right"><img src="<?php echo User::getPhoto(); ?>" class="img-fluid rounded-circle photo"></div>
         </li>
     </div>
 </div>

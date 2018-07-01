@@ -69,13 +69,13 @@ $obj = YouPHPTubePlugin::getObjectDataIfEnabled("YPTWallet");
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="form-group">
+                                        <div class=" ">
                                             <label for="value"><?php echo __("Transfer Funds"); ?> <?php echo $obj->currency_symbol; ?> <?php echo $obj->currency; ?></label>
                                             <input type="number" name="value" id="value" placeholder="<?php echo __("Total Amount"); ?>">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="form-group">
+                                        <div class=" ">
                                             <label for="users_name"><i class="fa fa-user"></i> <?php echo __("Transfer Funds to"); ?></label>
                                             <input type="text" id="users_name" placeholder="<?php echo __("Username or Email"); ?>">
                                             <input type="hidden" name="users_id" id="users_id">
@@ -110,8 +110,8 @@ $obj = YouPHPTubePlugin::getObjectDataIfEnabled("YPTWallet");
 
         <div class="hidden" id="model">
             <div style="background-image: url('{background}'); background-size: cover; height: 50px; width: 100%;" >
-                <img src="{photo}" class="pull-left img img-responsive img-circle" style="max-height: 40px;">
-                <div class="pull-left">
+                <img src="{photo}" class="float-left img img-fluid rounded-circle" style="max-height: 40px;">
+                <div class="float-left">
                     {identification}
                 </div>
             </div>

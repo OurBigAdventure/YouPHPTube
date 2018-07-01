@@ -23,7 +23,7 @@ function createGallery($title, $sort, $rowCount, $getName, $mostWord, $lessWord,
     <div class="clear clearfix">
         <h3 class="galleryTitle">
             <a class="btn-default" href="<?php echo $global['webSiteRootURL']; ?>?showOnly=<?php echo $getName; ?>">
-                <i class="glyphicon glyphicon-list-alt"></i>
+                <i class="fa fa-list-alt"></i>
                 <?php
                 if (empty($_GET[$getName])) {
                     $_GET[$getName] = $defaultSort;
@@ -85,7 +85,7 @@ function createOrderInfo($getName, $mostWord, $lessWord, $orderString) {
             $tmpOrderString .= $getName . "=ASC";
         }
 
-        $upDown = "<span class='glyphicon glyphicon-arrow-up' >" . __("Up") . "</span>";
+        $upDown = "<span class='fa fa-arrow-up' >" . __("Up") . "</span>";
         $mostLess = $mostWord;
     } else {
         if (strpos($orderString, $getName . "=ASC")) {
@@ -94,7 +94,7 @@ function createOrderInfo($getName, $mostWord, $lessWord, $orderString) {
             $tmpOrderString .= $getName . "=DESC";
         }
 
-        $upDown = "<span class='glyphicon glyphicon-arrow-down'>" . __("Down") . "</span>";
+        $upDown = "<span class='fa fa-arrow-down'>" . __("Down") . "</span>";
         $mostLess = $lessWord;
     }
 
@@ -127,9 +127,9 @@ function createGallerySection($videos) {
                 $poster = $images->thumbsJpg;
                 ?>
                 <div class="aspectRatio16_9">
-                    <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $poster; ?>" alt="<?php echo $value['title']; ?>" class="thumbsJPG img img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>  <?php echo ($poster != $images->thumbsJpgSmall) ? "blur" : ""; ?>" id="thumbsJPG<?php echo $value['id']; ?>" />
+                    <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $poster; ?>" alt="<?php echo $value['title']; ?>" class="thumbsJPG img img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>  <?php echo ($poster != $images->thumbsJpgSmall) ? "blur" : ""; ?>" id="thumbsJPG<?php echo $value['id']; ?>" />
                     <?php if (!empty($imgGif)) { ?>
-                        <img src="<?php echo $global['webSiteRootURL']; ?>img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
+                        <img src="<?php echo $global['webSiteRootURL']; ?>img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
                     <?php } ?>
                 </div>
                 <span class="duration"><?php echo Video::getCleanDuration($value['duration']); ?></span>
@@ -141,7 +141,7 @@ function createGallerySection($videos) {
             <div class="text-muted galeryDetails">
                 <div>
                     <?php if (empty($_GET['catName'])) { ?>
-                        <a class="label label-default" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $value['clean_category']; ?>/">
+                        <a class="badge badge-primary" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $value['clean_category']; ?>/">
                             <?php
                             if (!empty($value['iconClass'])) {
                                 ?>
@@ -158,7 +158,7 @@ function createGallerySection($videos) {
                         foreach ($value['tags'] as $value2) {
                             if ($value2->label === __("Group")) {
                                 ?>
-                                <span class="label label-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
+                                <span class="badge badge-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
                                 <?php
                             }
                         }
@@ -181,7 +181,7 @@ function createGallerySection($videos) {
                         <?php echo $name; ?>
                     </a>
                     <?php if ((!empty($value['description'])) && !empty($obj->Description)) { ?>
-                        <button type="button" data-trigger="focus" class="label label-danger" data-toggle="popover" data-placement="top" data-html="true" title="<?php echo $value['title']; ?>" data-content="<div> <?php echo str_replace('"', '&quot;', nl2br(textToLink($value['description']))); ?> </div>" ><?php echo __("Description"); ?></button>
+                        <button type="button" data-trigger="focus" class="badge badge-danger" data-toggle="popover" data-placement="top" data-html="true" title="<?php echo $value['title']; ?>" data-content="<div> <?php echo str_replace('"', '&quot;', nl2br(textToLink($value['description']))); ?> </div>" ><?php echo __("Description"); ?></button>
                     <?php } ?>
                 </div>
                 <?php if (Video::canEdit($value['id'])) { ?>
@@ -203,7 +203,7 @@ function createGallerySection($videos) {
                         }
                     }
                     ?>
-                    <div><a class="label label-default " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'] . $ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></div>
+                    <div><a class="badge badge-primary " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $value['filename'] . $ext; ?>" download="<?php echo $value['title'] . $ext; ?>"><?php echo __("Download"); ?></a></div>
                 <?php } ?>
 
             </div>
@@ -229,13 +229,13 @@ function createChannelItem($users_id, $photoURL = "", $identification = "", $row
         <h3 class="galleryTitle">
             <img src="<?php
             echo $photoURL;
-            ?>" class="img img-circle img-responsive pull-left" style="max-height: 20px;">
+            ?>" class="img rounded-circle img-fluid float-left" style="max-height: 20px;">
             <span style="margin: 0 5px;">
                 <?php
                 echo $identification;
                 ?>
             </span>
-            <a class="btn btn-xs btn-default" href="<?php echo User::getChannelLink($users_id); ?>" style="margin: 0 10px;">
+            <a class="btn-xs btn-default" href="<?php echo User::getChannelLink($users_id); ?>" style="margin: 0 10px;">
                 <i class="fas fa-external-link-alt"></i>
             </a>
             <?php

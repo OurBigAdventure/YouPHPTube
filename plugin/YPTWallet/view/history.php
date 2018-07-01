@@ -31,12 +31,12 @@ if (!empty($_GET['users_id'])) {
         <div class="container">
             <div class="panel panel-default">
                 <div class="panel-heading"  style="height: 70px;">
-                    <img src="<?php echo User::getPhoto($users_id); ?>" class="img img-responsive img-circle pull-left" style="height: 50px; margin-right: 10px;">
+                    <img src="<?php echo User::getPhoto($users_id); ?>" class="img img-fluid rounded-circle float-left" style="height: 50px; margin-right: 10px;">
                     <h1><?php echo User::getNameIdentificationById($users_id); ?></h1>
                 </div>
                 <div class="panel-body">
                     <div class="row bgWhite list-group-item">
-                        <table id="grid" class="table table-condensed table-hover table-striped">
+                        <table id="grid" class="table table-sm table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th data-column-id="valueText"  data-width="150px"><?php echo __("Value"); ?></th>
@@ -72,19 +72,19 @@ if (!empty($_GET['users_id'])) {
                                     "status": function (column, row) {
                                         var status = "";
                                         if (row.type == "<?php echo YPTWallet::MANUAL_ADD; ?>" || row.type == "<?php echo YPTWallet::MANUAL_WITHDRAW; ?>") {
-                                            status = "<span class='label label-success'>Success</span>";
+                                            status = "<span class='badge badge-success'>Success</span>";
                                             if (row.status == 'pending') {
-                                                status = "<span class='label label-warning'>Pending</span>";
+                                                status = "<span class='badge badge-warning'>Pending</span>";
                                             } else if (row.status == 'canceled') {
-                                                status = "<span class='label label-danger'>Canceled</span>";
+                                                status = "<span class='badge badge-danger'>Canceled</span>";
                                             }
 <?php
 if (User::isAdmin()) {
     ?>
 
-                                                status += "<br><br><div class=\"btn-group\"><button class='btn btn-default btn-xs command-status-success'>Success</button>";
-                                                status += "<button class='btn btn-default btn-xs command-status-pending'>Pending</button>";
-                                                status += "<button class='btn btn-default btn-xs command-status-canceled'>Canceled</button><div>";
+                                                status += "<br><br><div class=\"btn-group\"><button class='btn-default btn-xs command-status-success'>Success</button>";
+                                                status += "<button class='btn-default btn-xs command-status-pending'>Pending</button>";
+                                                status += "<button class='btn-default btn-xs command-status-canceled'>Canceled</button><div>";
 
     <?php
 }

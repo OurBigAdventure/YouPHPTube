@@ -152,24 +152,24 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
 
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top:10px;">
                     <?php
         include $global['systemRootPath'] . 'view/include/updateCheck.php';
         ?>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#menu0"><i class="fa fa-plug"></i> Installed Plugins</a></li>
-                <li><a data-toggle="tab" href="#menu1"><i class="fa fa-cart-plus"></i> Plugins Store</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu0"><i class="fa fa-plug"></i> Installed Plugins</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1"><i class="fa fa-cart-plus"></i> Plugins Store</a></li>
             </ul>
 
             <div class="tab-content">
-                <div id="menu0" class="tab-pane fade in active">
+                <div id="menu0" class="tab-pane fade show active">
                     <div class="list-group-item">
                         <div class="btn-group" >
                             <button type="button" class="btn btn-default" id="upload">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
+                                <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
                             </button>
                         </div>
-                        <table id="grid" class="table table-condensed table-hover table-striped">
+                        <table id="grid" class="table table-sm table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th data-column-id="name" data-formatter="name" data-width="300px" ><?php echo __("Name"); ?></th>
@@ -178,7 +178,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                 </tr>
                             </thead>
                         </table>
-                        <div id="pluginsFormModal" class="modal fade" tabindex="-1" role="dialog">
+                        <div id="pluginsFormModal" class="modal" tabindex="-1" role="dialog">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -187,15 +187,15 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                     </div>
                                     <div class="modal-body">
                                         <ul class="nav nav-tabs">
-                                            <li class="active"><a data-toggle="tab" href="#visual">Visual</a></li>
-                                            <li><a data-toggle="tab" href="#code">Code</a></li>
+                                            <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#visual">Visual</a></li>
+                                            <li class="nav-item" ><a class="nav-link" data-toggle="tab" href="#code">Code</a></li>
                                         </ul>
                                         <div class="tab-content">
-                                            <div id="visual" class="tab-pane fade in active">
+                                            <div id="visual" class="tab-pane fade show active">
                                                 <div class="row" id="jsonElements" style="padding: 10px;">Some content.</div>
                                             </div>
                                             <div id="code" class="tab-pane fade">
-                                                <form class="form-compact"  id="updatePluginForm" onsubmit="">
+                                                <form class="form-group"  id="updatePluginForm" onsubmit="">
                                                     <input type="hidden" id="inputPluginId"  >
                                                     <label for="inputData" class="sr-only">Object Data</label>
                                                     <textarea class="form-control" id="inputData"  rows="5"  placeholder="Object Data"></textarea>
@@ -250,7 +250,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                 <div id="menu1" class="tab-pane fade">
                     <div class="list-group-item">
                         <div class="panel panel-default">
-                            <div class="panel-heading"><a href="https://easytube.club/signUp" class="btn btn-default btn-xs"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
+                            <div class="panel-heading"><a href="https://easytube.club/signUp" class="btn-default btn-xs"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
                             <div class="panel-body">
                                 <ul class="list-group" id="pluginStoreList">
                                 </ul>
@@ -261,7 +261,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
             </div>
 
 
-            <li class="list-group-item hidden col-md-3" id="pluginStoreListModel">
+            <li class="list-group-item d-none col-md-3" id="pluginStoreListModel">
 
                 <div class="panel panel-warning panel-sm">
                     <div class="panel-heading">
@@ -276,7 +276,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                         <table class="table">
                             <tr >
                                 <td>
-                                    <img src="" class="img img-responsive img-rounded img-thumbnail zoom" style="height: 70px;">
+                                    <img src="" class="img img-fluid img-rounded img-thumbnail zoom" style="height: 70px;">
                                 </td>
                             </tr>
                             <tr class="active">
@@ -285,7 +285,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                         </table>
                     </div>
                     <div class="panel-footer">
-                        <a href="https://easytube.club/signUp" class="btn btn-success btn-xs" role="button"><i class="fa fa-cart-plus"></i> <?php echo __("Buy This Plugin"); ?> </a>
+                        <a href="https://easytube.club/signUp" class="btn-success btn-xs" role="button"><i class="fa fa-cart-plus"></i> <?php echo __("Buy This Plugin"); ?> </a>
                     </div>
                 </div>
             </li>
@@ -303,7 +303,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                     var label;
                     var input;
                     if (typeof (val) === "object") {// checkbox
-                        div = $('<div />', {"class": 'form-group'});
+                        div = $('<div />', {"class": ' '});
                         label = $('<label />', {"text": i + ": "});
                         if(val.type === 'textarea'){
                             input = $('<textarea />', {"class": 'form-control jsonElement', "name": i, "pluginType":"object"});
@@ -315,14 +315,14 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                         div.append(label);
                         div.append(input);
                     } else if (typeof (val) === "boolean") {// checkbox
-                        div = $('<div />', {"class": 'form-group'});
+                        div = $('<div />', {"class": ' '});
                         label = $('<label />', {"class": "checkbox-inline"});
                         input = $('<input />', {"class": 'jsonElement', "type": 'checkbox', "name": i, "value": 1, "checked": val});
                         label.append(input);
                         label.append(" " + i);
                         div.append(label);
                     } else {
-                        div = $('<div />', {"class": 'form-group'});
+                        div = $('<div />', {"class": ' '});
                         label = $('<label />', {"text": i + ": "});
                         input = $('<input />', {"class": 'form-control jsonElement', "name": i, "type": 'text', "value": val});
                         div.append(label);
@@ -389,11 +389,11 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                             var editBtn = '';
 
                             if (row.id && !$.isEmptyObject(row.data_object)) {
-                                editBtn = '<button type="button" class="btn btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit parameters</button>';
+                                editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span> Edit parameters</button>';
                             }
                             var sqlBtn = '';
                             if (row.databaseScript) {
-                                sqlBtn = '<button type="button" class="btn btn-xs btn-default command-sql" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Run Database Script"><span class="fa fa-database" aria-hidden="true"></span> Install tables</button>';
+                                sqlBtn = '<button type="button" class="btn-xs btn-default command-sql" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Run Database Script"><span class="fa fa-database" aria-hidden="true"></span> Install tables</button>';
                             }
                             menu = '';
                             if(row.installedPlugin && row.installedPlugin.status == 'active'){
@@ -406,7 +406,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                             if (row.enabled) {
                                 checked = " checked='checked' ";
                             }
-                            var switchBtn = '<div class="material-switch"><input name="enable' + row.uuid + '" id="enable' + row.uuid + '" type="checkbox" value="0" class="pluginSwitch" ' + checked + ' /><label for="enable' + row.uuid + '" class="label-success"></label></div>';
+                            var switchBtn = '<div class="material-switch"><input name="enable' + row.uuid + '" id="enable' + row.uuid + '" type="checkbox" value="0" class="pluginSwitch" ' + checked + ' /><label for="enable' + row.uuid + '" class="badge-success"></label></div>';
                             var tags = '';
                             if (row.tags) {
                                 for (i = 0; i < row.tags.length; i++) {
@@ -419,7 +419,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                         cl = 'info';
                                     }
 
-                                    tags += '<span class="label label-' + cl + '">' + row.tags[i] + '</span> ';
+                                    tags += '<span class="badge badge-' + cl + '">' + row.tags[i] + '</span> ';
                                 }
                             }
 

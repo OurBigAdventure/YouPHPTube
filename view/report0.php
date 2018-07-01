@@ -1,8 +1,8 @@
 
 <div class="row dashboard">
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="panel panel-blue">
-            <div class="panel-heading">
+        <div class="card bg-secondary">
+            <div class="card-heading">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-play-circle fa-5x"></i>
@@ -14,17 +14,17 @@
                 </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="card-footer">
+                    <span class="text-primary float-left"><?php echo __("View Details"); ?></span>
+                    <span class="text-primary float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
         </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card bg-primary">
+            <div class="card-heading">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-eye fa-5x"></i>
@@ -36,17 +36,17 @@
                 </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="card-footer">
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
         </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="panel panel-purple">
-            <div class="panel-heading">
+        <div class="card bg-info">
+            <div class="card-heading">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-users fa-5x"></i>
@@ -58,17 +58,17 @@
                 </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>users">
-                <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="card-footer">
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
         </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="panel panel-wine">
-            <div class="panel-heading">
+        <div class="card bg-warning">
+            <div class="card-heading">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-user-plus fa-5x"></i>
@@ -80,9 +80,9 @@
                 </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>subscribes">
-                <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="card-footer">
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -91,8 +91,8 @@
 
 
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="panel panel-red">
-            <div class="panel-heading">
+        <div class="card bg-warning">
+            <div class="card-heading">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-comments fa-5x"></i>
@@ -104,20 +104,20 @@
                 </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>comments">
-                <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="card-footer">
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
         </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="panel panel-orange">
-            <div class="panel-heading">
+        <div class="card bg-danger">
+            <div class="card-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-thumbs-o-up fa-5x"></i>
+                        <i class="fas fa-thumbs-up fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="huge loading" id="totalVideosLikes">0</div>
@@ -126,20 +126,20 @@
                 </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="card-footer">
+                    <span class="text-primary float-left"><?php echo __("View Details"); ?></span>
+                    <span class="text-primary float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
         </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="panel panel-yellow">
-            <div class="panel-heading">
+        <div class="card bg-light">
+            <div class="card-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-thumbs-o-down fa-5x"></i>
+                        <i class="fas fa-thumbs-down fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="huge loading" id="totalVideosDislikes">0</div>
@@ -148,20 +148,20 @@
                 </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="card-footer">
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
         </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="panel panel-green">
-            <div class="panel-heading">
+        <div class="card bg-success">
+            <div class="card-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-clock-o fa-5x"></i>
+                        <i class="fas fa-clock fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="huge loading" id="totalDurationVideos">0</div>
@@ -170,9 +170,9 @@
                 </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="panel-footer">
-                    <span class="pull-left"><?php echo __("View Details"); ?></span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="card-footer">
+                    <span class="float-left"><?php echo __("View Details"); ?></span>
+                    <span class="float-right"><i class="fas fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
             </a>
@@ -182,15 +182,16 @@
 <nav class="navbar navbar-default nav-chart">
     <div class="container-fluid">
         <div class="btn-group">
-            <button class="btn btn-primary navbar-btn active" id="btnAll" ><?php echo __("Total Views"); ?></button>
-            <button class="btn btn-warning navbar-btn" id="btnToday"><?php echo __("Today Views"); ?></button>
-            <button class="btn btn-default navbar-btn" id="btn7"><?php echo __("Last 7 Days"); ?></button>
-            <button class="btn btn-default navbar-btn" id="btn30" ><?php echo __("Last 30 Days"); ?></button>
+            <button class="btn btn-primary nav-item active" id="btnAll" ><?php echo __("Total Views"); ?></button>
+            <button class="btn btn-warning nav-item" id="btnToday"><?php echo __("Today Views"); ?></button>
+            <button class="btn btn-default nav-item" id="btn7"><?php echo __("Last 7 Days"); ?></button>
+            <button class="btn btn-default nav-item" id="btn30" ><?php echo __("Last 30 Days"); ?></button>
             <!--
-            <button class="btn btn-default navbar-btn" id="btnUnique" ><?php echo __("Unique Users"); ?></button>
+            <button class="btn btn-default nav-item" id="btnUnique" ><?php echo __("Unique Users"); ?></button>
             --></div>
     </div>
 </nav>
+<div class="row">
 <div class="col-md-3">
 
     <div class="panel panel-default">
@@ -250,6 +251,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <script>
 

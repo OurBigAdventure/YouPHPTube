@@ -30,7 +30,7 @@ $u = new User($t['users_id']);
 $user_id = $u->getBdId();
 $subscribe = Subscribe::getButton($user_id);
 $name = $u->getNameIdentificationBd();
-$video['creator'] = '<div class="pull-left"><img src="' . User::getPhoto($user_id) . '" alt="" class="img img-responsive img-circle" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName text-muted"><strong>' . $name . '</strong><br>' . $subscribe . '</div></div>';
+$video['creator'] = '<div class="float-left"><img src="' . User::getPhoto($user_id) . '" alt="" class="img img-fluid rounded-circle" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName text-muted"><strong>' . $name . '</strong><br>' . $subscribe . '</div></div>';
 
 $img = "{$global['webSiteRootURL']}plugin/LiveLinks/getImage.php?link={$_GET['link']}&format=jpg";
 $imgw = 640;

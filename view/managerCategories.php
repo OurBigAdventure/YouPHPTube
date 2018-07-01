@@ -24,10 +24,10 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
         <div class="container">
         <?php include $global['systemRootPath'] . 'view/include/updateCheck.php'; ?>
             <button type="button" class="btn btn-default" id="addCategoryBtn">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <?php echo __("New Category"); ?>
+                <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("New Category"); ?>
             </button>
 
-            <table id="grid" class="table table-condensed table-hover table-striped">
+            <table id="grid" class="table table-sm table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-column-id="id" data-type="numeric" data-identifier="true"><?php echo __("ID"); ?></th>
@@ -114,12 +114,12 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                         $("#inputParentId").html(tmpHtml);
                     });
                 }
-                
+
                 $('#categoryFormModal').on('hidden.bs.modal', function () {
-                    // when modal is closed in any way, get the new list - show old entry again (hidden by edit) + if a name was changed, it's corrected with this reload. 
+                    // when modal is closed in any way, get the new list - show old entry again (hidden by edit) + if a name was changed, it's corrected with this reload.
                     refreshSubCategoryList();
                 })
-                
+
                 refreshSubCategoryList();
 
                 var grid = $("#grid").bootgrid({
@@ -143,7 +143,7 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                         },
                         "parentId": function(column, row){
                             //if(fullCatList==undefined){
-                               // refreshSubCategoryList();    
+                               // refreshSubCategoryList();
                             // }
                             if(fullCatList!=undefined){
                                 var returnValue;
@@ -162,7 +162,7 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                                 }
                             }
                             return <?php __("Not loaded yet"); ?>;
-                            
+
                         },
                         "type": function(column, row){
                             if(row.type=='3'){
@@ -179,8 +179,8 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                         },
                         "commands": function (column, row)
                         {
-                            var editBtn = '<button type="button" class="btn btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo __("Edit"); ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>'
-                            var deleteBtn = '<button type="button" class="btn btn-default btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="<?php echo __("Delete"); ?>"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span></button>';
+                            var editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo __("Edit"); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                            var deleteBtn = '<button type="button" class="btn-default btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="<?php echo __("Delete"); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
                             return editBtn + deleteBtn;
                         }
                     }

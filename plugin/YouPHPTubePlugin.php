@@ -24,7 +24,7 @@ class YouPHPTubePlugin {
           if (is_object($p)) {
               $checkStr = $p->getChartContent();
               if(!empty($checkStr)){
-                $str .= '<li><a data-toggle="tab" id="pluginMenuLink'.$p->getName().'" href="#pluginMenu'.$p->getName().'">'.$p->getName().'</a></li>';
+                $str .= '<li class="nav-item"><a class="nav-link" data-toggle="tab" id="pluginMenuLink'.$p->getName().'" href="#pluginMenu'.$p->getName().'">'.$p->getName().'</a></li>';
               }
           }
       }
@@ -86,7 +86,7 @@ class YouPHPTubePlugin {
         }
         return $str;
     }
-    
+
     public static function getFooterCode() {
         $plugins = Plugin::getAllEnabled();
         $str = "";
@@ -98,7 +98,7 @@ class YouPHPTubePlugin {
         }
         return $str;
     }
-    
+
     public static function getJSFiles() {
         $plugins = Plugin::getAllEnabled();
         $allFiles = array();
@@ -110,7 +110,7 @@ class YouPHPTubePlugin {
         }
         return $allFiles;
     }
-    
+
     public static function getCSSFiles() {
         $plugins = Plugin::getAllEnabled();
         $allFiles = array();
@@ -348,7 +348,7 @@ class YouPHPTubePlugin {
             }
         }
     }
-    
+
     public static function afterNewVideo($videos_id) {
         $plugins = Plugin::getAllEnabled();
         foreach ($plugins as $value) {
@@ -394,7 +394,7 @@ class YouPHPTubePlugin {
             }
         }
     }
-    
+
     public static function getLiveApplicationArray(){
         $plugins = Plugin::getAllEnabled();
         $array = array();
@@ -415,11 +415,11 @@ class YouPHPTubePlugin {
         $str = "";
         foreach ($plugins as $value) {
             $p = static::loadPlugin($value['dirName']);
-            if (is_object($p)) {  
-                $str.=$p->getPlayListButtons($playlist_id); 
+            if (is_object($p)) {
+                $str.=$p->getPlayListButtons($playlist_id);
             }
         }
         return $str;
-    } 
+    }
 
 }

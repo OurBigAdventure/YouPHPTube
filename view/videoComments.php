@@ -22,7 +22,7 @@ if (User::canSeeCommentTextarea()) {
                 <a class="input-group-addon btn btn-success" href="<?php echo $global['webSiteRootURL']; ?>user"><span class="glyphicon glyphicon-log-in"></span> <?php echo __("You must login to be able to comment on videos"); ?></a>
             <?php } ?>
         </div>
-        <div class="pull-right" id="count_message"></div>
+        <div class="float-right" id="count_message"></div>
         <script>
             $(document).ready(function () {
                 var text_max = <?php echo empty($advancedCustom->commentsMaxLength)?"200":$advancedCustom->commentsMaxLength ?>;
@@ -38,36 +38,36 @@ if (User::canSeeCommentTextarea()) {
     }
     ?>
     <div class="replySet hidden" id="replyTemplate" comments_id="0">
-        <div>        
+        <div>
             <?php
             if (User::canComment()) {
                 ?>
-                <button class="btn btn-default no-outline reply btn-xs"> 
+                <button class="btn-default no-outline reply btn-xs">
                     <?php echo __("Reply"); ?>
                 </button>
                 <?php
             }
             ?>
-            <button class="btn btn-default no-outline btn-xs replyLikeBtn"> 
+            <button class="btn-default no-outline btn-xs replyLikeBtn">
                 <span class="fa fa-thumbs-up"></span>
                 <small>0</small>
-            </button> 
-            <button class="btn btn-default no-outline btn-xs replyDislikeBtn"> 
+            </button>
+            <button class="btn-default no-outline btn-xs replyDislikeBtn">
                 <span class="fa fa-thumbs-down"></span>
                 <small>0</small>
-            </button>           
-            <button class="btn btn-default no-outline allReplies btn-xs viewAllReplies">  
+            </button>
+            <button class="btn-default no-outline allReplies btn-xs viewAllReplies">
                 <?php echo __("View all replies"); ?> (<span class="total_replies">0</span>) <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </button> 
-            <button class="btn btn-default no-outline allReplies btn-xs hideAllReplies" style="display: none"> 
+            </button>
+            <button class="btn-default no-outline allReplies btn-xs hideAllReplies" style="display: none">
                 <?php echo __("Hide Replies"); ?> <i class="fa fa-chevron-up" aria-hidden="true"></i>
-            </button> 
-            <button class="btn btn-default no-outline btn-xs pull-right delete userCanAdminComment"> 
+            </button>
+            <button class="btn-default no-outline btn-xs float-right delete userCanAdminComment">
                 <i class="fa fa-trash" aria-hidden="true"></i>
-            </button> 
-            <button class="btn btn-default no-outline btn-xs pull-right edit userCanAdminComment"> 
+            </button>
+            <button class="btn-default no-outline btn-xs float-right edit userCanAdminComment">
                 <i class="fas fa-edit" aria-hidden="true"></i>
-            </button> 
+            </button>
         </div>
         <div style="padding-left: 50px;">
             <div class="input-group formRepy" style="display: none;">
@@ -78,7 +78,7 @@ if (User::canSeeCommentTextarea()) {
                 </span>
             </div>
             <div class="replyGrid" style="display: none;">
-                <table class="table table-condensed table-hover table-striped nowrapCell grid">
+                <table class="table table-sm table-hover table-striped nowrapCell grid">
                     <thead>
                         <tr>
                             <th data-column-id="comment"  data-formatter="commands" ><?php echo __("Comment"); ?></th>
@@ -89,7 +89,7 @@ if (User::canSeeCommentTextarea()) {
         </div>
     </div>
     <h4><?php echo __("Comments"); ?>:</h4>
-    <table id="grid" class="table table-condensed table-hover table-striped nowrapCell">
+    <table id="grid" class="table table-sm table-hover table-striped nowrapCell">
         <thead>
             <tr>
                 <?php
@@ -111,7 +111,7 @@ if (User::canSeeCommentTextarea()) {
                 </div>
                 <div class="modal-body">
                     <input type="hidden" value="" id="inputEditCommentId"/>
-                    <textarea id="inputEditComment" class="form-control" placeholder="<?php echo __("Comment"); ?>" required></textarea>                                
+                    <textarea id="inputEditComment" class="form-control" placeholder="<?php echo __("Comment"); ?>" required></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>
@@ -148,7 +148,7 @@ if (User::canSeeCommentTextarea()) {
                                 "video": function (column, row) {
                                     var image;
                                     if (row.video) {
-                                        image = '<img src="' + row.poster.thumbsJpg + '" class="img img-thumbnail img-responsive"><br><a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.video.clean_title + '" class="btn btn-default btn-xs">' + row.video.title + '</a>';
+                                        image = '<img src="' + row.poster.thumbsJpg + '" class="img img-thumbnail img-fluid"><br><a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.video.clean_title + '" class="btn btn-default btn-xs">' + row.video.title + '</a>';
                                     } else {
                                         image = 'Not found';
                                     }

@@ -45,7 +45,7 @@ function rrmdir($dir) {
                 if (!empty($updateFiles)) {
                     ?>
                     <div class="alert alert-warning">
-                        <form method="post" class="form-compact well form-horizontal" >
+                        <form method="post" class="form-compact well " >
                             <fieldset>
                                 <legend><?php echo __("Update YouPHPTube System"); ?></legend>
                                 <label for="updateFile" class="sr-only"><?php echo __("Select the update"); ?></label>
@@ -58,7 +58,7 @@ function rrmdir($dir) {
                                 </select>
                                 <?php printf(__("We detected a total of %s pending updates, if you want to do it now click (Update Now) button"), "<strong class='badge'>" . count($updateFiles) . "</strong>"); ?>
                                 <hr>
-                                <button type="submit" class="btn btn-warning btn-lg center-block " href="?update=1" > <span class="glyphicon glyphicon-refresh"></span> <?php echo __("Update Now"); ?> </button>
+                                <button type="submit" class="btn btn-warning btn-lg mx-auto.d-block " href="?update=1" > <span class="glyphicon glyphicon-refresh"></span> <?php echo __("Update Now"); ?> </button>
                             </fieldset>
                         </form>
                     </div>

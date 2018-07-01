@@ -34,12 +34,12 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
             <div class="row">
                 <div class="col-xs-1 col-sm-1 col-lg-2"></div>
                 <div class="col-xs-10 col-sm-10 col-lg-8">
-                    <form class="form-compact well form-horizontal"  id="updateUserForm" onsubmit="">
+                    <form class="form-compact well "  id="updateUserForm" onsubmit="">
                         <fieldset>
                             <legend><?php echo __("Sign Up"); ?></legend>
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
+                            <div class=" ">
+                                <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -48,8 +48,8 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
+                            <div class=" ">
+                                <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -58,8 +58,8 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
+                            <div class=" ">
+                                <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -68,8 +68,8 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"><?php echo __("New Password"); ?></label>
+                            <div class=" ">
+                                <label class="col-md-4 col-form-label"><?php echo __("New Password"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -78,8 +78,8 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"><?php echo __("Confirm New Password"); ?></label>
+                            <div class=" ">
+                                <label class="col-md-4 col-form-label"><?php echo __("Confirm New Password"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -94,12 +94,12 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             }
                             ?>
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
+                            <div class=" ">
+                                <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                        <span class="input-group-addon"><span class="btn btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
+                                        <span class="input-group-addon"><span class="btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
                                         <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
                                     </div>
                                 </div>
@@ -107,8 +107,8 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
 
 
                             <!-- Button -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"></label>
+                            <div class=" ">
+                                <label class="col-md-4 col-form-label"></label>
                                 <div class="col-md-8">
                                     <button type="submit" class="btn btn-primary" ><?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>
                                 </div>

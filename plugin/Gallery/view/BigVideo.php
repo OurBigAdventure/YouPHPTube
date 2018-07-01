@@ -12,9 +12,9 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                     $poster = $images->poster;
                     ?>
                     <div class="aspectRatio16_9">
-                        <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $poster; ?>" alt="<?php echo $video['title']; ?>" class="thumbsJPG img img-responsive <?php echo ($poster!=$images->thumbsJpgSmall)?"blur":""; ?>" style="height: auto; width: 100%;" id="thumbsJPG<?php echo $video['id']; ?>" />
+                        <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $poster; ?>" alt="<?php echo $video['title']; ?>" class="thumbsJPG img img-fluid <?php echo ($poster!=$images->thumbsJpgSmall)?"blur":""; ?>" style="height: auto; width: 100%;" id="thumbsJPG<?php echo $video['id']; ?>" />
                         <?php if (!empty($imgGif)) { ?>
-                            <img src="<?php echo $global['webSiteRootURL']; ?>view/img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $video['title']; ?>" id="thumbsGIF<?php echo $video['id']; ?>" class="thumbsGIF img-responsive <?php echo @$img_portrait; ?>  rotate<?php echo $video['rotation']; ?>" height="130" />
+                            <img src="<?php echo $global['webSiteRootURL']; ?>view/img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $video['title']; ?>" id="thumbsGIF<?php echo $video['id']; ?>" class="thumbsGIF img-fluid <?php echo @$img_portrait; ?>  rotate<?php echo $video['rotation']; ?>" height="130" />
     <?php } ?>
                     </div>
                     <span class="duration"><?php echo Video::getCleanDuration($video['duration']); ?></span>
@@ -30,7 +30,7 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                 <div class="text-muted galeryDetails">
                     <div>
                             <?php if (empty($_GET['catName'])) { ?>
-                            <a class="label label-default" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>/">
+                            <a class="badge badge-primary" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>/">
                                 <?php
                                 if (!empty($video['iconClass'])) {
                                     ?>
@@ -47,7 +47,7 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                             foreach ($video['tags'] as $value2) {
                                 if ($value2->label === __("Group")) {
                                     ?>
-                                    <span class="label label-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
+                                    <span class="badge badge-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
                                     <?php
                                 }
                             }
@@ -84,7 +84,7 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                             }
                         }
                         ?>
-                        <div><a class="label label-default " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $video['filename'] . $ext; ?>" download="<?php echo $video['title'] . $ext; ?>"><?php echo __("Download"); ?></a></div>
+                        <div><a class="badge badge-primary " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $video['filename'] . $ext; ?>" download="<?php echo $video['title'] . $ext; ?>"><?php echo __("Download"); ?></a></div>
     <?php } ?>
                 </div>
             </div>

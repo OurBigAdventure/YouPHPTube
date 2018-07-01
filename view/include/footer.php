@@ -10,13 +10,13 @@
         ?>
         <ul class="list-inline">
             <li>
-                Powered by <a href="http://www.youphptube.com" class="external btn btn-outline btn-primary btn-xs" target="_blank">YouPHPTube v<?php echo $config->getVersion(); ?></a>
+                Powered by <a href="http://www.youphptube.com" class="external btn-outline btn-primary btn-xs" target="_blank">YouPHPTube v<?php echo $config->getVersion(); ?></a>
             </li>
             <li>
-                <a href="https://www.facebook.com/mediasharingtube/" class="external btn btn-outline btn-primary btn-xs" target="_blank"><span class="sr-only">Facebook</span><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.facebook.com/mediasharingtube/" class="external btn-outline btn-primary btn-xs" target="_blank"><span class="sr-only">Facebook</span><i class="fab fa-facebook-square"></i></a>
             </li>
             <li>
-                <a href="https://plus.google.com/u/0/113820501552689289262" class="external btn btn-outline btn-primary btn-xs" target="_blank"><span class="sr-only">Google Plus</span><i class="fab fa-google-plus-g"></i></a>
+                <a href="https://plus.google.com/u/0/113820501552689289262" class="external btn-outline btn-primary btn-xs" target="_blank"><span class="sr-only">Google Plus</span><i class="fab fa-google-plus-g"></i></a>
             </li>
         </ul>
         <?php
@@ -38,9 +38,9 @@
         });
     return false;
     }
-    
+
     // Just for testing
-    // throw "A Bug"; 
+    // throw "A Bug";
     $(function () {
 <?php
 if (!empty($_GET['error'])) {
@@ -61,7 +61,8 @@ if (!empty($_GET['msg'])) {
 <!-- <script src="<?php echo $global['webSiteRootURL']; ?>bootstrap/js/bootstrap.min.js" type="text/javascript"></script> -->
 <?php
     $jsFiles = array();
-    $jsFiles[] = "view/bootstrap/js/bootstrap.min.js";
+    $jsFiles[] = "view/bootstrap/js/bootstrap.bundle.js";
+    $jsFiles[] = "view/css/material/js/material.js";
     $jsFiles[] = "view/js/seetalert/sweetalert.min.js";
     $jsFiles[] = "view/js/bootpag/jquery.bootpag.min.js";
     $jsFiles[] = "view/js/bootgrid/jquery.bootgrid.js";
@@ -73,7 +74,7 @@ if (!empty($_GET['msg'])) {
     $jsFiles[] = "view/js/jquery.lazy/jquery.lazy.min.js";
     $jsFiles[] = "view/js/jquery.lazy/jquery.lazy.plugins.min.js";
     if(!empty($_SESSION['type'])){
-        
+
         $waveSurferEnabled = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
         if($waveSurferEnabled==false){
            $waveSurferEnabled = true;
@@ -83,7 +84,7 @@ if (!empty($_GET['msg'])) {
         if((($_SESSION['type']=="audio")||($_SESSION['type']=="linkAudio"))&&($waveSurferEnabled)){
             $jsFiles[] = "view/js/videojs-wavesurfer/wavesurfer.min.js";
             $jsFiles[] = "view/js/videojs-wavesurfer/dist/videojs.wavesurfer.min.js";
-        }   
+        }
     }
     $jsFiles = array_merge($jsFiles,YouPHPTubePlugin::getJSFiles());
     $jsURL =  combineFiles($jsFiles, "js");

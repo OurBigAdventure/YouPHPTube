@@ -36,7 +36,7 @@ if (User::isLogged()) {
                 </div>
                 <a class="btn btn-success btn-block" href="<?php echo $global['webSiteRootURL']; ?>"><?php echo __("Go back to the main page"); ?></a>
             </div>
-            <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+            <form class="well " action=" " method="post"  id="contact_form">
                 <fieldset>
 
                     <!-- Form Name -->
@@ -44,8 +44,8 @@ if (User::isLogged()) {
 
                     <!-- Text input-->
 
-                    <div class="form-group">
-                        <label class="col-md-4 control-label"><?php echo __("Name"); ?></label>
+                    <div class=" ">
+                        <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -56,8 +56,8 @@ if (User::isLogged()) {
 
 
                     <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label"><?php echo __("E-mail"); ?></label>
+                    <div class=" ">
+                        <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -68,8 +68,8 @@ if (User::isLogged()) {
 
 
                     <!-- Text input-->
-                    <div class="form-group <?php echo empty($advancedCustom->doNotShowWebsiteOnContactForm) ? "" : "hidden" ?>">
-                        <label class="col-md-4 control-label"><?php echo __("Website"); ?></label>
+                    <div class="  <?php echo empty($advancedCustom->doNotShowWebsiteOnContactForm) ? "" : "hidden" ?>">
+                        <label class="col-md-4 col-form-label"><?php echo __("Website"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
@@ -79,8 +79,8 @@ if (User::isLogged()) {
                     </div>
                     <!-- Text area -->
 
-                    <div class="form-group">
-                        <label class="col-md-4 control-label"><?php echo __("Message"); ?></label>
+                    <div class=" ">
+                        <label class="col-md-4 col-form-label"><?php echo __("Message"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -90,19 +90,19 @@ if (User::isLogged()) {
                     </div>
 
 
-                    <div class="form-group">
-                        <label class="col-md-4 control-label"><?php echo __("Type the code"); ?></label>
+                    <div class=" ">
+                        <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                <span class="input-group-addon"><span class="btn btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
+                                <span class="input-group-addon"><span class="btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
                                 <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
                             </div>
                         </div>
                     </div>
                     <!-- Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label"></label>
+                    <div class=" ">
+                        <label class="col-md-4 col-form-label"></label>
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>
                         </div>

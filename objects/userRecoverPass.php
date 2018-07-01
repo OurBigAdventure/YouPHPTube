@@ -75,14 +75,14 @@ if (!(!empty($_GET['user']) && !empty($_GET['recoverpass']))) {
         <?php
     } else {
                 ?>
-                <form class="well form-horizontal" action=" " method="post"  id="recoverPassForm">
+                <form class="well " action=" " method="post"  id="recoverPassForm">
                     <fieldset>
 
                         <!-- Form Name -->
                         <legend><?php echo __("Recover password!"); ?></legend>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"><?php echo __("User"); ?></label>
+                        <div class=" ">
+                            <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                             <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -90,8 +90,8 @@ if (!(!empty($_GET['user']) && !empty($_GET['recoverpass']))) {
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"><?php echo __("Recover Password"); ?></label>
+                        <div class=" ">
+                            <label class="col-md-4 col-form-label"><?php echo __("Recover Password"); ?></label>
                             <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -100,8 +100,8 @@ if (!(!empty($_GET['user']) && !empty($_GET['recoverpass']))) {
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"><?php echo __("New Password"); ?></label>
+                        <div class=" ">
+                            <label class="col-md-4 col-form-label"><?php echo __("New Password"); ?></label>
                             <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -110,8 +110,8 @@ if (!(!empty($_GET['user']) && !empty($_GET['recoverpass']))) {
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"><?php echo __("Confirm New Password"); ?></label>
+                        <div class=" ">
+                            <label class="col-md-4 col-form-label"><?php echo __("Confirm New Password"); ?></label>
                             <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -122,8 +122,8 @@ if (!(!empty($_GET['user']) && !empty($_GET['recoverpass']))) {
 
 
                         <!-- Button -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"></label>
+                        <div class=" ">
+                            <label class="col-md-4 col-form-label"></label>
                             <div class="col-md-8">
                                 <button type="submit" class="btn btn-primary" ><?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>
                             </div>

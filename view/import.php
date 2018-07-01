@@ -32,12 +32,12 @@ if (!User::canUpload() || !empty($advancedCustom->doNotShowImportMP4Button)) {
                         If there is a file (html or htm or txt) we will import it's content as a description, and the first
                         <input type="number" id="length" value="100" style="width: 70px;" /> characteres will be the file title. (choose 0 to use the file name as the title)
                     </div>
-                    <div class="form-group">
+                    <div class=" ">
                         <div class="checkbox">
                             <label><input type="checkbox" value="delete" id="delete" checked="true"> <?php echo __("Delete files after submit"); ?></label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class=" ">
                         <div class="input-group">
                             <input type="text" id="path"  class="form-control" placeholder="Local Path of videos i.e. /media/videos"/>
                             <span class="input-group-btn">
@@ -58,7 +58,7 @@ if (!User::canUpload() || !empty($advancedCustom->doNotShowImportMP4Button)) {
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class=" ">
                         <select class="form-control" id="bulk_categories_id" name="bulk_categories_id">
 
                             <option value="0">Category - Use site default</option>
@@ -99,7 +99,7 @@ if (!User::canUpload() || !empty($advancedCustom->doNotShowImportMP4Button)) {
                             for (i = 0; i < response.length; i++) {
                                 if (!response[i])
                                     continue;
-                                $('#files').append('<li class="list-group-item" path="' + response[i].path + '" id="li' + i + '"><span class="label label-success" style="display: none;"><span class="glyphicon glyphicon-ok"></span> Added on queue.. </span> ' + response[i].name + '<div class="material-switch pull-right"><input id="someSwitchOption' + response[i].id + '" class="someSwitchOption" type="checkbox"/><label for="someSwitchOption' + response[i].id + '" class="label-primary"></label></div></li>');
+                                $('#files').append('<li class="list-group-item" path="' + response[i].path + '" id="li' + i + '"><span class="badge badge-success" style="display: none;"><span class="glyphicon glyphicon-ok"></span> Added on queue.. </span> ' + response[i].name + '<div class="material-switch float-right"><input id="someSwitchOption' + response[i].id + '" class="someSwitchOption" type="checkbox"/><label for="someSwitchOption' + response[i].id + '" class="label-primary"></label></div></li>');
                             }
                         }
                     }

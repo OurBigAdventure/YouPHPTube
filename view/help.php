@@ -32,7 +32,7 @@ require_once $global['systemRootPath'] . 'plugin/YouPHPTubePlugin.php';
             <p>Only you can see this, because you are a admin.</p>
             <h3>Settings and plugins</h3>
             <p>The default <a href='<?php echo $global['webSiteRootURL']; ?>siteConfigurations'>site config</a>, you can find on the menu-point. But there are more settings avaible; go to the <a href='<?php echo $global['webSiteRootURL']; ?>plugins'>plugins</a> and check the "CustomiseAdvanced"-Plugin.</p>
-            <p>Like on a lot of plugins, on the right site, you will find a button "<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit parameters". This button is always a click worth.</p>
+            <p>Like on a lot of plugins, on the right site, you will find a button "<span class="fas fa-edit" aria-hidden="true"></span>Edit parameters". This button is always a click worth.</p>
             <p>Also, when you activate a plugin and you see a button "Install Tables", press it at least once, if you never press it, this can cause bugs!</p>
             <hr />
             <h3>Update via git</h3>
@@ -70,7 +70,7 @@ require_once $global['systemRootPath'] . 'plugin/YouPHPTubePlugin.php';
             <hr />
             <h3>Edit videos</h3>
             <p>After you add any kind of video, you can find it in My videos</p>
-            <p>On the right site, you find various symbols, <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> means edit.</p>
+            <p>On the right site, you find various symbols, <span class="fas fa-edit" aria-hidden="true"></span> means edit.</p>
             <p>There, you can set</p>
             <ul>
               <li>Preview-picture and gif</li>

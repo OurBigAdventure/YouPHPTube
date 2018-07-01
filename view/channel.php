@@ -72,14 +72,14 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
         <div class="container">
             <div class="bgWhite list-group-item gallery clear clearfix" >
                 <div class="row bg-info profileBg" style="background-image: url('<?php echo $global['webSiteRootURL'], $user->getBackgroundURL(); ?>')">
-                    <img src="<?php echo User::getPhoto($user_id); ?>" alt="<?php echo $user->_getName(); ?>" class="img img-responsive img-thumbnail" style="max-width: 100px;"/>
+                    <img src="<?php echo User::getPhoto($user_id); ?>" alt="<?php echo $user->_getName(); ?>" class="img img-fluid img-thumbnail" style="max-width: 100px;"/>
                 </div>
                 <div class="row"><div class="col-6 col-md-12">
-                    <h1 class="pull-left">
+                    <h1 class="float-left">
                    <?php
                             echo $user->getNameIdentificationBd();
                         ?></h1>
-                    <span class="pull-right">
+                    <span class="float-right">
                         <?php
                         echo Subscribe::getButton($user_id);
                         ?>
@@ -89,8 +89,8 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                     <?php echo nl2br(htmlentities($user->getAbout())); ?>
                 </div>
                 <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
+                    <div class="card card-default">
+                        <div class="card-heading">
                             <?php
                             if ($isMyChannel) {
                                 ?>
@@ -106,7 +106,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                             echo YouPHPTubePlugin::getChannelButton();
                             ?>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                                 <?php
                                 if(!empty($uploadedVideos[0])){
                                     $video = $uploadedVideos[0];
@@ -138,11 +138,11 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                         $playListButtons=YouPHPTubePlugin::getPlayListButtons($playlist['id']);
                         ?>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
+                        <div class="card card-default">
+                            <div class="card-heading">
 
                                 <strong style="font-size: 1em;" class="playlistName"><?php echo $playlist['name']; ?> </strong>
-                                <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist['id']; ?>" class="btn btn-xs btn-default playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a><?php echo $playListButtons;?>
+                                <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist['id']; ?>" class="btn-xs btn-default playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a><?php echo $playListButtons;?>
                                 <?php
                                 if ($isMyChannel) {
                                     ?>
@@ -168,18 +168,18 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                             $("#sortable<?php echo $playlist['id']; ?>").disableSelection();
                                         });
                                     </script>
-                                    <div class="pull-right btn-group">
-                                        <button class="btn btn-xs btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>
-                                        <button class="btn btn-xs btn-danger deletePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-trash-o"></span> <?php echo __("Delete"); ?></button>
-                                        <button class="btn btn-xs btn-primary renamePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-pencil"></span> <?php echo __("Rename"); ?></button>
+                                    <div class="float-right btn-group">
+                                        <button class="btn-xs btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>
+                                        <button class="btn-xs btn-danger deletePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-trash-o"></span> <?php echo __("Delete"); ?></button>
+                                        <button class="btn-xs btn-primary renamePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-pencil"></span> <?php echo __("Rename"); ?></button>
                                     </div>
                                     <?php
                                 }
                                 ?>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
 
-                                <div id="sortable<?php echo $playlist['id']; ?>" style="list-style: none;">
+                                <div id="sortable<?php echo $playlist['id']; ?>" class="row" style="list-style: none;">
                                     <?php
                                     foreach ($videos as $value) {
                                         $img_portrait = ($value['rotation'] === "90" || $value['rotation'] === "270") ? "img-portrait" : "";
@@ -191,7 +191,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                         ?>
                                         <li class="col-lg-2 col-md-4 col-sm-4 col-xs-6 galleryVideo " id="<?php echo $value['id']; ?>">
                                             <a class="aspectRatio16_9" href="<?php echo $global['webSiteRootURL']; ?>video/<?php echo $value['clean_title']; ?>" title="<?php echo $value['title']; ?>" style="margin: 0;" >
-                                                <img src="<?php echo $poster; ?>" alt="<?php echo $value['title']; ?>" class="img img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" />
+                                                <img src="<?php echo $poster; ?>" alt="<?php echo $value['title']; ?>" class="img img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" />
                                                 <span class="duration"><?php echo Video::getCleanDuration($value['duration']); ?></span>
                                             </a>
                                             <a href="<?php echo $global['webSiteRootURL']; ?>video/<?php echo $value['clean_title']; ?>" title="<?php echo $value['title']; ?>">
@@ -200,7 +200,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                             <?php
                                             if ($isMyChannel) {
                                                 ?>
-                                                <button class="btn btn-xs btn-default btn-block removeVideo" playlist_id="<?php echo $playlist['id']; ?>" video_id="<?php echo $value['id']; ?>">
+                                                <button class="btn-xs btn-warning btn-block removeVideo" playlist_id="<?php echo $playlist['id']; ?>" video_id="<?php echo $value['id']; ?>">
                                                     <span class="fa fa-trash-o"></span> <?php echo __("Remove"); ?>
                                                 </button>
                                                 <?php
@@ -213,7 +213,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                                     foreach ($value['tags'] as $value2) {
                                                         if ($value2->label === __("Group")) {
                                                             ?>
-                                                            <span class="label label-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
+                                                            <span class="badge badge-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
                                                             <?php
                                                         }
                                                     }

@@ -100,7 +100,7 @@ if (!empty($_GET['video_id'])) {
                 if (empty($advancedCustom->doNotShowEmbedButton)) {
                     if ((isset($advancedCustom->onlyVerifiedEmailCanUpload) && $advancedCustom->onlyVerifiedEmailCanUpload && User::isVerified()) || (isset($advancedCustom->onlyVerifiedEmailCanUpload) && !$advancedCustom->onlyVerifiedEmailCanUpload) || !isset($advancedCustom->onlyVerifiedEmailCanUpload)
                     ) {
-                        ?>                                    
+                        ?>
                         <button class="btn btn-default" id="linkExternalVideo">
                             <span class="fa fa-link"></span>
                             <?php echo __("Embed a video link"); ?>
@@ -149,7 +149,7 @@ if (!empty($_GET['video_id'])) {
                 <?php
             }
             ?>
-            <div class="pull-left btn-group">       
+            <div class="float-left btn-group">
                 <button class="btn btn-secondary" id="checkBtn">
                     <i class="far fa-square" aria-hidden="true" id="chk"></i>
                 </button>
@@ -168,7 +168,7 @@ if (!empty($_GET['video_id'])) {
                         }
                         ?>
                     </ul>
-                </div>           
+                </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         <?php echo __('Status'); ?> <span class="caret"></span></button>
@@ -185,7 +185,7 @@ if (!empty($_GET['video_id'])) {
                     <i class="fa fa-trash" aria-hidden="true"></i> <?php echo __('Delete'); ?>
                 </button>
             </div>
-            <table id="grid" class="table table-condensed table-hover table-striped">
+            <table id="grid" class="table table-sm table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-formatter="checkbox" data-width="25px" ></th>
@@ -213,7 +213,7 @@ if (!empty($_GET['video_id'])) {
                                 </ul>
 
                                 <div class="tab-content">
-                                    <div id="jpg" class="tab-pane fade in active">
+                                    <div id="jpg" class="tab-pane fade show active">
                                         <input id="input-jpg" type="file" class="file-loading" accept="image/jpg">
                                     </div>
                                     <div id="gif" class="tab-pane fade">
@@ -221,7 +221,7 @@ if (!empty($_GET['video_id'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div id="videoLinkContent">                                
+                            <div id="videoLinkContent">
                                 <label for="videoLink" class="sr-only"><?php echo __("Video Link"); ?></label>
                                 <input type="text" id="videoLink" class="form-control first" placeholder="<?php echo __("Video Link"); ?> http://www.your-embed-link.com/video" required>
                                 <select class="form-control last" id="videoLinkType" required>
@@ -253,14 +253,14 @@ if (!empty($_GET['video_id'])) {
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <span class="fa fa-globe"></span> <?php echo __("Public Video"); ?>
-                                        <div class="material-switch pull-right">
+                                        <div class="material-switch float-right">
                                             <input id="public" type="checkbox" value="0" class="userGroups"/>
                                             <label for="public" class="label-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item active non-public">
                                         <?php echo __("Groups that can see this video"); ?>
-                                        <a href="#" class="btn btn-info btn-xs pull-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
+                                        <a href="#" class="btn btn-info btn-xs float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                     </li>
                                     <?php
                                     foreach ($userGroups as $value) {
@@ -268,8 +268,8 @@ if (!empty($_GET['video_id'])) {
                                         <li class="list-group-item non-public">
                                             <span class="fa fa-lock"></span>
                                             <?php echo $value['group_name']; ?>
-                                            <span class="label label-info"><?php echo $value['total_users']; ?> Users linked</span>
-                                            <div class="material-switch pull-right">
+                                            <span class="badge badge-info"><?php echo $value['total_users']; ?> Users linked</span>
+                                            <div class="material-switch float-right">
                                                 <input id="videoGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="videoGroups"/>
                                                 <label for="videoGroup<?php echo $value['id']; ?>" class="label-warning"></label>
                                             </div>
@@ -280,14 +280,14 @@ if (!empty($_GET['video_id'])) {
                                 </ul>
 
                                 <div class="row">
-                                    <h3><?php echo __("Autoplay Next Video"); ?> <button class="btn btn-danger btn-sm" id="removeAutoplay"><i class="fa fa-trash"></i> <?php echo __("Remove Autoplay Next Video"); ?></button></h3>
+                                    <h3><?php echo __("Autoplay Next Video"); ?> <button class="btn btn-danger btn-xs" id="removeAutoplay"><i class="fa fa-trash"></i> <?php echo __("Remove Autoplay Next Video"); ?></button></h3>
                                     <div class="col-md-4">
                                         <img id="inputNextVideo-poster" src="view/img/notfound.jpg" class="ui-state-default" alt="">
                                     </div>
-                                    <div class="col-md-8">                                        
+                                    <div class="col-md-8">
                                         <input id="inputNextVideo" placeholder="<?php echo __("Autoplay Next Video"); ?>" class="form-control">
                                         <input id="inputNextVideoClean" placeholder="<?php echo __("Autoplay Next Video URL"); ?>" class="form-control" readonly="readonly">
-                                        <input type="hidden" id="inputNextVideo-id">                                        
+                                        <input type="hidden" id="inputNextVideo-id">
                                     </div>
                                 </div>
                                 <script>
@@ -334,11 +334,11 @@ if (!empty($_GET['video_id'])) {
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-            <div class="btn-group pull-right" role="group">
-                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php?type=seo" target="_blank" class="btn btn-default btn-sm">
+            <div class="btn-group float-right" role="group">
+                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php?type=seo" target="_blank" class="btn btn-default btn-xs">
                     <i class="fas fa-download"></i> <?php echo __("Download your videos list"); ?> (SEO .txt file)
                 </a>
-                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php" target="_blank" class="btn btn-default btn-sm">
+                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php" target="_blank" class="btn btn-default btn-xs">
                     <i class="fas fa-download"></i> <?php echo __("Download your videos list"); ?> (Permalink .txt file)
                 </a>
             </div>
@@ -747,20 +747,20 @@ if (!empty($row)) {
                                             formatters: {
                                                 "commands": function (column, row)
                                                 {
-                                                    var editBtn = '<button type="button" class="btn btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Edit")); ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>'
-                                                    var deleteBtn = '<button type="button" class="btn btn-default btn-xs command-delete"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Delete")); ?>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>';
-                                                    var activeBtn = '<button style="color: #090" type="button" class="btn btn-default btn-xs command-active"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Inactivate")); ?>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>';
-                                                    var inactiveBtn = '<button style="color: #A00" type="button" class="btn btn-default btn-xs command-inactive"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Activate")); ?>"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></button>';
-                                                    var unlistedBtn = '<button style="color: #BBB" type="button" class="btn btn-default btn-xs command-unlisted"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Unlisted")); ?>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>';
-                                                    var rotateLeft = '<button type="button" class="btn btn-default btn-xs command-rotate"  data-row-id="left"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Rotate LEFT")); ?>"><span class="fa fa-undo" aria-hidden="true"></span></button>';
-                                                    var rotateRight = '<button type="button" class="btn btn-default btn-xs command-rotate"  data-row-id="right"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Rotate RIGHT")); ?>"><span class="fas fa-redo " aria-hidden="true"></span></button>';
+                                                    var editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Edit")); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                                                    var deleteBtn = '<button type="button" class="  btn-xs command-delete"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Delete")); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
+                                                    var activeBtn = '<button style="color: #090" type="button" class="  btn-xs command-active"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Inactivate")); ?>"><span class="fas fa-eye" aria-hidden="true"></span></button>';
+                                                    var inactiveBtn = '<button style="color: #A00" type="button" class=" btn-xs command-inactive"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Activate")); ?>"><span class="fas fa-eye-slash" aria-hidden="true"></span></button>';
+                                                    var unlistedBtn = '<button style="color: #BBB" type="button" class=" btn-xs command-unlisted"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Unlisted")); ?>"><span class="fas fa-eye" aria-hidden="true"></span></button>';
+                                                    var rotateLeft = '<button type="button" class="  btn-xs command-rotate"  data-row-id="left"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Rotate LEFT")); ?>"><span class="fa fa-undo" aria-hidden="true"></span></button>';
+                                                    var rotateRight = '<button type="button" class=" btn-xs command-rotate"  data-row-id="right"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Rotate RIGHT")); ?>"><span class="fas fa-redo " aria-hidden="true"></span></button>';
                                                     var rotateBtn = "<br>" + rotateLeft + rotateRight;
                                                     var suggestBtn = "";
 <?php
 if (User::isAdmin()) {
     ?>
-                                                        var suggest = '<button style="color: #C60" type="button" class="btn btn-default btn-xs command-suggest"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Suggest")); ?>"><i class="fas fa-star" aria-hidden="true"></i></button>';
-                                                        var unsuggest = '<button style="" type="button" class="btn btn-default btn-xs command-suggest unsuggest"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Unsuggest")); ?>"><i class="far fa-star" aria-hidden="true"></i></button>';
+                                                        var suggest = '<button style="color: #C60" type="button" class=" btn-xs command-suggest"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Suggest")); ?>"><i class="fas fa-star" aria-hidden="true"></i></button>';
+                                                        var unsuggest = '<button style="" type="button" class="  btn-xs command-suggest unsuggest"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Unsuggest")); ?>"><i class="far fa-star" aria-hidden="true"></i></button>';
                                                         suggestBtn = unsuggest;
                                                         if (row.isSuggested == "1") {
                                                             suggestBtn = suggest;
@@ -775,7 +775,7 @@ if (User::isAdmin()) {
                                                     var pluginsButtons = '<br><?php echo YouPHPTubePlugin::getVideosManagerListButton(); ?>';
                                                     var download = "";
                                                     for (var k in row.videosURL) {
-                                                        download += '<a href="' + row.videosURL[k].url + '?download=1" class="btn btn-default btn-xs" ><span class="fa fa-download " aria-hidden="true"></span> ' + k + '</a><br>';
+                                                        download += '<a href="' + row.videosURL[k].url + '?download=1" class="btn-xs btn-default" ><span class="fa fa-download " aria-hidden="true"></span> ' + k + '</a><br>';
                                                     }
 
                                                     if (row.status == "i") {
@@ -794,7 +794,7 @@ if (User::isAdmin()) {
 
                                                     var nextIsSet;
                                                     if (row.next_video == null || row.next_video.length == 0) {
-                                                        nextIsSet = "<span class='label label-danger'>Next video NOT set</span>";
+                                                        nextIsSet = "<span class='badge badge-danger'>Next video NOT set</span>";
                                                     } else {
                                                         var nextVideoTitle;
                                                         if (row.next_video.title.length > 20) {
@@ -802,7 +802,7 @@ if (User::isAdmin()) {
                                                         } else {
                                                             nextVideoTitle = row.next_video.title;
                                                         }
-                                                        nextIsSet = "<span class='label label-success' data-toggle='tooltip' title='" + row.next_video.title + "'>Next video: " + nextVideoTitle + "</span>";
+                                                        nextIsSet = "<span class='badge badge-success' data-toggle='tooltip' title='" + row.next_video.title + "'>Next video: " + nextVideoTitle + "</span>";
                                                     }
                                                     return editBtn + deleteBtn + status + suggestBtn + rotateBtn + pluginsButtons + "<br>" + download + nextIsSet;
 
@@ -813,9 +813,9 @@ if (User::isAdmin()) {
                                                         if (typeof row.tags[i].type == "undefined") {
                                                             continue;
                                                         }
-                                                        tags += "<span class='label label-primary fix-width'>" + row.tags[i].label + ": </span><span class=\"label label-" + row.tags[i].type + " fix-width\">" + row.tags[i].text + "</span><br>";
+                                                        tags += "<span class='badge badge-primary fix-width'>" + row.tags[i].label + ": </span><span class=\"badge badge-" + row.tags[i].type + " fix-width\">" + row.tags[i].text + "</span><br>";
                                                     }
-                                                    tags += "<span class='label label-primary fix-width'><?php echo __("Type") . ":"; ?> </span><span class=\"label label-default fix-width\">" + row.type + "</span><br>";
+                                                    tags += "<span class='badge badge-primary fix-width'><?php echo __("Type") . ":"; ?> </span><span class=\"badge badge-secondary fix-width\">" + row.type + "</span><br>";
                                                     return tags;
                                                 },
                                                 "checkbox": function (column, row) {
@@ -826,12 +826,12 @@ if (User::isAdmin()) {
                                                     var tags = "";
                                                     var youTubeLink = "", youTubeUpload = "";
 <?php if (!$config->getDisable_youtubeupload()) { ?>
-                                                        youTubeUpload = '<button type="button" class="btn btn-danger btn-xs command-uploadYoutube"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Upload to YouTube")); ?>"><span class="fa fa-upload " aria-hidden="true"></span></button>';
+                                                        youTubeUpload = '<button type="button" class="btn-danger btn-xs command-uploadYoutube"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Upload to YouTube")); ?>"><span class="fa fa-upload " aria-hidden="true"></span></button>';
 
                                                         if (row.youtubeId) {
                                                             //youTubeLink += '<a href=\'https://youtu.be/' + row.youtubeId + '\' target=\'_blank\'  class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Watch on YouTube")); ?>"><span class="fas fa-external-link-alt " aria-hidden="true"></span></a>';
                                                         }
-                                                        var yt = '<br><div class="btn-group" role="group" ><a class="btn btn-default  btn-xs" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
+                                                        var yt = '<br><div class="btn-group" role="group" ><a class="btn-default btn-xs" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
                                                         if (row.status == "d" || row.status == "e") {
                                                             yt = "";
                                                         }
@@ -851,13 +851,13 @@ if (User::isAdmin()) {
                                                     var type, img, is_portrait;
                                                     if (row.type === "audio") {
                                                         type = "<span class='fa fa-headphones' style='font-size:14px;'></span> ";
-                                                        img = "<img class='img img-responsive img-thumbnail pull-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "' style='max-height:80px; margin-right: 5px;'> ";
+                                                        img = "<img class='img img-fluid img-thumbnail float-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "' style='max-height:80px; margin-right: 5px;'> ";
                                                     } else {
                                                         type = "<span class='fa fa-film' style='font-size:14px;'></span> ";
                                                         is_portrait = (row.rotation === "90" || row.rotation === "270") ? "img-portrait" : "";
-                                                        img = "<img class='img img-responsive " + is_portrait + " img-thumbnail pull-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
+                                                        img = "<img class='img img-fluid " + is_portrait + " img-thumbnail float-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
                                                     }
-                                                    return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn btn-default btn-xs">' + type + row.title + "</a>" + tags + "" + yt;
+                                                    return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn-default btn-xs">' + type + row.title + "</a>" + tags + "" + yt;
                                                 }
 
 
