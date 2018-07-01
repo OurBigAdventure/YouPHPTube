@@ -90,7 +90,7 @@ $(function () {
         $(".thumbsImage").removeClass('active');
         $(this).addClass('active');
         $(this).parent().find(".arrow-down").fadeIn('slow');
-        $('.poster').slideUp();
+        $('.poster').not(poster).slideUp();
         $(row).find('.poster').slideDown('slow', function () {
             var top = row.offset().top;
             $('html, body').animate({
