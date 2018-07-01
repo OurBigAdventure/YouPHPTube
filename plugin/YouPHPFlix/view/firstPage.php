@@ -121,9 +121,9 @@ unset($_SESSION['type']);
                         $images = Video::getImageFromFilename($value['filename'], $value['type']);
                         $poster = $images->thumbsJpg;
                         ?>
-							<img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-responsive rotate<?php echo $value['rotation']; ?>" id="thumbsJPG<?php echo $value['id']; ?>" />
+							<img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-fluid rotate<?php echo $value['rotation']; ?>" id="thumbsJPG<?php echo $value['id']; ?>" />
                             <?php if ((!empty($imgGif)) && (!$o->LiteGalleryNoGifs)) { ?>
-                                    <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
+                                    <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
                         <?php }
                         $sql = "SELECT COUNT(title) FROM videos WHERE status='a' AND categories_id = ?;";
                         $res = sqlDAL::readSql($sql,"i",array($value['categories_id']));
@@ -134,7 +134,7 @@ unset($_SESSION['type']);
                 } else {
                     $poster = $global['webSiteRootURL'] . "view/img/notfound.jpg";
                     ?>
-				    <img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-responsive" id="thumbsJPG<?php echo $cat['id']; ?>" />
+				    <img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-fluid" id="thumbsJPG<?php echo $cat['id']; ?>" />
                     <?php
                         $sql = "SELECT COUNT(title) FROM videos WHERE status='a' AND categories_id = ?;";
                         $res = sqlDAL::readSql($sql,"i",array($cat['id']));
@@ -198,9 +198,9 @@ unset($_SESSION['type']);
                 <div class="carousel-cell tile ">
 					<div class="slide thumbsImage" videos_id="<?php echo $value['id']; ?>" poster="<?php echo $poster; ?>" video="<?php echo $value['clean_title']; ?>" iframe="<?php echo $global['webSiteRootURL']; ?>videoEmbeded/<?php echo $value['clean_title']; ?>">
 				        <div class="tile__media ">
-				            <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG img img-responsive carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
+				            <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG img img-fluid carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
                                     <?php if (! empty($imgGif)) { ?>
-                                        <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
+                                        <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
                                     <?php } ?>
                         </div>
 						<div class="tile__details">
@@ -290,9 +290,9 @@ unset($_SESSION['type']);
                     <div class="carousel-cell tile ">
 					   <div class="slide thumbsImage" videos_id="<?php echo $value['id']; ?>" poster="<?php echo $poster; ?>" video="<?php echo $value['clean_title']; ?>" iframe="<?php echo $global['webSiteRootURL']; ?>videoEmbeded/<?php echo $value['clean_title']; ?>">
 				        <div class="tile__media ">
-							<img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-responsive carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
+							<img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-fluid carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
                             <?php if (! empty($imgGif)) { ?>
-                                <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
+                                <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
                             <?php } ?>
                         </div>
 						<div class="tile__details">
@@ -368,9 +368,9 @@ unset($_SESSION['type']);
                     <div class="carousel-cell tile ">
                          <div class="slide thumbsImage" videos_id="<?php echo $value['id']; ?>" poster="<?php echo $poster; ?>" video="<?php echo $value['clean_title']; ?>" iframe="<?php echo $global['webSiteRootURL']; ?>videoEmbeded/<?php echo $value['clean_title']; ?>">
                                 <div class="tile__media ">
-                                    <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-responsive carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
+                                    <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-fluid carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
                                     <?php if (! empty($imgGif)) { ?>
-                                        <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
+                                        <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
                                     <?php } ?>
                                 </div>
                                 <div class="tile__details">
@@ -451,9 +451,9 @@ unset($_SESSION['type']);
                 <div class="carousel-cell tile ">
 					<div class="slide thumbsImage" videos_id="<?php echo $value['id']; ?>" poster="<?php echo $poster; ?>" video="<?php echo $value['clean_title']; ?>" iframe="<?php echo $global['webSiteRootURL']; ?>videoEmbeded/<?php echo $value['clean_title']; ?>">
                         <div class="tile__media ">
-                            <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-responsive carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
+                            <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-fluid carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
                             <?php if (! empty($imgGif)) { ?>
-                                <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
+                                <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
                             <?php } ?>
                         </div>
 						<div class="tile__details">
@@ -562,9 +562,9 @@ unset($_SESSION['type']);
             <div class="carousel-cell tile ">
 					<div class="slide thumbsImage" videos_id="<?php echo $value['id']; ?>" poster="<?php echo $poster; ?>" cat="<?php echo $cat['clean_name']; ?>" video="<?php echo $value['clean_title']; ?>" iframe="<?php echo $global['webSiteRootURL']; ?>videoEmbeded/<?php echo $value['clean_title']; ?>">
 				<div class="tile__media ">
-							<img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-responsive carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
+							<img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-fluid carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
                         <?php if (! empty($imgGif)) { ?>
-                            <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
+                            <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
                         <?php } ?>
                 </div>
 						<div class="tile__details">
@@ -711,7 +711,7 @@ unset($_SESSION['type']);
                         <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 galleryVideo thumbsImage fixPadding">
 					       <a href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $cat['clean_name']; ?>" title="<?php $cat['name']; ?>">
                                 <div class="aspectRatio16_9">
-                                    <img src="<?php echo $global['webSiteRootURL'].$audioReplacePicture; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-responsive" />
+                                    <img src="<?php echo $global['webSiteRootURL'].$audioReplacePicture; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-fluid" />
                                 </div>
                             <div class="videoInfo">
                             <?php if (!empty($videoCount)) { ?>
@@ -762,11 +762,11 @@ unset($_SESSION['type']);
                         }
                     ?>
                     <div class="aspectRatio16_9">
-				        <img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-responsive rotate<?php echo $value['rotation']; ?>" id="thumbsJPG<?php echo $value['id']; ?>" />
+				        <img src="<?php echo $poster; ?>" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" class="thumbsJPG img img-fluid rotate<?php echo $value['rotation']; ?>" id="thumbsJPG<?php echo $value['id']; ?>" />
                         <?php
                             if ((!empty($imgGif)) && (!$o->LiteGalleryNoGifs)) {
                         ?>
-                                <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
+                                <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="" data-toggle="tooltip" title="<?php echo $description; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
                         <?php
                             }
                             $sql = "SELECT COUNT(title) FROM videos WHERE status='a' AND categories_id = ?;";
@@ -812,7 +812,7 @@ unset($_SESSION['type']);
         <?php } if ($o->LiteDesign) { ?>
             <div class="">
                 <h2 style="margin-top: 30px;"><?php echo __("Categories"); ?> <span class="badge"><?php echo count($category); ?></span></h2>
-                <div class="carousel">
+                <div class="flickity-carousel">
                     <?php
                     foreach ($category as $cat) {
                         $_GET['catName'] = $cat['clean_name'];
@@ -833,9 +833,9 @@ unset($_SESSION['type']);
                         <a href="<?php echo $global['webSiteRootURL'] . "cat/" . $cat['clean_name']; ?>">
                             <div class="slide" videos_id="<?php echo $value['id']; ?>" poster="<?php echo $poster; ?>" cat="<?php echo $cat['clean_name']; ?>" video="<?php echo $value['clean_title']; ?>" iframe="<?php echo $global['webSiteRootURL']; ?>videoEmbeded/<?php echo $value['clean_title']; ?>">
                                 <div class="tile__media ">
-                                    <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-responsive carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
+                                    <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-fluid carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
                                     <?php if ((! empty($imgGif)) && (! $o->LiteDesignNoGifs)) { ?>
-                                    <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-responsive img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
+                                    <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
                                     <?php
                                     }
                                     $sql = "SELECT COUNT(title) FROM videos WHERE status='a' AND categories_id = ?;";
