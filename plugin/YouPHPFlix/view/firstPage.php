@@ -37,7 +37,6 @@ unset($_SESSION['type']);
           background: #777;
           position: relative;
         }
-
         .carousel-cell .container {
           height: 100%;
         }
@@ -53,7 +52,7 @@ unset($_SESSION['type']);
     <body>
         <?php include $global['systemRootPath'] . 'view/include/navbar.php'; ?>
 
-        <div class="container-fluid" id="mainContainer" style="/* display: none; */">
+        <div class="container-fluid" id="mainContainer" style="display: none;">
         <?php
             $category = Category::getAllCategories();
             $currentCat;
@@ -68,6 +67,9 @@ unset($_SESSION['type']);
             }
         if (($o->SubCategorys) && (! empty($_GET['catName']))) {
             ?>
+       <script>
+    		setTimeout(function(){ document.getElementById('mainContainer').style="display: block;";document.getElementById('loading').style="display: none;" }, 1000);
+	   </script>
 		<div class="clear clearfix">
 			<div class="row">
             <?php
@@ -145,7 +147,7 @@ unset($_SESSION['type']);
                             </div>
 			    <div class="videoInfo">
                             <?php if (!empty($videoCount)) { ?>
-                                <span class="badge badge-primary" style="top: 10px !important; position: absolute;"><i class="glyphicon glyphicon-cd"></i> <?php echo $videoCount[0]; ?></span>
+                                <span class="badge badge-primary" style="top: 10px !important; position: absolute;"><i class="fas fa-compact-disc"></i> <?php echo $videoCount[0]; ?></span>
                             <?php } ?>
                         </div>
 						<div data-toggle="tooltip" title="<?php echo $description; ?>" class="tile__title" style="margin-left: 10%; width: 80% !important; bottom: 40% !important; opacity: 0.8 !important; text-align: center;">
@@ -182,7 +184,7 @@ unset($_SESSION['type']);
                 ?>
             <div class="the-carousel-content">
                 <h2>
-                    <i class="glyphicon glyphicon-sort-by-attributes"></i> <?php
+                    <i class="fas fa-sort-numeric-up"></i> <?php
                     echo __("Date added (newest)");
                     ?>
                 </h2>
@@ -198,14 +200,14 @@ unset($_SESSION['type']);
                 <div class="carousel-cell tile ">
 					<div class="slide thumbsImage" videos_id="<?php echo $value['id']; ?>" poster="<?php echo $poster; ?>" video="<?php echo $value['clean_title']; ?>" iframe="<?php echo $global['webSiteRootURL']; ?>videoEmbeded/<?php echo $value['clean_title']; ?>">
 				        <div class="tile__media ">
-				            <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG img img-fluid carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
+				            <img alt="<?php echo $value['title']; ?>" class="tile__img thumbsJPG ing img-fluid carousel-cell-image" data-flickity-lazyload="<?php echo $img; ?>" />
                                     <?php if (! empty($imgGif)) { ?>
                                         <img style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="tile__img thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid img carousel-cell-image" data-flickity-lazyload="<?php echo $imgGif; ?>" />
                                     <?php } ?>
                         </div>
 						<div class="tile__details">
 							<div class="videoInfo">
-								<span class="badge badge-secondary"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
+								<span class="badge badge-primary"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
                                 <span class="badge badge-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
                                 <span class="badge badge-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category']; ?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
                             <?php if ($config->getAllow_download()) {
@@ -271,7 +273,7 @@ unset($_SESSION['type']);
                 ?>
             <div class="the-carousel-content">
 			<h2>
-				<i class="glyphicon glyphicon-music"></i> <?php
+				<i class="fas fa-music"></i> <?php
                 echo __("Audio-Gallery by Date");
                 ?>
                 </h2>
@@ -297,7 +299,7 @@ unset($_SESSION['type']);
                         </div>
 						<div class="tile__details">
 							<div class="videoInfo">
-								<span class="badge badge-secondary"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
+								<span class="badge badge-primary"><i class="fa fa-eye"></i> <?php echo $value['views_count']; ?></span>
                                 <span class="badge badge-success"><i class="fa fa-thumbs-up"></i> <?php echo $value['likes']; ?></span>
                                 <span class="badge badge-success"><a style="color: inherit;" class="tile__cat" cat="<?php echo $value['clean_category']; ?>" href="<?php echo $global['webSiteRootURL'] . "cat/" . $value['clean_category'];?>"><i class="fa"></i> <?php echo $value['category']; ?></a></span>
                             <?php if ($config->getAllow_download()) {
@@ -343,7 +345,7 @@ unset($_SESSION['type']);
             <span class="md-col-12">&nbsp;</span>
             <div class="the-carousel-content">
 			<h2>
-				<i class="glyphicon glyphicon-eye-open"></i> <?php echo __("Most watched"); ?>
+				<i class="fas fa-eye"></i> <?php echo __("Most watched"); ?>
             		</h2>
 			<div class="flickity-carousel">
                 <?php
@@ -427,7 +429,7 @@ unset($_SESSION['type']);
             <div class="the-carousel-content">
             <span class="md-col-12">&nbsp;</span>
 			<h2>
-				<i class="glyphicon glyphicon-thumbs-up"></i> <?php echo __("Most popular"); ?>
+				<i class="fas fa-thumbs-up"></i> <?php echo __("Most popular"); ?>
             </h2>
 			<div class="flickity-carousel">
                 <?php
@@ -628,6 +630,9 @@ unset($_SESSION['type']);
             $_GET['parentsOnly'] = "1";
             $liteGalleryCategory = Category::getAllCategories();
             ?>
+        <script>
+    		  setTimeout(function(){ document.getElementById('mainContainer').style="display: block;";document.getElementById('loading').style="display: none;" }, 1000);
+	    </script>
 		<div class="clear clearfix">
 			<div class="row">
 				<h2 style="margin-top: 30px;">
@@ -718,9 +723,9 @@ unset($_SESSION['type']);
                                 <span class="badge badge-primary" style="top: 10px !important; position: absolute;"> <?php
                                     if($catType){
                                         if(($catType['type']==0)||($catType['type']==2)){
-                                            echo '<i class="glyphicon glyphicon-cd"></i>';
+                                            echo '<i class="fas fa-compact-disc"></i>';
                                         } else {
-                                           echo '<i class="glyphicon glyphicon-music"></i>';
+                                           echo '<i class="fas fa-music"></i>';
                                         }
                                     }
                                     echo $videoCount[0]; ?>
@@ -782,9 +787,9 @@ unset($_SESSION['type']);
                             <span class="badge badge-primary" style="top: 10px !important; position: absolute;"> <?php
                                 if($catType){
                                     if(($catType['type']==0)||($catType['type']==2)){
-                                        echo '<i class="glyphicon glyphicon-cd"></i>';
+                                        echo '<i class="fas fa-compact-disc"></i>';
                                     } else {
-                                       echo '<i class="glyphicon glyphicon-music"></i>';
+                                       echo '<i class="fas fa-music"></i>';
                                     }
                                 }
                                 echo $videoCount[0];
@@ -810,7 +815,7 @@ unset($_SESSION['type']);
                 </div>
 		</div>
         <?php } if ($o->LiteDesign) { ?>
-            <div class="">
+            <div class="the-carousel-content">
                 <h2 style="margin-top: 30px;"><?php echo __("Categories"); ?> <span class="badge"><?php echo count($category); ?></span></h2>
                 <div class="flickity-carousel">
                     <?php
@@ -847,7 +852,7 @@ unset($_SESSION['type']);
                                     <div class="videoInfo">
                                         <?php if (!empty($videoCount)) { ?>
                                         <span class="badge badge-primary" style="top: 10px !important; position: absolute;">
-                                            <i class="glyphicon glyphicon-cd"></i> <?php
+                                            <i class="fas fa-compact-disc"></i> <?php
                                             echo $videoCount[0]; ?>
                                         </span>
                                         <?php } ?>
@@ -869,7 +874,7 @@ unset($_SESSION['type']);
         <?php } //end of lite-design ?>
         </div>
 	<div id="loading" class="loader"
-		style="width: 30vh; height: 30vh; position: absolute; left: 50%; top: 50%; margin-left: -15vh; margin-top: -15vh; display:none;"></div>
+		style="width: 30vh; height: 30vh; position: absolute; left: 50%; top: 50%; margin-left: -15vh; margin-top: -15vh;"></div>
         <div class="webui-popover-content" id="popover">
             <?php if (User::isLogged()) { ?>
             <form role="form">
@@ -887,7 +892,7 @@ unset($_SESSION['type']);
                     <?php echo __("Make it public"); ?>
                     <div class="material-switch pull-right">
                         <input id="publicPlayList" name="publicPlayList" type="checkbox" checked="checked" />
-                        <badge for="publicPlayList" class="badge-success"></badge>
+                        <label for="publicPlayList" class="label-success"></label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -898,7 +903,7 @@ unset($_SESSION['type']);
             <h5><?php echo __("Want to watch this again later?"); ?></h5>
 		      <?php echo __("Sign in to add this video to a playlist."); ?>
             <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-primary">
-                <span class="glyphicon glyphicon-log-in"></span>
+                <span class="fas fa-sign-in-alt"></span>
                 <?php echo __("Login"); ?>
             </a>
             <?php } ?>
