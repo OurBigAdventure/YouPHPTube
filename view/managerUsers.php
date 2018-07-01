@@ -30,7 +30,7 @@ $userGroups = UserGroups::getAllUsersGroups();
         include $global['systemRootPath'] . 'view/include/updateCheck.php';
         ?>
             <div class="btn-group" >
-                <button type="button" class="btn btn-default" id="addUserBtn">
+                <button type="button" class="btn btn-light" id="addUserBtn">
                     <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("New User"); ?>
                 </button>
                 <a href="<?php echo $global['webSiteRootURL']; ?>usersGroups" class="btn btn-warning">
@@ -145,7 +145,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
                             <button type="button" class="btn btn-primary" id="saveUserBtn"><?php echo __("Save changes"); ?></button>
                         </div>
                     </div><!-- /.modal-content -->
@@ -180,8 +180,8 @@ $userGroups = UserGroups::getAllUsersGroups();
                     url: "<?php echo $global['webSiteRootURL'] . "objects/users.json.php"; ?>",
                     formatters: {
                         "commands": function (column, row) {
-                            var editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
-                            //var deleteBtn = '<button type="button" class="btn-default btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="Delete""><span class="glyphicon glyphicon-erase" aria-hidden="true"></span></button>';
+                            var editBtn = '<button type="button" class="btn-xs btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                            //var deleteBtn = '<button type="button" class="btn-light btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="Delete""><span class="glyphicon glyphicon-erase" aria-hidden="true"></span></button>';
                             //return editBtn + deleteBtn;
                             return editBtn;
                         },

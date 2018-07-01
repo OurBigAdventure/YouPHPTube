@@ -78,7 +78,7 @@ if (!empty($_GET['video_id'])) {
                     ) {
                         if (!empty($config->getEncoderURL())) {
                             ?>
-                            <a href="<?php echo $config->getEncoderURL(), "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" class="btn btn-default">
+                            <a href="<?php echo $config->getEncoderURL(), "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" class="btn btn-light">
                                 <span class="fa fa-cog"></span>
                                 <?php echo __("Encode video and audio"); ?>
                             </a>
@@ -90,7 +90,7 @@ if (!empty($_GET['video_id'])) {
                     if ((isset($advancedCustom->onlyVerifiedEmailCanUpload) && $advancedCustom->onlyVerifiedEmailCanUpload && User::isVerified()) || (isset($advancedCustom->onlyVerifiedEmailCanUpload) && !$advancedCustom->onlyVerifiedEmailCanUpload) || !isset($advancedCustom->onlyVerifiedEmailCanUpload)
                     ) {
                         ?>
-                        <a href="<?php echo $global['webSiteRootURL']; ?>upload" class="btn btn-default">
+                        <a href="<?php echo $global['webSiteRootURL']; ?>upload" class="btn btn-light">
                             <span class="fa fa-upload"></span>
                             <?php echo __("Upload a MP4 File"); ?>
                         </a>
@@ -101,7 +101,7 @@ if (!empty($_GET['video_id'])) {
                     if ((isset($advancedCustom->onlyVerifiedEmailCanUpload) && $advancedCustom->onlyVerifiedEmailCanUpload && User::isVerified()) || (isset($advancedCustom->onlyVerifiedEmailCanUpload) && !$advancedCustom->onlyVerifiedEmailCanUpload) || !isset($advancedCustom->onlyVerifiedEmailCanUpload)
                     ) {
                         ?>
-                        <button class="btn btn-default" id="linkExternalVideo">
+                        <button class="btn btn-light" id="linkExternalVideo">
                             <span class="fa fa-link"></span>
                             <?php echo __("Embed a video link"); ?>
                         </button>
@@ -328,17 +328,17 @@ if (!empty($_GET['video_id'])) {
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
                             <button type="button" class="btn btn-primary" id="saveCategoryBtn"><?php echo __("Save changes"); ?></button>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
             <div class="btn-group float-right" role="group">
-                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php?type=seo" target="_blank" class="btn btn-default btn-xs">
+                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php?type=seo" target="_blank" class="btn btn-light btn-xs">
                     <i class="fas fa-download"></i> <?php echo __("Download your videos list"); ?> (SEO .txt file)
                 </a>
-                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php" target="_blank" class="btn btn-default btn-xs">
+                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php" target="_blank" class="btn btn-light btn-xs">
                     <i class="fas fa-download"></i> <?php echo __("Download your videos list"); ?> (Permalink .txt file)
                 </a>
             </div>
@@ -747,7 +747,7 @@ if (!empty($row)) {
                                             formatters: {
                                                 "commands": function (column, row)
                                                 {
-                                                    var editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Edit")); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                                                    var editBtn = '<button type="button" class="btn-xs btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Edit")); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
                                                     var deleteBtn = '<button type="button" class="  btn-xs command-delete"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Delete")); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
                                                     var activeBtn = '<button style="color: #090" type="button" class="  btn-xs command-active"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Inactivate")); ?>"><span class="fas fa-eye" aria-hidden="true"></span></button>';
                                                     var inactiveBtn = '<button style="color: #A00" type="button" class=" btn-xs command-inactive"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Activate")); ?>"><span class="fas fa-eye-slash" aria-hidden="true"></span></button>';
@@ -775,7 +775,7 @@ if (User::isAdmin()) {
                                                     var pluginsButtons = '<br><?php echo YouPHPTubePlugin::getVideosManagerListButton(); ?>';
                                                     var download = "";
                                                     for (var k in row.videosURL) {
-                                                        download += '<a href="' + row.videosURL[k].url + '?download=1" class="btn-xs btn-default" ><span class="fa fa-download " aria-hidden="true"></span> ' + k + '</a><br>';
+                                                        download += '<a href="' + row.videosURL[k].url + '?download=1" class="btn-xs btn-light" ><span class="fa fa-download " aria-hidden="true"></span> ' + k + '</a><br>';
                                                     }
 
                                                     if (row.status == "i") {
@@ -831,7 +831,7 @@ if (User::isAdmin()) {
                                                         if (row.youtubeId) {
                                                             //youTubeLink += '<a href=\'https://youtu.be/' + row.youtubeId + '\' target=\'_blank\'  class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Watch on YouTube")); ?>"><span class="fas fa-external-link-alt " aria-hidden="true"></span></a>';
                                                         }
-                                                        var yt = '<br><div class="btn-group" role="group" ><a class="btn-default btn-xs" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
+                                                        var yt = '<br><div class="btn-group" role="group" ><a class="btn-light btn-xs" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
                                                         if (row.status == "d" || row.status == "e") {
                                                             yt = "";
                                                         }
@@ -857,7 +857,7 @@ if (User::isAdmin()) {
                                                         is_portrait = (row.rotation === "90" || row.rotation === "270") ? "img-portrait" : "";
                                                         img = "<img class='img img-fluid " + is_portrait + " img-thumbnail float-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
                                                     }
-                                                    return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn-default btn-xs">' + type + row.title + "</a>" + tags + "" + yt;
+                                                    return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn-light btn-xs">' + type + row.title + "</a>" + tags + "" + yt;
                                                 }
 
 

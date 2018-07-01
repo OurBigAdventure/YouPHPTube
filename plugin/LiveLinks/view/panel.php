@@ -86,7 +86,7 @@
 </div>
 <div id="btnModelLinks" style="display: none;">
     <div class="btn-group float-right">
-        <button href="" class="editor_edit_link btn btn-default btn-xs">
+        <button href="" class="editor_edit_link btn btn-light btn-xs">
             <i class="fa fa-edit"></i>
         </button>
         <button href="" class="editor_delete_link btn btn-danger btn-xs">

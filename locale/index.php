@@ -63,7 +63,7 @@ sort($vars);
                         $(function () {
                             $("#navBarFlag2").flagStrap({
                                 inputName: 'country2',
-                                buttonType: "btn-default nav-item",
+                                buttonType: "btn-light nav-item",
                             });
                         });
                     </script>

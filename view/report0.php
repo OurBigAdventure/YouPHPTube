@@ -184,10 +184,10 @@
         <div class="btn-group">
             <button class="btn btn-primary nav-item active" id="btnAll" ><?php echo __("Total Views"); ?></button>
             <button class="btn btn-warning nav-item" id="btnToday"><?php echo __("Today Views"); ?></button>
-            <button class="btn btn-default nav-item" id="btn7"><?php echo __("Last 7 Days"); ?></button>
-            <button class="btn btn-default nav-item" id="btn30" ><?php echo __("Last 30 Days"); ?></button>
+            <button class="btn btn-light nav-item" id="btn7"><?php echo __("Last 7 Days"); ?></button>
+            <button class="btn btn-light nav-item" id="btn30" ><?php echo __("Last 30 Days"); ?></button>
             <!--
-            <button class="btn btn-default nav-item" id="btnUnique" ><?php echo __("Unique Users"); ?></button>
+            <button class="btn btn-light nav-item" id="btnUnique" ><?php echo __("Unique Users"); ?></button>
             --></div>
     </div>
 </nav>

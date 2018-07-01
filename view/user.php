@@ -357,7 +357,9 @@ $advancedCustom = json_decode($json_file);
                                         <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                         <div class="col-md-8 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                                </div>
                                                 <input  id="inputUser" placeholder="<?php echo __("User"); ?>" class="form-control"  type="text" value="" required >
                                             </div>
                                         </div>
@@ -368,7 +370,10 @@ $advancedCustom = json_decode($json_file);
                                         <label class="col-md-4 col-form-label"><?php echo __("Password"); ?></label>
                                         <div class="col-md-8">
                                             <div class="input-group">
-                                                <span class=" input-group-addon"  id="inputGroup-sizing-default"><i class="fas fa-lock"></i></span>
+                                                
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                                                </div>
                                                 <input  id="inputPassword" placeholder="<?php echo __("Password"); ?>" class="form-control"  type="password" value="" >
                                             </div>
                                             <?php

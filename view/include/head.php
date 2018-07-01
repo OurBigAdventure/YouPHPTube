@@ -14,10 +14,7 @@ $theme = $config->getTheme();
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="<?php echo $custom; ?>">
 <link rel="icon" href="<?php echo $global['webSiteRootURL']; ?>view/img/favicon.png">
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!-- <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 768px)" href="view/css/mobile.css" /> -->
-<link href="<?php echo $global['webSiteRootURL']; ?>view/css/material/css/material.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $global['webSiteRootURL']; ?>view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $global['webSiteRootURL']; ?>view/css/font-awesome-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $global['webSiteRootURL']; ?>view/css/flagstrap/css/flags.css" rel="stylesheet" type="text/css"/>
 <?php

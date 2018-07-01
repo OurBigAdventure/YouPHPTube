@@ -22,7 +22,7 @@ function createGallery($title, $sort, $rowCount, $getName, $mostWord, $lessWord,
     ?>
     <div class="clear clearfix">
         <h3 class="galleryTitle">
-            <a class="btn-default" href="<?php echo $global['webSiteRootURL']; ?>?showOnly=<?php echo $getName; ?>">
+            <a class="btn-light" href="<?php echo $global['webSiteRootURL']; ?>?showOnly=<?php echo $getName; ?>">
                 <i class="fa fa-list-alt"></i>
                 <?php
                 if (empty($_GET[$getName])) {
@@ -235,7 +235,7 @@ function createChannelItem($users_id, $photoURL = "", $identification = "", $row
                 echo $identification;
                 ?>
             </span>
-            <a class="btn-xs btn-default" href="<?php echo User::getChannelLink($users_id); ?>" style="margin: 0 10px;">
+            <a class="btn-xs btn-light" href="<?php echo User::getChannelLink($users_id); ?>" style="margin: 0 10px;">
                 <i class="fas fa-external-link-alt"></i>
             </a>
             <?php

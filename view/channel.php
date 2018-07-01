@@ -142,7 +142,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                             <div class="card-heading">
 
                                 <strong style="font-size: 1em;" class="playlistName"><?php echo $playlist['name']; ?> </strong>
-                                <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist['id']; ?>" class="btn-xs btn-default playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a><?php echo $playListButtons;?>
+                                <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist['id']; ?>" class="btn-xs btn-light playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a><?php echo $playListButtons;?>
                                 <?php
                                 if ($isMyChannel) {
                                     ?>

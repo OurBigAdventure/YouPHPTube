@@ -3,11 +3,11 @@
     border-bottom: 1px solid #29487d;
 }
 
-.navbar-default .btn-default {
+.navbar-default .btn-light {
     background-color: #4267b2;
     border-width: 0;
 }
-.navbar-default .btn-default:hover, .navbar-default .btn-default:active {
+.navbar-default .btn-light:hover, .navbar-default .btn-light:active {
     background-color: #365899;
 }
 .fbRow{

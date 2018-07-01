@@ -1,100 +1,74 @@
 <style>
-#menuSpacer {
-  margin-bottom: 5px;
-}
-@media (max-width : 990px) {
-#mysearch {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-}
-#myNavbar {
-  position: absolute;
-  top: 50px;
-  right: 10px;
-}
-#mysearch input {
-width: 65%;
-z-index:520 !important;
-background-color: white;
-}
-#buttonSearch {
-  position:absolute;
-  right: 50px;
-  top: 0px;
-}
-#buttonMyNavbar {
-  position:absolute;
-  right: 10px;
-  top: 0px;
-}
-#sidebar1 {
-  bottom: 50px;
-}
+    #menuSpacer {
+        margin-bottom: 5px;
+    }
+    @media (max-width : 990px) {
+        #mysearch {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+        }
+        #myNavbar {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+        }
+        #mysearch input {
+            width: 65%;
+            z-index:520 !important;
+            background-color: white;
+        }
+        #buttonSearch {
+            position:absolute;
+            right: 50px;
+            top: 0px;
+        }
+        #buttonMyNavbar {
+            position:absolute;
+            right: 10px;
+            top: 0px;
+        }
+        #sidebar1 {
+            bottom: 50px;
+        }
 
-}
+    }
 
+    #sidebar1>ul {
+        height: 100vh;
+        overflow-y: auto;
+        margin-left: -10px;
+        margin-top: -5px;
+        padding-bottom: 100px;
+    }
 
-
-
-@media (min-height : 800px) and (max-height : 1100px) {
-  #sidebar1 ul {
-    max-height: 600px;
-    overflow-y: auto;
-  }
-}
-
-@media (min-height : 1100px) {
-  #sidebar1 ul {
-    max-height: 850px;
-    overflow-y: auto;
-  }
-}
-@media (min-height : 300px) and (max-height : 450px) {
-  #sidebar1 ul {
-    max-height: 250px;
-    overflow-y: auto;
-  }
-}
-@media (min-height : 450px) and (max-height : 630px) {
-  #sidebar1 ul {
-    max-height: 400px;
-    overflow-y: auto;
-  }
-}
-@media (min-height : 630px) and (max-height : 800px) {
-  #sidebar1 ul {
-    max-height: 500px;
-    overflow-y: auto;
-  }
-}
 </style>
 <script>
-$( document ).ready(function() {
-    var wasMobile = true;
-    $(window).resize(function() {
-        if ($(window).width() > 767) {
-          // Window is bigger than 767 pixels wide - show search again, if autohide by mobile.
-          if(wasMobile){
-            wasMobile = false;
-        //  $('#mysearch').addClass("in");
-         //$('#myNavbar').removeClass("show");
-        }
-        }
-        if ($(window).width() < 767) {
-          // Window is smaller 767 pixels wide - show search again, if autohide by mobile.
-          if(wasMobile==false){
-            wasMobile = true;
-          //  $('#myNavbar').removeClass("in");
-          //  $('#mysearch').removeClass("in");
-        }
-        }
-      });
+    $(document).ready(function () {
+        var wasMobile = true;
+        $(window).resize(function () {
+            if ($(window).width() > 767) {
+                // Window is bigger than 767 pixels wide - show search again, if autohide by mobile.
+                if (wasMobile) {
+                    wasMobile = false;
+                    //  $('#mysearch').addClass("in");
+                    //$('#myNavbar').removeClass("show");
+                }
+            }
+            if ($(window).width() < 767) {
+                // Window is smaller 767 pixels wide - show search again, if autohide by mobile.
+                if (wasMobile == false) {
+                    wasMobile = true;
+                    //  $('#myNavbar').removeClass("in");
+                    //  $('#mysearch').removeClass("in");
+                }
+            }
+        });
     });
 </script>
 <?php
 global $global, $config;
-if(!isset($global['systemRootPath'])){
+if (!isset($global['systemRootPath'])) {
     require_once '../videos/configuration.php';
 }
 require_once $global['systemRootPath'] . 'objects/user.php';
@@ -115,26 +89,26 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
     $updateFiles = getUpdatesFilesArray();
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top justify-content-between">
-      <div class="my-nav-finder">
-      <button class="btn-light btn nav-item align-top" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="navbar-toggler-icon"></span></button>
-      <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
-        <div id="sidebar1" class="dropdown" style="position: absolute; height: 100%; top:0;">
+        <div class="my-nav-finder">
+            <button class="btn-light btn nav-item align-top" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
+            <div id="sidebar1" class="dropdown" style="position: absolute; height: 100%; top:0;">
                 <ul class="dropdown-menu  dropdown-menu-left bg-light" style="" aria-labelledby="buttonMenu1" >
                     <?php
                     if (User::isLogged()) {
                         ?>
                         <li class="dropdown-item">
-                                <a href="<?php echo $global['webSiteRootURL']; ?>logoff" class="btn btn-default btn-block" >
-                                    <span class="glyphicon glyphicon-log-out"></span>
-        <?php echo __("Logoff"); ?>
-                                </a>
+                            <a href="<?php echo $global['webSiteRootURL']; ?>logoff" class="btn btn-light btn-block" >
+                                <i class="fas fa-sign-out-alt"></i>
+                                <?php echo __("Logoff"); ?>
+                            </a>
                         </li>
                         <li class="dropdown-item" style="min-height: 60px;">
-                            <div class="text-center" style="margin-left: 10px;">
-                                <img src="<?php echo User::getPhoto(); ?>" style="max-width: 55px;"  class="img align-middle img-fluid img-thumbnail"/>
+                            <div class="text-center float-left" style="margin-left: 10px;">
+                                <img src="<?php echo User::getPhoto(); ?>" style="max-width: 55px;"  class="img align-middle img-fluid img-thumbnail rounded-circle"/>
                             </div>
                             <div  style="margin-left: 80px;">
-                                <h2><?php echo User::getName(); ?></h2>
+                                <h2 style="margin: 0; padding: 0;"><?php echo User::getName(); ?></h2>
                                 <div><small><?php echo User::getMail(); ?></small></div>
 
                             </div>
@@ -144,7 +118,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             <div>
                                 <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-primary btn-block" style="border-radius: 4px 4px 0 0;">
                                     <span class="fa fa-user-circle"></span>
-        <?php echo __("My Account"); ?>
+                                    <?php echo __("My Account"); ?>
                                 </a>
 
                             </div>
@@ -155,7 +129,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             <div>
                                 <a href="<?php echo User::getChannelLink(); ?>" class="btn btn-danger btn-block" style="border-radius: 0;">
                                     <span class="fab fa-youtube"></span>
-        <?php echo __("My Channel"); ?>
+                                    <?php echo __("My Channel"); ?>
                                 </a>
 
                             </div>
@@ -167,40 +141,39 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             <li class="dropdown-item">
                                 <div>
                                     <a href="<?php echo $global['webSiteRootURL']; ?>mvideos" class="btn btn-success btn-block" style="border-radius: 0;">
-                                        <span class="glyphicon glyphicon-film"></span>
-                                        <span class="glyphicon glyphicon-headphones"></span>
-            <?php echo __("My videos"); ?>
+                                        <i class="fas fa-video"></i>
+                                        <?php echo __("My videos"); ?>
                                     </a>
                                 </div>
                             </li>
                             <?php
-                          }
-                            if ((($config->getAuthCanViewChart()==0)&&(User::canUpload()))||(($config->getAuthCanViewChart()==1)&&(User::canViewChart()))) {
-                                ?>
+                        }
+                        if ((($config->getAuthCanViewChart() == 0) && (User::canUpload())) || (($config->getAuthCanViewChart() == 1) && (User::canViewChart()))) {
+                            ?>
                             <li class="dropdown-item" >
                                 <div>
                                     <a href="<?php echo $global['webSiteRootURL']; ?>charts" class="btn btn-info btn-block" style="border-radius: 0;">
                                         <span class="fas fa-tachometer-alt"></span>
-            <?php echo __("Dashboard"); ?>
+                                        <?php echo __("Dashboard"); ?>
                                     </a>
                                 </div>
                             </li>
                             <?php
-                          } if (User::canUpload()) {
-                                ?>
+                        } if (User::canUpload()) {
+                            ?>
                             <li class="dropdown-item">
                                 <div>
                                     <a href="<?php echo $global['webSiteRootURL']; ?>subscribes" class="btn btn-warning btn-block" style="border-radius: 0">
                                         <span class="fa fa-check"></span>
-            <?php echo __("Subscriptions"); ?>
+                                        <?php echo __("Subscriptions"); ?>
                                     </a>
                                 </div>
                             </li>
                             <li class="dropdown-item">
                                 <div>
-                                    <a href="<?php echo $global['webSiteRootURL']; ?>comments" class="btn btn-default btn-block" style="border-radius: 0 0 4px 4px;">
+                                    <a href="<?php echo $global['webSiteRootURL']; ?>comments" class="btn btn-dark btn-block" style="border-radius: 0 0 4px 4px;">
                                         <span class="fa fa-comment"></span>
-            <?php echo __("Comments"); ?>
+                                        <?php echo __("Comments"); ?>
                                     </a>
                                 </div>
                             </li>
@@ -217,49 +190,49 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                 <ul  class="" style="margin-bottom: 10px; padding-left:0px;">
                                     <li class="dropdown-item">
                                         <a href="<?php echo $global['webSiteRootURL']; ?>users">
-                                            <span class="glyphicon glyphicon-user"></span>
-            <?php echo __("Users"); ?>
+                                            <i class="fas fa-user"></i>
+                                            <?php echo __("Users"); ?>
                                         </a>
                                     </li>
                                     <li class="dropdown-item">
                                         <a href="<?php echo $global['webSiteRootURL']; ?>usersGroups">
                                             <span class="fa fa-users"></span>
-            <?php echo __("Users Groups"); ?>
+                                            <?php echo __("Users Groups"); ?>
                                         </a>
                                     </li>
                                     <li class="dropdown-item">
                                         <a href="<?php echo $global['webSiteRootURL']; ?>categories">
-                                            <span class="glyphicon glyphicon-list"></span>
-            <?php echo __("Categories"); ?>
+                                            <i class="fas fa-list-ul"></i>
+                                            <?php echo __("Categories"); ?>
                                         </a>
                                     </li>
                                     <li class="dropdown-item">
                                         <a href="<?php echo $global['webSiteRootURL']; ?>update">
-                                            <span class="glyphicon glyphicon-refresh"></span>
+                                            <i class="fas fa-sync-alt"></i>
                                             <?php echo __("Update version"); ?>
                                             <?php
                                             if (!empty($updateFiles)) {
                                                 ?><span class="badge badge-danger"><?php echo count($updateFiles); ?></span><?php
-                            }
-                            ?>
+                                            }
+                                            ?>
                                         </a>
                                     </li>
                                     <li class="dropdown-item">
                                         <a href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations">
-                                            <span class="glyphicon glyphicon-cog"></span>
-            <?php echo __("Site Configurations"); ?>
+                                            <i class="fas fa-cog"></i>
+                                            <?php echo __("Site Configurations"); ?>
                                         </a>
                                     </li>
                                     <li class="dropdown-item">
                                         <a href="<?php echo $global['webSiteRootURL']; ?>locale">
-                                            <span class="glyphicon glyphicon-flag"></span>
-            <?php echo __("Create more translations"); ?>
+                                            <i class="fas fa-flag"></i>
+                                            <?php echo __("Create more translations"); ?>
                                         </a>
                                     </li>
                                     <li class="dropdown-item">
                                         <a href="<?php echo $global['webSiteRootURL']; ?>plugins">
                                             <span class="fa fa-plug"></span>
-            <?php echo __("Plugins"); ?>
+                                            <?php echo __("Plugins"); ?>
                                         </a>
                                     </li>
                                 </ul>
@@ -271,11 +244,11 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         <?php
                     } else {
                         ?>
-                        <li>
+                        <li class="dropdown-item">
                             <div>
                                 <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-success btn-block">
-                                    <span class="glyphicon glyphicon-log-in"></span>
-        <?php echo __("Login"); ?>
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <?php echo __("Login"); ?>
                                 </a>
                             </div>
                         </li>
@@ -287,25 +260,25 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     <?php
                     if (empty($advancedCustom->doNotShowLeftMenuAudioAndVideoButtons)) {
                         ?>
-                        <li>
+                        <li class="dropdown-item">
                             <hr>
                         </li>
                         <li class="dropdown-item <?php echo empty($_SESSION['type']) ? "active" : ""; ?>">
                             <a class="nav-link " href="<?php echo $global['webSiteRootURL']; ?>?type=all">
-                                <span class="glyphicon glyphicon-star"></span>
-        <?php echo __("Audios and Videos"); ?>
+                                <i class="fas fa-star"></i>
+                                <?php echo __("Audios and Videos"); ?>
                             </a>
                         </li>
                         <li class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'video' && empty($_GET['catName'])) ? "active" : ""; ?>">
                             <a class="nav-link " href="<?php echo $global['webSiteRootURL']; ?>videoOnly">
-                                <span class="glyphicon glyphicon-facetime-video"></span>
-        <?php echo __("Videos"); ?>
+                                <i class="fas fa-video"></i>
+                                <?php echo __("Videos"); ?>
                             </a>
                         </li>
                         <li class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'audio' && empty($_GET['catName'])) ? "active" : ""; ?>">
                             <a class="nav-link" href="<?php echo $global['webSiteRootURL']; ?>audioOnly">
-                                <span class="glyphicon glyphicon-headphones"></span>
-                        <?php echo __("Audios"); ?>
+                                <i class="fas fa-headphones"></i>
+                                <?php echo __("Audios"); ?>
                             </a>
                         </li>
                         <?php
@@ -323,7 +296,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         <li class="dropdown-item">
                             <a href="<?php echo $global['webSiteRootURL']; ?>channels">
                                 <i class="fa fa-search"></i>
-        <?php echo __("Browse Channels"); ?>
+                                <?php echo __("Browse Channels"); ?>
                             </a>
                         </li>
 
@@ -374,188 +347,191 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     </li>
                     <li class="dropdown-item">
                         <a href="<?php echo $global['webSiteRootURL']; ?>help">
-                            <span class="glyphicon glyphicon-question-sign"></span>
-    <?php echo __("Help"); ?>
+                            <i class="fas fa-question-circle"></i>
+                            <?php echo __("Help"); ?>
                         </a>
                     </li>
                     <li class="dropdown-item">
                         <a href="<?php echo $global['webSiteRootURL']; ?>about">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-    <?php echo __("About"); ?>
+                            <i class="fas fa-info-circle"></i>
+                            <?php echo __("About"); ?>
                         </a>
                     </li>
                     <li class="dropdown-item">
                         <a href="<?php echo $global['webSiteRootURL']; ?>contact">
-                            <span class="glyphicon glyphicon-comment"></span>
-    <?php echo __("Contact"); ?>
+                            <i class="fas fa-comment"></i>
+                            <?php echo __("Contact"); ?>
                         </a>
                     </li>
                 </ul>
+            </div>
+
+
         </div>
 
-
-      </div>
-
         <div>
-          <ul class="items-container mr-auto navbar-brand" style="">
-              <li style="margin-right: 0px; " class="nav-item">
-                  <div class="">
-                      <button type="button" id="buttonSearch" class="d-none.d-sm-block.d-md-none navbar-toggler float-right" data-toggle="collapse" data-target="#mysearch" style="padding: 6px 12px;">
-                          <span class="fa fa-search"></span>
-                      </button>
-                  </div>
-            <form class="form-inline collapse navbar-collapse" style="padding-left: 10px; " id="mysearch"  action="<?php echo $global['webSiteRootURL']; ?>" >
-                <input class="form-control searchfield" type="search" value="<?php if (!empty($_GET['search'])) {echo $_GET['search'];} ?>" name="search" placeholder="<?php echo __("Search"); ?>" />
-                <button class="btn btn-success my-2 my-sm-0"   type="submit"><span class="fa fa-search"></span></button>
-            </form>
-        </li>
-              <li class="nav-item" style="margin-right: 0px; padding-left: 0px;">
-                  <div class="navbar-header">
-                      <button type="button" class="navbar-toggler float-right" id="buttonMyNavbar" data-toggle="collapse" data-target="#myNavbar">
-                          <span class="navbar-toggler-icon"></span>
-                      </button>
-                  </div>
-                  <div class="collapse navbar-collapse bg-light  navbar-default" style="white-space: nowrap; padding-left: 10px;padding-bottom: 10px;" id="myNavbar">
-                      <ul class="nav" style="">
-                          <?php
-                          if (!empty($advancedCustom->menuBarHTMLCode->value)) {
-                              echo $advancedCustom->menuBarHTMLCode->value;
-                          }
-                          ?>
+            <ul class="items-container mr-auto navbar-brand" style="">
+                <li style="margin-right: 0px; " class="nav-item">
+                    <div class="">
+                        <button type="button" id="buttonSearch" class="d-none.d-sm-block.d-md-none navbar-toggler float-right" data-toggle="collapse" data-target="#mysearch" style="padding: 6px 12px;">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </div>
+                    <form class="form-inline collapse navbar-collapse" style="padding-left: 10px; " id="mysearch"  action="<?php echo $global['webSiteRootURL']; ?>" >
+                        <input class="form-control searchfield" type="search" value="<?php
+                        if (!empty($_GET['search'])) {
+                            echo $_GET['search'];
+                        }
+                        ?>" name="search" placeholder="<?php echo __("Search"); ?>" />
+                        <button class="btn btn-success my-2 my-sm-0"   type="submit"><span class="fa fa-search"></span></button>
+                    </form>
+                </li>
+                <li class="nav-item" style="margin-right: 0px; padding-left: 0px;">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggler float-right" id="buttonMyNavbar" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse bg-light  navbar-default" style="white-space: nowrap; padding-left: 10px;" id="myNavbar">
+                        <ul class="nav" style="">
+                            <?php
+                            if (!empty($advancedCustom->menuBarHTMLCode->value)) {
+                                echo $advancedCustom->menuBarHTMLCode->value;
+                            }
+                            ?>
 
-                          <?php
-                          echo YouPHPTubePlugin::getHTMLMenuRight();
-                          ?>
-                          <?php
-                          if (User::canUpload()) {
-                              ?>
-                              <li class="nav-item">
-                                  <div class="btn-group">
-                                      <button type="button" class="btn btn-default  dropdown-toggle nav-item float-left"  data-toggle="dropdown">
-                                          <i class="<?php echo isset($advancedCustom->uploadButtonDropdownIcon) ? $advancedCustom->uploadButtonDropdownIcon : "fas fa-video"; ?>"></i> <?php echo!empty($advancedCustom->uploadButtonDropdownText) ? $advancedCustom->uploadButtonDropdownText : ""; ?> <span class="caret"></span>
-                                      </button>
-                                      <?php
-                                      if( (isset($advancedCustom->onlyVerifiedEmailCanUpload) && $advancedCustom->onlyVerifiedEmailCanUpload && User::isVerified()) || (isset($advancedCustom->onlyVerifiedEmailCanUpload) && !$advancedCustom->onlyVerifiedEmailCanUpload)  || !isset($advancedCustom->onlyVerifiedEmailCanUpload)
-                                      ){
-                                      ?>
-                                          <ul class="dropdown-menu dropdown-menu-right" role="menu" style="">
-                                              <?php
-                                              if (!empty($advancedCustom->encoderNetwork)) {
-                                                  ?>
-                                                  <li class="dropdown-item" >
-                                                      <a href="<?php echo $advancedCustom->encoderNetwork, "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
-                                                          <span class="fa fa-cogs"></span> <?php echo __("Encoder Network"); ?>
-                                                      </a>
-                                                  </li>
-                                                  <?php
-                                              }
-                                              if (empty($advancedCustom->doNotShowEncoderButton)) {
-                                                  if (!empty($config->getEncoderURL())) {
-                                                      ?>
-                                                      <li class="dropdown-item">
-                                                          <a href="<?php echo $config->getEncoderURL(), "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
-                                                              <span class="fa fa-cog"></span> <?php echo __("Encode video and audio"); ?>
-                                                          </a>
-                                                      </li>
-                                                      <?php
-                                                  } else {
-                                                      ?>
-                                                      <li class="dropdown-item">
-                                                          <a href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations" ><span class="fa fa-cogs"></span> <?php echo __("Configure an Encoder URL"); ?></a>
-                                                      </li>
-                                                      <?php
-                                                  }
-                                              }
-                                              if (empty($advancedCustom->doNotShowUploadMP4Button)) {
-                                                  ?>
-                                                  <li class="dropdown-item">
-                                                      <a  href="<?php echo $global['webSiteRootURL']; ?>upload" >
-                                                          <span class="fa fa-upload"></span> <?php echo __("Direct upload"); ?>
-                                                      </a>
-                                                  </li>
-                                                  <?php
-                                              }
-                                              if (empty($advancedCustom->doNotShowImportLocalVideosButton)) {
-                                                  ?>
-                                                  <li class="dropdown-item">
-                                                      <a  href="<?php echo $global['webSiteRootURL']; ?>view/import.php" >
-                                                          <span class="fas fa-hdd"></span> <?php echo __("Direct Import Local Videos"); ?>
-                                                      </a>
-                                                  </li>
-                                                  <?php
-                                              }
-                                              if (empty($advancedCustom->doNotShowEmbedButton)) {
-                                                  ?>
-                                                  <li class="dropdown-item">
-                                                      <a  href="<?php echo $global['webSiteRootURL']; ?>mvideos?link=1" >
-                                                          <span class="fa fa-link"></span> <?php echo __("Embed a video link"); ?>
-                                                      </a>
-                                                  </li>
-                                                  <?php
-                                              }
-                                              ?>
-                                          </ul>
-                                      <?php
-                                      }
-                                      else{
-                                      ?>
-                                          <ul class="dropdown-menu dropdown-menu-right" role="menu" style="">
-                                                  <li>
-                                                      <a  href="" >
-                                                          <span class="fa fa-exclamation"></span> <?php echo __("Only verified users can upload"); ?>
-                                                      </a>
-                                                  </li>
-                                          </ul>
+                            <?php
+                            echo YouPHPTubePlugin::getHTMLMenuRight();
+                            ?>
+                            <?php
+                            if (User::canUpload()) {
+                                ?>
+                                <li class="nav-item">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-light  dropdown-toggle nav-item float-left"  data-toggle="dropdown">
+                                            <i class="<?php echo isset($advancedCustom->uploadButtonDropdownIcon) ? $advancedCustom->uploadButtonDropdownIcon : "fas fa-video"; ?>"></i> <?php echo!empty($advancedCustom->uploadButtonDropdownText) ? $advancedCustom->uploadButtonDropdownText : ""; ?> <span class="caret"></span>
+                                        </button>
+                                        <?php
+                                        if ((isset($advancedCustom->onlyVerifiedEmailCanUpload) && $advancedCustom->onlyVerifiedEmailCanUpload && User::isVerified()) || (isset($advancedCustom->onlyVerifiedEmailCanUpload) && !$advancedCustom->onlyVerifiedEmailCanUpload) || !isset($advancedCustom->onlyVerifiedEmailCanUpload)
+                                        ) {
+                                            ?>
+                                            <ul class="dropdown-menu dropdown-menu-right" role="menu" style="">
+                                                <?php
+                                                if (!empty($advancedCustom->encoderNetwork)) {
+                                                    ?>
+                                                    <li class="dropdown-item" >
+                                                        <a href="<?php echo $advancedCustom->encoderNetwork, "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
+                                                            <span class="fa fa-cogs"></span> <?php echo __("Encoder Network"); ?>
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                }
+                                                if (empty($advancedCustom->doNotShowEncoderButton)) {
+                                                    if (!empty($config->getEncoderURL())) {
+                                                        ?>
+                                                        <li class="dropdown-item">
+                                                            <a href="<?php echo $config->getEncoderURL(), "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
+                                                                <span class="fa fa-cog"></span> <?php echo __("Encode video and audio"); ?>
+                                                            </a>
+                                                        </li>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <li class="dropdown-item">
+                                                            <a href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations" ><span class="fa fa-cogs"></span> <?php echo __("Configure an Encoder URL"); ?></a>
+                                                        </li>
+                                                        <?php
+                                                    }
+                                                }
+                                                if (empty($advancedCustom->doNotShowUploadMP4Button)) {
+                                                    ?>
+                                                    <li class="dropdown-item">
+                                                        <a  href="<?php echo $global['webSiteRootURL']; ?>upload" >
+                                                            <span class="fa fa-upload"></span> <?php echo __("Direct upload"); ?>
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                }
+                                                if (empty($advancedCustom->doNotShowImportLocalVideosButton)) {
+                                                    ?>
+                                                    <li class="dropdown-item">
+                                                        <a  href="<?php echo $global['webSiteRootURL']; ?>view/import.php" >
+                                                            <span class="fas fa-hdd"></span> <?php echo __("Direct Import Local Videos"); ?>
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                }
+                                                if (empty($advancedCustom->doNotShowEmbedButton)) {
+                                                    ?>
+                                                    <li class="dropdown-item">
+                                                        <a  href="<?php echo $global['webSiteRootURL']; ?>mvideos?link=1" >
+                                                            <span class="fa fa-link"></span> <?php echo __("Embed a video link"); ?>
+                                                        </a>
+                                                    </li>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </ul>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <ul class="dropdown-menu dropdown-menu-right" role="menu" style="">
+                                                <li>
+                                                    <a  href="" >
+                                                        <span class="fa fa-exclamation"></span> <?php echo __("Only verified users can upload"); ?>
+                                                    </a>
+                                                </li>
+                                            </ul>
 
-                                      <?php
-                                      }
-                                      ?>
-                                  </div>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
 
-                              </li>
-                              <?php
-                          }
-                          ?>
-                          <li class="nav-item">
-                              <?php
-                              $flags = getEnabledLangs();
-                              $objFlag = new stdClass();
-                              foreach ($flags as $key => $value) {
-                                  //$value = strtoupper($value);
-                                  $objFlag->$value = $value;
-                              }
-                              if ($lang == 'en') {
-                                  $lang = 'us';
-                              }
-                              ?>
-                              <style>
-                                  #navBarFlag .dropdown-menu {
-                                      min-width: 20px;
-                                  }
-                              </style>
-                              <div id="navBarFlag" data-input-name="country" data-selected-country="<?php echo $lang; ?>"></div>
-                              <script>
-                                  $(function () {
-                                      $("#navBarFlag").flagStrap({
-                                          countries: <?php echo json_encode($objFlag); ?>,
-                                          inputName: 'country',
-                                          buttonType: "btn-default nav-item",
-                                          onSelect: function (value, element) {
-                                              window.location.href = "<?php echo $global['webSiteRootURL']; ?>?lang=" + value;
-                                          },
-                                          placeholder: {
-                                              value: "",
-                                              text: ""
-                                          }
-                                      });
-                                  });
-                              </script>
-                          </li>
-                      </ul>
-                  </div>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                            <li class="nav-item">
+                                <?php
+                                $flags = getEnabledLangs();
+                                $objFlag = new stdClass();
+                                foreach ($flags as $key => $value) {
+                                    //$value = strtoupper($value);
+                                    $objFlag->$value = $value;
+                                }
+                                if ($lang == 'en') {
+                                    $lang = 'us';
+                                }
+                                ?>
+                                <style>
+                                    #navBarFlag .dropdown-menu {
+                                        min-width: 20px;
+                                    }
+                                </style>
+                                <div id="navBarFlag" data-input-name="country" data-selected-country="<?php echo $lang; ?>"></div>
+                                <script>
+                                    $(function () {
+                                        $("#navBarFlag").flagStrap({
+                                            countries: <?php echo json_encode($objFlag); ?>,
+                                            inputName: 'country',
+                                            buttonType: "btn-light nav-item",
+                                            onSelect: function (value, element) {
+                                                window.location.href = "<?php echo $global['webSiteRootURL']; ?>?lang=" + value;
+                                            },
+                                            placeholder: {
+                                                value: "",
+                                                text: ""
+                                            }
+                                        });
+                                    });
+                                </script>
+                            </li>
+                        </ul>
+                    </div>
 
-              </li>
-          </ul>
+                </li>
+            </ul>
         </div>
 
 

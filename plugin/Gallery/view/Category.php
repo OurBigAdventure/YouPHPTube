@@ -16,7 +16,7 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
                 if (!empty($_GET['catName'])) {
                     ?>
                     <div>
-                        <a class="btn btn-default btn-sm float-right"  href="<?php echo $global['webSiteRootURL']; ?>">
+                        <a class="btn btn-light btn-sm float-right"  href="<?php echo $global['webSiteRootURL']; ?>">
                             <i class="fa fa-backward"></i>
                             <?php echo __("Back to startpage"); ?>
                         </a>
@@ -27,7 +27,7 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
             } else if (!empty($parentCat)) {
                 ?>
                 <div>
-                    <a class="btn btn-default btn-sm float-right" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $parentCat['clean_name']; ?>">
+                    <a class="btn btn-light btn-sm float-right" href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $parentCat['clean_name']; ?>">
                         <i class="fa fa-backward"></i>
                         <?php echo __("Back to") . " " . $parentCat['name']; ?>
                     </a>

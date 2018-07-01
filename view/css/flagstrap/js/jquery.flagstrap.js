@@ -10,7 +10,7 @@
 
     var defaults = {
         buttonSize: "btn-md",
-        buttonType: "btn-default",
+        buttonType: "btn-light",
         labelMargin: "10px",
         scrollable: true,
         scrollableHeight: "250px",

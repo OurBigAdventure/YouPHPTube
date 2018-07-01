@@ -98,7 +98,7 @@ if (!User::isAdmin()) {
                                     content = content.replace("{status-icon}", "fas fa-check-square");
                                     content = content.replace("{status-text}", "Activate");
                                 }else{
-                                    content = content.replace("{status-class}", "btn-default");
+                                    content = content.replace("{status-class}", "btn-light");
                                     content = content.replace("{status-icon}", "fas fa-ban");
                                     content = content.replace("{status-text}", "Deactivate");
                                 }

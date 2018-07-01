@@ -117,7 +117,7 @@ if (!empty($_GET['playlist_id'])) {
 
 if (!empty($video)) {
     $name = User::getNameIdentificationById($video['users_id']);
-    $name = "<a href='" . User::getChannelLink($video['users_id']) . "' class='btn-xs btn-default'>{$name}</a>";
+    $name = "<a href='" . User::getChannelLink($video['users_id']) . "' class='btn-xs btn-light'>{$name}</a>";
     $subscribe = Subscribe::getButton($video['users_id']);
     $video['creator'] = '<div class="float-left"><img src="' . User::getPhoto($video['users_id']) . '" alt="" class="img img-fluid rounded-circle zoom" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName text-muted"><strong>' . $name . '</strong><br />' . $subscribe . '<br /><small>' . humanTiming(strtotime($video['videoCreation'])) . '</small></div></div>';
     $obj = new Video("", "", $video['id']);
@@ -258,7 +258,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             <div class="row">
                                 <div class="col-md-12 watch8-action-buttons text-muted">
                                     <?php if ((($advancedCustom != false) && ($advancedCustom->disableShareAndPlaylist == false)) || ($advancedCustom == false)) { ?>
-                                        <button class="btn btn-default no-outline" id="addBtn" data-placement="bottom">
+                                        <button class="btn btn-light no-outline" id="addBtn" data-placement="bottom">
                                             <span class="fa fa-plus"></span> <?php echo __("Add to"); ?>
                                         </button>
                                         <div class="webui-popover-content">
@@ -376,14 +376,14 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
 
                                             });
                                         </script>
-                                        <a href="#" class="btn btn-default no-outline" id="shareBtn">
+                                        <a href="#" class="btn btn-light no-outline" id="shareBtn">
                                             <span class="fa fa-share"></span> <?php echo __("Share"); ?>
                                         </a>
                                     <?php } echo YouPHPTubePlugin::getWatchActionButton(); ?>
-                                    <a href="#" class="btn btn-default no-outline float-right <?php echo ($video['myVote'] == - 1) ? "myVote" : "" ?>" id="dislikeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("DonÂ´t like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
+                                    <a href="#" class="btn btn-light no-outline float-right <?php echo ($video['myVote'] == - 1) ? "myVote" : "" ?>" id="dislikeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("DonÂ´t like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
                                         <span class="fa fa-thumbs-down"></span> <small><?php echo $video['dislikes']; ?></small>
                                     </a>
-                                    <a href="#" class="btn btn-default no-outline float-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("Like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
+                                    <a href="#" class="btn btn-light no-outline float-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("Like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
                                         <span class="fa fa-thumbs-up"></span>
                                         <small><?php echo $video['likes']; ?></small>
                                     </a>
@@ -580,7 +580,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-lg-12">
                                     <div class="col-xs-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Category"); ?>:</strong></div>
-                                    <div class="col-xs-8 col-sm-10 col-lg-10"><a class="btn-xs btn-default"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
+                                    <div class="col-xs-8 col-sm-10 col-lg-10"><a class="btn-xs btn-light"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
                                     <div class="col-xs-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Description"); ?>:</strong></div>
                                     <div class="col-xs-8 col-sm-10 col-lg-10" itemprop="description"><?php echo nl2br(textToLink(htmlentities($video['description']))); ?></div>
                                 </div>

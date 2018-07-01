@@ -285,10 +285,10 @@ trigger: 'manual',
                         $notify = 'hidden';
                         $notNotify = '';
                     }
-                    $subscribe .= '<span class=" notify'.$user_id.' '.$notify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-default btn-xs " data-toggle="tooltip"
+                    $subscribe .= '<span class=" notify'.$user_id.' '.$notify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-light btn-xs " data-toggle="tooltip"
                                    title="'.__("Stop getting notified for every new video").'">
                                 <i class="fa fa-bell" ></i>
-                            </button></span><span class=" notNotify'.$user_id.' '.$notNotify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-default btn-xs "  data-toggle="tooltip"
+                            </button></span><span class=" notNotify'.$user_id.' '.$notNotify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-light btn-xs "  data-toggle="tooltip"
                                    title="'.__("Get notified for every new video").'">
                                 <i class="fa fa-bell-slash"></i>
                             </button></span>';

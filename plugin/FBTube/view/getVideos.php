@@ -110,7 +110,7 @@ if (!empty($videos)) {
 
                 <div class="row">
                     <div class="col-md-12 col-lg-12 watch8-action-buttons text-muted">
-                        <button class="btn btn-default no-outline" id="addBtn<?php echo $video['id']; ?>" data-placement="bottom">
+                        <button class="btn btn-light no-outline" id="addBtn<?php echo $video['id']; ?>" data-placement="bottom">
                             <span class="fa fa-plus"></span> <?php echo __("Add to"); ?>
                         </button>
                         <div class="webui-popover-content">
@@ -231,13 +231,13 @@ if (!empty($videos)) {
 
                             });
                         </script>
-                        <a href="#" class="btn btn-default no-outline" id="shareBtn<?php echo $video['id']; ?>">
+                        <a href="#" class="btn btn-light no-outline" id="shareBtn<?php echo $video['id']; ?>">
                             <span class="fa fa-share"></span> <?php echo __("Share"); ?>
                         </a>
-                        <a href="#" class="btn btn-default no-outline" id="commentBtn<?php echo $video['id']; ?>">
+                        <a href="#" class="btn btn-light no-outline" id="commentBtn<?php echo $video['id']; ?>">
                             <span class="fa fa-comment"></span> <?php echo __("Comment"); ?>
                         </a>
-                        <a href="#" class="btn btn-default no-outline float-right <?php echo ($video['myVote'] == -1) ? "myVote" : "" ?>" id="dislikeBtn<?php echo $video['id']; ?>"
+                        <a href="#" class="btn btn-light no-outline float-right <?php echo ($video['myVote'] == -1) ? "myVote" : "" ?>" id="dislikeBtn<?php echo $video['id']; ?>"
                         <?php
                         if (!User::isLogged()) {
                             ?>
@@ -245,7 +245,7 @@ if (!empty($videos)) {
                            <?php } ?>>
                             <span class="fa fa-thumbs-down"></span> <small><?php echo $video['dislikes']; ?></small>
                         </a>
-                        <a href="#" class="btn btn-default no-outline float-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn<?php echo $video['id']; ?>"
+                        <a href="#" class="btn btn-light no-outline float-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn<?php echo $video['id']; ?>"
                         <?php
                         if (!User::isLogged()) {
                             ?>

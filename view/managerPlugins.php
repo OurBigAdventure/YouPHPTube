@@ -165,7 +165,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                 <div id="menu0" class="tab-pane fade show active">
                     <div class="list-group-item">
                         <div class="btn-group" >
-                            <button type="button" class="btn btn-default" id="upload">
+                            <button type="button" class="btn btn-light" id="upload">
                                 <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
                             </button>
                         </div>
@@ -174,7 +174,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                 <tr>
                                     <th data-column-id="name" data-formatter="name" data-width="300px" ><?php echo __("Name"); ?></th>
                                     <th data-column-id="description"><?php echo __("description"); ?></th>
-                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false" data-width="150px"></th>
+                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false" data-width="250px"></th>
                                 </tr>
                             </thead>
                         </table>
@@ -182,8 +182,10 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"><?php echo __("Plugin Form"); ?></h4>
+                                        <h5 class="modal-title"><?php echo __("Plugin Form"); ?></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
                                     <div class="modal-body">
                                         <ul class="nav nav-tabs">
@@ -192,7 +194,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                         </ul>
                                         <div class="tab-content">
                                             <div id="visual" class="tab-pane fade show active">
-                                                <div class="row" id="jsonElements" style="padding: 10px;">Some content.</div>
+                                                <div class="" id="jsonElements" style="padding: 10px;">Some content.</div>
                                             </div>
                                             <div id="code" class="tab-pane fade">
                                                 <form class="form-group"  id="updatePluginForm" onsubmit="">
@@ -204,7 +206,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>
+                                        <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
                                         <button type="button" class="btn btn-primary" id="savePluginBtn"><?php echo __("Save changes"); ?></button>
                                     </div>
                                 </div><!-- /.modal-content -->
@@ -250,7 +252,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                 <div id="menu1" class="tab-pane fade">
                     <div class="list-group-item">
                         <div class="panel panel-default">
-                            <div class="panel-heading"><a href="https://easytube.club/signUp" class="btn-default btn-xs"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
+                            <div class="panel-heading"><a href="https://easytube.club/signUp" class="btn-light btn-xs"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
                             <div class="panel-body">
                                 <ul class="list-group" id="pluginStoreList">
                                 </ul>
@@ -389,11 +391,11 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                             var editBtn = '';
 
                             if (row.id && !$.isEmptyObject(row.data_object)) {
-                                editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span> Edit parameters</button>';
+                                editBtn = '<button type="button" class="btn btn-xs btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span> Edit parameters</button>';
                             }
                             var sqlBtn = '';
                             if (row.databaseScript) {
-                                sqlBtn = '<button type="button" class="btn-xs btn-default command-sql" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Run Database Script"><span class="fa fa-database" aria-hidden="true"></span> Install tables</button>';
+                                sqlBtn = '<button type="button" class="btn btn-xs btn-light command-sql" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Run Database Script"><span class="fa fa-database" aria-hidden="true"></span> Install tables</button>';
                             }
                             menu = '';
                             if(row.installedPlugin && row.installedPlugin.status == 'active'){

@@ -106,7 +106,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     ?>
                                                     <div class="col-xs-4" style="padding: 10px;">
                                                         <img src="<?php echo $global['webSiteRootURL'], "view/css/custom/", $fileEx, ".png"; ?>" class="img-fluid img-radio">
-                                                        <button type="button" class="btn-default btn-radio btn-block btn-xs" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
+                                                        <button type="button" class="btn-light btn-radio btn-block btn-xs" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
                                                         <input type="checkbox" value="<?php echo ($fileEx); ?>"  class="d-none left-item">
                                                     </div>
                                                     <?php
@@ -278,7 +278,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </label>
                                                     <div class="col-md-8 ">
                                                         <div id="croppieLogo"></div>
-                                                        <a id="logo-btn" class="btn-default btn-xs btn-block"><?php echo __("Upload a logo"); ?></a>
+                                                        <a id="logo-btn" class="btn-light btn-xs btn-block"><?php echo __("Upload a logo"); ?></a>
                                                     </div>
                                                     <input type="file" id="logo" value="Choose a Logo" accept="image/*" style="display: none;" />
                                                 </div>
@@ -288,7 +288,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </label>
                                                     <div class="col-md-8 ">
                                                         <div id="croppieLogoSmall"></div>
-                                                        <a id="logoSmall-btn" class="btn-default btn-xs btn-block"><?php echo __("Upload a small logo"); ?></a>
+                                                        <a id="logoSmall-btn" class="btn-light btn-xs btn-block"><?php echo __("Upload a small logo"); ?></a>
                                                     </div>
                                                     <input type="file" id="logoSmall" value="Choose a Small Logo" accept="image/*" style="display: none;" />
                                                 </div>
@@ -408,7 +408,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             <small id="encoder_urlHelp" class="form-text text-muted">
                                                                 <?php echo __("You need to set up an encoder server"); ?><br>
                                                                 <?php echo __("You can use our public encoder on"); ?>: https://encoder.youphptube.com/ or
-                                                                <a href="https://github.com/DanielnetoDotCom/YouPHPTube-Encoder" class="btn-default btn-xs" target="_blank"><?php echo __("For faster encode, download your own encoder"); ?></a>
+                                                                <a href="https://github.com/DanielnetoDotCom/YouPHPTube-Encoder" class="btn-light btn-xs" target="_blank"><?php echo __("For faster encode, download your own encoder"); ?></a>
                                                             </small>
                                                         </div>
                                                     </div>

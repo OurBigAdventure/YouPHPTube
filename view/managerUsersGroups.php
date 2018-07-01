@@ -27,7 +27,7 @@ require_once $global['systemRootPath'] . 'objects/userGroups.php';
 
         <div class="container">
             <div class="btn-group" >
-                <button type="button" class="btn btn-default" id="addUserGroupsBtn">
+                <button type="button" class="btn btn-light" id="addUserGroupsBtn">
                     <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("New User Groups"); ?>
                 </button>
                 <a href="<?php echo $global['webSiteRootURL']; ?>mvideos" class="btn btn-success">
@@ -65,7 +65,7 @@ This will make your videos private. Only users who are in the same group as the 
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
                             <button type="button" class="btn btn-primary" id="saveUserGroupsBtn"><?php echo __("Save changes"); ?></button>
                         </div>
                     </div><!-- /.modal-content -->
@@ -91,8 +91,8 @@ This will make your videos private. Only users who are in the same group as the 
                     formatters: {
                         "commands": function (column, row)
                         {
-                            var editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
-                            var deleteBtn = '<button type="button" class="btn-default btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="Delete""><span class="fas fa-trash" aria-hidden="true"></span></button>';
+                            var editBtn = '<button type="button" class="btn-xs btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                            var deleteBtn = '<button type="button" class="btn-light btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="Delete""><span class="fas fa-trash" aria-hidden="true"></span></button>';
                             return editBtn + deleteBtn;
                         }
                     }

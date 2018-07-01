@@ -220,7 +220,7 @@ require_once '../objects/functions.php';
                                     $(function () {
                                         $("#navBarFlagInstall").flagStrap({
                                             inputName: 'mainLanguage',
-                                            buttonType: "btn-default bg-light nav-item",
+                                            buttonType: "btn-light bg-light nav-item",
                                         });
                                     });
                                 </script>

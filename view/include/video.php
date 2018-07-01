@@ -63,12 +63,12 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
         </div>
         <?php if ($config->getAllow_download()) { ?>
             <?php if ($playNowVideo['type'] == "video") { ?>
-                <a class="btn-xs btn-default float-right " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
+                <a class="btn-xs btn-light float-right " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>
             <?php } else { ?>
-                <a class="btn-xs btn-default float-right " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
+                <a class="btn-xs btn-light float-right " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>

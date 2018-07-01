@@ -192,7 +192,7 @@ if (!User::isAdmin()) {
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -210,7 +210,7 @@ if (!User::isAdmin()) {
                             <canvas id="canvas"></canvas>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -230,7 +230,7 @@ if (!User::isAdmin()) {
                     <button href="" class="editor_chart btn-info btn-xs">
                         <i class="fas fa-chart-area "></i>
                     </button>
-                    <button href="" class="editor_edit_link btn-default btn-xs">
+                    <button href="" class="editor_edit_link btn-light btn-xs">
                         <i class="fa fa-edit"></i>
                     </button>
                     <button href="" class="editor_delete_link btn-danger btn-xs">

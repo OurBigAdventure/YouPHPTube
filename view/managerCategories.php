@@ -23,7 +23,7 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
         <?php include $global['systemRootPath'] . 'view/include/navbar.php'; ?>
         <div class="container">
         <?php include $global['systemRootPath'] . 'view/include/updateCheck.php'; ?>
-            <button type="button" class="btn btn-default" id="addCategoryBtn">
+            <button type="button" class="btn btn-light" id="addCategoryBtn">
                 <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("New Category"); ?>
             </button>
 
@@ -77,7 +77,7 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                                 </select>
                                 </div>
                                 <div class="btn-group">
-                                    <button data-selected="graduation-cap" type="button" class="icp iconCat btn btn-default dropdown-toggle iconpicker-component" data-toggle="dropdown">
+                                    <button data-selected="graduation-cap" type="button" class="icp iconCat btn btn-light dropdown-toggle iconpicker-component" data-toggle="dropdown">
                                         <?php echo __("Select an icon for the category"); ?>  <i class="fa fa-fw"></i>
                                         <span class="caret"></span>
                                     </button>
@@ -86,7 +86,7 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __("Close"); ?></button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
                             <button type="button" class="btn btn-primary" id="saveCategoryBtn"><?php echo __("Save changes"); ?></button>
                         </div>
                     </div><!-- /.modal-content -->
@@ -179,8 +179,8 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                         },
                         "commands": function (column, row)
                         {
-                            var editBtn = '<button type="button" class="btn-xs btn-default command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo __("Edit"); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
-                            var deleteBtn = '<button type="button" class="btn-default btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="<?php echo __("Delete"); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
+                            var editBtn = '<button type="button" class="btn-xs btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo __("Edit"); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                            var deleteBtn = '<button type="button" class="btn-light btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="<?php echo __("Delete"); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
                             return editBtn + deleteBtn;
                         }
                     }

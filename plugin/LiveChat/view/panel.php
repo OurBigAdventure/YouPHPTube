@@ -11,7 +11,7 @@ $canSendMessage = $p->canSendMessage();
 </div>
 <div style="display: none" id="chatOnline">
     <div class="panel panel-default liveChat">
-        <div class="panel-heading"><i class="fa fa-comments-o"></i> <?php echo __("Live Chat"); ?> <button class="btn btn-xs btn-default float-right" id="collapseBtn"><i class="fa fa-minus-square"></i></button></div>
+        <div class="panel-heading"><i class="fa fa-comments-o"></i> <?php echo __("Live Chat"); ?> <button class="btn btn-xs btn-light float-right" id="collapseBtn"><i class="fa fa-minus-square"></i></button></div>
         <div class="colapsibleArea">
             <div class="panel-body">
                 <ul class="messages"></ul>
@@ -30,7 +30,7 @@ $canSendMessage = $p->canSendMessage();
                     <?php
                 }else{
                 ?>
-                <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-default"> <?php echo __('Login'); ?></a>
+                <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-light"> <?php echo __('Login'); ?></a>
                 <?php
                 }
                 ?>
