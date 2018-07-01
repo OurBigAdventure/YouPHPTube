@@ -163,7 +163,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
 
             <div class="tab-content">
                 <div id="menu0" class="tab-pane fade show active">
-                    <div class="list-group-item">
+                    <div class="bg-light">
                         <div class="btn-group" >
                             <button type="button" class="btn btn-light" id="upload">
                                 <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
@@ -250,7 +250,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                     </div>
                 </div>
                 <div id="menu1" class="tab-pane fade">
-                    <div class="list-group-item">
+                    <div class="bg-light">
                         <div class="panel panel-default">
                             <div class="panel-heading"><a href="https://easytube.club/signUp" class="btn-light btn-xs"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
                             <div class="panel-body">
@@ -263,7 +263,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
             </div>
 
 
-            <li class="list-group-item d-none col-md-3" id="pluginStoreListModel">
+            <li class="bg-light d-none col-md-3" id="pluginStoreListModel">
 
                 <div class="panel panel-warning panel-sm">
                     <div class="panel-heading">

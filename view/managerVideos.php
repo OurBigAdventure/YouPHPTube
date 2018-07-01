@@ -251,21 +251,21 @@ if (!empty($_GET['video_id'])) {
                                 </select>
 
                                 <ul class="list-group">
-                                    <li class="list-group-item">
+                                    <li class="bg-light">
                                         <span class="fa fa-globe"></span> <?php echo __("Public Video"); ?>
                                         <div class="material-switch float-right">
                                             <input id="public" type="checkbox" value="0" class="userGroups"/>
                                             <label for="public" class="label-success"></label>
                                         </div>
                                     </li>
-                                    <li class="list-group-item active non-public">
+                                    <li class="bg-light active non-public">
                                         <?php echo __("Groups that can see this video"); ?>
                                         <a href="#" class="btn btn-info btn-xs float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                     </li>
                                     <?php
                                     foreach ($userGroups as $value) {
                                         ?>
-                                        <li class="list-group-item non-public">
+                                        <li class="bg-light non-public">
                                             <span class="fa fa-lock"></span>
                                             <?php echo $value['group_name']; ?>
                                             <span class="badge badge-info"><?php echo $value['total_users']; ?> Users linked</span>

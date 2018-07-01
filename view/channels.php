@@ -25,7 +25,7 @@ $channels = Channel::getChannels();
         ?>
 
         <div class="container">
-            <div class="bgWhite list-group-item" >
+            <div class="bgWhite bg-light" >
                 <?php
                 foreach ($channels as $value) {
                     ?>

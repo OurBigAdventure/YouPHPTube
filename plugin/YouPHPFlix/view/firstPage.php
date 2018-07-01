@@ -235,7 +235,7 @@ unset($_SESSION['type']);
                 }
                 ?>
                 </div>
-			<div class="poster list-group-item" style="display: none;">
+			<div class="poster bg-light" style="display: none;">
 				<div class="posterDetails ">
 					<h2 class="infoTitle">Title</h2>
 					<h4 class="infoDetails">Details</h4>
@@ -325,7 +325,7 @@ unset($_SESSION['type']);
 				</div>
                 <?php } ?>
             </div>
-			<div class="poster list-group-item" style="display: none;">
+			<div class="poster bg-light" style="display: none;">
 				<div class="posterDetails ">
 					<h2 class="infoTitle">Title</h2>
 					<h4 class="infoDetails">Details</h4>
@@ -403,7 +403,7 @@ unset($_SESSION['type']);
                     </div>
                 <?php } ?>
                 </div>
-			<div class="poster list-group-item" style="display: none;">
+			<div class="poster bg-light" style="display: none;">
 				<div class="posterDetails ">
 					<h2 class="infoTitle">Title</h2>
 					<h4 class="infoDetails">Details</h4>
@@ -489,7 +489,7 @@ unset($_SESSION['type']);
 
                 ?>
                 </div>
-			<div class="poster list-group-item" style="display: none;">
+			<div class="poster bg-light" style="display: none;">
 				<div class="posterDetails ">
 					<h2 class="infoTitle">Title</h2>
 					<h4 class="infoDetails">Details</h4>
@@ -597,7 +597,7 @@ unset($_SESSION['type']);
 				</div>
                             <?php } ?>
             </div>
-			<div class="poster list-group-item" style="display: none;">
+			<div class="poster bg-light" style="display: none;">
 				<div class="posterDetails ">
 					<h2 class="infoTitle">Title</h2>
 					<h4 class="infoDetails">Details</h4>

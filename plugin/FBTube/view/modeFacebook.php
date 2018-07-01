@@ -41,7 +41,7 @@ if(!isset($global['systemRootPath'])){
             </div>
             <div class="col-lg-4 col-md-4 col-sm-3 hidden-xs">
                 <div data-spy="affix" style="margin-right: 10vw;" >
-                    <div class="list-group-item ">
+                    <div class="bg-light ">
                         <?php
                         echo $config->getAdsense();
                         ?>
@@ -74,7 +74,7 @@ if(!isset($global['systemRootPath'])){
                                     console.log(id);
                                     document.getElementById(id).contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
                                 } catch (err) {}
-                                $(this).find('.list-group-item').removeClass('playActive');
+                                $(this).find('.bg-light').removeClass('playActive');
                             });
                             try {
                                 $(this).find('video').get(0).play();
@@ -84,7 +84,7 @@ if(!isset($global['systemRootPath'])){
                                 console.log(id);
                                 document.getElementById(id).contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
                             } catch (err) {}
-                            $(this).find('.list-group-item').addClass('playActive');
+                            $(this).find('.bg-light').addClass('playActive');
                             return true;
                         }
                     });

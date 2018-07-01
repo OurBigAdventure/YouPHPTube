@@ -23,7 +23,7 @@ if (User::isLogged()) {
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
 
-        <div class="container list-group-item">
+        <div class="container bg-light">
             <div style="display: none;" id="messageSuccess">
                 <div class="alert alert-success clear clearfix">
                     <div class="col-md-3">

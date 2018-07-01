@@ -78,42 +78,42 @@ $userGroups = UserGroups::getAllUsersGroups();
                                 <input type="text" id="inputAnalyticsCode" class="form-control last" placeholder="UA-123456789-1" >
                                 <small>Do not paste the full javascript code, paste only the gtag id</small>
                                 <ul class="list-group">
-                                    <li class="list-group-item">
+                                    <li class="bg-light">
                                         <?php echo __("is Admin"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="isAdmin" id="isAdmin"/>
                                             <label for="isAdmin" class="label-success"></label>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
+                                    <li class="bg-light">
                                         <?php echo __("Can Stream Videos"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="canStream" id="canStream"/>
                                             <label for="canStream" class="label-success"></label>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
+                                    <li class="bg-light">
                                         <?php echo __("Can Upload Videos"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="canUpload" id="canUpload"/>
                                             <label for="canUpload" class="label-success"></label>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
+                                    <li class="bg-light">
                                         <?php echo __("Can view chart"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="canViewChart" id="canViewChart"/>
                                             <label for="canViewChart" class="label-success"></label>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
+                                    <li class="bg-light">
                                         <?php echo __("E-mail Verified"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="isEmailVerified" id="isEmailVerified"/>
                                             <label for="isEmailVerified" class="label-success"></label>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
+                                    <li class="bg-light">
                                         <?php echo __("is Active"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="status" id="status"/>
@@ -122,14 +122,14 @@ $userGroups = UserGroups::getAllUsersGroups();
                                     </li>
                                 </ul>
                                 <ul class="list-group">
-                                    <li class="list-group-item active">
+                                    <li class="bg-light active">
                                         <?php echo __("User Groups"); ?>
                                         <a href="#" class="btn-info btn-xs float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By associating groups with this user, they will be able to see all the videos that are related to this group"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                     </li>
                                     <?php
                                     foreach ($userGroups as $value) {
                                         ?>
-                                        <li class="list-group-item">
+                                        <li class="bg-light">
                                             <span class="fa fa-unlock"></span>
                                             <?php echo $value['group_name']; ?>
                                             <span class="badge badge-info"><?php echo $value['total_videos']; ?> <?php echo __("Videos linked"); ?></span>

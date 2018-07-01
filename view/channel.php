@@ -70,7 +70,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
         ?>
 
         <div class="container">
-            <div class="bgWhite list-group-item gallery clear clearfix" >
+            <div class="bgWhite bg-light gallery clear clearfix" >
                 <div class="row bg-info profileBg" style="background-image: url('<?php echo $global['webSiteRootURL'], $user->getBackgroundURL(); ?>')">
                     <img src="<?php echo User::getPhoto($user_id); ?>" alt="<?php echo $user->_getName(); ?>" class="img img-fluid img-thumbnail" style="max-width: 100px;"/>
                 </div>

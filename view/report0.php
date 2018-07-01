@@ -202,7 +202,7 @@
                 <?php
                 foreach ($labelsFull as $key => $value) {
                     ?>
-                    <a class="list-group-item " style="border-color: <?= $bg[$key] ?>; border-width: 1px 20px 1px 5px; font-size: 0.9em;">
+                    <a class="bg-light " style="border-color: <?= $bg[$key] ?>; border-width: 1px 20px 1px 5px; font-size: 0.9em;">
                         <?= $value ?>
                     </a>
                     <?php

@@ -147,7 +147,7 @@ foreach ($videos as $value) {
 //var_dump($videos);
         ?>
         <div class="container-fluid">
-            <div class="list-group-item clear clearfix">
+            <div class="bg-light clear clearfix">
                 <ul class="nav nav-tabs">
                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="fas fa-tachometer-alt"></i> <?php echo __("Dashboard"); ?></a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" id="viewperchannel" href="#menu1"><i class="fab fa-youtube"></i> <i class="fa fa-eye"></i> <?php echo __("Video views - per Channel"); ?></a></li>

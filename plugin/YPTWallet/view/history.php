@@ -35,7 +35,7 @@ if (!empty($_GET['users_id'])) {
                     <h1><?php echo User::getNameIdentificationById($users_id); ?></h1>
                 </div>
                 <div class="panel-body">
-                    <div class="row bgWhite list-group-item">
+                    <div class="row bgWhite bg-light">
                         <table id="grid" class="table table-sm table-hover table-striped">
                             <thead>
                                 <tr>

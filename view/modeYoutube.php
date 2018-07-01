@@ -212,7 +212,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                 <div class="row">
                     <div class="col-sm-1 col-md-1"></div>
                     <div class="col-sm-6 col-md-6">
-                        <div class="row bgWhite list-group-item">
+                        <div class="row bgWhite bg-light">
                             <div class="row divMainVideo">
                                 <div class="col-xs-4 col-sm-4 col-md-4">
                                     <img src="<?php echo $poster; ?>" alt="<?php echo str_replace('"', '', $video['title']); ?>" class="img img-fluid <?php echo $img_portrait; ?> rotate<?php echo $video['rotation']; ?>" height="130" itemprop="thumbnail" />
@@ -321,7 +321,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                 }
                                                             }
 
-                                                            $("#searchlist").append('<a class="list-group-item"><i class="fa fa-' + icon + '"></i> <span>'
+                                                            $("#searchlist").append('<a class="bg-light"><i class="fa fa-' + icon + '"></i> <span>'
                                                                     + response[i].name + '</span><div class="material-switch float-right"><input id="someSwitchOptionDefault'
                                                                     + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="'
                                                                     + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault'
@@ -420,7 +420,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             </div>
                         </div>
                         <?php if ((($advancedCustom != false) && ($advancedCustom->disableShareAndPlaylist == false)) || ($advancedCustom == false)) { ?>
-                            <div class="row bgWhite list-group-item" id="shareDiv">
+                            <div class="row bgWhite bg-light" id="shareDiv">
                                 <div class="tabbable-panel">
                                     <div class="tabbable-line text-muted">
                                         <ul class="nav nav-tabs">
@@ -576,7 +576,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                 </div>
                             </div>
                         <?php } ?>
-                        <div class="row bgWhite list-group-item">
+                        <div class="row bgWhite bg-light">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-lg-12">
                                     <div class="col-xs-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Category"); ?>:</strong></div>
@@ -596,11 +596,11 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                 });
                             });
                         </script>
-                        <div class="row bgWhite list-group-item">
+                        <div class="row bgWhite bg-light">
                             <?php include $global['systemRootPath'] . 'view/videoComments.php'; ?>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-md-4 bgWhite list-group-item rightBar">
+                    <div class="col-sm-4 col-md-4 bgWhite bg-light rightBar">
                         <?php
                         if (!empty($playlist_id)) {
                             include $global['systemRootPath'] . 'view/include/playlist.php';

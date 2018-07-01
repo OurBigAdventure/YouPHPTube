@@ -55,7 +55,7 @@ if (!empty($videos)) {
         }
         ?>
         <div class="row fbRow">
-            <div class="col-md-10 col-md-offset-1 list-group-item">
+            <div class="col-md-10 col-md-offset-1 bg-light">
                 <div class="clear clearfix"><?php echo $video['creator']; ?> </div>
                 <h2><?php echo $video['title']; ?></h2>
                 <div><?php echo nl2br(textToLink($video['description'])); ?></div>
@@ -179,7 +179,7 @@ if (!empty($videos)) {
                                                 }
                                             }
 
-                                            $("#searchlist<?php echo $video['id']; ?>").append('<a class="list-group-item"><i class="fa fa-' + icon + '"></i> <span>' + response[i].name + '</span><div class="material-switch float-right"><input id="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="' + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" class="label-success"></label></div></a>');
+                                            $("#searchlist<?php echo $video['id']; ?>").append('<a class="bg-light"><i class="fa fa-' + icon + '"></i> <span>' + response[i].name + '</span><div class="material-switch float-right"><input id="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="' + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" class="label-success"></label></div></a>');
                                         }
                                         $('#searchlist<?php echo $video['id']; ?>').btsListFilter('#searchinput<?php echo $video['id']; ?>', {itemChild: 'span'});
                                         $('.playListsIds').change(function () {
@@ -293,7 +293,7 @@ if (!empty($videos)) {
                         </script>
                     </div>
                 </div>
-                <div class="row bgWhite list-group-item" id="shareDiv<?php echo $video['id']; ?>">
+                <div class="row bgWhite bg-light" id="shareDiv<?php echo $video['id']; ?>">
                     <div class="tabbable-panel">
                         <div class="tabbable-line text-muted">
                             <ul class="nav nav-tabs">
@@ -435,7 +435,7 @@ if (!empty($videos)) {
                     </div>
                 </div>
 
-                <div class="row bgWhite list-group-item" id="commentDiv<?php echo $video['id']; ?>">
+                <div class="row bgWhite bg-light" id="commentDiv<?php echo $video['id']; ?>">
                     <div class="input-group">
                         <textarea class="form-control custom-control" rows="3" style="resize:none" id="comment<?php echo $video['id']; ?>" maxlength="200" <?php
                         if (!User::canComment()) {

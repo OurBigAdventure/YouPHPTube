@@ -77,7 +77,7 @@ if(!empty($_GET['embed'])){
             </div>  
         </div>
         <div class="container-fluid ">
-            <div class="col-md-5 col-md-offset-2 list-group-item">
+            <div class="col-md-5 col-md-offset-2 bg-light">
                 <h1 itemprop="name">
                     <i class="fas fa-video"></i> <?php echo $t['title']; ?>
                 </h1>
