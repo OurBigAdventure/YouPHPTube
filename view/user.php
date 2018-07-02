@@ -42,32 +42,26 @@ $advancedCustom = json_decode($json_file);
                                     <?php echo __("Update your user") ?>
 
                                 </legend>
-				<div class="d-block mx-auto justify-content-center col-5">
-                                <div class="form-group">
-                                    <label class="col-form-label"><?php echo __("Name"); ?></label>
-                                    <div class="inputGroupContainer">
-                                        <div class="input-group">
+				<div class="text-left">
+                                <div class="form-inline">
+                                    <label for="inputName" class="col-2" ><?php echo __("Name"); ?></label>
                                             <span class=""><i class="fas fa-pencil-alt"></i></span>
                                             <input  id="inputName" placeholder="<?php echo __("Name"); ?>" class="form-control"  type="text" value="<?php echo $user->getName(); ?>" required >
-                                        </div>
-                                    </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-form-label"><?php echo __("User"); ?></label>
-                                    <div class="inputGroupContainer">
-                                        <div class="input-group">
+                                <div class="form-inline">
+                                    <label for="inputUser" class="col-2"><?php echo __("User"); ?></label>
                                             <span class="input-group-addon"><i class="fas fa-user"></i></span>
                                             <input  id="inputUser" placeholder="<?php echo __("User"); ?>" class="form-control"  type="text" value="<?php echo $user->getUser(); ?>" required >
-                                        </div>
-                                    </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-form-label"><?php echo __("E-mail"); ?></label>
+                                <div class="form-inline">
+                                    <label class="col-2 col-form-label"><?php echo __("E-mail"); ?></label>
                                     <div class="inputGroupContainer form-group">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fas fa-envelope"></i></span>
+        <div class="input-group-prepend">
+          <div class="input-group-text"><span class="input-group-addon"><i class="fas fa-envelope"></i></span></div>
+        </div>
                                             <input  id="inputEmail" placeholder="<?php echo __("E-mail"); ?>" class="form-control"  type="email" value="<?php echo $user->getEmail(); ?>" required >
                                             <div class="">
                                                 <?php
@@ -110,8 +104,8 @@ $advancedCustom = json_decode($json_file);
 
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-form-label"><?php echo __("New Password"); ?></label>
+                                <div class="form-inline">
+                                    <label class="col-2 col-form-label"><?php echo __("New Password"); ?></label>
                                     <div class="inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fas fa-lock"></i></span>
@@ -120,8 +114,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-form-label"><?php echo __("Confirm New Password"); ?></label>
+                                <div class="form-inline">
+                                    <label class="col-2 col-form-label"><?php echo __("Confirm New Password"); ?></label>
                                     <div class="inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fas fa-lock"></i></span>
@@ -130,8 +124,8 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-form-label"><?php echo __("Channel Name"); ?></label>
+                                <div class="form-inline">
+                                    <label class="col-2 col-form-label"><?php echo __("Channel Name"); ?></label>
                                     <div class="inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fab fa-youtube"></i></span>
@@ -140,10 +134,10 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-form-label"><?php echo __("Analytics Code"); ?></label>
+                                <div class="form-inline">
+                                    <label class="col-2 col-form-label"><?php echo __("Analytics Code"); ?></label>
                                     <div class="inputGroupContainer">
-                                        <div class="input-group">
+                                        <div class=" input-group">
                                             <span class="input-group-addon"><i class="fas fa-chart-line"></i></span>
                                             <input  id="analyticsCode" placeholder="UA-123456789-1" class="form-control"  type="text" value="<?php echo $user->getAnalyticsCode(); ?>" >
                                         </div>
@@ -151,9 +145,10 @@ $advancedCustom = json_decode($json_file);
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-form-label"><?php echo __("About"); ?></label>
+                                <div class="form-inline">
+                                    <label class="col-2 col-form-label"><?php echo __("About"); ?></label>
                                     <div class="inputGroupContainer">
+					 <span class="input-group-addon"><i class="fas fa-newspaper"></i></span>
                                         <textarea id="textAbout" placeholder="<?php echo __("About"); ?>" class="form-control"  ><?php echo $user->getAbout(); ?></textarea>
                                     </div>
                                 </div>
