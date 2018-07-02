@@ -91,8 +91,8 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                 </a>
                             </div>
                         </li>
-                        <li style="min-height: 60px;">
-                            <div class="pull-left" style="margin-left: 10px;">
+                        <li style="min-height: 60px; margin-top: 5px;">
+                            <div class="float-left" style="margin-left: 10px;">
                                 <img src="<?php echo User::getPhoto(); ?>" style="max-width: 55px;"  class="img img-thumbnail img-responsive rounded-circle"/>
                             </div>
                             <div  style="margin-left: 80px;">
