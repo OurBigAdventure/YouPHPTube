@@ -2,6 +2,62 @@
     #menuSpacer {
         margin-bottom: 5px;
     }
+
+    @media (max-height : 200px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 100px;
+      }
+    }
+    @media (min-height : 200px) and (max-height : 300px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 150px;
+      }
+    }
+
+    @media (min-height : 300px) and (max-height : 450px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 250px;
+      }
+    }
+    @media (min-height : 450px) and (max-height : 550px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 400px;
+      }
+    }
+    @media (min-height : 550px) and (max-height : 600px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 500px;
+      }
+    }
+    @media (min-height : 600px) and (max-height : 700px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 550px;
+      }
+    }
+    @media (min-height : 700px) and (max-height : 800px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 650px;
+      }
+    }
+    @media (min-height : 800px) and (max-height : 900px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 750px;
+      }
+    }
+    @media (min-height : 900px) and (max-height : 1000px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 850px;
+      }
+    }
+    @media (min-height : 1000px) {
+      #sidebar1 .dropdown-menu {
+        max-height: 950px;
+      }
+    }
+    #sidebar1 .dropdown-menu {
+      overflow-y: auto;
+      overflow-x:hidden;
+    }
     @media (max-width : 990px) {
         #mysearch {
             position: absolute;
@@ -93,17 +149,15 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
             <button class="btn-light btn nav-item align-top" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="navbar-toggler-icon"></span></button>
             <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
             <div id="sidebar1" class="dropdown" style="position: absolute; height: 100%; top:0;">
-                <ul class="dropdown-menu  dropdown-menu-left bg-light" style="" aria-labelledby="buttonMenu1" >
+                <div class="dropdown-menu  dropdown-menu-left bg-light" style="" aria-labelledby="buttonMenu1" >
                     <?php
                     if (User::isLogged()) {
                         ?>
-                        <li class="dropdown-item">
                             <a href="<?php echo $global['webSiteRootURL']; ?>logoff" class="btn btn-outline-danger btn-block" >
                                 <i class="fas fa-sign-out-alt"></i>
                                 <?php echo __("Logoff"); ?>
                             </a>
-                        </li>
-                        <li class="dropdown-item" style="min-height: 60px;">
+                        <div class="dropdown-item" style="min-height: 60px;">
                             <div class="text-center float-left" style="margin-left: 10px;">
                                 <img src="<?php echo User::getPhoto(); ?>" style="max-width: 55px;"  class="img align-middle img-fluid img-thumbnail rounded-circle"/>
                             </div>
@@ -112,71 +166,44 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                 <div><small><?php echo User::getMail(); ?></small></div>
 
                             </div>
-                        </li>
-                        <li class="dropdown-item">
-
-                            <div>
-                                <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-primary btn-block" style="border-radius: 4px 4px 0 0;">
+                        </div>
+                                <a href="<?php echo $global['webSiteRootURL']; ?>user" class=" btn btn-primary btn-block" style="border-radius: 4px 4px 0 0;">
                                     <span class="fa fa-user-circle"></span>
                                     <?php echo __("My Account"); ?>
                                 </a>
 
-                            </div>
-                        </li>
-
-                        <li class="dropdown-item">
-
-                            <div>
-                                <a href="<?php echo User::getChannelLink(); ?>" class="btn btn-danger btn-block" style="border-radius: 0;">
+                                <a href="<?php echo User::getChannelLink(); ?>" class=" btn btn-danger btn-block" style="border-radius: 0;">
                                     <span class="fab fa-youtube"></span>
                                     <?php echo __("My Channel"); ?>
                                 </a>
 
-                            </div>
-                        </li>
 
                         <?php
                         if (User::canUpload()) {
                             ?>
-                            <li class="dropdown-item">
-                                <div>
-                                    <a href="<?php echo $global['webSiteRootURL']; ?>mvideos" class="btn btn-success btn-block" style="border-radius: 0;">
+                                    <a  href="<?php echo $global['webSiteRootURL']; ?>mvideos" class=" btn btn-success btn-block" style="border-radius: 0;">
                                         <i class="fas fa-video"></i>
                                         <?php echo __("My videos"); ?>
                                     </a>
-                                </div>
-                            </li>
                             <?php
                         }
                         if ((($config->getAuthCanViewChart() == 0) && (User::canUpload())) || (($config->getAuthCanViewChart() == 1) && (User::canViewChart()))) {
                             ?>
-                            <li class="dropdown-item" >
-                                <div>
                                     <a href="<?php echo $global['webSiteRootURL']; ?>charts" class="btn btn-info btn-block" style="border-radius: 0;">
                                         <span class="fas fa-tachometer-alt"></span>
                                         <?php echo __("Dashboard"); ?>
                                     </a>
-                                </div>
-                            </li>
                             <?php
                         } if (User::canUpload()) {
                             ?>
-                            <li class="dropdown-item">
-                                <div>
                                     <a href="<?php echo $global['webSiteRootURL']; ?>subscribes" class="btn btn-warning btn-block" style="border-radius: 0">
                                         <span class="fa fa-check"></span>
                                         <?php echo __("Subscriptions"); ?>
                                     </a>
-                                </div>
-                            </li>
-                            <li class="dropdown-item">
-                                <div>
                                     <a href="<?php echo $global['webSiteRootURL']; ?>comments" class="btn btn-dark btn-block" style="border-radius: 0 0 4px 4px;">
                                         <span class="fa fa-comment"></span>
                                         <?php echo __("Comments"); ?>
                                     </a>
-                                </div>
-                            </li>
                             <?php
                         }
                         ?>
@@ -184,30 +211,21 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         if (User::isAdmin()) {
                             ?>
 
-                            <li class="dropdown-item">
-                                <hr>
+                                <div class="dropdown-divider"></div>
                                 <h2 class="text-danger"><?php echo __("Admin Menu"); ?></h2>
-                                <ul  class="" style="margin-bottom: 10px; padding-left:0px;">
-                                    <li class="dropdown-item">
-                                        <a href="<?php echo $global['webSiteRootURL']; ?>users">
+                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>users">
                                             <i class="fas fa-user"></i>
                                             <?php echo __("Users"); ?>
                                         </a>
-                                    </li>
-                                    <li class="dropdown-item">
-                                        <a href="<?php echo $global['webSiteRootURL']; ?>usersGroups">
+                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>usersGroups">
                                             <span class="fa fa-users"></span>
                                             <?php echo __("Users Groups"); ?>
                                         </a>
-                                    </li>
-                                    <li class="dropdown-item">
-                                        <a href="<?php echo $global['webSiteRootURL']; ?>categories">
+                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>categories">
                                             <i class="fas fa-list-ul"></i>
                                             <?php echo __("Categories"); ?>
                                         </a>
-                                    </li>
-                                    <li class="dropdown-item">
-                                        <a href="<?php echo $global['webSiteRootURL']; ?>update">
+                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>update">
                                             <i class="fas fa-sync-alt"></i>
                                             <?php echo __("Update version"); ?>
                                             <?php
@@ -216,27 +234,19 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                             }
                                             ?>
                                         </a>
-                                    </li>
-                                    <li class="dropdown-item">
-                                        <a href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations">
+                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations">
                                             <i class="fas fa-cog"></i>
                                             <?php echo __("Site Configurations"); ?>
                                         </a>
-                                    </li>
-                                    <li class="dropdown-item">
-                                        <a href="<?php echo $global['webSiteRootURL']; ?>locale">
+                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>locale">
                                             <i class="fas fa-flag"></i>
                                             <?php echo __("Create more translations"); ?>
                                         </a>
-                                    </li>
-                                    <li class="dropdown-item">
-                                        <a href="<?php echo $global['webSiteRootURL']; ?>plugins">
+                                        <a  class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>plugins">
                                             <span class="fa fa-plug"></span>
                                             <?php echo __("Plugins"); ?>
                                         </a>
-                                    </li>
-                                </ul>
-                            </li>
+
 
                             <?php
                         }
@@ -244,14 +254,10 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         <?php
                     } else {
                         ?>
-                        <li class="dropdown-item">
-                            <div>
-                                <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-success btn-block">
+                                <a href="<?php echo $global['webSiteRootURL']; ?>user" class="dropdown-item btn btn-success btn-block">
                                     <i class="fas fa-sign-in-alt"></i>
                                     <?php echo __("Login"); ?>
                                 </a>
-                            </div>
-                        </li>
                         <?php
                     }
                     ?>
@@ -260,27 +266,19 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     <?php
                     if (empty($advancedCustom->doNotShowLeftMenuAudioAndVideoButtons)) {
                         ?>
-                        <li class="dropdown-item">
-                            <hr>
-                        </li>
-                        <li class="dropdown-item <?php echo empty($_SESSION['type']) ? "active" : ""; ?>">
-                            <a class="nav-link " href="<?php echo $global['webSiteRootURL']; ?>?type=all">
+                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item <?php echo empty($_SESSION['type']) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>?type=all">
                                 <i class="fas fa-star"></i>
                                 <?php echo __("Audios and Videos"); ?>
                             </a>
-                        </li>
-                        <li class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'video' && empty($_GET['catName'])) ? "active" : ""; ?>">
-                            <a class="nav-link " href="<?php echo $global['webSiteRootURL']; ?>videoOnly">
+                            <a class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'video' && empty($_GET['catName'])) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>videoOnly">
                                 <i class="fas fa-video"></i>
                                 <?php echo __("Videos"); ?>
                             </a>
-                        </li>
-                        <li class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'audio' && empty($_GET['catName'])) ? "active" : ""; ?>">
-                            <a class="nav-link" href="<?php echo $global['webSiteRootURL']; ?>audioOnly">
+                            <a class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'audio' && empty($_GET['catName'])) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>audioOnly">
                                 <i class="fas fa-headphones"></i>
                                 <?php echo __("Audios"); ?>
                             </a>
-                        </li>
                         <?php
                     }
                     ?>
@@ -289,25 +287,21 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     if (empty($advancedCustom->removeBrowserChannelLinkFromMenu)) {
                         ?>
                         <!-- Channels -->
-                        <li class="dropdown-item">
-                            <hr>
-                            <h3 class="text-danger"><?php echo __("Channels"); ?></h3>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="<?php echo $global['webSiteRootURL']; ?>channels">
+                        <div class="dropdown-divider"></div>
+
+                            <h3 class="text-danger dropdown-item"><?php echo __("Channels"); ?></h3>
+
+                            <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>channels">
                                 <i class="fa fa-search"></i>
                                 <?php echo __("Browse Channels"); ?>
                             </a>
-                        </li>
 
                         <?php
                     }
                     ?>
                     <!-- categories -->
-                    <li class="dropdown-item">
-                        <hr>
-                        <h3 class="text-danger"><?php echo __("Categories"); ?></h3>
-                    </li>
+                        <div class="dropdown-divider"></div>
+                        <h3 class="text-danger dropdown-item"><?php echo __("Categories"); ?></h3>
                     <?php
 
                     function mkSub($catId) {
@@ -317,8 +311,8 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         if (!empty($subcats)) {
                             echo "<ul style='margin-bottom: 0px; list-style-type: none;'>";
                             foreach ($subcats as $subcat) {
-                                echo '<li class="dropdown-item ' . ($subcat['clean_name'] == @$_GET['catName'] ? "active" : "") . '">'
-                                . '<a href="' . $global['webSiteRootURL'] . 'cat/' . $subcat['clean_name'] . '" >'
+                                echo '<li >'
+                                . '<a class="dropdown-item ' . ($subcat['clean_name'] == @$_GET['catName'] ? "active" : "") . '" href="' . $global['webSiteRootURL'] . 'cat/' . $subcat['clean_name'] . '" >'
                                 . '<span class="' . (empty($subcat['iconClass']) ? "fa fa-folder" : $subcat['iconClass']) . '"></span>  ' . $subcat['name'] . '</a></li>';
                                 mkSub($subcat['id']);
                             }
@@ -328,8 +322,8 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
 
                     foreach ($categories as $value) {
 
-                        echo '<li class="dropdown-item ' . ($value['clean_name'] == @$_GET['catName'] ? "active" : "") . '">'
-                        . '<a href="' . $global['webSiteRootURL'] . 'cat/' . $value['clean_name'] . '" >'
+                        echo '<li >'
+                        . '<a class="dropdown-item ' . ($value['clean_name'] == @$_GET['catName'] ? "active" : "") . '" href="' . $global['webSiteRootURL'] . 'cat/' . $value['clean_name'] . '" >'
                         . '<span class="' . (empty($value['iconClass']) ? "fa fa-folder" : $value['iconClass']) . '"></span>  ' . $value['name'] . '</a>';
                         mkSub($value['id']);
                         echo '</li>';
@@ -342,28 +336,20 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
 
                     <!-- categories END -->
 
-                    <li>
-                        <hr>
-                    </li>
-                    <li class="dropdown-item">
-                        <a href="<?php echo $global['webSiteRootURL']; ?>help">
+                      <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>help">
                             <i class="fas fa-question-circle"></i>
                             <?php echo __("Help"); ?>
                         </a>
-                    </li>
-                    <li class="dropdown-item">
-                        <a href="<?php echo $global['webSiteRootURL']; ?>about">
+                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>about">
                             <i class="fas fa-info-circle"></i>
                             <?php echo __("About"); ?>
                         </a>
-                    </li>
-                    <li class="dropdown-item">
-                        <a href="<?php echo $global['webSiteRootURL']; ?>contact">
+                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>contact">
                             <i class="fas fa-comment"></i>
                             <?php echo __("Contact"); ?>
                         </a>
-                    </li>
-                </ul>
+                </div>
             </div>
 
 
