@@ -44,7 +44,7 @@ $advancedCustom = json_decode($json_file);
                                 </legend>
 				<div class="">
                                 <div class="form-inline ">
-                                    <label for="inputName" class="col-4" ><?php echo __("Name"); ?></label>
+                                    <label for="inputName" class="ml-auto font-weight-bold mr-2" ><?php echo __("Name"); ?></label>
                                     <div class="input-group col-8">
                                       <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-pencil-alt"></i></div>
@@ -54,7 +54,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline">
-                                    <label for="inputUser" class="col-4"><?php echo __("User"); ?></label>
+                                    <label for="inputUser" class="ml-auto font-weight-bold mr-2"><?php echo __("User"); ?></label>
                                     <div class="input-group col-8">
                                       <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-user"></i></div>
@@ -65,7 +65,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline">
-                                    <label for="inputEmail" class="col-4"><?php echo __("E-mail"); ?></label>
+                                    <label for="inputEmail" class="ml-auto font-weight-bold mr-2"><?php echo __("E-mail"); ?></label>
                                         <div class="input-group col-8">
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fas fa-envelope"></i></div>
@@ -112,7 +112,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline">
-                                    <label for="inputPassword" class="col-4"><?php echo __("New Password"); ?></label>
+                                    <label for="inputPassword" class="ml-auto font-weight-bold mr-2"><?php echo __("New Password"); ?></label>
                                         <div class="input-group col-8">
                                           <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fas fa-lock"></i></div>
@@ -122,7 +122,7 @@ $advancedCustom = json_decode($json_file);
 
                                 </div>
                                 <div class="form-inline">
-                                <label for="inputPasswordConfirm" class="col-4"><?php echo __("Confirm New Password"); ?></label>
+                                <label for="inputPasswordConfirm" class="ml-auto font-weight-bold mr-2"><?php echo __("Confirm New Password"); ?></label>
                                     <div class="input-group col-8">
                                       <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-lock"></i></div>
@@ -133,7 +133,7 @@ $advancedCustom = json_decode($json_file);
 
 
                                 <div class="form-inline">
-                                    <label for="channelName" class="col-4"><?php echo __("Channel Name"); ?></label>
+                                    <label for="channelName" class="ml-auto font-weight-bold  mr-2"><?php echo __("Channel Name"); ?></label>
                                         <div class="input-group col-8">
                                           <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fab fa-youtube"></i></div>
@@ -143,7 +143,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline">
-                                    <label for="analyticsCode" class="col-4"><?php echo __("Analytics Code"); ?></label>
+                                    <label for="analyticsCode" class="ml-auto font-weight-bold  mr-2"><?php echo __("Analytics Code"); ?></label>
                                         <div class=" input-group col-5">
                                           <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fas fa-chart-line"></i></div>
@@ -156,7 +156,7 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline">
-                                    <label for="textAbout" class="col-4"><?php echo __("About"); ?></label>
+                                    <label for="textAbout" class="ml-auto font-weight-bold mr-2"><?php echo __("About"); ?></label>
                                     <div class="input-group col-8">
                                         <textarea id="textAbout" placeholder="<?php echo __("About"); ?>" class="form-control"  ><?php echo $user->getAbout(); ?></textarea>
                                     </div>
