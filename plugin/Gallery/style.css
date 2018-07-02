@@ -11,8 +11,8 @@
 }
 .gallery h2,
 .videosDetails .title {
-    font-size: 1em;
-    margin: 0;
+    font-size: 0.8em;
+    margin: 5px 0 0 0;
     padding: 0;
     overflow: hidden;
     text-overflow: ellipsis;

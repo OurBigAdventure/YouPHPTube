@@ -82,7 +82,7 @@ if (($video['type'] !== "audio")&&($video['type'] !== "linkAudio")) {
     $jsFiles = array();
     //$jsFiles[] = "{$global['webSiteRootURL']}bootstrap/js/bootstrap.min.js";
     $jsFiles[] = "view/js/seetalert/sweetalert.min.js";
-    $jsFiles[] = "view/js/bootpag/jquery.bootpag.min.js";
+    $jsFiles[] = "view/js/bootpag/jquery.bootpag.js";
     $jsFiles[] = "view/js/bootgrid/jquery.bootgrid.js";
     $jsFiles[] = "view/bootstrap/bootstrapSelectPicker/js/bootstrap-select.min.js";
     $jsFiles[] = "view/js/script.js";

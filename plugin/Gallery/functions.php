@@ -54,7 +54,7 @@ function createGallery($title, $sort, $rowCount, $getName, $mostWord, $lessWord,
         $videos = Video::getAllVideos("viewable");
         createGallerySection($videos);
         ?>
-        <div class="col-sm-12" style="z-index: 1;">
+        <div class="col-sm-12" style="z-index: 1; padding-top: 10px;">
             <ul id="<?php echo $paggingId; ?>">
             </ul>
         </div>
@@ -69,6 +69,8 @@ function createGallery($title, $sort, $rowCount, $getName, $mostWord, $lessWord,
     <?php echo 'var args = "' . $args . '";'; ?>
                 window.location.replace("<?php echo $url; ?>" + num + args);
             });
+            $('#pagination li').addClass('page-item');
+            $('#pagination a').addClass('page-link');
         });
     </script>
     <?php
