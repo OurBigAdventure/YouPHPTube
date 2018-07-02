@@ -42,31 +42,32 @@ $advancedCustom = json_decode($json_file);
                                     <?php echo __("Update your user") ?>
 
                                 </legend>
+				<div class="d-block mx-auto justify-content-center col-5">
                                 <div class="form-group">
-                                    <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
-                                    <div class="col-md-8 inputGroupContainer">
+                                    <label class="col-form-label"><?php echo __("Name"); ?></label>
+                                    <div class="inputGroupContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                            <span class=""><i class="fas fa-pencil-alt"></i></span>
                                             <input  id="inputName" placeholder="<?php echo __("Name"); ?>" class="form-control"  type="text" value="<?php echo $user->getName(); ?>" required >
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
-                                    <div class="col-md-8 inputGroupContainer">
+                                    <label class="col-form-label"><?php echo __("User"); ?></label>
+                                    <div class="inputGroupContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <span class="input-group-addon"><i class="fas fa-user"></i></span>
                                             <input  id="inputUser" placeholder="<?php echo __("User"); ?>" class="form-control"  type="text" value="<?php echo $user->getUser(); ?>" required >
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
-                                    <div class="col-md-6 inputGroupContainer form-group">
+                                    <label class="col-form-label"><?php echo __("E-mail"); ?></label>
+                                    <div class="inputGroupContainer form-group">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                            <span class="input-group-addon"><i class="fas fa-envelope"></i></span>
                                             <input  id="inputEmail" placeholder="<?php echo __("E-mail"); ?>" class="form-control"  type="email" value="<?php echo $user->getEmail(); ?>" required >
                                             <div class="">
                                                 <?php
@@ -110,28 +111,28 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 col-form-label"><?php echo __("New Password"); ?></label>
-                                    <div class="col-md-8 inputGroupContainer">
+                                    <label class="col-form-label"><?php echo __("New Password"); ?></label>
+                                    <div class="inputGroupContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                            <span class="input-group-addon"><i class="fas fa-lock"></i></span>
                                             <input  id="inputPassword" placeholder="<?php echo __("New Password"); ?>" class="form-control"  type="password" value="" >
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 col-form-label"><?php echo __("Confirm New Password"); ?></label>
-                                    <div class="col-md-8 inputGroupContainer">
+                                    <label class="col-form-label"><?php echo __("Confirm New Password"); ?></label>
+                                    <div class="inputGroupContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                            <span class="input-group-addon"><i class="fas fa-lock"></i></span>
                                             <input  id="inputPasswordConfirm" placeholder="<?php echo __("Confirm New Password"); ?>" class="form-control"  type="password" value="" >
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 col-form-label"><?php echo __("Channel Name"); ?></label>
-                                    <div class="col-md-8 inputGroupContainer">
+                                    <label class="col-form-label"><?php echo __("Channel Name"); ?></label>
+                                    <div class="inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fab fa-youtube"></i></span>
                                             <input  id="channelName" placeholder="<?php echo __("Channel Name"); ?>" class="form-control"  type="text" value="<?php echo $user->getChannelName(); ?>" >
@@ -140,8 +141,8 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 col-form-label"><?php echo __("Analytics Code"); ?></label>
-                                    <div class="col-md-8 inputGroupContainer">
+                                    <label class="col-form-label"><?php echo __("Analytics Code"); ?></label>
+                                    <div class="inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fas fa-chart-line"></i></span>
                                             <input  id="analyticsCode" placeholder="UA-123456789-1" class="form-control"  type="text" value="<?php echo $user->getAnalyticsCode(); ?>" >
@@ -151,11 +152,12 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 col-form-label"><?php echo __("About"); ?></label>
-                                    <div class="col-md-8 inputGroupContainer">
+                                    <label class="col-form-label"><?php echo __("About"); ?></label>
+                                    <div class="inputGroupContainer">
                                         <textarea id="textAbout" placeholder="<?php echo __("About"); ?>" class="form-control"  ><?php echo $user->getAbout(); ?></textarea>
                                     </div>
                                 </div>
+				</div>
                                 <div class="form-group">
                                     <div class="col-md-12 ">
                                         <div id="croppie"></div>
