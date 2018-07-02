@@ -105,7 +105,6 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                 <span class="fa fa-user-circle"></span>
                                 <?php echo __("My Account"); ?>
                             </a>
-
                         </li>
                         <li>
                             <a href="<?php echo User::getChannelLink(); ?>" class=" btn btn-danger btn-block" style="border-radius: 0;">
@@ -329,12 +328,17 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         </button>
                     </div>
                     <form class="form-inline collapse navbar-collapse" style="padding-left: 10px; " id="mysearch"  action="<?php echo $global['webSiteRootURL']; ?>" >
-                        <input class="form-control searchfield" type="search" value="<?php
-                        if (!empty($_GET['search'])) {
-                            echo $_GET['search'];
-                        }
-                        ?>" name="search" placeholder="<?php echo __("Search"); ?>" />
-                        <button class="btn btn-success my-2 my-sm-0"   type="submit"><span class="fa fa-search"></span></button>
+
+                        <div class="input-group">
+                            <input class="form-control searchfield py-2 border-right-0 border" type="search" value="<?php
+                            if (!empty($_GET['search'])) {
+                                echo $_GET['search'];
+                            }
+                            ?>" name="search" placeholder="<?php echo __("Search"); ?>" />
+                            <span class="input-group-append">
+                                <button class="btn bg-transparent input-group-text my-2 my-sm-0 border-left-0 "   type="submit"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
                     </form>
                 </li>
                 <li class="nav-item" style="margin-right: 0px; padding-left: 0px;">
