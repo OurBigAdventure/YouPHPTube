@@ -100,29 +100,29 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                 <div><small><?php echo User::getMail(); ?></small></div>
                             </div>
                         </li>
-                            <li>
-                        <a href="<?php echo $global['webSiteRootURL']; ?>user" class=" btn btn-primary btn-block" style="border-radius: 4px 4px 0 0;">
-                            <span class="fa fa-user-circle"></span>
-                            <?php echo __("My Account"); ?>
-                        </a>
+                        <li>
+                            <a href="<?php echo $global['webSiteRootURL']; ?>user" class=" btn btn-primary btn-block" style="border-radius: 4px 4px 0 0;">
+                                <span class="fa fa-user-circle"></span>
+                                <?php echo __("My Account"); ?>
+                            </a>
 
-                            </li>
-                            <li>
-                        <a href="<?php echo User::getChannelLink(); ?>" class=" btn btn-danger btn-block" style="border-radius: 0;">
-                            <span class="fab fa-youtube"></span>
-                            <?php echo __("My Channel"); ?>
-                        </a>
-                            </li>
+                        </li>
+                        <li>
+                            <a href="<?php echo User::getChannelLink(); ?>" class=" btn btn-danger btn-block" style="border-radius: 0;">
+                                <span class="fab fa-youtube"></span>
+                                <?php echo __("My Channel"); ?>
+                            </a>
+                        </li>
 
 
                         <?php
                         if (User::canUpload()) {
                             ?>
                             <li>
-                            <a  href="<?php echo $global['webSiteRootURL']; ?>mvideos" class=" btn btn-success btn-block" style="border-radius: 0;">
-                                <i class="fas fa-video"></i>
-                                <?php echo __("My videos"); ?>
-                            </a>
+                                <a  href="<?php echo $global['webSiteRootURL']; ?>mvideos" class=" btn btn-success btn-block" style="border-radius: 0;">
+                                    <i class="fas fa-video"></i>
+                                    <?php echo __("My videos"); ?>
+                                </a>
                             </li>
                             <?php
                         }
@@ -132,26 +132,26 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         if ((($config->getAuthCanViewChart() == 0) && (User::canUpload())) || (($config->getAuthCanViewChart() == 1) && (User::canViewChart()))) {
                             ?>
                             <li>
-                            <a href="<?php echo $global['webSiteRootURL']; ?>charts" class="btn btn-info btn-block" style="border-radius: 0;">
-                                <span class="fas fa-tachometer-alt"></span>
-                                <?php echo __("Dashboard"); ?>
-                            </a>
+                                <a href="<?php echo $global['webSiteRootURL']; ?>charts" class="btn btn-info btn-block" style="border-radius: 0;">
+                                    <span class="fas fa-tachometer-alt"></span>
+                                    <?php echo __("Dashboard"); ?>
+                                </a>
                             </li>
 
                             <?php
                         } if (User::canUpload()) {
                             ?>
                             <li>
-                                    <a href="<?php echo $global['webSiteRootURL']; ?>subscribes" class="btn btn-warning btn-block" style="border-radius: 0">
-                                        <span class="fa fa-check"></span>
-                                        <?php echo __("Subscriptions"); ?>
-                                    </a>
+                                <a href="<?php echo $global['webSiteRootURL']; ?>subscribes" class="btn btn-warning btn-block" style="border-radius: 0">
+                                    <span class="fa fa-check"></span>
+                                    <?php echo __("Subscriptions"); ?>
+                                </a>
                             </li>
                             <li>
-                                    <a href="<?php echo $global['webSiteRootURL']; ?>comments" class="btn btn-dark btn-block" style="border-radius: 0 0 4px 4px;">
-                                        <span class="fa fa-comment"></span>
-                                        <?php echo __("Comments"); ?>
-                                    </a>
+                                <a href="<?php echo $global['webSiteRootURL']; ?>comments" class="btn btn-dark btn-block" style="border-radius: 0 0 4px 4px;">
+                                    <span class="fa fa-comment"></span>
+                                    <?php echo __("Comments"); ?>
+                                </a>
                             </li>
                             <?php
                         }
@@ -203,12 +203,12 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         <?php
                     } else {
                         ?>
-                            <li>
-                        <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-success btn-block">
-                            <i class="fas fa-sign-in-alt"></i>
-                            <?php echo __("Sign In"); ?>
-                        </a>
-                            </li>
+                        <li>
+                            <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-success btn-block">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <?php echo __("Sign In"); ?>
+                            </a>
+                        </li>
                         <?php
                     }
                     ?>
