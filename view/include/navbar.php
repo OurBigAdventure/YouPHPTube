@@ -254,7 +254,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         <?php
                     } else {
                         ?>
-                                <a href="<?php echo $global['webSiteRootURL']; ?>user" class="dropdown-item btn btn-success btn-block">
+                                <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-success btn-block">
                                     <i class="fas fa-sign-in-alt"></i>
                                     <?php echo __("Login"); ?>
                                 </a>
