@@ -314,6 +314,8 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                 <?php echo __("Contact"); ?>
                             </a>
                         </li>
+                        <li style="height: 150px;">
+                        </li>
                     </ul>
                 </div>
             </div>
