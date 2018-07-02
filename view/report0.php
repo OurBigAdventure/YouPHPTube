@@ -1,17 +1,15 @@
 
 <div class="row dashboard">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
         <div class="card bg-secondary">
-            <div class="card-heading">
-                <div class="row">
-                    <div class="col-xs-3">
+            <div class="card-body">
+                    <span class="col-xs-3">
                         <i class="fa fa-play-circle fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
+                    </span>
+                    <div class="col-xs-9 float-right">
                         <div class="huge loading" id="totalVideos">0</div>
                         <div><?php echo __("Total Videos"); ?></div>
                     </div>
-                </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
                 <div class="card-footer">
@@ -22,21 +20,19 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
         <div class="card bg-primary">
-            <div class="card-heading">
-                <div class="row">
-                    <div class="col-xs-3">
+            <div class="card-body">
+                    <span class="col-xs-3">
                         <i class="fa fa-eye fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
+                    </span>
+                    <div class="col-xs-9 float-right">
                         <div class="huge loading" id="totalVideosViews">0</div>
                         <div><?php echo __("Total Videos Views"); ?></div>
                     </div>
-                </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="card-footer">
+                <div class="card-footer text-secondary">
                     <span class="float-left"><?php echo __("View Details"); ?></span>
                     <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
@@ -44,21 +40,19 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
         <div class="card bg-info">
-            <div class="card-heading">
-                <div class="row">
-                    <div class="col-xs-3">
+            <div class="card-body">
+                    <span class="col-xs-3">
                         <i class="fa fa-users fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
+                    </span>
+                    <div class="col-xs-9 float-right">
                         <div class="huge loading" id="totalUsers">0</div>
                         <div><?php echo __("Total Users"); ?></div>
                     </div>
-                </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>users">
-                <div class="card-footer">
+                <div class="card-footer text-secondary">
                     <span class="float-left"><?php echo __("View Details"); ?></span>
                     <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
@@ -66,18 +60,16 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
         <div class="card bg-warning">
-            <div class="card-heading">
-                <div class="row">
-                    <div class="col-xs-3">
+            <div class="card-body">
+                    <span class="col-xs-3">
                         <i class="fa fa-user-plus fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
+                    </span>
+                    <div class="col-xs-9 float-right">
                         <div class="huge loading" id="totalSubscriptions">0</div>
                         <div><?php echo __("Total Subscriptions"); ?></div>
                     </div>
-                </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>subscribes">
                 <div class="card-footer">
@@ -92,16 +84,14 @@
 
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
         <div class="card bg-warning">
-            <div class="card-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-comments fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
+            <div class="card-body">
+                    <span class="col-xs-3">
+                        <i class="fa fa-comments fa-3x"></i>
+                    </span>
+                    <div class="col-xs-9 float-right">
                         <div class="huge loading" id="totalVideosComents">0</div>
                         <div><?php echo __("Total Video Comments"); ?></div>
                     </div>
-                </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>comments">
                 <div class="card-footer">
@@ -114,16 +104,14 @@
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
         <div class="card bg-danger">
-            <div class="card-heading">
-                <div class="row">
-                    <div class="col-xs-3">
+            <div class="card-body">
+                    <span class="col-xs-3">
                         <i class="fas fa-thumbs-up fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
+                    </span>
+                    <div class="col-xs-9 float-right">
                         <div class="huge loading" id="totalVideosLikes">0</div>
                         <div><?php echo __("Total Videos Likes"); ?></div>
                     </div>
-                </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
                 <div class="card-footer">
@@ -136,16 +124,14 @@
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
         <div class="card bg-light">
-            <div class="card-heading">
-                <div class="row">
-                    <div class="col-xs-3">
+            <div class="card-body">
+                    <span class="col-xs-3">
                         <i class="fas fa-thumbs-down fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
+                    </span>
+                    <div class="col-xs-9 float-right">
                         <div class="huge loading" id="totalVideosDislikes">0</div>
                         <div><?php echo __("Total Videos Dislikes"); ?></div>
                     </div>
-                </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
                 <div class="card-footer">
@@ -158,19 +144,17 @@
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
         <div class="card bg-success">
-            <div class="card-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fas fa-clock fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
+            <div class="card-body">
+                    <span class="col-xs-3">
+                        <i class="fas fa-clock fa-2x"></i>
+                    </span>
+                    <div class="col-xs-9 float-right">
                         <div class="huge loading" id="totalDurationVideos">0</div>
                         <div><?php echo __("Total Duration Videos (Minutes)"); ?></div>
                     </div>
-                </div>
             </div>
             <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="card-footer">
+                <div class="card-footer text-secondary">
                     <span class="float-left"><?php echo __("View Details"); ?></span>
                     <span class="float-right"><i class="fas fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
