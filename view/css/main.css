@@ -439,7 +439,7 @@ img.rotate-90 {
     margin-top: 50px;
 }
 #sideBarContainer {
-    margin: -10px 0 0 -20px;
+    margin: -1px 0 0 -20px;
     padding: 10px 10px 150px 10px;
     height: 100vh;
     overflow-y: scroll;
@@ -458,6 +458,10 @@ img.rotate-90 {
 }
 
 /** header **/
+nav.fixed-top{
+    box-shadow: 0 -5px 15px #000;
+}
+
 nav ul.items-container {
     display: flex;
     justify-content: flex-end;
