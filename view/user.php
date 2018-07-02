@@ -44,8 +44,8 @@ $advancedCustom = json_decode($json_file);
                                 </legend>
 				<div class="">
                                 <div class="form-inline mb-1">
-                                    <label for="inputName" class="ml-auto font-weight-bold mr-2" ><?php echo __("Name"); ?></label>
-                                    <div class="input-group col-8">
+                                    <label for="inputName" class="ml-md-auto font-weight-bold mr-md-2" ><?php echo __("Name"); ?></label>
+                                    <div class="input-group col-md-8">
                                       <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-pencil-alt"></i></div>
                                       </div>
@@ -54,8 +54,8 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline mb-1">
-                                    <label for="inputUser" class="ml-auto font-weight-bold mr-2"><?php echo __("User"); ?></label>
-                                    <div class="input-group col-8">
+                                    <label for="inputUser" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("User"); ?></label>
+                                    <div class="input-group col-md-8">
                                       <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-user"></i></div>
                                       </div>
@@ -65,8 +65,8 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline mb-1">
-                                    <label for="inputEmail" class="ml-auto font-weight-bold mr-2"><?php echo __("E-mail"); ?></label>
-                                        <div class="input-group col-8">
+                                    <label for="inputEmail" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("E-mail"); ?></label>
+                                        <div class="input-group col-md-8">
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fas fa-envelope"></i></div>
         </div>
@@ -79,7 +79,7 @@ $advancedCustom = json_decode($json_file);
                                                     <?php
                                                 } else {
                                                     ?>
-                                                    <button class="btn btn-warning ml-2" id="verifyEmail"><i class="fa fa-envelope"></i> <?php echo __("Verify e-mail"); ?></button>
+                                                    <button class="btn btn-warning ml-md-2" id="verifyEmail"><i class="fa fa-envelope"></i> <?php echo __("Verify e-mail"); ?></button>
 
                                                     <script>
                                                         $(document).ready(function () {
@@ -112,8 +112,8 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline mb-1">
-                                    <label for="inputPassword" class="ml-auto font-weight-bold mr-2"><?php echo __("New Password"); ?></label>
-                                        <div class="input-group col-8">
+                                    <label for="inputPassword" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("New Password"); ?></label>
+                                        <div class="input-group col-md-8">
                                           <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fas fa-lock"></i></div>
                                           </div>
@@ -122,8 +122,8 @@ $advancedCustom = json_decode($json_file);
 
                                 </div>
                                 <div class="form-inline mb-1">
-                                <label for="inputPasswordConfirm" class="ml-auto font-weight-bold mr-2"><?php echo __("Confirm New Password"); ?></label>
-                                    <div class="input-group col-8">
+                                <label for="inputPasswordConfirm" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Confirm New Password"); ?></label>
+                                    <div class="input-group col-md-8">
                                       <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-lock"></i></div>
                                       </div>
@@ -133,8 +133,8 @@ $advancedCustom = json_decode($json_file);
 
 
                                 <div class="form-inline  mb-1">
-                                    <label for="channelName" class="ml-auto font-weight-bold  mr-2"><?php echo __("Channel Name"); ?></label>
-                                        <div class="input-group col-8">
+                                    <label for="channelName" class="ml-md-auto font-weight-bold  mr-md-2"><?php echo __("Channel Name"); ?></label>
+                                        <div class="input-group col-md-8">
                                           <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fab fa-youtube"></i></div>
                                           </div>
@@ -143,20 +143,20 @@ $advancedCustom = json_decode($json_file);
                                 </div>
 
                                 <div class="form-inline mb-1">
-                                    <label for="analyticsCode" class="ml-auto font-weight-bold  mr-2"><?php echo __("Analytics Code"); ?></label>
-                                        <div class=" input-group col-5">
+                                    <label for="analyticsCode" class="ml-md-auto font-weight-bold  mr-md-2"><?php echo __("Analytics Code"); ?></label>
+                                        <div class=" input-group col-md-5">
                                           <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fas fa-chart-line"></i></div>
                                           </div>
                                             <input  id="analyticsCode" placeholder="UA-123456789-1" class="form-control"  type="text" value="<?php echo $user->getAnalyticsCode(); ?>" >
 
                                         </div>
-                                        <small class="form-text text-muted col-3"><?php echo __("Track your videos with Google analytics"); ?></small>
+                                        <small class="form-text text-muted col-md-3"><?php echo __("Track your videos with Google analytics"); ?></small>
 
                                 </div>
 
                                 <div class="form-inline mb-1">
-                                    <label for="textAbout" class="ml-auto font-weight-bold mr-2"><?php echo __("About"); ?></label>
+                                    <label for="textAbout" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("About"); ?></label>
                                     <div class="input-group col-8">
                                         <textarea id="textAbout" placeholder="<?php echo __("About"); ?>" class="form-control"  ><?php echo $user->getAbout(); ?></textarea>
                                     </div>
