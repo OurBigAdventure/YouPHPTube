@@ -146,7 +146,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top justify-content-between">
         <div class="my-nav-finder">
-            <button class="btn-light btn nav-item align-top" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="navbar-toggler-icon"></span></button>
+            <button class="float-left btn btn-light align-top" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="fas fa-bars"></span></button>
             <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
             <div id="sidebar1" class="dropdown" style="position: absolute; height: 100%; top:0;">
                 <div class="dropdown-menu  dropdown-menu-left bg-light" style="" aria-labelledby="buttonMenu1" >
@@ -267,18 +267,24 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     if (empty($advancedCustom->doNotShowLeftMenuAudioAndVideoButtons)) {
                         ?>
                              <div class="dropdown-divider"></div>
+			<ul style="list-style: none; padding-left: 0px;"><li>
                             <a class="dropdown-item <?php echo empty($_SESSION['type']) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>?type=all">
                                 <i class="fas fa-star"></i>
                                 <?php echo __("Audios and Videos"); ?>
                             </a>
+			</li><li>
                             <a class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'video' && empty($_GET['catName'])) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>videoOnly">
                                 <i class="fas fa-video"></i>
                                 <?php echo __("Videos"); ?>
                             </a>
+			</li>
+<li>
                             <a class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'audio' && empty($_GET['catName'])) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>audioOnly">
                                 <i class="fas fa-headphones"></i>
                                 <?php echo __("Audios"); ?>
                             </a>
+</li>
+			</ul>
                         <?php
                     }
                     ?>
@@ -337,18 +343,22 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     <!-- categories END -->
 
                       <div class="dropdown-divider"></div>
+ <ul style="list-style: none; padding-left: 0px;"><li>
                         <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>help">
                             <i class="fas fa-question-circle"></i>
                             <?php echo __("Help"); ?>
                         </a>
+</li><li>
                         <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>about">
                             <i class="fas fa-info-circle"></i>
                             <?php echo __("About"); ?>
                         </a>
+</li><li>
                         <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>contact">
                             <i class="fas fa-comment"></i>
                             <?php echo __("Contact"); ?>
                         </a>
+</li></ul>
                 </div>
             </div>
 
