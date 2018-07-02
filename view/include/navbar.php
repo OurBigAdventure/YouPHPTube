@@ -93,12 +93,11 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         </li>
                         <li style="min-height: 60px;">
                             <div class="pull-left" style="margin-left: 10px;">
-                                <img src="<?php echo User::getPhoto(); ?>" style="max-width: 55px;"  class="img img-thumbnail img-responsive img-circle"/>
+                                <img src="<?php echo User::getPhoto(); ?>" style="max-width: 55px;"  class="img img-thumbnail img-responsive rounded-circle"/>
                             </div>
                             <div  style="margin-left: 80px;">
                                 <h2 style="margin: 0; padding: 0;"><?php echo User::getName(); ?></h2>
                                 <div><small><?php echo User::getMail(); ?></small></div>
-
                             </div>
                         </li>
                             <li>
