@@ -487,7 +487,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             if (User::isLogged()) {
                                 ?>
                                 <li>
-                                    <a class="btn navbar-btn btn-default"  href="<?php echo $global['webSiteRootURL']; ?>logoff">
+                                    <a class="btn navbar-btn btn-link"  href="<?php echo $global['webSiteRootURL']; ?>logoff">
                                         <i class="fas fa-sign-out-alt"></i> <?php echo __("Sign Out"); ?>
                                     </a>
                                 </li>
@@ -495,7 +495,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             } else {
                                 ?>
                                 <li>
-                                    <a class="btn navbar-btn btn-default" href="<?php echo $global['webSiteRootURL']; ?>user" >
+                                    <a class="btn navbar-btn btn-link" href="<?php echo $global['webSiteRootURL']; ?>user" >
                                         <i class="fas fa-sign-in-alt"></i> <?php echo __("Sign In"); ?>
                                     </a>
                                 </li>
