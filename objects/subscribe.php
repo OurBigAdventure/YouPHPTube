@@ -220,11 +220,13 @@ class Subscribe {
 
 
     static function getButton($user_id) {
+        global $global;
         $total = static::getTotalSubscribes($user_id);
 
-        $subscribe = "<div class=\"btn-group\">"
-                . "<button class='btn-xs subsB subs{$user_id} subscribeButton{$user_id}'><i class='fab fa-youtube'></i> <b class='text'>" . __("Subscribe") . "</b></button>"
-                . "<button class='btn-xs subsB subs{$user_id}'><b class='textTotal{$user_id}'>{$total}</b></button>"
+        
+        $subscribe = "<div class=\"btn-group\" >"
+                . "<button class='btn btn-xs subsB subs{$user_id} subscribeButton{$user_id}' title=\"" . __("Want to subscribe to this channel?") . "\" data-content=\"" . __("Sign in to subscribe to this channel") . "<hr><center><a class='btn btn-success btn-sm' href='{$global['webSiteRootURL']}user'>" . __("Sign in") . "</a></center>\"  tabindex=\"0\" role=\"button\" data-html=\"true\"  data-toggle=\"popover\" data-placement=\"bottom\" ><i class='fab fa-youtube'></i> <b class='text'>" . __("Subscribe") . "</b></button>"
+                . "<button class='btn btn-xs subsB subs{$user_id}'><b class='textTotal{$user_id}'>{$total}</b></button>"
                 . "</div>";
 
         //show subscribe button with mail field
@@ -293,6 +295,24 @@ trigger: 'manual',
                                 <i class="fa fa-bell-slash"></i>
                             </button></span>';
                 }
+                $script = "<script>
+                    function toogleNotify{$user_id}(){
+                        email = $('#subscribeEmail{$user_id}').val();
+                        if (validateEmail(email)) {
+                            subscribeNotify(email, '{$user_id}');
+                        }
+                    }
+                    $(document).ready(function () {
+                        $(\".subscribeButton{$user_id}\").off(\"click\");
+                        $(\".subscribeButton{$user_id}\").click(function () {
+                            email = $('#subscribeEmail{$user_id}').val();
+                            if (validateEmail(email)) {
+                                subscribe(email, '{$user_id}');
+                            }
+                        });
+                        $('[data-toggle=\"tooltip\"]').tooltip(); 
+                    });
+                </script>";
             }
         }
         return $subscribe.$popover.$script;

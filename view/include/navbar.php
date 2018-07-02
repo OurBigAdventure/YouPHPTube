@@ -186,9 +186,14 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                         <?php echo __("My videos"); ?>
                                     </a>
                             <?php
-                        }
-                        if ((($config->getAuthCanViewChart() == 0) && (User::canUpload())) || (($config->getAuthCanViewChart() == 1) && (User::canViewChart()))) {
-                            ?>
+                          }
+                          
+                            print YouPHPTubePlugin::navBarButtons();
+
+                            if ((($config->getAuthCanViewChart()==0)&&(User::canUpload()))||(($config->getAuthCanViewChart()==1)&&(User::canViewChart()))) {
+                                ?>
+                            <li>
+                                <div>
                                     <a href="<?php echo $global['webSiteRootURL']; ?>charts" class="btn btn-info btn-block" style="border-radius: 0;">
                                         <span class="fas fa-tachometer-alt"></span>
                                         <?php echo __("Dashboard"); ?>
