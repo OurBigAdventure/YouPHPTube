@@ -439,15 +439,10 @@ img.rotate-90 {
     margin-top: 50px;
 }
 #sideBarContainer {
-    overflow-y: auto;
-    position: absolute;
-    left: 0;
-    padding: 10px;
-    height: 100%;
-    width: 100%;
-}
-#sideBarContainer ul {
-    margin-bottom: 150px;
+    margin: -10px 0 0 -20px;
+    padding: 10px 10px 150px 10px;
+    height: 100vh;
+    overflow-y: scroll;
 }
 .navbar-brand {
     padding: 0px !important; /* firefox bug fix */

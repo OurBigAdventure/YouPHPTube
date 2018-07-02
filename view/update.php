@@ -25,10 +25,11 @@ function rrmdir($dir) {
     }
 }
 
+// remove cache dir before the script starts to let the script recreate the javascript and css files
 if (!empty($_POST['updateFile'])) {
-  rrmdir($global['systemRootPath']."videos/cache");
+    $dir = "{$global['systemRootPath']}videos/cache";
+    rrmdir($dir);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config->getLanguage(); ?>">
