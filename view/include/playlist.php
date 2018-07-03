@@ -36,10 +36,10 @@ $playlistVideos = PlayList::getVideosFromPlaylist($playlist_id);
             ?>
             <li class="<?php echo $class; ?>">
                     <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist_id; ?>/<?php echo $count; ?>" title="<?php echo $value['title']; ?>" class="videoLink row">
-                        <div class="col-md-1 col-sm-1 col-xs-1">
+                        <div class="col-md-1 col-sm-1 col-1">
                             <?php echo $indicator; ?>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 nopadding">
+                        <div class="col-md-3 col-sm-3 col-3 nopadding">
                             <?php
                             if (($value['type'] !== "audio")&&($value['type'] !== "linkAudio")) {
                                 $img = "{$global['webSiteRootURL']}videos/{$value['filename']}.jpg";
@@ -58,7 +58,7 @@ $playlistVideos = PlayList::getVideosFromPlaylist($playlist_id);
 
                             <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($value['duration']); ?>"><?php echo Video::getCleanDuration($value['duration']); ?></time>
                         </div>
-                        <div class="col-md-8 col-sm-8 col-xs-8 videosDetails">
+                        <div class="col-md-8 col-sm-8 col-8 videosDetails">
                             <div class="text-uppercase row"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
                             <div class="details row" itemprop="description">
                                 <div>

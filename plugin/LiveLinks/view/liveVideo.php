@@ -1,7 +1,7 @@
 <link href="<?php echo $global['webSiteRootURL']; ?>plugin/Live/view/live.css" rel="stylesheet" type="text/css"/>
 <div class="row main-video">
-    <div class="col-xs-12 col-sm-12 col-lg-2"></div>
-    <div class="col-xs-12 col-sm-12 col-lg-8">
+    <div class="col-12 col-sm-12 col-lg-2"></div>
+    <div class="col-12 col-sm-12 col-lg-8">
         <div id="videoContainer">
             <div id="floatButtons" style="display: none;">
                 <p class="btn btn-outline btn-xs move">
@@ -21,7 +21,7 @@
         </div>
     </div> 
 
-    <div class="col-xs-12 col-sm-12 col-lg-2"></div>
+    <div class="col-12 col-sm-12 col-lg-2"></div>
 </div><!--/row-->
 <script>
 

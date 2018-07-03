@@ -69,7 +69,7 @@ $imgh = 360;
                     <i class="fas fa-video"></i> <?php echo $t['title']; ?>
                 </h1>
                 <p><?php echo nl2br(textToLink($t['description'])); ?></p>
-                <div class="col-xs-12 col-sm-12 col-lg-12"><?php echo $video['creator']; ?></div>
+                <div class="col-12 col-sm-12 col-lg-12"><?php echo $video['creator']; ?></div>
             </div>
             <div class="col-md-3">
                     <?php

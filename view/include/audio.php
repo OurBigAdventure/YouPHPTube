@@ -1,6 +1,6 @@
 <div class="row main-video" style="padding: 10px;" id="mvideo">
-    <div class="col-xs-12 col-sm-12 col-lg-2 firstC"></div>
-    <div class="col-xs-12 col-sm-12 col-lg-8 secC">
+    <div class="col-12 col-sm-12 col-lg-2 firstC"></div>
+    <div class="col-12 col-sm-12 col-lg-8 secC">
         <div id="videoContainer">
         <?php
             $waveSurferEnabled = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
@@ -145,5 +145,5 @@
     <?php } ?>
         }); });
     </script>
-    <div class="col-xs-12 col-sm-12 col-lg-2"></div>
+    <div class="col-12 col-sm-12 col-lg-2"></div>
 </div><!--/row-->

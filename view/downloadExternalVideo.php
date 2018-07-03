@@ -49,8 +49,8 @@ function isYoutubeDl() {
             } else {
                 ?>
                 <div class="row">
-                    <div class="col-xs-1 col-sm-1 col-lg-2"></div>
-                    <div class="col-xs-10 col-sm-10 col-lg-8">
+                    <div class="col-1 col-sm-1 col-lg-2"></div>
+                    <div class="col-10 col-sm-10 col-lg-8">
                         <form class="form-compact well "  id="updateUserForm" onsubmit="">
                             <fieldset>
                                 <legend><?php echo __("Download Video"); ?></legend>
@@ -88,7 +88,7 @@ function isYoutubeDl() {
                             <div id="downloadProgress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0px"></div>
                         </div>
                     </div>
-                    <div class="col-xs-1 col-sm-1 col-lg-2">
+                    <div class="col-1 col-sm-1 col-lg-2">
                         <?php
                         if (!empty($global['videoStorageLimitMinutes'])) {
                             $minutesTotal = getMinutesTotalVideosLength();

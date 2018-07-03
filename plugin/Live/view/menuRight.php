@@ -40,14 +40,14 @@ if (User::canStream()) {
         </div>
     </a>
 </li>
-<div class="col-lg-12 col-sm-12 col-xs-12 bottom-border d-none extraVideosModel liveVideo" itemscope itemtype="http://schema.org/VideoObject">
+<div class="col-lg-12 col-sm-12 col-12 bottom-border d-none extraVideosModel liveVideo" itemscope itemtype="http://schema.org/VideoObject">
     <a href="" class="h6 videoLink">
-        <div class="col-lg-5 col-sm-5 col-xs-5 nopadding thumbsImage" style="min-height: 70px; position:relative;" >
+        <div class="col-lg-5 col-sm-5 col-5 nopadding thumbsImage" style="min-height: 70px; position:relative;" >
             <img src="" class="thumbsJPG img-fluid" height="130" />
             <img src="" style="position: absolute; top: 0; display: none;" class="thumbsGIF img-fluid" height="130" />
             <span class="badge badge-danger liveNow faa-flash faa-slow animated"><?php echo __("LIVE NOW"); ?></span>
         </div>
-        <div class="col-lg-7 col-sm-7 col-xs-7 videosDetails">
+        <div class="col-lg-7 col-sm-7 col-7 videosDetails">
             <div class="text-uppercase row"><strong itemprop="name" class="title liveTitle"><?php echo __("Title"); ?></strong></div>
             <div class="details row" itemprop="description">
                 <div class="float-left">

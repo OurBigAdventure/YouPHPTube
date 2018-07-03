@@ -104,7 +104,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <?php
                                                     }
                                                     ?>
-                                                    <div class="col-xs-4" style="padding: 10px;">
+                                                    <div class="col-4" style="padding: 10px;">
                                                         <img src="<?php echo $global['webSiteRootURL'], "view/css/custom/", $fileEx, ".png"; ?>" class="img-fluid img-radio">
                                                         <button type="button" class="btn-light btn-radio btn-block btn-xs" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
                                                         <input type="checkbox" value="<?php echo ($fileEx); ?>"  class="d-none left-item">

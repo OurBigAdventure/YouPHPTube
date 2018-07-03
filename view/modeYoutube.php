@@ -191,7 +191,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                         }
                     </style>
                     <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-12 col-sm-12 col-12">
                             <center style="margin:5px;">
                                 <?php
                                 echo $config->getAdsense();
@@ -214,7 +214,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                     <div class="col-sm-6 col-md-6">
                         <div class="row bgWhite bg-light">
                             <div class="row divMainVideo">
-                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                <div class="col-4 col-sm-4 col-md-4">
                                     <img src="<?php echo $poster; ?>" alt="<?php echo str_replace('"', '', $video['title']); ?>" class="img img-fluid <?php echo $img_portrait; ?> rotate<?php echo $video['rotation']; ?>" height="130" itemprop="thumbnail" />
                                     <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($video['duration']); ?>" ><?php echo Video::getCleanDuration($video['duration']); ?></time>
                                     <meta itemprop="thumbnailUrl" content="<?php echo $img; ?>" />
@@ -223,7 +223,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                     <meta itemprop="uploadDate" content="<?php echo $video['created']; ?>" />
                                     <meta itemprop="description" content="<?php echo str_replace('"', '', $video['title']); ?> - <?php echo htmlentities($video['description']); ?>" />
                                 </div>
-                                <div class="col-xs-8 col-sm-8 col-md-8">
+                                <div class="col-8 col-sm-8 col-md-8">
                                     <h1 itemprop="name">
                                         <?php
                                         echo $video['title'];
@@ -248,7 +248,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                             ?>
                                         </small>
                                     </h1>
-                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="col-12 col-sm-12 col-md-12">
                                         <?php echo $video['creator']; ?>
                                     </div>
                                     <span class="watch-view-count float-right text-muted" itemprop="interactionCount"><span class="view-count<?php echo $video['id']; ?>"><?php echo number_format($video['views_count'], 0); ?></span> <?php echo __("Views"); ?></span>
@@ -578,11 +578,11 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                         <?php } ?>
                         <div class="row bgWhite bg-light">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-lg-12">
-                                    <div class="col-xs-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Category"); ?>:</strong></div>
-                                    <div class="col-xs-8 col-sm-10 col-lg-10"><a class="btn-xs btn-light"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
-                                    <div class="col-xs-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Description"); ?>:</strong></div>
-                                    <div class="col-xs-8 col-sm-10 col-lg-10" itemprop="description"><?php echo nl2br(textToLink(htmlentities($video['description']))); ?></div>
+                                <div class="col-12 col-sm-12 col-lg-12">
+                                    <div class="col-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Category"); ?>:</strong></div>
+                                    <div class="col-8 col-sm-10 col-lg-10"><a class="btn-xs btn-light"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
+                                    <div class="col-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Description"); ?>:</strong></div>
+                                    <div class="col-8 col-sm-10 col-lg-10" itemprop="description"><?php echo nl2br(textToLink(htmlentities($video['description']))); ?></div>
                                 </div>
                             </div>
 
@@ -615,7 +615,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             </script>
                         <?php } else if (empty($autoPlayVideo)) {
                             ?>
-                            <div class="col-lg-12 col-sm-12 col-xs-12 autoplay text-muted" >
+                            <div class="col-lg-12 col-sm-12 col-12 autoplay text-muted" >
                                 <strong><?php echo __("Autoplay ended"); ?></strong>
                                 <span class="float-right">
                                     <span><?php echo __("Autoplay"); ?></span>
@@ -626,7 +626,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                 </span>
                             </div>
                         <?php } else if (!empty($autoPlayVideo)) { ?>
-                            <div class="col-lg-12 col-sm-12 col-xs-12 autoplay text-muted" style="display: none;">
+                            <div class="col-lg-12 col-sm-12 col-12 autoplay text-muted" style="display: none;">
                                 <strong><?php echo __("Up Next"); ?></strong>
                                 <span class="float-right">
                                     <span><?php echo __("Autoplay"); ?></span>
@@ -636,9 +636,9 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                     <input type="checkbox" data-toggle="toggle" data-size="mini" class="saveCookie" name="autoplay">
                                 </span>
                             </div>
-                            <div class="col-lg-12 col-sm-12 col-xs-12 bottom-border autoPlayVideo" itemscope itemtype="http://schema.org/VideoObject" style="display: none;" >
+                            <div class="col-lg-12 col-sm-12 col-12 bottom-border autoPlayVideo" itemscope itemtype="http://schema.org/VideoObject" style="display: none;" >
                                 <a href="<?php echo $global['webSiteRootURL'], $catLink; ?>video/<?php echo $autoPlayVideo['clean_title']; ?>" title="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" class="videoLink h6">
-                                    <div class="col-lg-5 col-sm-5 col-xs-5 nopadding thumbsImage">
+                                    <div class="col-lg-5 col-sm-5 col-5 nopadding thumbsImage">
                                         <?php
                                         $imgGif = "";
                                         if (file_exists("{$global['systemRootPath']}videos/{$autoPlayVideo['filename']}.gif")) {
@@ -662,7 +662,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                         <meta itemprop="uploadDate" content="<?php echo $autoPlayVideo['created']; ?>" />
                                         <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($autoPlayVideo['duration']); ?>"><?php echo Video::getCleanDuration($autoPlayVideo['duration']); ?></time>
                                     </div>
-                                    <div class="col-lg-7 col-sm-7 col-xs-7 videosDetails">
+                                    <div class="col-lg-7 col-sm-7 col-7 videosDetails">
                                         <div class="text-uppercase row"><strong itemprop="name" class="title"><?php echo $autoPlayVideo['title']; ?></strong></div>
                                         <div class="details row text-muted" itemprop="description">
                                             <div>
@@ -694,11 +694,11 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             </div>
                         <?php } if (!empty($advancedCustom->showAdsenseBannerOnLeft)) {
                             ?>
-                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-sm-12 col-12">
                                 <?php echo $config->getAdsense(); ?>
                             </div>
                         <?php } ?>
-                        <div class="col-lg-12 col-sm-12 col-xs-12 extraVideos nopadding"></div>
+                        <div class="col-lg-12 col-sm-12 col-12 extraVideos nopadding"></div>
                         <!-- videos List -->
                         <div id="videosList">
                             <?php include $global['systemRootPath'] . 'view/videosList.php'; ?>

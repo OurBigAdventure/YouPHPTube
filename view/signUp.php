@@ -32,8 +32,8 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
 
 
             <div class="row">
-                <div class="col-xs-1 col-sm-1 col-lg-2"></div>
-                <div class="col-xs-10 col-sm-10 col-lg-8">
+                <div class="col-1 col-sm-1 col-lg-2"></div>
+                <div class="col-10 col-sm-10 col-lg-8">
                     <form class="form-compact well "  id="updateUserForm" onsubmit="">
                         <fieldset>
                             <legend><?php echo __("Sign Up"); ?></legend>
@@ -117,7 +117,7 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                     </form>
 
                 </div>
-                <div class="col-xs-1 col-sm-1 col-lg-8"></div>
+                <div class="col-1 col-sm-1 col-lg-8"></div>
             </div>
             <script>
                 $(document).ready(function () {

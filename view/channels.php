@@ -57,7 +57,7 @@ $channels = Channel::getChannels();
                                 $imgs = Video::getImageFromFilename($value2['filename']);
                                 $poster = $imgs->thumbsJpg;
                                 ?>
-                                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 ">
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-6 ">
                                     <a href="<?php echo $global['webSiteRootURL']; ?>video/<?php echo $value2['clean_title']; ?>" title="<?php echo $value2['title']; ?>" >
                                         <img src="<?php echo $poster; ?>" alt="<?php echo $value2['title']; ?>" class="img img-fluid img-thumbnail" />
                                     </a>

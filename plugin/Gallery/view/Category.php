@@ -70,7 +70,7 @@ if ((!empty($videos)) || ($obj->SubCategorys)) {
                         $countCols ++;
                         unset($_GET['catName']);
                         ?>
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 galleryVideo thumbsImage fixPadding">
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 galleryVideo thumbsImage fixPadding">
                             <a href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $cat['clean_name']; ?>" title="<?php $cat['name']; ?>">
                                 <div class="aspectRatio16_9">
                                     <?php

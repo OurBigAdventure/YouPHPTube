@@ -71,7 +71,7 @@ if (!empty($objSecure->disableEmbedMode)) {
 
     <body style="background-color: black; overflow-x: hidden;">
         <div class="container">
-            <div class="col-md-9 col-sm-9 col-xs-9" style="margin: 0; padding: 0;" id="embedVideo-content">
+            <div class="col-md-9 col-sm-9 col-9" style="margin: 0; padding: 0;" id="embedVideo-content">
                 <?php
                 echo $config->getAdsense();
                 ?>
@@ -94,7 +94,7 @@ if (!empty($objSecure->disableEmbedMode)) {
                 echo $config->getAdsense();
                 ?>
             </div>
-            <div class="col-md-3 col-sm-3 col-xs-3" style="margin: 0; padding: 0;">
+            <div class="col-md-3 col-sm-3 col-3" style="margin: 0; padding: 0;">
                 <?php
                 $p->getChat($uuid);
                 ?>

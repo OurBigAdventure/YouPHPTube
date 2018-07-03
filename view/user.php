@@ -349,7 +349,7 @@ $advancedCustom = json_decode($json_file);
                 ?>
                 <div class="row">
                     <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
-                    <div class="col-xs-12 col-sm-8  col-md-6 col-lg-4 bg-light ">
+                    <div class="col-12 col-sm-8  col-md-6 col-lg-4 bg-light ">
                         <fieldset>
                             <legend><?php echo __("Please sign in"); ?></legend>
 

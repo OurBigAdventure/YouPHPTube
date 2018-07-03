@@ -81,14 +81,14 @@ foreach ($videos as $key => $value) {
     $name = User::getNameIdentificationById($value['users_id']);
     $value['creator'] = '<div class="float-left"><img src="' . User::getPhoto($value['users_id']) . '" alt="" class="img img-fluid rounded-circle zoom" style="max-width: 20px;"/></div><div class="commentDetails" style="margin-left:25px;"><div class="commenterName text-muted"><strong>' . $name . '</strong> <small>' . humanTiming(strtotime($value['videoCreation'])) . '</small></div></div>';
     ?>
-    <div class="col-lg-12 col-sm-12 col-xs-12 bottom-border" id="divVideo-<?php echo $value['id']; ?>" itemscope itemtype="http://schema.org/VideoObject">
+    <div class="col-lg-12 col-sm-12 col-12 bottom-border" id="divVideo-<?php echo $value['id']; ?>" itemscope itemtype="http://schema.org/VideoObject">
         <a href="<?php echo $global['webSiteRootURL'], $catLink; ?>video/<?php
         echo $value['clean_title'];
         if (!empty($_GET['page']) && $_GET['page'] > 1) {
             echo "/page/{$_GET['page']}";
         }
         ?>" title="<?php echo $value['title']; ?>" class="videoLink h6">
-            <div class="col-lg-5 col-sm-5 col-xs-5 nopadding thumbsImage" >
+            <div class="col-lg-5 col-sm-5 col-5 nopadding thumbsImage" >
                 <?php
                 $images = Video::getImageFromFilename($value['filename'], $value['type']);
 
@@ -110,7 +110,7 @@ foreach ($videos as $key => $value) {
                 <meta itemprop="uploadDate" content="<?php echo $value['created']; ?>" />
                 <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($value['duration']); ?>"><?php echo Video::getCleanDuration($value['duration']); ?></time>
             </div>
-            <div class="col-lg-7 col-sm-7 col-xs-7 videosDetails">
+            <div class="col-lg-7 col-sm-7 col-7 videosDetails">
                 <div class="text-uppercase row"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
                 <div class="details row" itemprop="description">
                     <div>

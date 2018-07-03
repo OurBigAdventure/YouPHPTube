@@ -36,7 +36,7 @@ if (!User::canUpload()) {
 
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-9">
+                <div class="col-12 col-sm-12 col-lg-9">
                     <form id="upload" method="post" action="<?php echo $global['webSiteRootURL'] . "view/mini-upload-form/upload.php"; ?>" enctype="multipart/form-data">
                         <div id="drop">
                             <?php echo __("Drop Here"); ?>
@@ -52,7 +52,7 @@ if (!User::canUpload()) {
                     </form>
 
                 </div>
-                <div class="col-xs-12 col-sm-12 col-lg-3">
+                <div class="col-12 col-sm-12 col-lg-3">
                     <div class="alert alert-info">
                         <h1>
                             <span class="glyphicon glyphicon-info-sign" style="font-size:1em;"></span>
