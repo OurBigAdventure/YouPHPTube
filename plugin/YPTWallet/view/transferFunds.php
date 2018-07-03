@@ -34,9 +34,9 @@ $obj = YouPHPTubePlugin::getObjectDataIfEnabled("YPTWallet");
             <div class="row">
 
                 <div class="row ">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><?php echo __("Transfer Funds"); ?></div>
-                        <div class="panel-body">
+                    <div class="card">
+                        <div class="card-header"><?php echo __("Transfer Funds"); ?></div>
+                        <div class="card-body">
                             <div class="col-sm-6">
                                 <?php echo $obj->transfer_funds_text ?>
                             </div>

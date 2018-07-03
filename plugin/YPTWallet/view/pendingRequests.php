@@ -22,13 +22,13 @@ if (!User::isAdmin()) {
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
         <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <?php
                     echo __("Pending Requests");
                     ?>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="row bgWhite bg-light">
                         <table id="grid" class="table table-sm table-hover table-striped">
                             <thead>

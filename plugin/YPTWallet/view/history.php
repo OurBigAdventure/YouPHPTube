@@ -29,12 +29,12 @@ if (!empty($_GET['users_id'])) {
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
         <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading"  style="height: 70px;">
+            <div class="card">
+                <div class="card-header"  style="height: 70px;">
                     <img src="<?php echo User::getPhoto($users_id); ?>" class="img img-fluid rounded-circle float-left" style="height: 50px; margin-right: 10px;">
                     <h1><?php echo User::getNameIdentificationById($users_id); ?></h1>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="row bgWhite bg-light">
                         <table id="grid" class="table table-sm table-hover table-striped">
                             <thead>

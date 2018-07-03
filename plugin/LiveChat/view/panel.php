@@ -10,14 +10,14 @@ $canSendMessage = $p->canSendMessage();
     <?php echo __("Trying to establish a chat server connection"); ?>
 </div>
 <div style="display: none" id="chatOnline">
-    <div class="panel panel-default liveChat">
-        <div class="panel-heading"><i class="fa fa-comments-o"></i> <?php echo __("Live Chat"); ?> <button class="btn btn-xs btn-light float-right" id="collapseBtn"><i class="fa fa-minus-square"></i></button></div>
+    <div class="card liveChat">
+        <div class="card-header"><i class="fa fa-comments-o"></i> <?php echo __("Live Chat"); ?> <button class="btn btn-xs btn-light float-right" id="collapseBtn"><i class="fa fa-minus-square"></i></button></div>
         <div class="colapsibleArea">
-            <div class="panel-body">
+            <div class="card-body">
                 <ul class="messages"></ul>
             </div>
 
-            <div class="panel-footer">
+            <div class="card-footer">
                 <?php
                 if ($canSendMessage) {
                     ?>
@@ -137,7 +137,7 @@ $canSendMessage = $p->canSendMessage();
     }
     function makeDrag() {
         //$("#chatOnline").draggable('destroy');
-        $("#chatOnline").draggable({handle: ".panel-heading"});
+        $("#chatOnline").draggable({handle: ".card-header"});
     }
     $(function () {
         $('#collapseBtn').click(function (e) {

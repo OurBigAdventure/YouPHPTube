@@ -25,11 +25,11 @@ if (!User::isAdmin()) {
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
         <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <i class="fas fa-clone"></i> <?php echo __("Manage Clones"); ?>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <table id="campaignTable" class="display" width="100%" cellspacing="0">
                         <thead>
                             <tr>

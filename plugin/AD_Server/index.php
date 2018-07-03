@@ -37,8 +37,8 @@ if (!User::isAdmin()) {
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
         <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <i class="fas fa-link"></i> <?php echo __("Configure your Ads"); ?>
                     <div class="float-right" style="width: 200px;">
                         <div class="material-switch ">
@@ -52,12 +52,12 @@ if (!User::isAdmin()) {
                         </div>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-sm-4">
-                            <div class="panel panel-default ">
-                                <div class="panel-heading"><?php echo __("Create Campaign"); ?></div>
-                                <div class="panel-body">
+                            <div class="card ">
+                                <div class="card-header"><?php echo __("Create Campaign"); ?></div>
+                                <div class="card-body">
                                     <form id="panelForm">
                                         <div class="row">
                                             <input type="hidden" name="campId" id="campId" value="" >
@@ -111,9 +111,9 @@ if (!User::isAdmin()) {
                                     <input type="text" class="form-control form-control-sm" readonly value="<?php echo $global['webSiteRootURL']; ?>plugin/AD_Server/VMAP.php" >
                                 </div>
                             </div>
-                            <div class="panel panel-default ">
-                                <div class="panel-heading"><?php echo __("Edit Campaigns"); ?></div>
-                                <div class="panel-body">
+                            <div class="card ">
+                                <div class="card-header"><?php echo __("Edit Campaigns"); ?></div>
+                                <div class="card-body">
                                     <table id="campaignTable" class="display" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>

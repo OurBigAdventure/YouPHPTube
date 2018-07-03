@@ -27,9 +27,9 @@ $obj = $plugin->getDataObject();
 
         <div class="container">
 
-            <div class="panel panel-default">
-                <div class="panel-heading">Total Site Balance: <b><?php echo YPTWallet::getTotalBalanceText(); ?></b></div>
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-header">Total Site Balance: <b><?php echo YPTWallet::getTotalBalanceText(); ?></b></div>
+                <div class="card-body">
 
                     <table id="grid" class="table table-sm table-hover table-striped">
                         <thead>

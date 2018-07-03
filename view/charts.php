@@ -100,7 +100,7 @@ foreach ($videos as $value) {
 
         <style>
             /* Custom Colored Panels */
-            .dashboard .panel-heading {
+            .dashboard .card-header {
                 color: #fff;
             }
             .dashboard .loading {

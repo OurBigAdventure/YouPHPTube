@@ -28,7 +28,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                 text-align: center;
             }
             .panel:hover { box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px 5px rgba(130, 130, 130, 0.35); }
-            .panel-body
+            .card-body
             {
                 padding: 0px;
                 text-align: center;
@@ -132,15 +132,15 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
             .panel-sm table, .panel-sm div{
                 margin: 0;
             }
-            .panel-sm .panel-heading{
+            .panel-sm .card-header{
                 height: 25px;
                 padding: 2px 5px;
                 font-size: 0.9em;
             }
-            .panel-sm .panel-heading .panel-title{
+            .panel-sm .card-header .card-title{
                 font-size: 0.9em;
             }
-            .panel-sm .panel-body{
+            .panel-sm .card-body{
                 padding: 0;
                 font-size: 0.8em;
             }
@@ -251,9 +251,9 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                 </div>
                 <div id="menu1" class="tab-pane fade">
                     <div class="bg-light">
-                        <div class="panel panel-default">
-                            <div class="panel-heading"><a href="https://easytube.club/signUp" class="btn-light btn-xs"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
-                            <div class="panel-body">
+                        <div class="card">
+                            <div class="card-header"><a href="https://easytube.club/signUp" class="btn-light btn-xs"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
+                            <div class="card-body">
                                 <ul class="list-group" id="pluginStoreList">
                                 </ul>
                             </div>
@@ -266,10 +266,10 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
             <li class="bg-light d-none col-md-3" id="pluginStoreListModel">
 
                 <div class="panel panel-warning panel-sm">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"></h3>
+                    <div class="card-header">
+                        <h3 class="card-title"></h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="the-price">
                             <h1>
                                 USD $<span class="int">0</span>.<small class="cents">00</small>
@@ -286,7 +286,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                             </tr>
                         </table>
                     </div>
-                    <div class="panel-footer">
+                    <div class="card-footer">
                         <a href="https://easytube.club/signUp" class="btn-success btn-xs" role="button"><i class="fa fa-cart-plus"></i> <?php echo __("Buy This Plugin"); ?> </a>
                     </div>
                 </div>
@@ -365,7 +365,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                 //var cents = Math.ceil((price - intPrice) * 100);
                 var $li = $('#pluginStoreListModel').clone();
                 $li.removeClass("hidden").attr("id", "");
-                $li.find('.panel-title').text(name);
+                $li.find('.card-title').text(name);
                 $li.find('.int').text(intPrice);
                 $li.find('.cents').text("99");
                 $li.find('.desc').text(description);

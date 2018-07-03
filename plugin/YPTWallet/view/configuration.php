@@ -28,9 +28,9 @@ $wallet->setUsers_id(User::getId());
         ?>
         <div class="container">
             <div class="row ">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><?php echo __("Configurations"); ?></div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header"><?php echo __("Configurations"); ?></div>
+                    <div class="card-body">
                         <form id="form">
                             <div class=" ">
                                 <label for="CryptoWallet"><?php echo $obj->CryptoWalletName; ?>:</label>

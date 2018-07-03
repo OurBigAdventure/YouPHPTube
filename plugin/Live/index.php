@@ -75,9 +75,9 @@ if(empty($channelName)){
                 <?php
                 if(!empty($obj->experimentalWebcam)){
                 ?>
-                <div class="panel panel-default">
-                    <div class="panel-heading"><?php echo __("WebCam Streaming"); ?></div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header"><?php echo __("WebCam Streaming"); ?></div>
+                    <div class="card-body">
                         <div class="embed-responsive embed-responsive-16by9">
                             <div class="embed-responsive-item"  id="webcam">
                                 <button class="btn btn-primary btn-block" id="enableWebCam">
@@ -97,9 +97,9 @@ if(empty($channelName)){
                 <?php
                 }
                 ?>
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-share"></i> <?php echo __("Share Info"); ?></div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header"><i class="fa fa-share"></i> <?php echo __("Share Info"); ?></div>
+                    <div class="card-body">
                         <div class=" ">
                             <label for="playerURL"><i class="fa fa-play-circle"></i> <?php echo __("Player URL"); ?>:</label>
                             <input type="text" class="form-control" id="playerURL" value="<?php echo $p->getPlayerServer(); ?>/<?php echo $trasnmition['key']; ?>/index.m3u8"  readonly="readonly">
@@ -114,9 +114,9 @@ if(empty($channelName)){
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-hdd-o"></i> <?php echo __("Devices Stream Info"); ?></div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header"><i class="fa fa-hdd-o"></i> <?php echo __("Devices Stream Info"); ?></div>
+                    <div class="card-body">
                         <div class=" ">
                             <label for="server"><i class="fa fa-server"></i> <?php echo __("Server URL"); ?>:</label>
                             <input type="text" class="form-control" id="server" value="<?php echo $p->getServer(); ?>?p=<?php echo User::getUserPass(); ?>" readonly="readonly">
@@ -139,14 +139,14 @@ if(empty($channelName)){
                 ?>
             </div>
             <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+                <div class="card">
+                    <div class="card-header">
                         <?php
                         $streamName = $trasnmition['key'];
                         include $global['systemRootPath'].'plugin/Live/view/onlineLabel.php';
                         ?>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="embed-responsive embed-responsive-16by9">
                             <video poster="<?php echo $global['webSiteRootURL']; ?>plugin/Live/view/OnAir.jpg" controls
                                    class="embed-responsive-item video-js vjs-default-skin <?php echo $vjsClass; ?> vjs-big-play-centered"
@@ -156,9 +156,9 @@ if(empty($channelName)){
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading"><?php echo __("Stream Settings"); ?></div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header"><?php echo __("Stream Settings"); ?></div>
+                    <div class="card-body">
                         <div class=" ">
                             <label for="title"><?php echo __("Title"); ?>:</label>
                             <input type="text" class="form-control" id="title" value="<?php echo $trasnmition['title'] ?>">
@@ -179,9 +179,9 @@ if(empty($channelName)){
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading"><?php echo __("Groups That Can See This Stream"); ?><br><small><?php echo __("Uncheck all to make it public"); ?></small></div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header"><?php echo __("Groups That Can See This Stream"); ?><br><small><?php echo __("Uncheck all to make it public"); ?></small></div>
+                    <div class="card-body">
                         <?php
                         $ug = UserGroups::getAllUsersGroups();
                         foreach ($ug as $value) {

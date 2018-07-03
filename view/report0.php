@@ -1,241 +1,258 @@
+<style>
+    .card-body-icon {
+        position: absolute;
+        z-index: 0;
+        top: -10px;
+        right: 10px;
+        font-size: 6rem;
+        -webkit-transform: rotate(15deg);
+        -ms-transform: rotate(15deg);
+        transform: rotate(15deg);
+    }
+</style>
 
 <div class="row dashboard">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
-        <div class="card bg-secondary">
+
+
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
-                    <span class="col-xs-3">
-                        <i class="fa fa-play-circle fa-5x"></i>
-                    </span>
-                    <div class="col-xs-9 float-right">
-                        <div class="huge loading" id="totalVideos">0</div>
-                        <div><?php echo __("Total Videos"); ?></div>
-                    </div>
-            </div>
-            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="card-footer">
-                    <span class="text-primary float-left"><?php echo __("View Details"); ?></span>
-                    <span class="text-primary float-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
+                <div class="card-body-icon">
+                    <i class="fa fa-play-circle"></i>
                 </div>
+                <div class="mr-5">
+                    <div class="huge loading" id="totalVideos">0</div>
+                    <div><?php echo __("Total Videos"); ?></div>
+                </div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="<?php echo $global['webSiteRootURL']; ?>mvideos">
+                <span class="float-left"><?php echo __("View Details"); ?></span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
-        <div class="card bg-primary">
+
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-secondary o-hidden h-100">
             <div class="card-body">
-                    <span class="col-xs-3">
-                        <i class="fa fa-eye fa-5x"></i>
-                    </span>
-                    <div class="col-xs-9 float-right">
-                        <div class="huge loading" id="totalVideosViews">0</div>
-                        <div><?php echo __("Total Videos Views"); ?></div>
-                    </div>
-            </div>
-            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="card-footer text-secondary">
-                    <span class="float-left"><?php echo __("View Details"); ?></span>
-                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
+                <div class="card-body-icon">
+                    <i class="fa fa-eye"></i>
                 </div>
+                <div class="mr-5">
+                    <div class="huge loading" id="totalVideosViews">0</div>
+                    <div><?php echo __("Total Videos Views"); ?></div>
+                </div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="<?php echo $global['webSiteRootURL']; ?>mvideos">
+                <span class="float-left"><?php echo __("View Details"); ?></span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
-        <div class="card bg-info">
+
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
-                    <span class="col-xs-3">
-                        <i class="fa fa-users fa-5x"></i>
-                    </span>
-                    <div class="col-xs-9 float-right">
-                        <div class="huge loading" id="totalUsers">0</div>
-                        <div><?php echo __("Total Users"); ?></div>
-                    </div>
-            </div>
-            <a href="<?php echo $global['webSiteRootURL']; ?>users">
-                <div class="card-footer text-secondary">
-                    <span class="float-left"><?php echo __("View Details"); ?></span>
-                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
+                <div class="card-body-icon">
+                    <i class="fa fa-users"></i>
                 </div>
+                <div class="mr-5">
+                    <div class="huge loading" id="totalUsers">0</div>
+                    <div><?php echo __("Total Users"); ?></div>
+                </div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="<?php echo $global['webSiteRootURL']; ?>users">
+                <span class="float-left"><?php echo __("View Details"); ?></span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
-        <div class="card bg-warning">
+
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
-                    <span class="col-xs-3">
-                        <i class="fa fa-user-plus fa-5x"></i>
-                    </span>
-                    <div class="col-xs-9 float-right">
-                        <div class="huge loading" id="totalSubscriptions">0</div>
-                        <div><?php echo __("Total Subscriptions"); ?></div>
-                    </div>
-            </div>
-            <a href="<?php echo $global['webSiteRootURL']; ?>subscribes">
-                <div class="card-footer">
-                    <span class="float-left"><?php echo __("View Details"); ?></span>
-                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
+                <div class="card-body-icon">
+                    <i class="fa fa-user-plus"></i>
                 </div>
+                <div class="mr-5">
+                    <div class="huge loading" id="totalSubscriptions">0</div>
+                    <div><?php echo __("Total Subscriptions"); ?></div>
+                </div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="<?php echo $global['webSiteRootURL']; ?>subscribes">
+                <span class="float-left"><?php echo __("View Details"); ?></span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <div class="mr-5">
+                    <div class="huge loading" id="totalVideosComents">0</div>
+                    <div><?php echo __("Total Video Comments"); ?></div>
+                </div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="<?php echo $global['webSiteRootURL']; ?>comments">
+                <span class="float-left"><?php echo __("View Details"); ?></span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>    
+
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-info o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-thumbs-up"></i>
+                </div>
+                <div class="mr-5">
+                    <div class="huge loading" id="totalVideosLikes">0</div>
+                    <div><?php echo __("Total Videos Likes"); ?></div>
+                </div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="<?php echo $global['webSiteRootURL']; ?>mvideos">
+                <span class="float-left"><?php echo __("View Details"); ?></span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-dark o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-thumbs-down"></i>
+                </div>
+                <div class="mr-5">
+                    <div class="huge loading" id="totalVideosDislikes">0</div>
+                    <div><?php echo __("Total Videos Dislikes"); ?></div>
+                </div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="<?php echo $global['webSiteRootURL']; ?>mvideos">
+                <span class="float-left"><?php echo __("View Details"); ?></span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
             </a>
         </div>
     </div>
 
 
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card bg-warning">
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-dark bg-light o-hidden h-100">
             <div class="card-body">
-                    <span class="col-xs-3">
-                        <i class="fa fa-comments fa-3x"></i>
-                    </span>
-                    <div class="col-xs-9 float-right">
-                        <div class="huge loading" id="totalVideosComents">0</div>
-                        <div><?php echo __("Total Video Comments"); ?></div>
-                    </div>
-            </div>
-            <a href="<?php echo $global['webSiteRootURL']; ?>comments">
-                <div class="card-footer">
-                    <span class="float-left"><?php echo __("View Details"); ?></span>
-                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
+                <div class="card-body-icon">
+                    <i class="fa fa-clock"></i>
                 </div>
+                <div class="mr-5">
+                    <div class="huge loading text-dark" id="totalDurationVideos">0</div>
+                    <div><?php echo __("Total Duration Videos (Minutes)"); ?></div>
+                </div>
+            </div>
+            <a class="card-footer text-dark clearfix small z-1" href="<?php echo $global['webSiteRootURL']; ?>mvideos">
+                <span class="float-left"><?php echo __("View Details"); ?></span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card bg-danger">
-            <div class="card-body">
-                    <span class="col-xs-3">
-                        <i class="fas fa-thumbs-up fa-5x"></i>
-                    </span>
-                    <div class="col-xs-9 float-right">
-                        <div class="huge loading" id="totalVideosLikes">0</div>
-                        <div><?php echo __("Total Videos Likes"); ?></div>
-                    </div>
-            </div>
-            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="card-footer">
-                    <span class="text-primary float-left"><?php echo __("View Details"); ?></span>
-                    <span class="text-primary float-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card bg-light">
-            <div class="card-body">
-                    <span class="col-xs-3">
-                        <i class="fas fa-thumbs-down fa-5x"></i>
-                    </span>
-                    <div class="col-xs-9 float-right">
-                        <div class="huge loading" id="totalVideosDislikes">0</div>
-                        <div><?php echo __("Total Videos Dislikes"); ?></div>
-                    </div>
-            </div>
-            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="card-footer">
-                    <span class="float-left"><?php echo __("View Details"); ?></span>
-                    <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card bg-success">
-            <div class="card-body">
-                    <span class="col-xs-3">
-                        <i class="fas fa-clock fa-2x"></i>
-                    </span>
-                    <div class="col-xs-9 float-right">
-                        <div class="huge loading" id="totalDurationVideos">0</div>
-                        <div><?php echo __("Total Duration Videos (Minutes)"); ?></div>
-                    </div>
-            </div>
-            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos">
-                <div class="card-footer text-secondary">
-                    <span class="float-left"><?php echo __("View Details"); ?></span>
-                    <span class="float-right"><i class="fas fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
+
 </div>
-<nav class="navbar navbar-default nav-chart">
-    <div class="container-fluid">
-        <div class="btn-group">
-            <button class="btn btn-primary nav-item active" id="btnAll" ><?php echo __("Total Views"); ?></button>
-            <button class="btn btn-warning nav-item" id="btnToday"><?php echo __("Today Views"); ?></button>
-            <button class="btn btn-light nav-item" id="btn7"><?php echo __("Last 7 Days"); ?></button>
-            <button class="btn btn-light nav-item" id="btn30" ><?php echo __("Last 30 Days"); ?></button>
-            <!--
-            <button class="btn btn-light nav-item" id="btnUnique" ><?php echo __("Unique Users"); ?></button>
-            --></div>
-    </div>
-</nav>
 <div class="row">
-<div class="col-md-3">
+    <div class="col-12">        
+        <div class="card">
+            <div class="card-body">
+                <div class="btn-group">
+                    <button class="btn btn-primary nav-item active" id="btnAll" ><?php echo __("Total Views"); ?></button>
+                    <button class="btn btn-secondary nav-item" id="btnToday"><?php echo __("Today Views"); ?></button>
+                    <button class="btn btn-outline-secondary nav-item" id="btn7"><?php echo __("Last 7 Days"); ?></button>
+                    <button class="btn btn-outline-primary nav-item" id="btn30" ><?php echo __("Last 30 Days"); ?></button>
+                    <!--
+                    <button class="btn btn-light nav-item" id="btnUnique" ><?php echo __("Unique Users"); ?></button>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-header when"><?php echo __("Color Legend"); ?></div>
+            <div class="card-body" style="height: 600px; overflow-y: scroll;">
+                <div class="list-group">
 
-    <div class="panel panel-default">
-        <div class="panel-heading when"><?php echo __("Color Legend"); ?></div>
-        <div class="panel-body" style="height: 600px; overflow-y: scroll;">
-            <div class="list-group">
-
-                <?php
-                foreach ($labelsFull as $key => $value) {
-                    ?>
-                    <a class="bg-light " style="border-color: <?= $bg[$key] ?>; border-width: 1px 20px 1px 5px; font-size: 0.9em;">
-                        <?= $value ?>
-                    </a>
                     <?php
-                }
-                ?>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-md-9">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading when"># <?php echo __("Total Views"); ?></div>
-                <div class="panel-body">
-                    <canvas id="myChart" height="60" ></canvas>
+                    foreach ($labelsFull as $key => $value) {
+                        ?>
+                        <a class="list-group-item " style="border-color: <?= $bg[$key] ?>; border-width: 1px 20px 1px 5px; font-size: 0.9em;">
+                            <?= $value ?>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading when"># <?php echo __("Total Views"); ?></div>
-                <div class="panel-body">
-                    <canvas id="myChartPie" height="200"  ></canvas>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header when"># <?php echo __("Total Views"); ?></div>
+                    <div class="card-body">
+                        <canvas id="myChart" height="60" ></canvas>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading when"># <?php echo __("Timeline"); ?></div>
-                <div class="panel-body" id="timeline">
-                    <canvas id="myChartLine" height="90"  ></canvas>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header when"># <?php echo __("Total Views"); ?></div>
+                    <div class="card-body">
+                        <canvas id="myChartPie" height="200"  ></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header when"># <?php echo __("Timeline"); ?></div>
+                    <div class="card-body" id="timeline">
+                        <canvas id="myChartLine" height="90"  ></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header when"># <?php echo __("Total Views Today"), " - ", date("Y-m-d"); ?></div>
+                    <div class="card-body">
+                        <canvas id="myChartLineToday" height="60" ></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading when"># <?php echo __("Total Views Today"), " - ", date("Y-m-d"); ?></div>
-                <div class="panel-body">
-                    <canvas id="myChartLineToday" height="60" ></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 <script>
 

@@ -23,9 +23,9 @@ if (!User::canUpload() || !empty($advancedCustom->doNotShowImportMP4Button)) {
 
         <div class="container">
 
-            <div class="panel panel-default">
-                <div class="panel-heading">Import Local Videos</div>
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-header">Import Local Videos</div>
+                <div class="card-body">
                     <div class="alert alert-info">
                         <i class="fas fa-question-circle"></i>
                         Here you can direct import multiple videos stored on your hard drive.<br>
