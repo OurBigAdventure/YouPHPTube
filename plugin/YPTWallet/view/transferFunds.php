@@ -87,7 +87,7 @@ $obj = YouPHPTubePlugin::getObjectDataIfEnabled("YPTWallet");
                                     <div class="col-sm-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                            <span class="input-group-addon"><span class="btn btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
+                                            <span class="input-group-addon"><span class="btn btn-sm btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
                                             <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
                                         </div>
                                     </div>

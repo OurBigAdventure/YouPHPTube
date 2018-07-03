@@ -66,8 +66,8 @@ if (!User::isAdmin()) {
                     formatters: {
                         "status": function (column, row) {
                             var status = "";
-                            status = "<div class=\"btn-group\"><button class='btn-success btn-xs command-status-success'>Confirm</button>";
-                            status += "<button class='btn-danger btn-xs command-status-canceled'>Cancel</button><div>";
+                            status = "<div class=\"btn-group\"><button class='btn-success btn-sm command-status-success'>Confirm</button>";
+                            status += "<button class='btn-danger btn-sm command-status-canceled'>Cancel</button><div>";
                             return status;
                         }
                     }

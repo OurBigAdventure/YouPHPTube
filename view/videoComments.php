@@ -42,30 +42,30 @@ if (User::canSeeCommentTextarea()) {
             <?php
             if (User::canComment()) {
                 ?>
-                <button class="btn-light no-outline reply btn-xs">
+                <button class="btn-light no-outline reply btn-sm">
                     <?php echo __("Reply"); ?>
                 </button>
                 <?php
             }
             ?>
-            <button class="btn-light no-outline btn-xs replyLikeBtn">
+            <button class="btn-light no-outline btn-sm replyLikeBtn">
                 <span class="fa fa-thumbs-up"></span>
                 <small>0</small>
             </button>
-            <button class="btn-light no-outline btn-xs replyDislikeBtn">
+            <button class="btn-light no-outline btn-sm replyDislikeBtn">
                 <span class="fa fa-thumbs-down"></span>
                 <small>0</small>
             </button>
-            <button class="btn-light no-outline allReplies btn-xs viewAllReplies">
+            <button class="btn-light no-outline allReplies btn-sm viewAllReplies">
                 <?php echo __("View all replies"); ?> (<span class="total_replies">0</span>) <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </button>
-            <button class="btn-light no-outline allReplies btn-xs hideAllReplies" style="display: none">
+            <button class="btn-light no-outline allReplies btn-sm hideAllReplies" style="display: none">
                 <?php echo __("Hide Replies"); ?> <i class="fa fa-chevron-up" aria-hidden="true"></i>
             </button>
-            <button class="btn-light no-outline btn-xs float-right delete userCanAdminComment">
+            <button class="btn-light no-outline btn-sm float-right delete userCanAdminComment">
                 <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
-            <button class="btn-light no-outline btn-xs float-right edit userCanAdminComment">
+            <button class="btn-light no-outline btn-sm float-right edit userCanAdminComment">
                 <i class="fas fa-edit" aria-hidden="true"></i>
             </button>
         </div>
@@ -148,7 +148,7 @@ if (User::canSeeCommentTextarea()) {
                                 "video": function (column, row) {
                                     var image;
                                     if (row.video) {
-                                        image = '<img src="' + row.poster.thumbsJpg + '" class="img img-thumbnail img-fluid"><br><a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.video.clean_title + '" class="btn btn-light btn-xs">' + row.video.title + '</a>';
+                                        image = '<img src="' + row.poster.thumbsJpg + '" class="img img-thumbnail img-fluid"><br><a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.video.clean_title + '" class="btn btn-light btn-sm">' + row.video.title + '</a>';
                                     } else {
                                         image = 'Not found';
                                     }

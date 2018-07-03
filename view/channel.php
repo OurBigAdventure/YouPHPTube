@@ -142,7 +142,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                             <div class="card-heading">
 
                                 <strong style="font-size: 1em;" class="playlistName"><?php echo $playlist['name']; ?> </strong>
-                                <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist['id']; ?>" class="btn-xs btn-light playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a><?php echo $playListButtons;?>
+                                <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist['id']; ?>" class="btn-sm btn-light playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a><?php echo $playListButtons;?>
                                 <?php
                                 if ($isMyChannel) {
                                     ?>
@@ -169,9 +169,9 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                         });
                                     </script>
                                     <div class="float-right btn-group">
-                                        <button class="btn-xs btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>
-                                        <button class="btn-xs btn-danger deletePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-trash-o"></span> <?php echo __("Delete"); ?></button>
-                                        <button class="btn-xs btn-primary renamePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-pencil"></span> <?php echo __("Rename"); ?></button>
+                                        <button class="btn-sm btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>
+                                        <button class="btn-sm btn-danger deletePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-trash-o"></span> <?php echo __("Delete"); ?></button>
+                                        <button class="btn-sm btn-primary renamePlaylist" playlist_id="<?php echo $playlist['id']; ?>" ><span class="fa fa-pencil"></span> <?php echo __("Rename"); ?></button>
                                     </div>
                                     <?php
                                 }
@@ -200,7 +200,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                             <?php
                                             if ($isMyChannel) {
                                                 ?>
-                                                <button class="btn-xs btn-warning btn-block removeVideo" playlist_id="<?php echo $playlist['id']; ?>" video_id="<?php echo $value['id']; ?>">
+                                                <button class="btn-sm btn-warning btn-block removeVideo" playlist_id="<?php echo $playlist['id']; ?>" video_id="<?php echo $value['id']; ?>">
                                                     <span class="fa fa-trash-o"></span> <?php echo __("Remove"); ?>
                                                 </button>
                                                 <?php

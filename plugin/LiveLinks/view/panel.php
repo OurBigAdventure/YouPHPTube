@@ -86,10 +86,10 @@
 </div>
 <div id="btnModelLinks" style="display: none;">
     <div class="btn-group float-right">
-        <button href="" class="editor_edit_link btn btn-light btn-xs">
+        <button href="" class="editor_edit_link btn btn-light btn-sm">
             <i class="fa fa-edit"></i>
         </button>
-        <button href="" class="editor_delete_link btn btn-danger btn-xs">
+        <button href="" class="editor_delete_link btn btn-danger btn-sm">
             <i class="fa fa-trash"></i>
         </button>
     </div>

@@ -260,7 +260,7 @@ if (!empty($_GET['video_id'])) {
                                     </li>
                                     <li class="bg-light active non-public">
                                         <?php echo __("Groups that can see this video"); ?>
-                                        <a href="#" class="btn btn-info btn-xs float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
+                                        <a href="#" class="btn btn-info btn-sm float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                     </li>
                                     <?php
                                     foreach ($userGroups as $value) {
@@ -280,7 +280,7 @@ if (!empty($_GET['video_id'])) {
                                 </ul>
 
                                 <div class="row">
-                                    <h3><?php echo __("Autoplay Next Video"); ?> <button class="btn btn-danger btn-xs" id="removeAutoplay"><i class="fa fa-trash"></i> <?php echo __("Remove Autoplay Next Video"); ?></button></h3>
+                                    <h3><?php echo __("Autoplay Next Video"); ?> <button class="btn btn-danger btn-sm" id="removeAutoplay"><i class="fa fa-trash"></i> <?php echo __("Remove Autoplay Next Video"); ?></button></h3>
                                     <div class="col-md-4">
                                         <img id="inputNextVideo-poster" src="view/img/notfound.jpg" class="ui-state-default" alt="">
                                     </div>
@@ -335,10 +335,10 @@ if (!empty($_GET['video_id'])) {
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
             <div class="btn-group float-right" role="group">
-                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php?type=seo" target="_blank" class="btn btn-light btn-xs">
+                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php?type=seo" target="_blank" class="btn btn-light btn-sm">
                     <i class="fas fa-download"></i> <?php echo __("Download your videos list"); ?> (SEO .txt file)
                 </a>
-                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php" target="_blank" class="btn btn-light btn-xs">
+                <a href="<?php echo $global['webSiteRootURL']; ?>objects/videos.txt.php" target="_blank" class="btn btn-light btn-sm">
                     <i class="fas fa-download"></i> <?php echo __("Download your videos list"); ?> (Permalink .txt file)
                 </a>
             </div>
@@ -350,17 +350,17 @@ if (!empty($_GET['video_id'])) {
                     <h2>Before you start</h2>
                     <ol>
                         <li>
-                            <a href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations" class="btn btn-info btn-xs">Enable Google Login</a> and get your google ID and Key
+                            <a href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations" class="btn btn-info btn-sm">Enable Google Login</a> and get your google ID and Key
                         </li>
                         <li>
                             Go to https://console.developers.google.com
-                            on <a href="https://console.developers.google.com/apis/dashboard" class="btn btn-info btn-xs" target="_blank">dashboard</a> Enable <strong>YouTube Data API v3</strong>
+                            on <a href="https://console.developers.google.com/apis/dashboard" class="btn btn-info btn-sm" target="_blank">dashboard</a> Enable <strong>YouTube Data API v3</strong>
                         </li>
                         <li>
                             In credentials authorized this redirect URIs <code><?php echo $global['webSiteRootURL']; ?>objects/youtubeUpload.json.php</code>
                         </li>
                         <li>
-                            You can find more help on <a href="https://developers.google.com/youtube/v3/getting-started" class="btn btn-info btn-xs"  target="_blank">https://developers.google.com/youtube/v3/getting-started </a>
+                            You can find more help on <a href="https://developers.google.com/youtube/v3/getting-started" class="btn btn-info btn-sm"  target="_blank">https://developers.google.com/youtube/v3/getting-started </a>
                         </li>
                     </ol>
 
@@ -747,20 +747,20 @@ if (!empty($row)) {
                                             formatters: {
                                                 "commands": function (column, row)
                                                 {
-                                                    var editBtn = '<button type="button" class="btn-xs btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Edit")); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
-                                                    var deleteBtn = '<button type="button" class="  btn-xs command-delete"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Delete")); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
-                                                    var activeBtn = '<button style="color: #090" type="button" class="  btn-xs command-active"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Inactivate")); ?>"><span class="fas fa-eye" aria-hidden="true"></span></button>';
-                                                    var inactiveBtn = '<button style="color: #A00" type="button" class=" btn-xs command-inactive"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Activate")); ?>"><span class="fas fa-eye-slash" aria-hidden="true"></span></button>';
-                                                    var unlistedBtn = '<button style="color: #BBB" type="button" class=" btn-xs command-unlisted"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Unlisted")); ?>"><span class="fas fa-eye" aria-hidden="true"></span></button>';
-                                                    var rotateLeft = '<button type="button" class="  btn-xs command-rotate"  data-row-id="left"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Rotate LEFT")); ?>"><span class="fa fa-undo" aria-hidden="true"></span></button>';
-                                                    var rotateRight = '<button type="button" class=" btn-xs command-rotate"  data-row-id="right"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Rotate RIGHT")); ?>"><span class="fas fa-redo " aria-hidden="true"></span></button>';
+                                                    var editBtn = '<button type="button" class="btn btn-sm btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Edit")); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                                                    var deleteBtn = '<button type="button" class="btn btn-light btn-sm command-delete"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Delete")); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
+                                                    var activeBtn = '<button style="color: #090" type="button" class="btn btn-light btn-sm command-active"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Inactivate")); ?>"><span class="fas fa-eye" aria-hidden="true"></span></button>';
+                                                    var inactiveBtn = '<button style="color: #A00" type="button" class="btn btn-light  btn-sm command-inactive"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Activate")); ?>"><span class="fas fa-eye-slash" aria-hidden="true"></span></button>';
+                                                    var unlistedBtn = '<button style="color: #BBB" type="button" class="btn btn-light  btn-sm command-unlisted"  data-row-id="' + row.id + '"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Unlisted")); ?>"><span class="fas fa-eye" aria-hidden="true"></span></button>';
+                                                    var rotateLeft = '<button type="button" class="btn  btn-light btn-sm command-rotate"  data-row-id="left"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Rotate LEFT")); ?>"><span class="fa fa-undo" aria-hidden="true"></span></button>';
+                                                    var rotateRight = '<button type="button" class="btn btn-light  btn-sm command-rotate"  data-row-id="right"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Rotate RIGHT")); ?>"><span class="fas fa-redo " aria-hidden="true"></span></button>';
                                                     var rotateBtn = "<br>" + rotateLeft + rotateRight;
                                                     var suggestBtn = "";
 <?php
 if (User::isAdmin()) {
     ?>
-                                                        var suggest = '<button style="color: #C60" type="button" class=" btn-xs command-suggest"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Suggest")); ?>"><i class="fas fa-star" aria-hidden="true"></i></button>';
-                                                        var unsuggest = '<button style="" type="button" class="  btn-xs command-suggest unsuggest"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Unsuggest")); ?>"><i class="far fa-star" aria-hidden="true"></i></button>';
+                                                        var suggest = '<button style="color: #C60" type="button" class="btn btn-light  btn-sm command-suggest"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Suggest")); ?>"><i class="fas fa-star" aria-hidden="true"></i></button>';
+                                                        var unsuggest = '<button style="" type="button" class=" btn btn-light  btn-sm command-suggest unsuggest"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Unsuggest")); ?>"><i class="far fa-star" aria-hidden="true"></i></button>';
                                                         suggestBtn = unsuggest;
                                                         if (row.isSuggested == "1") {
                                                             suggestBtn = suggest;
@@ -775,7 +775,7 @@ if (User::isAdmin()) {
                                                     var pluginsButtons = '<br><?php echo YouPHPTubePlugin::getVideosManagerListButton(); ?>';
                                                     var download = "";
                                                     for (var k in row.videosURL) {
-                                                        download += '<a href="' + row.videosURL[k].url + '?download=1" class="btn-xs btn-light" ><span class="fa fa-download " aria-hidden="true"></span> ' + k + '</a><br>';
+                                                        download += '<a href="' + row.videosURL[k].url + '?download=1" class="btn btn-sm btn-light" ><span class="fa fa-download " aria-hidden="true"></span> ' + k + '</a><br>';
                                                     }
 
                                                     if (row.status == "i") {
@@ -826,12 +826,12 @@ if (User::isAdmin()) {
                                                     var tags = "";
                                                     var youTubeLink = "", youTubeUpload = "";
 <?php if (!$config->getDisable_youtubeupload()) { ?>
-                                                        youTubeUpload = '<button type="button" class="btn-danger btn-xs command-uploadYoutube"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Upload to YouTube")); ?>"><span class="fa fa-upload " aria-hidden="true"></span></button>';
+                                                        youTubeUpload = '<button type="button" class="btn btn-danger btn-sm command-uploadYoutube"  data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Upload to YouTube")); ?>"><span class="fa fa-upload " aria-hidden="true"></span></button>';
 
                                                         if (row.youtubeId) {
                                                             //youTubeLink += '<a href=\'https://youtu.be/' + row.youtubeId + '\' target=\'_blank\'  class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Watch on YouTube")); ?>"><span class="fas fa-external-link-alt " aria-hidden="true"></span></a>';
                                                         }
-                                                        var yt = '<br><div class="btn-group" role="group" ><a class="btn-light btn-xs" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
+                                                        var yt = '<br><div class="btn btn-group" role="group" ><a class="btn btn-light btn-sm" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
                                                         if (row.status == "d" || row.status == "e") {
                                                             yt = "";
                                                         }
@@ -857,7 +857,7 @@ if (User::isAdmin()) {
                                                         is_portrait = (row.rotation === "90" || row.rotation === "270") ? "img-portrait" : "";
                                                         img = "<img class='img img-fluid " + is_portrait + " img-thumbnail float-left rotate" + row.rotation + "' src='<?php echo $global['webSiteRootURL']; ?>videos/" + row.filename + ".jpg?" + Math.random() + "'  style='max-height:80px; margin-right: 5px;'> ";
                                                     }
-                                                    return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn-light btn-xs">' + type + row.title + "</a>" + tags + "" + yt;
+                                                    return img + '<a href="<?php echo $global['webSiteRootURL']; ?>video/' + row.clean_title + '" class="btn btn-light btn-sm">' + type + row.title + "</a>" + tags + "" + yt;
                                                 }
 
 

@@ -90,8 +90,8 @@ $obj = $plugin->getDataObject();
                     url: "<?php echo $global['webSiteRootURL'] . "plugin/YPTWallet/view/users.json.php"; ?>",
                     formatters: {
                         "commands": function (column, row) {
-                            var editBtn = '<button type="button" class="btn-xs btn-light command-edit" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
-                            var history = '<a href="<?php echo $global['webSiteRootURL']; ?>plugin/YPTWallet/view/history.php?users_id=' + row.users_id + '" class="btn-light btn-xs command-history"   data-toggle="tooltip" data-placement="left" title="History""><span class="fa fa-history" aria-hidden="true"></span></a>';
+                            var editBtn = '<button type="button" class="btn-sm btn-light command-edit" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                            var history = '<a href="<?php echo $global['webSiteRootURL']; ?>plugin/YPTWallet/view/history.php?users_id=' + row.users_id + '" class="btn-light btn-sm command-history"   data-toggle="tooltip" data-placement="left" title="History""><span class="fa fa-history" aria-hidden="true"></span></a>';
                             //return editBtn + deleteBtn;
                             return editBtn + history;
                         },

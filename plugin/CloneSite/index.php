@@ -55,10 +55,10 @@ if (!User::isAdmin()) {
         </div>
         <div id="btnModelLinks" style="display: none;">
             <div class="btn-group pull-right">
-                <button href="" class="editor_status btn {status-class} btn-xs">
+                <button href="" class="editor_status btn {status-class} btn-sm">
                     <i class="{status-icon}"></i> {status-text}
                 </button>
-                <button href="" class="editor_delete_link btn btn-danger btn-xs">
+                <button href="" class="editor_delete_link btn btn-danger btn-sm">
                     <i class="fa fa-trash"></i>
                 </button>
             </div>

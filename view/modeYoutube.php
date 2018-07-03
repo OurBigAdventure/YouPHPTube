@@ -117,7 +117,7 @@ if (!empty($_GET['playlist_id'])) {
 
 if (!empty($video)) {
     $name = User::getNameIdentificationById($video['users_id']);
-    $name = "<a href='" . User::getChannelLink($video['users_id']) . "' class='btn-xs btn-light'>{$name}</a>";
+    $name = "<a href='" . User::getChannelLink($video['users_id']) . "' class='btn-sm btn-light'>{$name}</a>";
     $subscribe = Subscribe::getButton($video['users_id']);
     $video['creator'] = '<div class="float-left"><img src="' . User::getPhoto($video['users_id']) . '" alt="" class="img img-fluid rounded-circle zoom" style="max-width: 40px;"/></div><div class="commentDetails" style="margin-left:45px;"><div class="commenterName text-muted"><strong>' . $name . '</strong><br />' . $subscribe . '<br /><small>' . humanTiming(strtotime($video['videoCreation'])) . '</small></div></div>';
     $obj = new Video("", "", $video['id']);
@@ -512,7 +512,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                                                        <span class="input-group-addon"><span class="btn-xs btn-success" id="btnReloadCapcha"><span class="fas fa-sync"></span></span></span>
+                                                                        <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="fas fa-sync"></span></span></span>
                                                                         <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
                                                                     </div>
                                                                 </div>
@@ -580,7 +580,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-lg-12">
                                     <div class="col-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Category"); ?>:</strong></div>
-                                    <div class="col-8 col-sm-10 col-lg-10"><a class="btn-xs btn-light"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
+                                    <div class="col-8 col-sm-10 col-lg-10"><a class="btn-sm btn-light"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
                                     <div class="col-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Description"); ?>:</strong></div>
                                     <div class="col-8 col-sm-10 col-lg-10" itemprop="description"><?php echo nl2br(textToLink(htmlentities($video['description']))); ?></div>
                                 </div>

@@ -108,9 +108,9 @@ if (!User::canUpload()) {
                     url: "<?php echo $global['webSiteRootURL'] . "objects/subscribes.json.php"; ?>",
                     formatters: {
                         "status": function (column, row) {
-                            var subscribe = '<button type="button" class="btn-xs btn-success command-status" id="subscribe' + row.id + '" data-toggle="tooltip" data-placement="left" title="Unsubscribe"><span class="fa fa-check" aria-hidden="true"></span></button>'
+                            var subscribe = '<button type="button" class="btn-sm btn-success command-status" id="subscribe' + row.id + '" data-toggle="tooltip" data-placement="left" title="Unsubscribe"><span class="fa fa-check" aria-hidden="true"></span></button>'
                             if (row.status == 'i') {
-                                subscribe = '<button type="button" class="btn-xs btn-danger command-status" id="subscribe' + row.id + '" data-toggle="tooltip" data-placement="left" title="Subscribe"><span class="fa fa-times-circle" aria-hidden="true"></span></button>'
+                                subscribe = '<button type="button" class="btn-sm btn-danger command-status" id="subscribe' + row.id + '" data-toggle="tooltip" data-placement="left" title="Subscribe"><span class="fa fa-times-circle" aria-hidden="true"></span></button>'
                             }
                             return subscribe;
                         }

@@ -107,7 +107,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         ?>
                                                         <div class="col-4" style="padding: 10px;">
                                                             <img src="<?php echo $global['webSiteRootURL'], "view/css/custom/", $fileEx, ".png"; ?>" class="img-fluid img-radio">
-                                                            <button type="button" class="btn btn-light btn-radio btn-block btn-xs" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
+                                                            <button type="button" class="btn btn-light btn-radio btn-block btn-sm" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
                                                             <input type="checkbox" value="<?php echo ($fileEx); ?>"  class="d-none left-item">
                                                         </div>
                                                         <?php
@@ -280,7 +280,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </label>
                                                     <div class="col-md-8 ">
                                                         <div id="croppieLogo"></div>
-                                                        <a id="logo-btn" class="btn-light btn-xs btn-block"><?php echo __("Upload a logo"); ?></a>
+                                                        <a id="logo-btn" class="btn-light btn-sm btn-block"><?php echo __("Upload a logo"); ?></a>
                                                     </div>
                                                     <input type="file" id="logo" value="Choose a Logo" accept="image/*" style="display: none;" />
                                                 </div>
@@ -290,7 +290,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </label>
                                                     <div class="col-md-8 ">
                                                         <div id="croppieLogoSmall"></div>
-                                                        <a id="logoSmall-btn" class="btn-light btn-xs btn-block"><?php echo __("Upload a small logo"); ?></a>
+                                                        <a id="logoSmall-btn" class="btn-light btn-sm btn-block"><?php echo __("Upload a small logo"); ?></a>
                                                     </div>
                                                     <input type="file" id="logoSmall" value="Choose a Small Logo" accept="image/*" style="display: none;" />
                                                 </div>
@@ -410,7 +410,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             <small id="encoder_urlHelp" class="form-text text-muted">
                                                                 <?php echo __("You need to set up an encoder server"); ?><br>
                                                                 <?php echo __("You can use our public encoder on"); ?>: https://encoder.youphptube.com/ or
-                                                                <a href="https://github.com/DanielnetoDotCom/YouPHPTube-Encoder" class="btn-light btn-xs" target="_blank"><?php echo __("For faster encode, download your own encoder"); ?></a>
+                                                                <a href="https://github.com/DanielnetoDotCom/YouPHPTube-Encoder" class="btn-light btn-sm" target="_blank"><?php echo __("For faster encode, download your own encoder"); ?></a>
                                                             </small>
                                                         </div>
                                                     </div>
@@ -521,7 +521,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <div class="col-md-4 inputGroupContainer">
                                                             <div class="input-group">
                                                                 <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                                                <span class="input-group-addon"><span class="btn-xs btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
+                                                                <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
                                                                 <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
                                                             </div>
                                                         </div>

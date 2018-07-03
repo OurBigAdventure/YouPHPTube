@@ -11,7 +11,7 @@ $canSendMessage = $p->canSendMessage();
 </div>
 <div style="display: none" id="chatOnline">
     <div class="card liveChat">
-        <div class="card-header"><i class="fa fa-comments-o"></i> <?php echo __("Live Chat"); ?> <button class="btn btn-xs btn-light float-right" id="collapseBtn"><i class="fa fa-minus-square"></i></button></div>
+        <div class="card-header"><i class="fa fa-comments-o"></i> <?php echo __("Live Chat"); ?> <button class="btn btn-sm btn-light float-right" id="collapseBtn"><i class="fa fa-minus-square"></i></button></div>
         <div class="colapsibleArea">
             <div class="card-body">
                 <ul class="messages"></ul>

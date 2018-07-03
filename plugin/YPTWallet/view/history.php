@@ -82,9 +82,9 @@ if (!empty($_GET['users_id'])) {
 if (User::isAdmin()) {
     ?>
 
-                                                status += "<br><br><div class=\"btn-group\"><button class='btn-light btn-xs command-status-success'>Success</button>";
-                                                status += "<button class='btn-light btn-xs command-status-pending'>Pending</button>";
-                                                status += "<button class='btn-light btn-xs command-status-canceled'>Canceled</button><div>";
+                                                status += "<br><br><div class=\"btn-group\"><button class='btn-light btn-sm command-status-success'>Success</button>";
+                                                status += "<button class='btn-light btn-sm command-status-pending'>Pending</button>";
+                                                status += "<button class='btn-light btn-sm command-status-canceled'>Canceled</button><div>";
 
     <?php
 }

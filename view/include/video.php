@@ -17,10 +17,10 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
     <div class="col-sm-8 col-md-8 secC">
         <div id="videoContainer">
             <div id="floatButtons" style="display: none;">
-                <p class="btn-outline btn-xs move">
+                <p class="btn-outline btn-sm move">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </p>
-                <button type="button" class="btn-outline btn-xs"
+                <button type="button" class="btn-outline btn-sm"
                         onclick="closeFloatVideo();floatClosed = 1;">
                     <i class="far fa-window-close"></i>
                 </button>
@@ -63,12 +63,12 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
         </div>
         <?php if ($config->getAllow_download()) { ?>
             <?php if ($playNowVideo['type'] == "video") { ?>
-                <a class="btn-xs btn-light float-right " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
+                <a class="btn-sm btn-light float-right " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>
             <?php } else { ?>
-                <a class="btn-xs btn-light float-right " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
+                <a class="btn-sm btn-light float-right " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>

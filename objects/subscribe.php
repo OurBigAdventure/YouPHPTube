@@ -225,8 +225,8 @@ class Subscribe {
 
         
         $subscribe = "<div class=\"btn-group\" >"
-                . "<button class='btn btn-xs subsB subs{$user_id} subscribeButton{$user_id}' title=\"" . __("Want to subscribe to this channel?") . "\" data-content=\"" . __("Sign in to subscribe to this channel") . "<hr><center><a class='btn btn-success btn-sm' href='{$global['webSiteRootURL']}user'>" . __("Sign in") . "</a></center>\"  tabindex=\"0\" role=\"button\" data-html=\"true\"  data-toggle=\"popover\" data-placement=\"bottom\" ><i class='fab fa-youtube'></i> <b class='text'>" . __("Subscribe") . "</b></button>"
-                . "<button class='btn btn-xs subsB subs{$user_id}'><b class='textTotal{$user_id}'>{$total}</b></button>"
+                . "<button class='btn btn-sm subsB subs{$user_id} subscribeButton{$user_id}' title=\"" . __("Want to subscribe to this channel?") . "\" data-content=\"" . __("Sign in to subscribe to this channel") . "<hr><center><a class='btn btn-success btn-sm' href='{$global['webSiteRootURL']}user'>" . __("Sign in") . "</a></center>\"  tabindex=\"0\" role=\"button\" data-html=\"true\"  data-toggle=\"popover\" data-placement=\"bottom\" ><i class='fab fa-youtube'></i> <b class='text'>" . __("Subscribe") . "</b></button>"
+                . "<button class='btn btn-sm subsB subs{$user_id}'><b class='textTotal{$user_id}'>{$total}</b></button>"
                 . "</div>";
 
         //show subscribe button with mail field
@@ -276,8 +276,8 @@ trigger: 'manual',
                 if (!empty($subs)) {
                     // show unsubscribe Button
                     $subscribe = "<div class=\"btn-group\">"
-                . "<button class='btn-xs subsB subscribeButton{$user_id} subscribed subs{$user_id}'><i class='fab fa-youtube'></i> <b class='text'>" . __("Subscribed") . "</b></button>"
-                . "<button class='btn-xs subsB subscribed subs{$user_id}'><b class='textTotal{$user_id}'>$total</b></button>"
+                . "<button class='btn-sm subsB subscribeButton{$user_id} subscribed subs{$user_id}'><i class='fab fa-youtube'></i> <b class='text'>" . __("Subscribed") . "</b></button>"
+                . "<button class='btn-sm subsB subscribed subs{$user_id}'><b class='textTotal{$user_id}'>$total</b></button>"
                 . "</div>";
 
                     if(!empty($subs['notify'])){
@@ -287,10 +287,10 @@ trigger: 'manual',
                         $notify = 'hidden';
                         $notNotify = '';
                     }
-                    $subscribe .= '<span class=" notify'.$user_id.' '.$notify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-light btn-xs " data-toggle="tooltip"
+                    $subscribe .= '<span class=" notify'.$user_id.' '.$notify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-light btn-sm " data-toggle="tooltip"
                                    title="'.__("Stop getting notified for every new video").'">
                                 <i class="fa fa-bell" ></i>
-                            </button></span><span class=" notNotify'.$user_id.' '.$notNotify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-light btn-xs "  data-toggle="tooltip"
+                            </button></span><span class=" notNotify'.$user_id.' '.$notNotify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-light btn-sm "  data-toggle="tooltip"
                                    title="'.__("Get notified for every new video").'">
                                 <i class="fa fa-bell-slash"></i>
                             </button></span>';

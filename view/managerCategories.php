@@ -179,8 +179,8 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
                         },
                         "commands": function (column, row)
                         {
-                            var editBtn = '<button type="button" class="btn-xs btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo __("Edit"); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
-                            var deleteBtn = '<button type="button" class="btn-light btn-xs command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="<?php echo __("Delete"); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
+                            var editBtn = '<button type="button" class="btn-sm btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="<?php echo __("Edit"); ?>"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                            var deleteBtn = '<button type="button" class="btn-light btn-sm command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="<?php echo __("Delete"); ?>"><span class="fas fa-trash" aria-hidden="true"></span></button>';
                             return editBtn + deleteBtn;
                         }
                     }

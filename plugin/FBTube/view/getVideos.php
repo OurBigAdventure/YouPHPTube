@@ -383,7 +383,7 @@ if (!empty($videos)) {
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha<?php echo $video['id']; ?>"></span>
-                                                            <span class="input-group-addon"><span class="btn-xs btn-success" id="btnReloadCapcha<?php echo $video['id']; ?>"><span class="glyphicon glyphicon-refresh"></span></span></span>
+                                                            <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha<?php echo $video['id']; ?>"><span class="glyphicon glyphicon-refresh"></span></span></span>
                                                             <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText<?php echo $video['id']; ?>">
                                                         </div>
                                                     </div>

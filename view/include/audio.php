@@ -42,11 +42,11 @@
             <?php if ($config->getAllow_download()) {
             if($video['type']=="audio"){
             ?>
-                <a class="btn-xs btn-light " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $video['filename'].$ext; ?>" download="<?php echo $video['title'] . $ext; ?>"><?php echo __("Download audio"); ?></a>
+                <a class="btn-sm btn-light " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $video['filename'].$ext; ?>" download="<?php echo $video['title'] . $ext; ?>"><?php echo __("Download audio"); ?></a>
             <?php  } else {
             $ext = substr($video['videoLink'],strlen($video['videoLink'])-4,strlen($video['videoLink']));
             ?>
-                <a class="btn-xs btn-light " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $video['title'] . $ext; ?>"><?php echo __("Download audio"); ?></a>
+                <a class="btn-sm btn-light " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $video['title'] . $ext; ?>"><?php echo __("Download audio"); ?></a>
             <?php  }} ?>
         </div>
     </div>

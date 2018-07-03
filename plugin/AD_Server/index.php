@@ -217,23 +217,23 @@ if (!User::isAdmin()) {
             </div><!-- /.modal -->
 
             <div id="btnModelVideos" style="display: none;">
-                <button href="" class="editor_delete_video btn-danger btn-xs">
+                <button href="" class="editor_delete_video btn-danger btn-sm">
                     <i class="fa fa-trash"></i>
                 </button>
             </div>
 
             <div id="btnModelLinks" style="display: none;">
                 <div class="btn-group float-right">
-                    <button href="" class="editor_add_video btn-success btn-xs">
+                    <button href="" class="editor_add_video btn-success btn-sm">
                         <i class="fa fa-video"></i> Add Video
                     </button>
-                    <button href="" class="editor_chart btn-info btn-xs">
+                    <button href="" class="editor_chart btn-info btn-sm">
                         <i class="fas fa-chart-area "></i>
                     </button>
-                    <button href="" class="editor_edit_link btn-light btn-xs">
+                    <button href="" class="editor_edit_link btn-light btn-sm">
                         <i class="fa fa-edit"></i>
                     </button>
-                    <button href="" class="editor_delete_link btn-danger btn-xs">
+                    <button href="" class="editor_delete_link btn-danger btn-sm">
                         <i class="fa fa-trash"></i>
                     </button>
                 </div>

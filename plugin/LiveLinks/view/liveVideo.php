@@ -4,10 +4,10 @@
     <div class="col-12 col-sm-12 col-lg-8">
         <div id="videoContainer">
             <div id="floatButtons" style="display: none;">
-                <p class="btn btn-outline btn-xs move">
+                <p class="btn btn-outline btn-sm move">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </p>
-                <button type="button" class="btn btn-outline btn-xs" onclick="closeFloatVideo();floatClosed = 1;">
+                <button type="button" class="btn btn-outline btn-sm" onclick="closeFloatVideo();floatClosed = 1;">
                     <i class="far fa-window-close"></i>
                 </button>
             </div>

@@ -77,7 +77,7 @@
 .toggle-on.btn-sm { padding-right: 20px; }
 .toggle-off.btn-sm { padding-left: 20px; }
 
-.toggle.btn-xs { min-width: 35px; min-height: 22px;}
-.toggle-on.btn-xs { padding-right: 12px; }
-.toggle-off.btn-xs { padding-left: 12px; }
+.toggle.btn-sm { min-width: 35px; min-height: 22px;}
+.toggle-on.btn-sm { padding-right: 12px; }
+.toggle-off.btn-sm { padding-left: 12px; }
 

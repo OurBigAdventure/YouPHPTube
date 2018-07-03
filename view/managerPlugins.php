@@ -252,7 +252,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                 <div id="menu1" class="tab-pane fade">
                     <div class="bg-light">
                         <div class="card">
-                            <div class="card-header"><a href="https://easytube.club/signUp" class="btn-light btn-xs"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
+                            <div class="card-header"><a href="https://easytube.club/signUp" class="btn-light btn-sm"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
                             <div class="card-body">
                                 <ul class="list-group" id="pluginStoreList">
                                 </ul>
@@ -287,7 +287,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                         </table>
                     </div>
                     <div class="card-footer">
-                        <a href="https://easytube.club/signUp" class="btn-success btn-xs" role="button"><i class="fa fa-cart-plus"></i> <?php echo __("Buy This Plugin"); ?> </a>
+                        <a href="https://easytube.club/signUp" class="btn-success btn-sm" role="button"><i class="fa fa-cart-plus"></i> <?php echo __("Buy This Plugin"); ?> </a>
                     </div>
                 </div>
             </li>
@@ -391,11 +391,11 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                             var editBtn = '';
 
                             if (row.id && !$.isEmptyObject(row.data_object)) {
-                                editBtn = '<button type="button" class="btn btn-xs btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span> Edit parameters</button>';
+                                editBtn = '<button type="button" class="btn btn-sm btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span> Edit parameters</button>';
                             }
                             var sqlBtn = '';
                             if (row.databaseScript) {
-                                sqlBtn = '<button type="button" class="btn btn-xs btn-light command-sql" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Run Database Script"><span class="fa fa-database" aria-hidden="true"></span> Install tables</button>';
+                                sqlBtn = '<button type="button" class="btn btn-sm btn-light command-sql" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Run Database Script"><span class="fa fa-database" aria-hidden="true"></span> Install tables</button>';
                             }
                             menu = '';
                             if(row.installedPlugin && row.installedPlugin.status == 'active'){
