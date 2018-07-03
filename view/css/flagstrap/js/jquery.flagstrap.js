@@ -10,7 +10,7 @@
 
     var defaults = {
         buttonSize: "btn-md",
-        buttonType: "btn-light",
+        buttonType: "btn-default",
         labelMargin: "10px",
         scrollable: true,
         scrollableHeight: "250px",
@@ -404,20 +404,19 @@
 
 
                 // Build a clickable drop down option item, insert the flag and label, attach click event
-                var flagStrapItem = $('<a/>')
+                var flagStrapItem = $('<a href="#"/>')
                     .attr('data-val', $(this).val())
                     .html(flagIcon)
                     .append(text)
                     .on('click', function (e) {
-                        $(htmlSelect).find('option').removeAttr('selected');
-                        $(htmlSelect).find('option[value="' + $(this).data('val') + '"]').attr("selected", "selected");
+                        $(htmlSelect).val($(this).data('val'));
                         $(htmlSelect).trigger('change');
                         $('.flagstrap-selected-' + uniqueId).html($(this).html());
                         e.preventDefault();
                     });
 
                 // Make it a list item
-                var listItem = $('<li/>').prepend(flagStrapItem);
+                var listItem = $('<li class="dropdown-item"/>').prepend(flagStrapItem);
 
                 // Append it to the drop down item list
                 items.append(listItem);

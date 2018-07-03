@@ -70,7 +70,7 @@ if (!empty($_GET['msg'])) {
     $jsFiles[] = "view/js/script.js";
     $jsFiles[] = "view/js/bootstrap-toggle/bootstrap-toggle.min.js";
     $jsFiles[] = "view/js/js-cookie/js.cookie.js";
-    $jsFiles[] = "view/css/flagstrap/js/jquery.flagstrap.min.js";
+    $jsFiles[] = "view/css/flagstrap/js/jquery.flagstrap.js";
     $jsFiles[] = "view/js/jquery.lazy/jquery.lazy.min.js";
     $jsFiles[] = "view/js/jquery.lazy/jquery.lazy.plugins.min.js";
     if(!empty($_SESSION['type'])){
