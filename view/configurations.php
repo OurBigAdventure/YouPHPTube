@@ -1,6 +1,6 @@
 <?php
 global $global, $config;
-if(!isset($global['systemRootPath'])){
+if (!isset($global['systemRootPath'])) {
     require_once '../videos/configuration.php';
 }
 require_once $global['systemRootPath'] . 'objects/user.php';
@@ -86,32 +86,34 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     <span class="fa fa-info-circle"></span>
                                                     <?php echo __("We would like to thanks http://bootswatch.com/"); ?>
                                                 </div>
-                                                <?php
-                                                foreach (glob("{$global['systemRootPath']}view/css/custom/*.css") as $filename) {
-                                                    //echo "$filename size " . filesize($filename) . "\n";
-                                                    $file = basename($filename);         // $file is set to "index.php"
-                                                    $fileEx = basename($filename, ".css"); // $file is set to "index"
-                                                    $savedTheme = $config->getTheme();
-                                                    if ($fileEx == $savedTheme) {
+                                                <div class="row">
+                                                    <?php
+                                                    foreach (glob("{$global['systemRootPath']}view/css/custom/*.css") as $filename) {
+                                                        //echo "$filename size " . filesize($filename) . "\n";
+                                                        $file = basename($filename);         // $file is set to "index.php"
+                                                        $fileEx = basename($filename, ".css"); // $file is set to "index"
+                                                        $savedTheme = $config->getTheme();
+                                                        if ($fileEx == $savedTheme) {
+                                                            ?>
+                                                            <script>
+                                                                $(document).ready(function () {
+                                                                    setTimeout(function () {
+                                                                        $("#btn<?php echo ($fileEx); ?>").trigger("click");
+                                                                    }, 1000);
+                                                                });
+                                                            </script>
+                                                            <?php
+                                                        }
                                                         ?>
-                                                        <script>
-                                                            $(document).ready(function () {
-                                                                setTimeout(function () {
-                                                                    $("#btn<?php echo ($fileEx); ?>").trigger("click");
-                                                                }, 1000);
-                                                            });
-                                                        </script>
+                                                        <div class="col-4" style="padding: 10px;">
+                                                            <img src="<?php echo $global['webSiteRootURL'], "view/css/custom/", $fileEx, ".png"; ?>" class="img-fluid img-radio">
+                                                            <button type="button" class="btn btn-light btn-radio btn-block btn-xs" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
+                                                            <input type="checkbox" value="<?php echo ($fileEx); ?>"  class="d-none left-item">
+                                                        </div>
                                                         <?php
                                                     }
                                                     ?>
-                                                    <div class="col-4" style="padding: 10px;">
-                                                        <img src="<?php echo $global['webSiteRootURL'], "view/css/custom/", $fileEx, ".png"; ?>" class="img-fluid img-radio">
-                                                        <button type="button" class="btn-light btn-radio btn-block btn-xs" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
-                                                        <input type="checkbox" value="<?php echo ($fileEx); ?>"  class="d-none left-item">
-                                                    </div>
-                                                    <?php
-                                                }
-                                                ?>
+                                                </div>
                                             </fieldset>
                                         </div>
                                         <div class="tab-pane" id="tabCompatibility">
@@ -616,11 +618,11 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                             $.ajax({
                                 url: '<?php echo $global['webSiteRootURL']; ?>objects/sendEmail.json.php',
                                 data: {
-                                    captcha:$('#captchaText').val(),
+                                    captcha: $('#captchaText').val(),
                                     first_name: "Your Site test",
-                                    email:"teste@teste.com",
+                                    email: "teste@teste.com",
                                     website: "www.youphptube.com",
-                                    comment:"Teste of comment"
+                                    comment: "Teste of comment"
                                 },
                                 type: 'post',
                                 success: function (response) {
