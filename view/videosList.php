@@ -87,7 +87,7 @@ foreach ($videos as $key => $value) {
         if (!empty($_GET['page']) && $_GET['page'] > 1) {
             echo "/page/{$_GET['page']}";
         }
-        ?>" title="<?php echo $value['title']; ?>" class="videoLink h6">
+        ?>" title="<?php echo $value['title']; ?>" class="videoLink h6 row">
             <div class="col-lg-5 col-sm-5 col-5 nopadding thumbsImage" >
                 <?php
                 $images = Video::getImageFromFilename($value['filename'], $value['type']);
@@ -112,7 +112,7 @@ foreach ($videos as $key => $value) {
             </div>
             <div class="col-lg-7 col-sm-7 col-7 videosDetails">
                 <div class="text-uppercase row"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
-                <div class="details row" itemprop="description">
+                <div class="details" itemprop="description">
                     <div>
                         <strong><?php echo __("Category"); ?>: </strong>
                         <span class="<?php echo $value['iconClass']; ?>"></span>
