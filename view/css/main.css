@@ -122,30 +122,7 @@ footer ul.list-inline li {
 #videosList, #videosList div{
     z-index: 1;
 }
-/* end for main video */
-.form-compact .form-control {
-    position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 16px;
-}
-.form-compact input.form-control {
-    border-radius: 0;
-}
-.form-compact input.first,
-.form-compact select.first {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-.form-compact input.last,
-.form-compact select.last {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin-bottom: 10px;
-}
+
 @media (max-width: 767px) {
     .navbar-form {
         padding: 0;
@@ -167,64 +144,6 @@ footer ul.list-inline li {
     min-height: 50px;
 }
 /* End Comments */
-
-
-/* Tabs panel */
-.tabbable-panel {
-    padding: 10px;
-}
-
-/* Default mode */
-.tabbable-line > .nav-tabs {
-    border: none;
-    margin: 0px;
-}
-.tabbable-line > .nav-tabs > li {
-    margin-right: 2px;
-    border-bottom: 4px solid #DDD;
-}
-.tabbable-line > .nav-tabs > li > a {
-    border: 0;
-    margin-right: 0;
-}
-.tabbable-line > .nav-tabs > li.open,
-.tabbable-line > .nav-tabs > li:hover {
-    border-bottom: 4px solid #fbcdcf;
-}
-.tabbable-line > .nav-tabs > li.open > a,
-.tabbable-line > .nav-tabs > li:hover > a {
-    border: 0;
-    background: none !important;
-}
-.tabbable-line > .nav-tabs > li.open > a > i,
-.tabbable-line > .nav-tabs > li:hover > a > i {
-    color: #a6a6a6;
-}
-.tabbable-line > .nav-tabs > li.open .dropdown-menu,
-.tabbable-line > .nav-tabs > li:hover .dropdown-menu {
-    margin-top: 0px;
-}
-.tabbable-line > .nav-tabs > li.active {
-    border-bottom: 4px solid #f3565d;
-    position: relative;
-}
-.tabbable-line > .nav-tabs > li.active > a {
-    border: 0;
-    background: none !important;
-}
-.tabbable-line > .nav-tabs > li.active > a > i {
-    color: #404040;
-}
-.tabbable-line > .tab-content {
-    margin-top: -3px;
-    border: 0;
-    border-top: 1px solid #eee;
-    padding: 15px 0;
-}
-.portlet .tabbable-line > .tab-content {
-    padding-bottom: 0;
-}
-/* END Tabs panel */
 
 .nowrapCell td {
     white-space: normal !important;

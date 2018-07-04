@@ -37,12 +37,12 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
             if (User::isAdmin()) {
                 ?>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-12">
                         <form class="form-compact well "  id="updateConfigForm" onsubmit="">
 
-                            <div class="tabbable-panel">
-                                <div class="tabbable-line">
-                                    <ul class="nav">
+                            <div class="">
+                                <div class="">
+                                    <ul class="nav nav-tabs">
                                         <li class="nav-item">
                                             <a class="nav-link" href="#tabTheme" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
@@ -74,505 +74,529 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                             </a>
                                         </li>
                                     </ul>
-                                    <div class="tab-content clearfix">
-                                        <div class="tab-pane" id="tabTheme">
-                                            <fieldset>
-                                                <legend><?php echo __("Themes"); ?></legend>
-                                                <h1 class="alert alert-warning">
-                                                    <span class="fa fa-warning"></span>
-                                                    <?php echo __("Do not forget to save after choose your theme"); ?>
-                                                </h1>
-                                                <div class="alert alert-info">
-                                                    <span class="fa fa-info-circle"></span>
-                                                    <?php echo __("We would like to thanks http://bootswatch.com/"); ?>
-                                                </div>
-                                                <div class="row">
-                                                    <?php
-                                                    foreach (glob("{$global['systemRootPath']}view/css/custom/*.css") as $filename) {
-                                                        //echo "$filename size " . filesize($filename) . "\n";
-                                                        $file = basename($filename);         // $file is set to "index.php"
-                                                        $fileEx = basename($filename, ".css"); // $file is set to "index"
-                                                        $savedTheme = $config->getTheme();
-                                                        if ($fileEx == $savedTheme) {
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade" id="tabTheme">
+                                            <div class="card border-top-0">
+                                                <div class="card-body">
+                                                    <h1 class="alert alert-warning">
+                                                        <span class="fa fa-warning"></span>
+                                                        <?php echo __("Do not forget to save after choose your theme"); ?>
+                                                    </h1>
+                                                    <div class="alert alert-info">
+                                                        <span class="fa fa-info-circle"></span>
+                                                        <?php echo __("We would like to thanks http://bootswatch.com/"); ?>
+                                                    </div>
+                                                    <div class="row">
+                                                        <?php
+                                                        foreach (glob("{$global['systemRootPath']}view/css/custom/*.css") as $filename) {
+                                                            //echo "$filename size " . filesize($filename) . "\n";
+                                                            $file = basename($filename);         // $file is set to "index.php"
+                                                            $fileEx = basename($filename, ".css"); // $file is set to "index"
+                                                            $savedTheme = $config->getTheme();
+                                                            if ($fileEx == $savedTheme) {
+                                                                ?>
+                                                                <script>
+                                                                    $(document).ready(function () {
+                                                                        setTimeout(function () {
+                                                                            $("#btn<?php echo ($fileEx); ?>").trigger("click");
+                                                                        }, 1000);
+                                                                    });
+                                                                </script>
+                                                                <?php
+                                                            }
                                                             ?>
-                                                            <script>
-                                                                $(document).ready(function () {
-                                                                    setTimeout(function () {
-                                                                        $("#btn<?php echo ($fileEx); ?>").trigger("click");
-                                                                    }, 1000);
-                                                                });
-                                                            </script>
+                                                            <div class="col-4" style="padding: 10px;">
+                                                                <img src="<?php echo $global['webSiteRootURL'], "view/css/custom/", $fileEx, ".png"; ?>" class="img-fluid img-radio">
+                                                                <button type="button" class="btn btn-light btn-radio btn-block btn-sm" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
+                                                                <input type="checkbox" value="<?php echo ($fileEx); ?>"  class="d-none left-item">
+                                                            </div>
                                                             <?php
                                                         }
                                                         ?>
-                                                        <div class="col-4" style="padding: 10px;">
-                                                            <img src="<?php echo $global['webSiteRootURL'], "view/css/custom/", $fileEx, ".png"; ?>" class="img-fluid img-radio">
-                                                            <button type="button" class="btn btn-light btn-radio btn-block btn-sm" id="btn<?php echo ($fileEx); ?>"><?php echo ucfirst($fileEx); ?></button>
-                                                            <input type="checkbox" value="<?php echo ($fileEx); ?>"  class="d-none left-item">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tabCompatibility">
+                                            <div class="card border-top-0">
+                                                <div class="card-body">
+
+                                                    <div class="alert alert-success">
+                                                        <span class="fa fa-film"></span>
+                                                        <strong><?php
+                                                            $secondsTotal = getSecondsTotalVideosLength();
+                                                            $seconds = $secondsTotal % 60;
+                                                            $minutes = ($secondsTotal - $seconds) / 60;
+                                                            printf(__("You are hosting %d minutes and %d seconds of video"), $minutes, $seconds);
+                                                            ?></strong>
+                                                        <?php
+                                                        if (!empty($global['videoStorageLimitMinutes'])) {
+                                                            $secondsLimit = $global['videoStorageLimitMinutes'] * 60;
+                                                            if ($secondsLimit > $secondsTotal) {
+
+                                                                $percent = intval($secondsTotal / $secondsLimit * 100);
+                                                            } else {
+                                                                $percent = 100;
+                                                            }
+                                                            ?> and you have <?php echo $global['videoStorageLimitMinutes']; ?> minutes of storage
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                                                                     aria-valuenow="<?php echo $percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $percent; ?>%">
+                                                                    <?php echo $percent; ?>% of your storage limit used
+                                                                </div>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                        ?>
+
+                                                    </div>
+                                                    <?php
+                                                    if (isApache()) {
+                                                        ?>
+                                                        <div class="alert alert-success">
+                                                            <span class="glyphicon glyphicon-check"></span>
+                                                            <strong><?php echo $_SERVER['SERVER_SOFTWARE']; ?> is Present</strong>
+                                                        </div>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <div class="alert alert-danger">
+                                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                                            <strong>Your server is <?php echo $_SERVER['SERVER_SOFTWARE']; ?>, you must install Apache</strong>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                    ?>
+
+
+                                                    <?php
+                                                    if (isPHP("5.6")) {
+                                                        ?>
+                                                        <div class="alert alert-success">
+                                                            <span class="glyphicon glyphicon-check"></span>
+                                                            <strong>PHP <?php echo PHP_VERSION; ?> is Present</strong>
+                                                        </div>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <div class="alert alert-danger">
+                                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                                            <strong>Your PHP version is <?php echo PHP_VERSION; ?>, you must install PHP 5.6.x or greater</strong>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                    ?>
+
+                                                    <?php
+                                                    if (checkVideosDir()) {
+                                                        ?>
+                                                        <div class="alert alert-success">
+                                                            <span class="glyphicon glyphicon-check"></span>
+                                                            <strong>Your videos directory is writable</strong>
+                                                        </div>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <div class="alert alert-danger">
+                                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                                            <strong>Your videos directory must be writable</strong>
+                                                            <details>
+                                                                <?php
+                                                                $dir = getPathToApplication() . "videos";
+                                                                if (!file_exists($dir)) {
+                                                                    ?>
+                                                                    The video directory does not exists, YouPHPTube had no permition to create it, you must create it manualy!
+                                                                    <br>
+                                                                    <pre><code>sudo mkdir <?php echo $dir; ?></code></pre>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                                <br>
+                                                                Then you can set the permissions.
+                                                                <br>
+                                                                <pre><code>sudo chmod -R 777 <?php echo $dir; ?></code></pre>
+                                                            </details>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                    $pathToPHPini = php_ini_loaded_file();
+                                                    if (empty($pathToPHPini)) {
+                                                        $pathToPHPini = "/etc/php/7.0/cli/php.ini";
+                                                    }
+                                                    ?>
+
+                                                    <?php
+                                                    if (check_post_max_size()) {
+                                                        ?>
+                                                        <div class="alert alert-success">
+                                                            <span class="glyphicon glyphicon-check"></span>
+                                                            <strong>Your post_max_size is <?php echo ini_get('post_max_size'); ?></strong>
+                                                        </div>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <div class="alert alert-danger">
+                                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                                            <strong>Your post_max_size is <?php echo ini_get('post_max_size'); ?>, it must be at least 100M</strong>
+
+                                                            <details>
+                                                                Edit the <code>php.ini</code> file
+                                                                <br>
+                                                                <pre><code>sudo nano <?php echo $pathToPHPini; ?></code></pre>
+                                                            </details>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                    ?>
+
+                                                    <?php
+                                                    if (check_upload_max_filesize()) {
+                                                        ?>
+                                                        <div class="alert alert-success">
+                                                            <span class="fas fa-check-circle"></span>
+                                                            <strong><?php echo __("Your upload_max_filesize is") . " " . ini_get('upload_max_filesize'); ?></strong>
+                                                        </div>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <div class="alert alert-danger">
+                                                            <span class="fas fa-circle"></span>
+                                                            <strong><?php echo __("Your upload_max_filesize is") . " " . ini_get('upload_max_filesize'); ?>, it must be at least 100M</strong>
+
+                                                            <details>
+                                                                Edit the <code>php.ini</code> file
+                                                                <br>
+                                                                <pre><code>sudo nano <?php echo $pathToPHPini; ?></code></pre>
+                                                            </details>
                                                         </div>
                                                         <?php
                                                     }
                                                     ?>
                                                 </div>
-                                            </fieldset>
-                                        </div>
-                                        <div class="tab-pane" id="tabCompatibility">
-                                            <div class="alert alert-success">
-                                                <span class="fa fa-film"></span>
-                                                <strong><?php
-                                                    $secondsTotal = getSecondsTotalVideosLength();
-                                                    $seconds = $secondsTotal % 60;
-                                                    $minutes = ($secondsTotal - $seconds) / 60;
-                                                    printf(__("You are hosting %d minutes and %d seconds of video"), $minutes, $seconds);
-                                                    ?></strong>
-                                                <?php
-                                                if (!empty($global['videoStorageLimitMinutes'])) {
-                                                    $secondsLimit = $global['videoStorageLimitMinutes'] * 60;
-                                                    if ($secondsLimit > $secondsTotal) {
-
-                                                        $percent = intval($secondsTotal / $secondsLimit * 100);
-                                                    } else {
-                                                        $percent = 100;
-                                                    }
-                                                    ?> and you have <?php echo $global['videoStorageLimitMinutes']; ?> minutes of storage
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-                                                             aria-valuenow="<?php echo $percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $percent; ?>%">
-                                                            <?php echo $percent; ?>% of your storage limit used
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                                ?>
-
                                             </div>
-                                            <?php
-                                            if (isApache()) {
-                                                ?>
-                                                <div class="alert alert-success">
-                                                    <span class="glyphicon glyphicon-check"></span>
-                                                    <strong><?php echo $_SERVER['SERVER_SOFTWARE']; ?> is Present</strong>
-                                                </div>
-                                                <?php
-                                            } else {
-                                                ?>
-                                                <div class="alert alert-danger">
-                                                    <span class="glyphicon glyphicon-unchecked"></span>
-                                                    <strong>Your server is <?php echo $_SERVER['SERVER_SOFTWARE']; ?>, you must install Apache</strong>
-                                                </div>
-                                                <?php
-                                            }
-                                            ?>
-
-
-                                            <?php
-                                            if (isPHP("5.6")) {
-                                                ?>
-                                                <div class="alert alert-success">
-                                                    <span class="glyphicon glyphicon-check"></span>
-                                                    <strong>PHP <?php echo PHP_VERSION; ?> is Present</strong>
-                                                </div>
-                                                <?php
-                                            } else {
-                                                ?>
-                                                <div class="alert alert-danger">
-                                                    <span class="glyphicon glyphicon-unchecked"></span>
-                                                    <strong>Your PHP version is <?php echo PHP_VERSION; ?>, you must install PHP 5.6.x or greater</strong>
-                                                </div>
-                                                <?php
-                                            }
-                                            ?>
-
-                                            <?php
-                                            if (checkVideosDir()) {
-                                                ?>
-                                                <div class="alert alert-success">
-                                                    <span class="glyphicon glyphicon-check"></span>
-                                                    <strong>Your videos directory is writable</strong>
-                                                </div>
-                                                <?php
-                                            } else {
-                                                ?>
-                                                <div class="alert alert-danger">
-                                                    <span class="glyphicon glyphicon-unchecked"></span>
-                                                    <strong>Your videos directory must be writable</strong>
-                                                    <details>
-                                                        <?php
-                                                        $dir = getPathToApplication() . "videos";
-                                                        if (!file_exists($dir)) {
-                                                            ?>
-                                                            The video directory does not exists, YouPHPTube had no permition to create it, you must create it manualy!
-                                                            <br>
-                                                            <pre><code>sudo mkdir <?php echo $dir; ?></code></pre>
-                                                            <?php
-                                                        }
-                                                        ?>
-                                                        <br>
-                                                        Then you can set the permissions.
-                                                        <br>
-                                                        <pre><code>sudo chmod -R 777 <?php echo $dir; ?></code></pre>
-                                                    </details>
-                                                </div>
-                                                <?php
-                                            }
-                                            $pathToPHPini = php_ini_loaded_file();
-                                            if (empty($pathToPHPini)) {
-                                                $pathToPHPini = "/etc/php/7.0/cli/php.ini";
-                                            }
-                                            ?>
-
-                                            <?php
-                                            if (check_post_max_size()) {
-                                                ?>
-                                                <div class="alert alert-success">
-                                                    <span class="glyphicon glyphicon-check"></span>
-                                                    <strong>Your post_max_size is <?php echo ini_get('post_max_size'); ?></strong>
-                                                </div>
-                                                <?php
-                                            } else {
-                                                ?>
-                                                <div class="alert alert-danger">
-                                                    <span class="glyphicon glyphicon-unchecked"></span>
-                                                    <strong>Your post_max_size is <?php echo ini_get('post_max_size'); ?>, it must be at least 100M</strong>
-
-                                                    <details>
-                                                        Edit the <code>php.ini</code> file
-                                                        <br>
-                                                        <pre><code>sudo nano <?php echo $pathToPHPini; ?></code></pre>
-                                                    </details>
-                                                </div>
-                                                <?php
-                                            }
-                                            ?>
-
-                                            <?php
-                                            if (check_upload_max_filesize()) {
-                                                ?>
-                                                <div class="alert alert-success">
-                                                    <span class="fas fa-check-circle"></span>
-                                                    <strong><?php echo __("Your upload_max_filesize is")." ".ini_get('upload_max_filesize'); ?></strong>
-                                                </div>
-                                                <?php
-                                            } else {
-                                                ?>
-                                                <div class="alert alert-danger">
-                                                    <span class="fas fa-circle"></span>
-                                                    <strong><?php echo __("Your upload_max_filesize is")." ".ini_get('upload_max_filesize'); ?>, it must be at least 100M</strong>
-
-                                                    <details>
-                                                        Edit the <code>php.ini</code> file
-                                                        <br>
-                                                        <pre><code>sudo nano <?php echo $pathToPHPini; ?></code></pre>
-                                                    </details>
-                                                </div>
-                                                <?php
-                                            }
-                                            ?>
 
                                         </div>
-                                        <div class="tab-pane active" id="tabRegular">
-                                            <fieldset>
-                                                <legend><?php echo __("Update the site configuration"); ?></legend>
+                                        <div class="tab-pane fade show active" id="tabRegular">
 
-                                                <div class="form-inline ">
-                                                    <label class="ml-md-auto font-weight-bold mr-md-2">
-                                                        <?php echo __("Your Logo"); ?>
-                                                    </label>
-                                                    <div class="col-md-8 ">
-                                                        <div id="croppieLogo"></div>
-                                                        <a id="logo-btn" class="btn-light btn-sm btn-block"><?php echo __("Upload a logo"); ?></a>
-                                                    </div>
-                                                    <input type="file" id="logo" value="Choose a Logo" accept="image/*" style="display: none;" />
-                                                </div>
-                                                <div class="form-inline ">
-                                                    <label class="ml-md-auto font-weight-bold mr-md-2">
-                                                        <?php echo __("Your Small Logo"); ?>  (32x32)
-                                                    </label>
-                                                    <div class="col-md-8 ">
-                                                        <div id="croppieLogoSmall"></div>
-                                                        <a id="logoSmall-btn" class="btn-light btn-sm btn-block"><?php echo __("Upload a small logo"); ?></a>
-                                                    </div>
-                                                    <input type="file" id="logoSmall" value="Choose a Small Logo" accept="image/*" style="display: none;" />
-                                                </div>
 
-                                                <div class=" form-inline">
-                                                    <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("First Page Mode"); ?></label>
-                                                    <div class="col-md-8 inputGroupContainer">
-                                                        <div class="input-group">
-                                                          <div class="input-group-prepend">
-                                                            <div class="input-group-text"><i class="fa fa-sitemap"></i></div></div>
-                                                            <select class="form-control" id="mode" >
-                                                                <option value="Youtube" <?php echo ($config->getMode() == "Youtube") ? "selected" : ""; ?>><?php echo __("Youtube"); ?></option>
-                                                            </select>
+                                            <div class="card border-top-0">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2">
+                                                            <?php echo __("Your Logo"); ?>
+                                                        </label>
+                                                        <div class="col-md-8 ">
+                                                            <div id="croppieLogo"></div>
+                                                        </div>
+                                                        <div class="col-md-4 "></div>
+                                                        <div class="col-md-8 ">
+                                                            <a id="logo-btn" class="btn btn-warning btn-sm btn-block"><i class="fas fa-image"></i> <?php echo __("Upload a logo"); ?></a>
+                                                            <input type="file" id="logo" value="Choose a Logo" accept="image/*" style="display: none;" />
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="form-inline ">
-                                                    <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Web site title"); ?></label>
-                                                    <div class="col-md-8 inputGroupContainer">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                                            <input  id="inputWebSiteTitle" placeholder="<?php echo __("Web site title"); ?>" class="form-control"  type="text"  value="<?php echo $config->getWebSiteTitle(); ?>" >
+                                                    <hr>
+                                                    <div class="row">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2">
+                                                            <?php echo __("Your Small Logo"); ?>  (32x32)
+                                                        </label>
+                                                        <div class="col-md-8 ">
+                                                            <div id="croppieLogoSmall"></div>
+                                                        </div>
+                                                        <div class="col-md-4 "></div>
+                                                        <div class="col-8">
+                                                            <a id="logoSmall-btn" class="btn btn-warning btn-sm btn-block"><i class="fas fa-image"></i> <?php echo __("Upload a small logo"); ?></a>
+                                                            <input type="file" id="logoSmall" value="Choose a Small Logo" accept="image/*" style="display: none;" />
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-inline ">
-                                                    <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Language"); ?></label>
-                                                    <div class="col-md-8 inputGroupContainer">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
-                                                            <input  id="inputLanguage" placeholder="<?php echo __("Language"); ?>" class="form-control"  type="text"  value="<?php echo $config->getLanguage(); ?>" >
-                                                        </div>
-                                                        <small class="form-text text-muted"><?php echo __("This value must match with the language files on"); ?><code><?php echo $global['systemRootPath']; ?>locale</code></small>
-                                                    </div>
-                                                </div>
-                                                <div class=" form-inline">
-                                                    <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("E-mail"); ?></label>
-                                                    <div class="col-md-8 inputGroupContainer">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                                            <input  id="inputEmail" placeholder="<?php echo __("E-mail"); ?>" class="form-control"  type="email"  value="<?php echo $config->getContactEmail(); ?>" >
-                                                        </div>
-                                                        <small class="form-text text-muted"><?php echo __("This e-mail will be used for this web site notifications"); ?></small>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-inline ">
-                                                    <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can upload videos"); ?></label>
-                                                    <div class="col-md-8 inputGroupContainer">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
-                                                            <select class="form-control" id="authCanUploadVideos" >
-                                                                <option value="1" <?php echo ($config->getAuthCanUploadVideos() == 1) ? "selected" : ""; ?>><?php echo __("Yes"); ?></option>
-                                                                <option value="0" <?php echo ($config->getAuthCanUploadVideos() == 0) ? "selected" : ""; ?>><?php echo __("No"); ?></option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class=" form-inline">
-                                                    <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can view chart"); ?></label>
-                                                    <div class="col-md-8 inputGroupContainer">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
-                                                            <select class="form-control" id="authCanViewChart" >
-                                                                <option value="0" <?php echo ($config->getAuthCanViewChart() == 0) ? "selected" : ""; ?>><?php echo __("For uploaders"); ?></option>
-                                                                <option value="1" <?php echo ($config->getAuthCanViewChart() == 1) ? "selected" : ""; ?>><?php echo __("For selected, admin view"); ?></option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-inline">
-                                                    <label class="col-md-4  text-right font-weight-bold"><?php echo __("Authenticated users can comment videos"); ?></label>
-                                                    <div class="col-md-8 inputGroupContainer">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon"><i class="fa fa-commenting"></i></span>
-
-                                                            <select class="form-control" id="authCanComment"  >
-                                                                <option value="1" <?php echo ($config->getAuthCanComment() == 1) ? "selected" : ""; ?>><?php echo __("Yes"); ?></option>
-                                                                <option value="0" <?php echo ($config->getAuthCanComment() == 0) ? "selected" : ""; ?>><?php echo __("No"); ?></option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-inline" data-toggle="buttons">
-                                                    <label class="col-md-4  text-right font-weight-bold"><?php echo __("Autoplay Video on Load Page"); ?></label>
-                                                    <div class="col-md-8">
-                                                        <input data-toggle="toggle" type="checkbox" name="autoplay" id="autoplay" value="1" <?php
-                                                        if (!empty($config->getAutoplay())) {
-                                                            echo "checked";
-                                                        }
-                                                        ?>>
-                                                    </div>
-                                                </div>
-
-                                            </fieldset>
-                                        </div>
-                                        <div class="tab-pane" id="tabAdvanced">
-                                            <?php
-                                            if (empty($global['disableAdvancedConfigurations'])) {
-                                                ?>
-                                                <fieldset>
-                                                    <legend><?php echo __("Advanced configuration"); ?></legend>
-
-                                                    <div class="form-inline">
-                                                        <div class="col-12">
-                                                            <button class="btn btn-danger" id="clearCache"><i class="fa fa-trash"></i> <?php echo __("Clear Cache Directory"); ?></button>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-inline">
-                                                        <label for="encoder_url" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Encoder URL"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input id="encoder_url" aria-describedby="encoder_urlHelp" class="form-control"  type="url" value="<?php echo $config->getEncoderURL(); ?>" >
-                                                            <small id="encoder_urlHelp" class="form-text text-muted">
-                                                                <?php echo __("You need to set up an encoder server"); ?><br>
-                                                                <?php echo __("You can use our public encoder on"); ?>: https://encoder.youphptube.com/ or
-                                                                <a href="https://github.com/DanielnetoDotCom/YouPHPTube-Encoder" class="btn-light btn-sm" target="_blank"><?php echo __("For faster encode, download your own encoder"); ?></a>
-                                                            </small>
-                                                          </div>
-                                                    </div>
-                                                    <div class="form-inline">
-
-
-                                                    </div>
-                                                    <div class="form-inline">
-                                                        <label for="session_timeout" class="col-4  text-right font-weight-bold"><?php echo __("Session Timeout in seconds"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input id="session_timeout" class="form-control"  type="number" value="<?php echo $config->getSession_timeout(); ?>" >
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="form-inline">
-                                                        <label for="disable_analytics" class="col-4  text-right font-weight-bold"><?php echo __("Disable YouPHPTube Google Analytics"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input data-toggle="toggle" type="checkbox" name="disable_analytics" id="disable_analytics" value="1" <?php
-                                                            if (!empty($config->getDisable_analytics())) {
-                                                                echo "checked";
-                                                            }
-                                                            ?>  aria-describedby="disable_analyticsHelp">
-                                                            <small id="disable_analyticsHelp" class="form-text text-muted"><?php echo __("This help us to track and dettect errors"); ?></small>
-                                                          </div>
-                                                    </div>
-
-                                                    <div class="form-inline">
-                                                        <label for="disable_youtubeupload" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable Youtube-Upload"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input data-toggle="toggle" type="checkbox" name="disable_youtubeupload" id="disable_youtubeupload" value="1" <?php
-                                                            if (!empty($config->getDisable_youtubeupload())) {
-                                                                echo "checked";
-                                                            }
-                                                            ?> >
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-inline">
-                                                        <label class="col-4 font-weight-bold text-right"><?php echo __("Disable right-click-prevention on video and allow downloading"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input data-toggle="toggle" type="checkbox" name="disable_rightclick" id="allow_download" value="1" <?php
-                                                            if (!empty($config->getAllow_download())) {
-                                                                echo "checked";
-                                                            }
-                                                            ?> aria-describedby="allow_downloadHelp">
-                                                            <small id="allow_downloadHelp" class="form-text text-muted"><?php echo __("This creates a download-button under your video, suggest you title.mp4 as download-name."); ?></small>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="form-inline">
-                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Enable SMTP"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input data-toggle="toggle" type="checkbox" name="enableSmtp" id="enableSmtp" value="1" <?php
-                                                            if (!empty($config->getSmtp())) {
-                                                                echo "checked";
-                                                            }
-                                                            ?> >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-inline">
-                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Enable SMTP Auth"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input data-toggle="toggle" type="checkbox" name="enableSmtpAuth" id="enableSmtpAuth" value="1" <?php
-                                                            if (!empty($config->getSmtpAuth())) {
-                                                                echo "checked";
-                                                            }
-                                                            ?> >
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-inline">
-                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Secure"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input id="smtpSecure" class="form-control"  type="text" value="<?php echo $config->getSmtpSecure(); ?>" placeholder="tls OR ssl" aria-describedby="smtpSecureHelp"    >
-                                                            <small id="smtpSecureHelp" class="form-text text-muted"><?php echo __("Use tls OR ssl"); ?></small>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-inline">
-                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Port"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input id="smtpPort" class="form-control"  type="number" value="<?php echo $config->getSmtpPort(); ?>" placeholder="465 OR 587" aria-describedby="smtpPortHelp"    >
-                                                            <small id="smtpPortHelp" class="form-text text-muted"><?php echo __("465 OR 587"); ?></small>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-inline">
-                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Host"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input id="smtpHost" class="form-control"  type="text" value="<?php echo $config->getSmtpHost(); ?>" placeholder="smtp.gmail.com" >
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-inline">
-                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Username"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input id="smtpUsername" class="form-control"  type="text" value="<?php echo $config->getSmtpUsername(); ?>" placeholder="email@gmail.com" >
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-inline">
-                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Password"); ?></label>
-                                                        <div class="input-group col-8">
-                                                            <input id="smtpPassword" class="form-control"  type="password" value="<?php echo $config->getSmtpPassword(); ?>" >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-inline">
-                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Test your email"); ?></label>
-                                                        <div class="col-4 input-group inputGroupContainer">
+                                                    <hr>
+                                                    <div class="row">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Web site title"); ?></label>
+                                                        <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
-                                                                <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                                                <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="fas fa-sync-alt"></span></span></span>
-                                                                <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
+                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                                                                <input  id="inputWebSiteTitle" placeholder="<?php echo __("Web site title"); ?>" class="form-control"  type="text"  value="<?php echo $config->getWebSiteTitle(); ?>" >
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-4">
-                                                            <span class="btn btn-warning btn-lg" id="testEmail" ><?php echo __("Test Email"); ?> <span class="glyphicon glyphicon-send"></span></span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Language"); ?></label>
+                                                        <div class="col-md-8 inputGroupContainer">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
+                                                                <input  id="inputLanguage" placeholder="<?php echo __("Language"); ?>" class="form-control"  type="text"  value="<?php echo $config->getLanguage(); ?>" >
+                                                            </div>
+                                                            <small class="form-text text-muted"><?php echo __("This value must match with the language files on"); ?><code><?php echo $global['systemRootPath']; ?>locale</code></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("E-mail"); ?></label>
+                                                        <div class="col-md-8 inputGroupContainer">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                                <input  id="inputEmail" placeholder="<?php echo __("E-mail"); ?>" class="form-control"  type="email"  value="<?php echo $config->getContactEmail(); ?>" >
+                                                            </div>
+                                                            <small class="form-text text-muted"><?php echo __("This e-mail will be used for this web site notifications"); ?></small>
                                                         </div>
                                                     </div>
 
-                                                </fieldset>
-                                                <?php
-                                            } else {
-                                                ?>
-                                                <h2 class="alert alert-danger"><?php echo __("Advanced configurations are disabled"); ?></h2>
-                                                <?php
-                                            }
-                                            ?>
+                                                    <div class="row">
+                                                        <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can upload videos"); ?></label>
+                                                        <div class="col-md-8 inputGroupContainer">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
+                                                                <select class="form-control" id="authCanUploadVideos" >
+                                                                    <option value="1" <?php echo ($config->getAuthCanUploadVideos() == 1) ? "selected" : ""; ?>><?php echo __("Yes"); ?></option>
+                                                                    <option value="0" <?php echo ($config->getAuthCanUploadVideos() == 0) ? "selected" : ""; ?>><?php echo __("No"); ?></option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row form-inline">
+                                                        <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can view chart"); ?></label>
+                                                        <div class="col-md-8 inputGroupContainer">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
+                                                                <select class="form-control" id="authCanViewChart" >
+                                                                    <option value="0" <?php echo ($config->getAuthCanViewChart() == 0) ? "selected" : ""; ?>><?php echo __("For uploaders"); ?></option>
+                                                                    <option value="1" <?php echo ($config->getAuthCanViewChart() == 1) ? "selected" : ""; ?>><?php echo __("For selected, admin view"); ?></option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row form-inline">
+                                                        <label class="col-md-4  text-right font-weight-bold"><?php echo __("Authenticated users can comment videos"); ?></label>
+                                                        <div class="col-md-8 inputGroupContainer">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-commenting"></i></span>
+
+                                                                <select class="form-control" id="authCanComment"  >
+                                                                    <option value="1" <?php echo ($config->getAuthCanComment() == 1) ? "selected" : ""; ?>><?php echo __("Yes"); ?></option>
+                                                                    <option value="0" <?php echo ($config->getAuthCanComment() == 0) ? "selected" : ""; ?>><?php echo __("No"); ?></option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <label for="autoplay" class="col-md-4  font-weight-bold ">
+                                                            <span>
+                                                                <?php echo __("Autoplay Video on Load Page"); ?>
+                                                            </span>
+                                                        </label>
+                                                        <div class="col-md-8 ">
+                                                            <div class="material-switch">
+                                                                <input name="autoplay" id="autoplay" type="checkbox" value="1" class="pluginSwitch"  <?php
+                                                                if (!empty($config->getAutoplay())) {
+                                                                    echo "checked";
+                                                                }
+                                                                ?>/>
+                                                                <label for="autoplay" class="badge-success"></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div class="tab-pane" id="tabHead">
-                                            <fieldset>
-                                                <legend><?php echo __("Script Code"); ?></legend>
+                                        <div class="tab-pane fade" id="tabAdvanced">
 
-                                                <div class=" ">
-                                                    <label class="col-md-2"><?php echo __("Head Code"); ?></label>
-                                                    <div class="col-md-10">
-                                                        <textarea id="head" class="form-control" type="text" rows="20" ><?php echo $config->getHead(); ?></textarea>
-                                                        <small>For Google Analytics code: <a href='https://analytics.google.com'  target="_blank">https://analytics.google.com</a></small><br>
-                                                        <small>Leave blank for native code</small>
+                                            <div class="card border-top-0">
+                                                <div class="card-body">
+                                                    <?php
+                                                    if (empty($global['disableAdvancedConfigurations'])) {
+                                                        ?>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <button class="btn btn-danger btn-block" id="clearCache"><i class="fa fa-trash"></i> <?php echo __("Clear Cache Directory"); ?></button>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="form-inline">
+                                                            <label for="encoder_url" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Encoder URL"); ?></label>
+                                                            <div class="input-group col-8">
+                                                                <input id="encoder_url" aria-describedby="encoder_urlHelp" class="form-control"  type="url" value="<?php echo $config->getEncoderURL(); ?>" >
+                                                                <small id="encoder_urlHelp" class="form-text text-muted">
+                                                                    <?php echo __("You need to set up an encoder server"); ?><br>
+                                                                    <?php echo __("You can use our public encoder on"); ?>: https://encoder.youphptube.com/ or
+                                                                    <a href="https://github.com/DanielnetoDotCom/YouPHPTube-Encoder" class="btn-light btn-sm" target="_blank"><?php echo __("For faster encode, download your own encoder"); ?></a>
+                                                                </small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-inline">
+                                                            <label for="session_timeout" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Session Timeout in seconds"); ?></label>
+                                                            <div class="input-group col-8">
+                                                                <input id="session_timeout" class="form-control"  type="number" value="<?php echo $config->getSession_timeout(); ?>" >
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+
+                                                        <div class="row">
+                                                            <label for="disable_analytics" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable YouPHPTube Google Analytics"); ?></label>
+                                                            <div class="col-8">
+                                                                <div class="material-switch">
+                                                                    <input name="disable_analytics" id="disable_analytics" type="checkbox" value="0" class="pluginSwitch" <?php
+                                                                    if (!empty($config->getDisable_analytics())) {
+                                                                        echo "checked";
+                                                                    }
+                                                                    ?> />
+                                                                    <label for="disable_analytics" class="badge-success"></label>
+                                                                </div>
+                                                                <small id="disable_analyticsHelp" class="form-text text-muted"><?php echo __("This help us to track and dettect errors"); ?></small>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <label for="disable_youtubeupload" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable Youtube-Upload"); ?></label>
+                                                            <div class="col-8">
+                                                                <div class="material-switch">
+                                                                    <input name="disable_youtubeupload" id="disable_youtubeupload" type="checkbox" value="1" class="pluginSwitch" <?php
+                                                                    if (!empty($config->getDisable_youtubeupload())) {
+                                                                        echo "checked";
+                                                                    }
+                                                                    ?> />
+                                                                    <label for="disable_youtubeupload" class="badge-success"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <label for="disable_rightclick" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable right-click-prevention"); ?></label>
+                                                            <div class="col-8">
+                                                                <div class="material-switch">
+                                                                    <input name="disable_rightclick" id="disable_rightclick" type="checkbox" value="1" class="pluginSwitch" <?php
+                                                                    if (!empty($config->getAllow_download())) {
+                                                                        echo "checked";
+                                                                    }
+                                                                    ?> />
+                                                                    <label for="disable_rightclick" class="badge-success"></label>
+                                                                </div>
+                                                                <small id="disable_rightclickHelp" class="form-text text-muted"><?php echo __("This creates a download-button under your video, suggest you title.mp4 as download-name."); ?></small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <label for="enableSmtp" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Enable SMTP"); ?></label>
+                                                            <div class="col-8">
+                                                                <div class="material-switch">
+                                                                    <input name="enableSmtp" id="enableSmtp" type="checkbox" value="1" class="pluginSwitch" <?php
+                                                                    if (!empty($config->getSmtp())) {
+                                                                        echo "checked";
+                                                                    }
+                                                                    ?> />
+                                                                    <label for="enableSmtp" class="badge-success"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <label for="enableSmtpAuth" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Enable SMTP Auth"); ?></label>
+                                                            <div class="col-8">
+                                                                <div class="material-switch">
+                                                                    <input name="enableSmtpAuth" id="enableSmtpAuth" type="checkbox" value="1" class="pluginSwitch" <?php
+                                                                    if (!empty($config->getSmtpAuth())) {
+                                                                        echo "checked";
+                                                                    }
+                                                                    ?> />
+                                                                    <label for="enableSmtpAuth" class="badge-success"></label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-inline">
+                                                            <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Secure"); ?></label>
+                                                            <div class="input-group col-8">
+                                                                <input id="smtpSecure" class="form-control"  type="text" value="<?php echo $config->getSmtpSecure(); ?>" placeholder="tls OR ssl" aria-describedby="smtpSecureHelp"    >
+                                                                <small id="smtpSecureHelp" class="form-text text-muted"><?php echo __("Use tls OR ssl"); ?></small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-inline">
+                                                            <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Port"); ?></label>
+                                                            <div class="input-group col-8">
+                                                                <input id="smtpPort" class="form-control"  type="number" value="<?php echo $config->getSmtpPort(); ?>" placeholder="465 OR 587" aria-describedby="smtpPortHelp"    >
+                                                                <small id="smtpPortHelp" class="form-text text-muted"><?php echo __("465 OR 587"); ?></small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-inline">
+                                                            <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Host"); ?></label>
+                                                            <div class="input-group col-8">
+                                                                <input id="smtpHost" class="form-control"  type="text" value="<?php echo $config->getSmtpHost(); ?>" placeholder="smtp.gmail.com" >
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-inline">
+                                                            <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Username"); ?></label>
+                                                            <div class="input-group col-8">
+                                                                <input id="smtpUsername" class="form-control"  type="text" value="<?php echo $config->getSmtpUsername(); ?>" placeholder="email@gmail.com" >
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-inline">
+                                                            <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Password"); ?></label>
+                                                            <div class="input-group col-8">
+                                                                <input id="smtpPassword" class="form-control"  type="password" value="<?php echo $config->getSmtpPassword(); ?>" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-inline">
+                                                            <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Test your email"); ?></label>
+                                                            <div class="input-group col-8">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="btn-sm btn-success btn-large" id="btnReloadCapcha">
+                                                                        <span class="fas fa-sync-alt"></span>
+                                                                    </span>
+                                                                </div>
+                                                                <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha" height="48"></span>
+                                                                <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
+                                                                <span class="btn btn-warning btn-lg" id="testEmail" ><i class="fas fa-at"></i> <?php echo __("Test Email"); ?> <span class="glyphicon glyphicon-send"></span></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <h2 class="alert alert-danger"><?php echo __("Advanced configurations are disabled"); ?></h2>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tabHead">
+
+                                            <div class="card border-top-0">
+                                                <div class="card-body">
+
+                                                    <div class="row">
+                                                        <label class="col-2"><?php echo __("Head Code"); ?></label>
+                                                        <div class="col-10">
+                                                            <textarea id="head" class="form-control" type="text" rows="20" ><?php echo $config->getHead(); ?></textarea>
+                                                            <small>For Google Analytics code: <a href='https://analytics.google.com'  target="_blank">https://analytics.google.com</a></small><br>
+                                                            <small>Leave blank for native code</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-2"><?php echo __("Google Ad Sense"); ?></label>
+                                                        <div class="col-10">
+                                                            <textarea id="adsense" class="form-control" type="text" rows="20" ><?php echo $config->getAdsense(); ?></textarea>
+                                                            <small>For Google AdSense code: <a href='https://www.google.com/adsense'  target="_blank">https://www.google.com/adsense</a></small><br>
+                                                            <small>Leave blank for native code</small>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class=" ">
-                                                    <label class="col-md-2"><?php echo __("Google Ad Sense"); ?></label>
-                                                    <div class="col-md-10">
-                                                        <textarea id="adsense" class="form-control" type="text" rows="20" ><?php echo $config->getAdsense(); ?></textarea>
-                                                        <small>For Google AdSense code: <a href='https://www.google.com/adsense'  target="_blank">https://www.google.com/adsense</a></small><br>
-                                                        <small>Leave blank for native code</small>
-                                                    </div>
-                                                </div>
-
-                                            </fieldset>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Button -->
-                                <div class=" ">
-                                    <label class="col-md-4 col-form-label"></label>
-                                    <div class="col-md-8">
-                                        <button type="submit" class="btn btn-primary" ><?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-success btn-large btn-block" ><i class="fas fa-save"></i> <?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>
                                     </div>
                                 </div>
                             </div>

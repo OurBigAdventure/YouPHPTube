@@ -1,6 +1,6 @@
 <?php
 global $global, $config;
-if(!isset($global['systemRootPath'])){
+if (!isset($global['systemRootPath'])) {
     require_once '../videos/configuration.php';
 }
 session_write_close();
@@ -133,7 +133,7 @@ if ($video['type'] == "video") {
 }
 
 if (!empty($video)) {
-    if (($video['type'] !== "audio")&&($video['type'] !== "linkAudio")) {
+    if (($video['type'] !== "audio") && ($video['type'] !== "linkAudio")) {
         $source = Video::getSourceFile($video['filename']);
         $img = $source['url'];
         $data = getimgsize($source['path']);
@@ -144,7 +144,7 @@ if (!empty($video)) {
     }
     $images = Video::getImageFromFilename($video['filename']);
     $poster = $images->poster;
-}else{
+} else {
     $poster = "{$global['webSiteRootURL']}view/img/notfound.jpg";
 }
 
@@ -202,10 +202,10 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                     <?php
                 }
                 $vType = $video['type'];
-                if($vType=="linkVideo"){
-                    $vType="video";
-                } else if($vType=="linkAudio"){
-                    $vType="audio";
+                if ($vType == "linkVideo") {
+                    $vType = "video";
+                } else if ($vType == "linkAudio") {
+                    $vType = "audio";
                 }
                 require "{$global['systemRootPath']}view/include/{$vType}.php";
                 ?>
@@ -616,24 +616,33 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                         <?php } else if (empty($autoPlayVideo)) {
                             ?>
                             <div class="col-lg-12 col-sm-12 col-12 autoplay text-muted" >
-                                <strong><?php echo __("Autoplay ended"); ?></strong>
-                                <span class="float-right">
-                                    <span><?php echo __("Autoplay"); ?></span>
-                                    <span>
-                                        <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom"  title="<?php echo __("When autoplay is enabled, a suggested video will automatically play next."); ?>"></i>
-                                    </span>
-                                    <input type="checkbox" data-toggle="toggle" data-size="mini" class="saveCookie" name="autoplay">
+                                <div class="row autoplay text-muted" style="display: none;">
+                                <strong class="col-4"><?php echo __("Autoplay ended"); ?></strong>
+                                <span class="col-8">
+                                    <label for="autoplay" class="font-weight-bold float-right">
+                                            <span>
+                                                <?php echo __("Autoplay"); ?>
+                                                <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom"  title="<?php echo __("When autoplay is enabled, a suggested video will automatically play next."); ?>"></i>
+                                            </span>
+                                        </label>
                                 </span>
                             </div>
+                                
+                            </div>
                         <?php } else if (!empty($autoPlayVideo)) { ?>
-                            <div class="col-lg-12 col-sm-12 col-12 autoplay text-muted" style="display: none;">
-                                <strong><?php echo __("Up Next"); ?></strong>
-                                <span class="float-right">
-                                    <span><?php echo __("Autoplay"); ?></span>
-                                    <span>
-                                        <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom"  title="<?php echo __("When autoplay is enabled, a suggested video will automatically play next."); ?>"></i>
-                                    </span>
-                                    <input type="checkbox" data-toggle="toggle" data-size="mini" class="saveCookie" name="autoplay">
+                            <div class="row autoplay text-muted" style="display: none;">
+                                <strong class="col-4"><?php echo __("Up Next"); ?></strong>
+                                <span class="col-8">
+                                    <div class="material-switch float-right">
+                                        <input name="autoplay" id="autoplay" type="checkbox" value="1" class="pluginSwitch saveCookie"/>
+                                        <label for="autoplay" class="badge-primary"></label>
+                                    </div>
+                                    <label for="autoplay" class="font-weight-bold float-right">
+                                        <span>
+                                            <?php echo __("Autoplay"); ?>
+                                            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom"  title="<?php echo __("When autoplay is enabled, a suggested video will automatically play next."); ?>"></i>
+                                        </span>
+                                    </label>
                                 </span>
                             </div>
                             <div class="col-lg-12 col-sm-12 col-12 bottom-border autoPlayVideo" itemscope itemtype="http://schema.org/VideoObject" style="display: none;" >
@@ -644,7 +653,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                         if (file_exists("{$global['systemRootPath']}videos/{$autoPlayVideo['filename']}.gif")) {
                                             $imgGif = "{$global['webSiteRootURL']}videos/{$autoPlayVideo['filename']}.gif";
                                         }
-                                        if (($autoPlayVideo['type'] !== "audio")&&($autoPlayVideo['type'] !== "linkAudio")) {
+                                        if (($autoPlayVideo['type'] !== "audio") && ($autoPlayVideo['type'] !== "linkAudio")) {
                                             $img = "{$global['webSiteRootURL']}videos/{$autoPlayVideo['filename']}.jpg";
                                             $img_portrait = ($autoPlayVideo['rotation'] === "90" || $autoPlayVideo['rotation'] === "270") ? "img-portrait" : "";
                                         } else {
@@ -743,9 +752,9 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
         </div>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
         <script>
-                        /*** Handle jQuery plugin naming conflict between jQuery UI and Bootstrap ***/
-                        $.widget.bridge('uibutton', $.ui.button);
-                        $.widget.bridge('uitooltip', $.ui.tooltip);
+                            /*** Handle jQuery plugin naming conflict between jQuery UI and Bootstrap ***/
+                            $.widget.bridge('uibutton', $.ui.button);
+                            $.widget.bridge('uitooltip', $.ui.tooltip);
         </script>
         <?php
         $videoJSArray = array("view/js/video.js/video.js");

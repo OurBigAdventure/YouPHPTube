@@ -24,7 +24,6 @@ $cssFiles[] = "view/js/seetalert/sweetalert.css";
 $cssFiles[] = "view/bootstrap/bootstrapSelectPicker/css/bootstrap-select.min.css";
 $cssFiles[] = "view/js/bootgrid/jquery.bootgrid.css";
 $cssFiles[] = "view/css/main.css";
-$cssFiles[] = "view/js/bootstrap-toggle/bootstrap-toggle.min.css";
 $cssFiles = array_merge($cssFiles, YouPHPTubePlugin::getCSSFiles());
 $cssURL = combineFiles($cssFiles, "css");
 ?>
