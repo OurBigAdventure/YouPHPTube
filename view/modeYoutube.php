@@ -258,7 +258,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             <div class="row">
                                 <div class="col-md-12 watch8-action-buttons text-muted">
                                     <?php if ((($advancedCustom != false) && ($advancedCustom->disableShareAndPlaylist == false)) || ($advancedCustom == false)) { ?>
-                                        <button class="btn btn-light no-outline" id="addBtn" data-placement="bottom">
+                                        <button class="btn btn-light" id="addBtn" data-placement="bottom">
                                             <span class="fa fa-plus"></span> <?php echo __("Add to"); ?>
                                         </button>
                                         <div class="webui-popover-content">
@@ -376,14 +376,14 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
 
                                             });
                                         </script>
-                                        <a href="#" class="btn btn-light no-outline" id="shareBtn">
+                                        <a href="#" class="btn btn-light" id="shareBtn">
                                             <span class="fa fa-share"></span> <?php echo __("Share"); ?>
                                         </a>
                                     <?php } echo YouPHPTubePlugin::getWatchActionButton(); ?>
-                                    <a href="#" class="btn btn-light no-outline float-right <?php echo ($video['myVote'] == - 1) ? "myVote" : "" ?>" id="dislikeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("DonÂ´t like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
+                                    <a href="#" class="btn btn-light float-right <?php echo ($video['myVote'] == - 1) ? "myVote" : "" ?>" id="dislikeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("DonÂ´t like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
                                         <span class="fa fa-thumbs-down"></span> <small><?php echo $video['dislikes']; ?></small>
                                     </a>
-                                    <a href="#" class="btn btn-light no-outline float-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("Like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
+                                    <a href="#" class="btn btn-light float-right <?php echo ($video['myVote'] == 1) ? "myVote" : "" ?>" id="likeBtn" <?php if (!User::isLogged()) { ?> data-toggle="tooltip" title="<?php echo __("Like this video? Sign in to make your opinion count."); ?>" <?php } ?>>
                                         <span class="fa fa-thumbs-up"></span>
                                         <small><?php echo $video['likes']; ?></small>
                                     </a>
