@@ -66,7 +66,12 @@ $('#pagination a').addClass('page-link');
             $(this).find(".thumbsGIF").height($(this).find(".thumbsJPG").height());
             $(this).find(".thumbsGIF").width($(this).find(".thumbsJPG").width());
             try {
-                $(this).find(".thumbsGIF").lazy({effect: 'fadeIn'});
+                $(this).find(".thumbsGIF").lazy({
+                    effect: 'fadeIn',
+                    afterLoad: function(element) {
+                        $(element).hide();
+                    }
+                });
             } catch (e) {
             }
             $(this).find(".thumbsGIF").stop(true, true).fadeIn();

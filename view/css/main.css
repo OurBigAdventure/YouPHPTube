@@ -15,7 +15,7 @@ body {
     padding: 2px;
     color: #FFF;
     top: 5px;
-    left: 5px;
+    left: 15px;
     font-size: 0.9em;
     border-radius: 5px;
 }
@@ -141,7 +141,6 @@ footer ul.list-inline li {
 }
 .commentDetails {
     margin: 0 0 0 60px;
-    min-height: 50px;
 }
 /* End Comments */
 
@@ -265,8 +264,8 @@ footer ul.list-inline li {
     background: rgba(0, 0, 0, 0.6)!important;
     padding: 3px;
     color: #FFF;
-    bottom: 5px;
-    right: 25px;
+    top: 5px;
+    left: 15px;
     font-size: 0.9em;
     border-radius: 5px;
 }
@@ -485,17 +484,16 @@ nav ul.items-container li ul.right-menus li li {
     right: -10px;
     top: -10px;
 }
-#floatButtons .btn-outline:hover,
-#floatButtons .btn-outline:focus,
-#floatButtons .btn-outline:active {
+#floatButtons .btn:hover,
+#floatButtons .btn:focus,
+#floatButtons .btn:active {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(0, 0, 0, 0.5);
 }
-#floatButtons .btn-outline {
+#floatButtons .btn {
     color: rgba(255, 255, 255, 0.3);
     background-color: rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    border-radius: 10px;
 }
 #videoContainer {
     overflow: visible;

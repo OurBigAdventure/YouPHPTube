@@ -212,7 +212,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                 <div class="row">
                     <div class="col-sm-1 col-md-1"></div>
                     <div class="col-sm-6 col-md-6">
-                        <div class="row bgWhite bg-light">
+                        <div class="row bgWhite border border-light rounded bg-light">
                             <div class="row divMainVideo">
                                 <div class="col-4 col-sm-4 col-md-4">
                                     <img src="<?php echo $poster; ?>" alt="<?php echo str_replace('"', '', $video['title']); ?>" class="img img-fluid <?php echo $img_portrait; ?> rotate<?php echo $video['rotation']; ?>" height="130" itemprop="thumbnail" />
@@ -229,7 +229,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                         echo $video['title'];
                                         if (Video::canEdit($video['id'])) {
                                             ?>
-                                            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos?video_id=<?php echo $video['id']; ?>" class="btn-primary btn-sm btn" data-toggle="tooltip" title="<?php echo __("Edit Video"); ?>"><i class="fa fa-edit"></i> <?php echo __("Edit Video"); ?></a>
+                                            <a href="<?php echo $global['webSiteRootURL']; ?>mvideos?video_id=<?php echo $video['id']; ?>" class="btn-link btn-sm btn" data-toggle="tooltip" title="<?php echo __("Edit Video"); ?>"><i class="fa fa-edit"></i> <?php echo __("Edit Video"); ?></a>
                                         <?php } ?>
                                         <small>
                                             <?php
@@ -420,7 +420,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             </div>
                         </div>
                         <?php if ((($advancedCustom != false) && ($advancedCustom->disableShareAndPlaylist == false)) || ($advancedCustom == false)) { ?>
-                            <div class="row bgWhite bg-light" id="shareDiv">
+                            <div class="row bgWhite border border-light rounded bg-light" id="shareDiv">
                                 <div class="tabbable-panel">
                                     <div class="tabbable-line text-muted">
                                         <ul class="nav nav-tabs">
@@ -576,7 +576,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                 </div>
                             </div>
                         <?php } ?>
-                        <div class="row bgWhite bg-light">
+                        <div class="row bgWhite border border-light rounded bg-light">
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-lg-12">
                                     <div class="col-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Category"); ?>:</strong></div>
@@ -596,11 +596,11 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                 });
                             });
                         </script>
-                        <div class="row bgWhite bg-light">
+                        <div class="row bgWhite border border-light rounded bg-light">
                             <?php include $global['systemRootPath'] . 'view/videoComments.php'; ?>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-md-4 bgWhite bg-light rightBar">
+                    <div class="col-sm-4 col-md-4 bgWhite border border-light rounded bg-light rightBar">
                         <?php
                         if (!empty($playlist_id)) {
                             include $global['systemRootPath'] . 'view/include/playlist.php';
@@ -663,7 +663,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                         ?>
                                         <img src="<?php echo $img; ?>" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" class="img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" itemprop="thumbnail" />
                                         <?php if (!empty($imgGif)) { ?>
-                                            <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" id="thumbsGIF<?php echo $autoPlayVideo['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" />
+                                            <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none; width: 0; height: 0;" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" id="thumbsGIF<?php echo $autoPlayVideo['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" />
                                         <?php } ?>
                                         <meta itemprop="thumbnailUrl" content="<?php echo $img; ?>" />
                                         <meta itemprop="contentURL" content="<?php echo Video::getLink($autoPlayVideo['id'], $autoPlayVideo['clean_title']); ?>" />

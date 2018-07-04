@@ -17,13 +17,13 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
     <div class="col-sm-8 col-md-8 secC">
         <div id="videoContainer">
             <div id="floatButtons" style="display: none;">
-                <p class="btn-outline btn-sm move">
+                <p class="btn btn-dark btn-sm float-right rounded-circle border border-secondary"
+                        onclick="closeFloatVideo();floatClosed = 1;">
+                    <i class="far fa-times-circle"></i>
+                </p>
+                <p class="btn btn-dark btn-sm move float-right rounded-circle border border-secondary">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </p>
-                <button type="button" class="btn-outline btn-sm"
-                        onclick="closeFloatVideo();floatClosed = 1;">
-                    <i class="far fa-window-close"></i>
-                </button>
             </div>
             <div id="main-video" class="embed-responsive <?php echo $embedResponsiveClass; ?>">
                 <video

@@ -88,7 +88,7 @@ foreach ($videos as $key => $value) {
             echo "/page/{$_GET['page']}";
         }
         ?>" title="<?php echo $value['title']; ?>" class="videoLink h6 row">
-            <div class="col-lg-5 col-sm-5 col-5 nopadding thumbsImage" >
+            <div class="col-lg-5 col-sm-5 col-5 thumbsImage" style="padding-right: 0;" >
                 <?php
                 $images = Video::getImageFromFilename($value['filename'], $value['type']);
 
@@ -100,18 +100,18 @@ foreach ($videos as $key => $value) {
                     $img_portrait = "";
                 }
                 ?>
-                <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $img; ?>" alt="<?php echo $value['title']; ?>" class="thumbsJPG img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>  <?php echo ($img!=$images->thumbsJpgSmall)?"blur":""; ?>" height="130" />
+                <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $img; ?>" alt="<?php echo $value['title']; ?>" class="thumbsJPG img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>  <?php echo ($img!=$images->thumbsJpgSmall)?"blur":""; ?>"  />
                 <?php
                 if (!empty($imgGif)) {
                     ?>
-                    <img src="<?php echo $global['webSiteRootURL']; ?>view/img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" height="130" />
+                    <img src="<?php echo $global['webSiteRootURL']; ?>view/img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" />
                 <?php } ?>
                 <meta itemprop="thumbnailUrl" content="<?php echo $img; ?>" />
                 <meta itemprop="uploadDate" content="<?php echo $value['created']; ?>" />
                 <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($value['duration']); ?>"><?php echo Video::getCleanDuration($value['duration']); ?></time>
             </div>
-            <div class="col-lg-7 col-sm-7 col-7 videosDetails">
-                <div class="text-uppercase row"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
+            <div class="col-lg-7 col-sm-7 col-7 videosDetails" style="padding-left: 5px;" >
+                <div class="text-uppercase"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
                 <div class="details" itemprop="description">
                     <div>
                         <strong><?php echo __("Category"); ?>: </strong>
@@ -222,7 +222,10 @@ foreach ($videos as $key => $value) {
                                 afterLoad: function(element) {
                                     element.removeClass('blur');
                                     element.parent().find('.thumbsGIF').lazy({
-                                        effect: 'fadeIn'
+                                        effect: 'fadeIn',
+                                        afterLoad: function(element) {
+                                            $(element).hide();
+                                        }
                                     });
                                 }
                             });
