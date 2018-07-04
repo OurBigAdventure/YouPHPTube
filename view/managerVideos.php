@@ -207,9 +207,9 @@ if (!empty($_GET['video_id'])) {
                         </div>
                         <div class="modal-body" style="max-height: 70vh; overflow-y: scroll;">
                             <div id="postersImage">
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#jpg">Poster (JPG)</a></li>
-                                    <li><a data-toggle="tab" href="#gif">Mouse Over Poster (GIF)</a></li>
+                                <ul class="nav">
+                                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#jpg">Poster (JPG)</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#gif">Mouse Over Poster (GIF)</a></li>
                                 </ul>
 
                                 <div class="tab-content">

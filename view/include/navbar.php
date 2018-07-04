@@ -158,7 +158,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         <?php
                         if (User::isAdmin()) {
                             ?>
-
+                            <li>
                             <div class="dropdown-divider"></div>
                             <h2 class="text-danger"><?php echo __("Admin Menu"); ?></h2>
                             <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>users">
@@ -194,7 +194,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                 <span class="fa fa-plug"></span>
                                 <?php echo __("Plugins"); ?>
                             </a>
-
+                          </li>
 
                             <?php
                         }
@@ -216,27 +216,21 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                     <?php
                     if (empty($advancedCustom->doNotShowLeftMenuAudioAndVideoButtons)) {
                         ?>
+                        <li>
                         <div class="dropdown-divider"></div>
-                        <ul style="list-style: none; padding-left: 0px;">
-                            <li>
                                 <a class="dropdown-item <?php echo empty($_SESSION['type']) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>?type=all">
                                     <i class="fas fa-star"></i>
                                     <?php echo __("Audios and Videos"); ?>
                                 </a>
-                            </li>
-                            <li>
                                 <a class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'video' && empty($_GET['catName'])) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>videoOnly">
                                     <i class="fas fa-video"></i>
                                     <?php echo __("Videos"); ?>
                                 </a>
-                            </li>
-                            <li>
                                 <a class="dropdown-item <?php echo (!empty($_SESSION['type']) && $_SESSION['type'] == 'audio' && empty($_GET['catName'])) ? "active" : ""; ?>" href="<?php echo $global['webSiteRootURL']; ?>audioOnly">
                                     <i class="fas fa-headphones"></i>
                                     <?php echo __("Audios"); ?>
                                 </a>
-                            </li>
-                        </ul>
+                        </li>
                         <?php
                     }
                     ?>
@@ -372,63 +366,51 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                         if ((isset($advancedCustom->onlyVerifiedEmailCanUpload) && $advancedCustom->onlyVerifiedEmailCanUpload && User::isVerified()) || (isset($advancedCustom->onlyVerifiedEmailCanUpload) && !$advancedCustom->onlyVerifiedEmailCanUpload) || !isset($advancedCustom->onlyVerifiedEmailCanUpload)
                                         ) {
                                             ?>
-                                            <ul class="dropdown-menu dropdown-menu-right" role="menu" style="">
+                                            <div class="dropdown-menu dropdown-menu-right" role="menu" style="">
                                                 <?php
                                                 if (!empty($advancedCustom->encoderNetwork)) {
                                                     ?>
-                                                    <li class="dropdown-item" >
-                                                        <a href="<?php echo $advancedCustom->encoderNetwork, "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
+                                                        <a class="dropdown-item" href="<?php echo $advancedCustom->encoderNetwork, "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
                                                             <span class="fa fa-cogs"></span> <?php echo __("Encoder Network"); ?>
                                                         </a>
-                                                    </li>
                                                     <?php
                                                 }
                                                 if (empty($advancedCustom->doNotShowEncoderButton)) {
                                                     if (!empty($config->getEncoderURL())) {
                                                         ?>
-                                                        <li class="dropdown-item">
-                                                            <a href="<?php echo $config->getEncoderURL(), "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
+                                                            <a class="dropdown-item" href="<?php echo $config->getEncoderURL(), "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
                                                                 <span class="fa fa-cog"></span> <?php echo __("Encode video and audio"); ?>
                                                             </a>
-                                                        </li>
                                                         <?php
                                                     } else {
                                                         ?>
-                                                        <li class="dropdown-item">
-                                                            <a href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations" ><span class="fa fa-cogs"></span> <?php echo __("Configure an Encoder URL"); ?></a>
-                                                        </li>
+                                                            <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations" ><span class="fa fa-cogs"></span> <?php echo __("Configure an Encoder URL"); ?></a>
                                                         <?php
                                                     }
                                                 }
                                                 if (empty($advancedCustom->doNotShowUploadMP4Button)) {
                                                     ?>
-                                                    <li class="dropdown-item">
-                                                        <a  href="<?php echo $global['webSiteRootURL']; ?>upload" >
+                                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>upload" >
                                                             <span class="fa fa-upload"></span> <?php echo __("Direct upload"); ?>
                                                         </a>
-                                                    </li>
                                                     <?php
                                                 }
                                                 if (empty($advancedCustom->doNotShowImportLocalVideosButton)) {
                                                     ?>
-                                                    <li class="dropdown-item">
-                                                        <a  href="<?php echo $global['webSiteRootURL']; ?>view/import.php" >
+                                                        <a class="dropdown-item"  href="<?php echo $global['webSiteRootURL']; ?>view/import.php" >
                                                             <span class="fas fa-hdd"></span> <?php echo __("Direct Import Local Videos"); ?>
                                                         </a>
-                                                    </li>
                                                     <?php
                                                 }
                                                 if (empty($advancedCustom->doNotShowEmbedButton)) {
                                                     ?>
-                                                    <li class="dropdown-item">
-                                                        <a  href="<?php echo $global['webSiteRootURL']; ?>mvideos?link=1" >
+                                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>mvideos?link=1" >
                                                             <span class="fa fa-link"></span> <?php echo __("Embed a video link"); ?>
                                                         </a>
-                                                    </li>
                                                     <?php
                                                 }
                                                 ?>
-                                            </ul>
+                                            </div>
                                             <?php
                                         } else {
                                             ?>

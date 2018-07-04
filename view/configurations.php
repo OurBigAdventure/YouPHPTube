@@ -42,7 +42,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
 
                             <div class="tabbable-panel">
                                 <div class="tabbable-line">
-                                    <ul class="nav nav-tabs">
+                                    <ul class="nav">
                                         <li class="nav-item">
                                             <a class="nav-link" href="#tabTheme" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
@@ -249,15 +249,15 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                             if (check_upload_max_filesize()) {
                                                 ?>
                                                 <div class="alert alert-success">
-                                                    <span class="glyphicon glyphicon-check"></span>
-                                                    <strong>Your upload_max_filesize is <?php echo ini_get('upload_max_filesize'); ?></strong>
+                                                    <span class="fas fa-check-circle"></span>
+                                                    <strong><?php echo __("Your upload_max_filesize is")." ".ini_get('upload_max_filesize'); ?></strong>
                                                 </div>
                                                 <?php
                                             } else {
                                                 ?>
                                                 <div class="alert alert-danger">
-                                                    <span class="glyphicon glyphicon-unchecked"></span>
-                                                    <strong>Your upload_max_filesize is <?php echo ini_get('upload_max_filesize'); ?>, it must be at least 100M</strong>
+                                                    <span class="fas fa-circle"></span>
+                                                    <strong><?php echo __("Your upload_max_filesize is")." ".ini_get('upload_max_filesize'); ?>, it must be at least 100M</strong>
 
                                                     <details>
                                                         Edit the <code>php.ini</code> file
@@ -270,12 +270,12 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                             ?>
 
                                         </div>
-                                        <div class="tab-pane  active" id="tabRegular">
+                                        <div class="tab-pane active" id="tabRegular">
                                             <fieldset>
                                                 <legend><?php echo __("Update the site configuration"); ?></legend>
 
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label">
+                                                <div class="form-inline ">
+                                                    <label class="ml-md-auto font-weight-bold mr-md-2">
                                                         <?php echo __("Your Logo"); ?>
                                                     </label>
                                                     <div class="col-md-8 ">
@@ -284,8 +284,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                     <input type="file" id="logo" value="Choose a Logo" accept="image/*" style="display: none;" />
                                                 </div>
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label">
+                                                <div class="form-inline ">
+                                                    <label class="ml-md-auto font-weight-bold mr-md-2">
                                                         <?php echo __("Your Small Logo"); ?>  (32x32)
                                                     </label>
                                                     <div class="col-md-8 ">
@@ -295,11 +295,12 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     <input type="file" id="logoSmall" value="Choose a Small Logo" accept="image/*" style="display: none;" />
                                                 </div>
 
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label"><?php echo __("First Page Mode"); ?></label>
+                                                <div class=" form-inline">
+                                                    <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("First Page Mode"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="fa fa-sitemap"></i></span>
+                                                          <div class="input-group-prepend">
+                                                            <div class="input-group-text"><i class="fa fa-sitemap"></i></div></div>
                                                             <select class="form-control" id="mode" >
                                                                 <option value="Youtube" <?php echo ($config->getMode() == "Youtube") ? "selected" : ""; ?>><?php echo __("Youtube"); ?></option>
                                                             </select>
@@ -307,8 +308,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                 </div>
 
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label"><?php echo __("Web site title"); ?></label>
+                                                <div class="form-inline ">
+                                                    <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Web site title"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
@@ -316,8 +317,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label"><?php echo __("Language"); ?></label>
+                                                <div class="form-inline ">
+                                                    <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Language"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
@@ -326,8 +327,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <small class="form-text text-muted"><?php echo __("This value must match with the language files on"); ?><code><?php echo $global['systemRootPath']; ?>locale</code></small>
                                                     </div>
                                                 </div>
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
+                                                <div class=" form-inline">
+                                                    <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("E-mail"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -337,8 +338,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                 </div>
 
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label"><?php echo __("Authenticated users can upload videos"); ?></label>
+                                                <div class="form-inline ">
+                                                    <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can upload videos"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
@@ -350,8 +351,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                 </div>
 
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label"><?php echo __("Authenticated users can view chart"); ?></label>
+                                                <div class=" form-inline">
+                                                    <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can view chart"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
@@ -363,8 +364,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                 </div>
 
-                                                <div class=" ">
-                                                    <label class="col-md-4 col-form-label"><?php echo __("Authenticated users can comment videos"); ?></label>
+                                                <div class="form-inline">
+                                                    <label class="col-md-4  text-right font-weight-bold"><?php echo __("Authenticated users can comment videos"); ?></label>
                                                     <div class="col-md-8 inputGroupContainer">
                                                         <div class="input-group">
                                                             <span class="input-group-addon"><i class="fa fa-commenting"></i></span>
@@ -377,8 +378,8 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
                                                 </div>
 
-                                                <div class="btn-group-toggle" data-toggle="buttons">
-                                                    <label class="col-md-4  col-form-label"><?php echo __("Autoplay Video on Load Page"); ?></label>
+                                                <div class="form-inline" data-toggle="buttons">
+                                                    <label class="col-md-4  text-right font-weight-bold"><?php echo __("Autoplay Video on Load Page"); ?></label>
                                                     <div class="col-md-8">
                                                         <input data-toggle="toggle" type="checkbox" name="autoplay" id="autoplay" value="1" <?php
                                                         if (!empty($config->getAutoplay())) {
@@ -397,47 +398,50 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 <fieldset>
                                                     <legend><?php echo __("Advanced configuration"); ?></legend>
 
-                                                    <div class=" ">
-                                                        <div class="col-md-12">
+                                                    <div class="form-inline">
+                                                        <div class="col-12">
                                                             <button class="btn btn-danger" id="clearCache"><i class="fa fa-trash"></i> <?php echo __("Clear Cache Directory"); ?></button>
 
                                                         </div>
                                                     </div>
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("Encoder URL"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label for="encoder_url" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Encoder URL"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input id="encoder_url" aria-describedby="encoder_urlHelp" class="form-control"  type="url" value="<?php echo $config->getEncoderURL(); ?>" >
                                                             <small id="encoder_urlHelp" class="form-text text-muted">
                                                                 <?php echo __("You need to set up an encoder server"); ?><br>
                                                                 <?php echo __("You can use our public encoder on"); ?>: https://encoder.youphptube.com/ or
                                                                 <a href="https://github.com/DanielnetoDotCom/YouPHPTube-Encoder" class="btn-light btn-sm" target="_blank"><?php echo __("For faster encode, download your own encoder"); ?></a>
                                                             </small>
-                                                        </div>
+                                                          </div>
                                                     </div>
+                                                    <div class="form-inline">
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("Session Timeout in seconds"); ?></label>
-                                                        <div class="col-md-10">
+
+                                                    </div>
+                                                    <div class="form-inline">
+                                                        <label for="session_timeout" class="col-4  text-right font-weight-bold"><?php echo __("Session Timeout in seconds"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input id="session_timeout" class="form-control"  type="number" value="<?php echo $config->getSession_timeout(); ?>" >
                                                         </div>
                                                     </div>
 
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("Disable YouPHPTube Google Analytics"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label for="disable_analytics" class="col-4  text-right font-weight-bold"><?php echo __("Disable YouPHPTube Google Analytics"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input data-toggle="toggle" type="checkbox" name="disable_analytics" id="disable_analytics" value="1" <?php
                                                             if (!empty($config->getDisable_analytics())) {
                                                                 echo "checked";
                                                             }
                                                             ?>  aria-describedby="disable_analyticsHelp">
                                                             <small id="disable_analyticsHelp" class="form-text text-muted"><?php echo __("This help us to track and dettect errors"); ?></small>
-                                                        </div>
+                                                          </div>
                                                     </div>
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("Disable Youtube-Upload"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label for="disable_youtubeupload" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable Youtube-Upload"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input data-toggle="toggle" type="checkbox" name="disable_youtubeupload" id="disable_youtubeupload" value="1" <?php
                                                             if (!empty($config->getDisable_youtubeupload())) {
                                                                 echo "checked";
@@ -446,9 +450,9 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("Disable right-click-prevention on video and allow downloading"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label class="col-4 font-weight-bold text-right"><?php echo __("Disable right-click-prevention on video and allow downloading"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input data-toggle="toggle" type="checkbox" name="disable_rightclick" id="allow_download" value="1" <?php
                                                             if (!empty($config->getAllow_download())) {
                                                                 echo "checked";
@@ -459,9 +463,9 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     </div>
 
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("Enable SMTP"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Enable SMTP"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input data-toggle="toggle" type="checkbox" name="enableSmtp" id="enableSmtp" value="1" <?php
                                                             if (!empty($config->getSmtp())) {
                                                                 echo "checked";
@@ -469,9 +473,9 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             ?> >
                                                         </div>
                                                     </div>
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("Enable SMTP Auth"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Enable SMTP Auth"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input data-toggle="toggle" type="checkbox" name="enableSmtpAuth" id="enableSmtpAuth" value="1" <?php
                                                             if (!empty($config->getSmtpAuth())) {
                                                                 echo "checked";
@@ -480,49 +484,49 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("SMTP Secure"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Secure"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input id="smtpSecure" class="form-control"  type="text" value="<?php echo $config->getSmtpSecure(); ?>" placeholder="tls OR ssl" aria-describedby="smtpSecureHelp"    >
                                                             <small id="smtpSecureHelp" class="form-text text-muted"><?php echo __("Use tls OR ssl"); ?></small>
                                                         </div>
                                                     </div>
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("SMTP Port"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Port"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input id="smtpPort" class="form-control"  type="number" value="<?php echo $config->getSmtpPort(); ?>" placeholder="465 OR 587" aria-describedby="smtpPortHelp"    >
                                                             <small id="smtpPortHelp" class="form-text text-muted"><?php echo __("465 OR 587"); ?></small>
                                                         </div>
                                                     </div>
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("SMTP Host"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Host"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input id="smtpHost" class="form-control"  type="text" value="<?php echo $config->getSmtpHost(); ?>" placeholder="smtp.gmail.com" >
                                                         </div>
                                                     </div>
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("SMTP Username"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Username"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input id="smtpUsername" class="form-control"  type="text" value="<?php echo $config->getSmtpUsername(); ?>" placeholder="email@gmail.com" >
                                                         </div>
                                                     </div>
 
-                                                    <div class=" ">
-                                                        <label class="col-md-2"><?php echo __("SMTP Password"); ?></label>
-                                                        <div class="col-md-10">
+                                                    <div class="form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Password"); ?></label>
+                                                        <div class="input-group col-8">
                                                             <input id="smtpPassword" class="form-control"  type="password" value="<?php echo $config->getSmtpPassword(); ?>" >
                                                         </div>
                                                     </div>
-                                                    <div class=" ">
-                                                        <label class="col-md-4"><?php echo __("Test your email"); ?></label>
-                                                        <div class="col-md-4 inputGroupContainer">
+                                                    <div class="form-inline">
+                                                        <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Test your email"); ?></label>
+                                                        <div class="col-4 input-group inputGroupContainer">
                                                             <div class="input-group">
                                                                 <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                                                <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
-                                                                <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
+                                                                <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="fas fa-sync-alt"></span></span></span>
+                                                                <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
