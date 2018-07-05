@@ -226,7 +226,7 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    <i class="fa fa-clock-o"></i>
+                                                    <i class="far fa-clock"></i>
                                                     <?php
                                                     echo humanTiming(strtotime($value['videoCreation'])), " ", __('ago');
                                                     ?>
