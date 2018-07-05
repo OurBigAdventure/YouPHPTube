@@ -48,7 +48,7 @@ if (!User::isAdmin()) {
                                 echo " checked='checked' ";
                             }
                             ?> />
-                            <label for="enable1" class="label-success"></label>
+                            <label for="enable1" class="badge-success"></label>
                         </div>
                     </div>
                 </div>

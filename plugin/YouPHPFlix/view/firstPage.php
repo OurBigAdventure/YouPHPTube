@@ -892,7 +892,7 @@ unset($_SESSION['type']);
                     <?php echo __("Make it public"); ?>
                     <div class="material-switch pull-right">
                         <input id="publicPlayList" name="publicPlayList" type="checkbox" checked="checked" />
-                        <label for="publicPlayList" class="label-success"></label>
+                        <label for="publicPlayList" class="badge-success"></label>
                     </div>
                 </div>
                 <div class="form-group">

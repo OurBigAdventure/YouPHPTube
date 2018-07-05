@@ -279,7 +279,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                         <?php echo __("Make it public"); ?>
                                                         <div class="material-switch float-right">
                                                             <input id="publicPlayList" name="publicPlayList" type="checkbox" checked="checked"/>
-                                                            <label for="publicPlayList" class="label-success"></label>
+                                                            <label for="publicPlayList" class="badge-success"></label>
                                                         </div>
                                                     </div>
                                                     <div class=" ">
@@ -325,7 +325,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                                     + response[i].name + '</span><div class="material-switch float-right"><input id="someSwitchOptionDefault'
                                                                     + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="'
                                                                     + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault'
-                                                                    + response[i].id + '" class="label-success"></label></div></a>');
+                                                                    + response[i].id + '" class="badge-success"></label></div></a>');
                                                         }
                                                         $('#searchlist').btsListFilter('#searchinput', {itemChild: 'span'});
                                                         $('.playListsIds').change(function () {

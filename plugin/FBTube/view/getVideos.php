@@ -134,7 +134,7 @@ if (!empty($videos)) {
                                         <?php echo __("Make it public"); ?>
                                         <div class="material-switch float-right">
                                             <input id="publicPlayList<?php echo $video['id']; ?>" name="publicPlayList" type="checkbox" checked="checked"/>
-                                            <label for="publicPlayList" class="label-success"></label>
+                                            <label for="publicPlayList" class="badge-success"></label>
                                         </div>
                                     </div>
                                     <div class=" ">
@@ -179,7 +179,7 @@ if (!empty($videos)) {
                                                 }
                                             }
 
-                                            $("#searchlist<?php echo $video['id']; ?>").append('<a class="bg-light"><i class="fa fa-' + icon + '"></i> <span>' + response[i].name + '</span><div class="material-switch float-right"><input id="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="' + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" class="label-success"></label></div></a>');
+                                            $("#searchlist<?php echo $video['id']; ?>").append('<a class="bg-light"><i class="fa fa-' + icon + '"></i> <span>' + response[i].name + '</span><div class="material-switch float-right"><input id="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="' + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault<?php echo $video['id']; ?>' + response[i].id + '" class="badge-success"></label></div></a>');
                                         }
                                         $('#searchlist<?php echo $video['id']; ?>').btsListFilter('#searchinput<?php echo $video['id']; ?>', {itemChild: 'span'});
                                         $('.playListsIds').change(function () {

@@ -99,7 +99,7 @@ if (!User::canUpload() || !empty($advancedCustom->doNotShowImportMP4Button)) {
                             for (i = 0; i < response.length; i++) {
                                 if (!response[i])
                                     continue;
-                                $('#files').append('<li class="bg-light" path="' + response[i].path + '" id="li' + i + '"><span class="badge badge-success" style="display: none;"><span class="glyphicon glyphicon-ok"></span> Added on queue.. </span> ' + response[i].name + '<div class="material-switch float-right"><input id="someSwitchOption' + response[i].id + '" class="someSwitchOption" type="checkbox"/><label for="someSwitchOption' + response[i].id + '" class="label-primary"></label></div></li>');
+                                $('#files').append('<li class="bg-light" path="' + response[i].path + '" id="li' + i + '"><span class="badge badge-success" style="display: none;"><span class="glyphicon glyphicon-ok"></span> Added on queue.. </span> ' + response[i].name + '<div class="material-switch float-right"><input id="someSwitchOption' + response[i].id + '" class="someSwitchOption" type="checkbox"/><label for="someSwitchOption' + response[i].id + '" class="badge-primary"></label></div></li>');
                             }
                         }
                     }

@@ -82,42 +82,42 @@ $userGroups = UserGroups::getAllUsersGroups();
                                         <?php echo __("is Admin"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="isAdmin" id="isAdmin"/>
-                                            <label for="isAdmin" class="label-success"></label>
+                                            <label for="isAdmin" class="badge-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("Can Stream Videos"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="canStream" id="canStream"/>
-                                            <label for="canStream" class="label-success"></label>
+                                            <label for="canStream" class="badge-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("Can Upload Videos"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="canUpload" id="canUpload"/>
-                                            <label for="canUpload" class="label-success"></label>
+                                            <label for="canUpload" class="badge-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("Can view chart"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="canViewChart" id="canViewChart"/>
-                                            <label for="canViewChart" class="label-success"></label>
+                                            <label for="canViewChart" class="badge-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("E-mail Verified"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="isEmailVerified" id="isEmailVerified"/>
-                                            <label for="isEmailVerified" class="label-success"></label>
+                                            <label for="isEmailVerified" class="badge-success"></label>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <?php echo __("is Active"); ?>
                                         <div class="material-switch float-right">
                                             <input type="checkbox" value="status" id="status"/>
-                                            <label for="status" class="label-success"></label>
+                                            <label for="status" class="badge-success"></label>
                                         </div>
                                     </li>
                                     <?php
@@ -138,7 +138,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                                             <span class="badge badge-info"><?php echo $value['total_videos']; ?> <?php echo __("Videos linked"); ?></span>
                                             <div class="material-switch float-right">
                                                 <input id="userGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="userGroups"/>
-                                                <label for="userGroup<?php echo $value['id']; ?>" class="label-warning"></label>
+                                                <label for="userGroup<?php echo $value['id']; ?>" class="badge-warning"></label>
                                             </div>
                                         </li>
                                         <?php

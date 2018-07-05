@@ -36,7 +36,7 @@ function loadPlayLists() {
                     }
                 }
 
-                $("#searchlist").append('<a class="bg-light"><i class="fa fa-' + icon + '"></i> <span>' + response[i].name + '</span><div class="material-switch pull-right"><input id="someSwitchOptionDefault' + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="' + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault' + response[i].id + '" class="label-success"></label></div></a>');
+                $("#searchlist").append('<a class="bg-light"><i class="fa fa-' + icon + '"></i> <span>' + response[i].name + '</span><div class="material-switch pull-right"><input id="someSwitchOptionDefault' + response[i].id + '" name="someSwitchOption' + response[i].id + '" class="playListsIds" type="checkbox" value="' + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault' + response[i].id + '" class="badge-success"></label></div></a>');
             }
             $('#searchlist').btsListFilter('#searchinput', {itemChild: 'span'});
             $('.playListsIds').change(function () {

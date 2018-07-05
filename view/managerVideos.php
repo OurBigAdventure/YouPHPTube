@@ -255,7 +255,7 @@ if (!empty($_GET['video_id'])) {
                                         <span class="fa fa-globe"></span> <?php echo __("Public Video"); ?>
                                         <div class="material-switch float-right">
                                             <input id="public" type="checkbox" value="0" class="userGroups"/>
-                                            <label for="public" class="label-success"></label>
+                                            <label for="public" class="badge-success"></label>
                                         </div>
                                     </li>
                                     <li class="bg-light active non-public">
@@ -271,7 +271,7 @@ if (!empty($_GET['video_id'])) {
                                             <span class="badge badge-info"><?php echo $value['total_users']; ?> Users linked</span>
                                             <div class="material-switch float-right">
                                                 <input id="videoGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="videoGroups"/>
-                                                <label for="videoGroup<?php echo $value['id']; ?>" class="label-warning"></label>
+                                                <label for="videoGroup<?php echo $value['id']; ?>" class="badge-warning"></label>
                                             </div>
                                         </li>
                                         <?php

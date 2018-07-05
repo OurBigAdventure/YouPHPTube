@@ -175,7 +175,7 @@ if (empty($channelName)) {
                                 <span class="fa fa-globe"></span> <?php echo __("Listed Transmition"); ?>
                                 <div class="material-switch float-right">
                                     <input id="listed" type="checkbox" value="1" <?php echo!empty($trasnmition['public']) ? "checked" : ""; ?>/>
-                                    <label for="listed" class="label-success"></label>
+                                    <label for="listed" class="badge-success"></label>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +191,7 @@ if (empty($channelName)) {
                                     <span class="fa fa-users"></span> <?php echo $value['group_name']; ?>
                                     <div class="material-switch float-right">
                                         <input id="group<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="userGroups" <?php echo (in_array($value['id'], $groups) ? "checked" : "") ?>/>
-                                        <label for="group<?php echo $value['id']; ?>" class="label-success"></label>
+                                        <label for="group<?php echo $value['id']; ?>" class="badge-success"></label>
                                     </div>
                                 </div>
                                 <?php
