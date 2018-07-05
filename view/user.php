@@ -23,6 +23,11 @@ $advancedCustom = json_decode($json_file);
         ?>
         <link href="<?php echo $global['webSiteRootURL']; ?>view/js/Croppie/croppie.css" rel="stylesheet" type="text/css"/>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/Croppie/croppie.min.js" type="text/javascript"></script>
+        <style>
+            .input-group-text{
+                width: 40px;
+            }
+        </style>
     </head>
 
     <body>
@@ -385,7 +390,7 @@ $advancedCustom = json_decode($json_file);
                                             <?php
                                             if (empty($advancedCustom->disableNativeSignUp)) {
                                                 ?>
-                                                <small><a href="#" id="forgotPassword"><?php echo __("I forgot my password"); ?></a></small>
+                                            <small><a href="#" id="forgotPassword" class="btn btn-link"><?php echo __("I forgot my password"); ?></a></small>
                                                 <?php
                                             }
                                             ?>
