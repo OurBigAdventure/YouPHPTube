@@ -14,7 +14,7 @@ $options = json_decode($obj->withdrawFundsOptions);
 <!DOCTYPE html>
 <html lang="<?php echo $_SESSION['language']; ?>">
     <head>
-        <title>Add Funds</title>
+        <title><?php echo __("Add Funds"); ?></title>
         <?php
         include $global['systemRootPath'] . 'view/include/head.php';
         ?>
@@ -25,14 +25,14 @@ $options = json_decode($obj->withdrawFundsOptions);
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
         <div class="container">
-            <div class="row">
+            <div class="">
                 <div class="card">
                     <div class="card-header"><?php echo __("Withdraw Funds"); ?></div>
                     <div class="card-body">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 float-left">
                             <?php echo $obj->withdraw_funds_text ?>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 float-right">
                             <?php
                             if (!empty($_GET['status'])) {
                                 $text = "unknow";
@@ -58,7 +58,7 @@ $options = json_decode($obj->withdrawFundsOptions);
                             }
                             ?>
                             <div class=" ">
-                                <label for="value"><?php echo __("Specify Ammount"); ?> <?php echo $obj->currency_symbol; ?> <?php echo $obj->currency; ?></label>
+                                <label class="font-weight-bold" for="value"><?php echo __("Specify Ammount"); ?> <?php echo $obj->currency_symbol; ?> <?php echo $obj->currency; ?></label>
                                 <select class="form-control" id="value" >
                                     <?php
                                     foreach ($options as $value) {
@@ -70,11 +70,11 @@ $options = json_decode($obj->withdrawFundsOptions);
                                 </select>
                             </div>
                             <div class=" ">
-                                <label for="informations"><?php echo __("Informations"); ?></label>
+                                <label for="informations" class="font-weight-bold"><?php echo __("Informations"); ?></label>
                                 <textarea class="form-control" id="informations" name="informations"></textarea>
                             </div>
                             <button class="btn btn-primary" id="manualWithdrawFundsPageButton"><?php echo $obj->manualWithdrawFundsPageButton; ?></button>
-                        </div>  
+                        </div>
                     </div>
                 </div>
 

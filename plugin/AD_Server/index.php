@@ -18,7 +18,7 @@ if (!User::isAdmin()) {
         <?php
         include $global['systemRootPath'] . 'view/include/head.php';
         ?>
-        <link rel="stylesheet" type="text/css" href="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $global['webSiteRootURL']; ?>view/js/datatables/css/dataTables.bootstrap.css"/>
         <link href="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
 
@@ -59,26 +59,26 @@ if (!User::isAdmin()) {
                                 <div class="card-header"><?php echo __("Create Campaign"); ?></div>
                                 <div class="card-body">
                                     <form id="panelForm">
-                                        <div class="row">
+                                        <div class="">
                                             <input type="hidden" name="campId" id="campId" value="" >
-                                            <div class="  col-sm-12">
-                                                <label for="name"><?php echo __("Name"); ?>:</label>
+                                            <div class="form-inline mb-2">
+                                                <label for="name" class="col-3"><?php echo __("Name"); ?>:</label>
                                                 <input type="text" id="name" name="name" class="form-control form-control-sm" placeholder="<?php echo __("Name"); ?>" required="true">
                                             </div>
-                                            <div class="  col-sm-6">
-                                                <label for="startDate"><?php echo __("Starts on"); ?>:</label>
+                                            <div class="form-inline">
+                                                <label for="startDate" class="col-3"><?php echo __("Starts on"); ?>:</label>
                                                 <input type="text" id="startDate" name="start_date" class="form-control datepickerLink form-control-sm" placeholder="<?php echo __("Starts on"); ?>" required >
                                             </div>
-                                            <div class="  col-sm-6">
-                                                <label for="endDate"><?php echo __("End on"); ?>:</label>
+                                            <div class=" form-inline">
+                                                <label for="endDate" class="col-3"><?php echo __("End on"); ?>:</label>
                                                 <input type="text" id="endDate" name="end_date" class="form-control datepickerLink form-control-sm" placeholder="<?php echo __("End on"); ?>" required>
                                             </div>
-                                            <div class="  col-sm-6">
-                                                <label for="maxPrints"><?php echo __("Max Prints"); ?>:</label>
-                                                <input type="number" id="maxPrints" name="maxPrints" class="form-control form-control-sm" placeholder="<?php echo __("End on"); ?>" required>
+                                            <div class="form-inline">
+                                                <label for="maxPrints" class="col-3"><?php echo __("Max Prints"); ?>:</label>
+                                                <input type="number" id="maxPrints" name="maxPrints" class="form-control form-control-sm" placeholder="<?php echo __("Max Prints"); ?>" required>
                                             </div>
-                                            <div class="  col-sm-6">
-                                                <label for="status"><?php echo __("Status"); ?>:</label>
+                                            <div class=" form-inline mb-2">
+                                                <label for="status" class="col-3"><?php echo __("Status"); ?>:</label>
                                                 <select class="form-control form-control-sm" name="status" id="status">
                                                     <option value="a"><?php echo __("Active"); ?></option>
                                                     <option value="i"><?php echo __("Inactive"); ?></option>
@@ -93,7 +93,7 @@ if (!User::isAdmin()) {
                                                 </select>
                                             </div>
                                             -->
-                                            <div class="  col-sm-12">
+                                            <div class=" form-inline col-sm-12">
                                                 <div class="btn-group float-right">
                                                     <span class="btn btn-success" id="newLiveLink"><i class="fas fa-plus"></i> <?php echo __("New"); ?></span>
                                                     <button class="btn btn-primary" id="addLiveLink" type="submit"><i class="fas fa-save"></i> <?php echo __("Save"); ?></button>
@@ -104,9 +104,9 @@ if (!User::isAdmin()) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-8">
                             <div class="row">
-                                <div class="  col-sm-6">
+                                <div class="  col-12">
                                     <label><?php echo __("VMAP Link"); ?>:</label>
                                     <input type="text" class="form-control form-control-sm" readonly value="<?php echo $global['webSiteRootURL']; ?>plugin/AD_Server/VMAP.php" >
                                 </div>
@@ -114,7 +114,7 @@ if (!User::isAdmin()) {
                             <div class="card ">
                                 <div class="card-header"><?php echo __("Edit Campaigns"); ?></div>
                                 <div class="card-body">
-                                    <table id="campaignTable" class="display" width="100%" cellspacing="0">
+                                    <table id="campaignTable" class="display table-fluid table" width="" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th><?php echo __("Name"); ?></th>
@@ -242,7 +242,7 @@ if (!User::isAdmin()) {
         <?php
         include $global['systemRootPath'] . 'view/include/footer.php';
         ?>
-        <script type="text/javascript" src="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.js"></script>
+        <script type="text/javascript" src="<?php echo $global['webSiteRootURL']; ?>view/js/datatables/js/dataTables.bootstrap4.js"></script>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/Chart.bundle.min.js"></script>

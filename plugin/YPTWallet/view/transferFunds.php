@@ -33,14 +33,14 @@ $obj = YouPHPTubePlugin::getObjectDataIfEnabled("YPTWallet");
         <div class="container">
             <div class="row">
 
-                <div class="row ">
+                <div class="">
                     <div class="card">
                         <div class="card-header"><?php echo __("Transfer Funds"); ?></div>
                         <div class="card-body">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 float-left">
                                 <?php echo $obj->transfer_funds_text ?>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 float-right">
                                 <div class="row">
 
                                     <div class="col-sm-12">
@@ -67,39 +67,38 @@ $obj = YouPHPTubePlugin::getObjectDataIfEnabled("YPTWallet");
                                     </div>
 
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
+                                <div class="row mb-1">
+                                    <div class="col-sm-6 ">
                                         <div class=" ">
-                                            <label for="value"><?php echo __("Transfer Funds"); ?> <?php echo $obj->currency_symbol; ?> <?php echo $obj->currency; ?></label>
+                                            <label for="value" class="font-weight-bold"><?php echo __("Transfer Funds"); ?> <?php echo $obj->currency_symbol; ?> <?php echo $obj->currency; ?></label>
                                             <input type="number" name="value" id="value" placeholder="<?php echo __("Total Amount"); ?>">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class=" ">
-                                            <label for="users_name"><i class="fa fa-user"></i> <?php echo __("Transfer Funds to"); ?></label>
+                                            <label for="users_name" class="font-weight-bold"><i class="fa fa-user"></i> <?php echo __("Transfer Funds to"); ?></label>
                                             <input type="text" id="users_name" placeholder="<?php echo __("Username or Email"); ?>">
                                             <input type="hidden" name="users_id" id="users_id">
                                         </div>
                                     </div>
 
                                 </div>
-                                <div class="row">
+                                <div class="row mb-2">
                                     <div class="col-sm-12">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                            <span class="input-group-addon"><span class="btn btn-sm btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
-                                            <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
+                                            <span class="input-group-text"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
+                                            <span class="input-group-text"><span class="btn btn-sm btn-success" id="btnReloadCapcha"><span class="fas fa-sync-alt"></span></span></span>
+                                            <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <br>
                                     <div class="col-sm-12 text-center">
                                         <button class="btn btn-primary" id="transferNow"><i class="fa fa-exchange" aria-hidden="true"></i> <?php echo __("Transfer now"); ?></button>
                                     </div>
                                 </div>
 
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,7 +107,7 @@ $obj = YouPHPTubePlugin::getObjectDataIfEnabled("YPTWallet");
             </div>
         </div>
 
-        <div class="hidden" id="model">
+        <div class="d-none" id="model">
             <div style="background-image: url('{background}'); background-size: cover; height: 50px; width: 100%;" >
                 <img src="{photo}" class="float-left img img-fluid rounded-circle" style="max-height: 40px;">
                 <div class="float-left">

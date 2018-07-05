@@ -26,14 +26,14 @@ $options = json_decode($obj->addFundsOptions);
         include $global['systemRootPath'] . 'view/include/navbar.php';
         ?>
         <div class="container">
-            <div class="row">
+            <div class="">
                 <div class="card">
                     <div class="card-header"><?php echo __("Add Funds"); ?></div>
                     <div class="card-body">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 float-left">
                             <?php echo $obj->add_funds_text ?>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 float-right">
                             <?php
                             if (!empty($_GET['status'])) {
                                 $text = "unknow";
@@ -73,7 +73,7 @@ $options = json_decode($obj->addFundsOptions);
                             <?php
                             $plugin->getAvailablePayments();
                             ?>
-                        </div>  
+                        </div>
                     </div>
                 </div>
 
