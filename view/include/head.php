@@ -17,6 +17,7 @@ $theme = $config->getTheme();
 <link href="<?php echo $global['webSiteRootURL']; ?>view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $global['webSiteRootURL']; ?>view/css/font-awesome-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $global['webSiteRootURL']; ?>view/css/flagstrap/css/flags.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $global['webSiteRootURL']; ?>view/css/font-awesome-5.0.10/svg-with-js/css/fa-svg-with-js.css" rel="stylesheet" type="text/css"/>
 <?php
 $cssFiles = array();
 $cssFiles[] = "view/css/custom/{$theme}.css"; // I had to move it to be the first because the font load

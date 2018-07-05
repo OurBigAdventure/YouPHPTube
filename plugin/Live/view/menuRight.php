@@ -13,30 +13,33 @@
 <?php
 if (User::canStream()) {
     ?>
-    <li>
-        <a href="<?php echo $global['webSiteRootURL']; ?>plugin/Live"  class="btn btn-danger nav-item" data-toggle="tooltip" title="<?php echo __("Broadcast a Live Streaming"); ?>" data-placement="bottom" >
+    <li class="nav-item">
+        <a href="<?php echo $global['webSiteRootURL']; ?>plugin/Live"  class="btn btn-danger" data-toggle="tooltip" title="<?php echo __("Broadcast a Live Streaming"); ?>" data-placement="bottom" >
             <span class="fa fa-circle"></span> <?php echo $buttonTitle; ?>
         </a>
     </li>
     <?php
 }
 ?>
-<li class="dropdown">
-    <a href="#" class=" btn btn-light nav-item" data-toggle="dropdown">
-        <span class="fa fa-bell"></span>
-        <span class="badge onlineApplications" style=" background: rgba(255,0,0,1); color: #FFF;">0</span>
-        <b class="caret"></b>
+
+<li class="nav-item dropdown">
+    <a class="dropdown-toggle btn btn-light  " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="fa-layers fa-fw" style="">
+            <i class="fa fa-bell"></i>
+            <span class="fa-layers-counter onlineApplications fa-2x" style="background:Tomato; ">0</span>
+        </span>
     </a>
+
     <ul class="dropdown-menu dropdown-menu-right notify-drop" id="availableLiveStream"></ul>
 </li>
-<li class="hidden liveModel"  style="margin-right: 0;">
-    <a href="<?php echo $global['webSiteRootURL']; ?>plugin/Live/" class='liveLink '>
+<li class="d-none liveModel dropdown-item"  style="margin-right: 0;">
+    <a href="<?php echo $global['webSiteRootURL']; ?>plugin/Live/" class='liveLink btn btn-light'>
         <div class="float-left">
             <img src="" class="img rounded-circle img-fluid" style="max-width: 38px;">
         </div>
         <div style="margin-left: 40px;">
             <i class="fas fa-video"></i> <strong class="liveTitle"><?php echo __("Title"); ?></strong> <br>
-            <span class="badge badge-success liveUser"><?php echo __("User"); ?></span> <span class="badge badge-danger liveNow faa-flash faa-slow animated hidden"><?php echo __("LIVE NOW"); ?></span>
+            <span class="badge badge-success liveUser"><?php echo __("User"); ?></span> <span class="badge badge-danger liveNow faa-flash faa-slow animated d-none"><?php echo __("LIVE NOW"); ?></span>
         </div>
     </a>
 </li>
@@ -84,7 +87,7 @@ if (User::canStream()) {
             $liveLi.find('.liveUser').removeClass("label-success").addClass("label-danger");
             $liveLi.find('.badge').text("offline");
         }
-        $liveLi.removeClass("hidden").removeClass("liveModel");
+        $liveLi.removeClass("d-none").removeClass("liveModel");
         $liveLi.find('a').attr("href", href);
         $liveLi.find('.liveTitle').text(title);
         $liveLi.find('.liveUser').text(name);
@@ -92,7 +95,7 @@ if (User::canStream()) {
         $('#availableLiveStream').append($liveLi);
 
         if (href != "#") {
-            $liveLi.find('.liveNow').removeClass("hidden");
+            $liveLi.find('.liveNow').removeClass("d-none");
         }
 
         $('.liveUsersOnline_' + key).text(online);
@@ -104,7 +107,7 @@ if (User::canStream()) {
         id = id.replace(/\W/g, '');
         if ($(".extraVideos").length && $("#" + id).length == 0) {
             var $liveLi = $('.extraVideosModel').clone();
-            $liveLi.removeClass("hidden").removeClass("extraVideosModel");
+            $liveLi.removeClass("d-none").removeClass("extraVideosModel");
             $liveLi.css({'display': 'none'})
             $liveLi.attr('id', id);
             $liveLi.find('.videoLink').attr("href", href);

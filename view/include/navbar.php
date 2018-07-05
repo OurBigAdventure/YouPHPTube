@@ -370,7 +370,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                                 <?php
                                                 if (!empty($advancedCustom->encoderNetwork)) {
                                                     ?>
-                                                        <a class="dropdown-item" href="<?php echo $advancedCustom->encoderNetwork, "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
+                                                        <a class="dropdown-item btn btn-light" href="<?php echo $advancedCustom->encoderNetwork, "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
                                                             <span class="fa fa-cogs"></span> <?php echo __("Encoder Network"); ?>
                                                         </a>
                                                     <?php
@@ -378,33 +378,33 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                                 if (empty($advancedCustom->doNotShowEncoderButton)) {
                                                     if (!empty($config->getEncoderURL())) {
                                                         ?>
-                                                            <a class="dropdown-item" href="<?php echo $config->getEncoderURL(), "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
+                                                            <a class="dropdown-item btn btn-light" href="<?php echo $config->getEncoderURL(), "?webSiteRootURL=", urlencode($global['webSiteRootURL']), "&user=", urlencode(User::getUserName()), "&pass=", urlencode(User::getUserPass()); ?>" target="encoder" >
                                                                 <span class="fa fa-cog"></span> <?php echo __("Encode video and audio"); ?>
                                                             </a>
                                                         <?php
                                                     } else {
                                                         ?>
-                                                            <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations" ><span class="fa fa-cogs"></span> <?php echo __("Configure an Encoder URL"); ?></a>
+                                                            <a class="dropdown-item btn btn-light" href="<?php echo $global['webSiteRootURL']; ?>siteConfigurations" ><span class="fa fa-cogs"></span> <?php echo __("Configure an Encoder URL"); ?></a>
                                                         <?php
                                                     }
                                                 }
                                                 if (empty($advancedCustom->doNotShowUploadMP4Button)) {
                                                     ?>
-                                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>upload" >
+                                                        <a class="dropdown-item btn btn-light" href="<?php echo $global['webSiteRootURL']; ?>upload" >
                                                             <span class="fa fa-upload"></span> <?php echo __("Direct upload"); ?>
                                                         </a>
                                                     <?php
                                                 }
                                                 if (empty($advancedCustom->doNotShowImportLocalVideosButton)) {
                                                     ?>
-                                                        <a class="dropdown-item"  href="<?php echo $global['webSiteRootURL']; ?>view/import.php" >
+                                                        <a class="dropdown-item btn btn-light"  href="<?php echo $global['webSiteRootURL']; ?>view/import.php" >
                                                             <span class="fas fa-hdd"></span> <?php echo __("Direct Import Local Videos"); ?>
                                                         </a>
                                                     <?php
                                                 }
                                                 if (empty($advancedCustom->doNotShowEmbedButton)) {
                                                     ?>
-                                                        <a class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>mvideos?link=1" >
+                                                        <a class="dropdown-item btn btn-light" href="<?php echo $global['webSiteRootURL']; ?>mvideos?link=1" >
                                                             <span class="fa fa-link"></span> <?php echo __("Embed a video link"); ?>
                                                         </a>
                                                     <?php
@@ -471,7 +471,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             if (User::isLogged()) {
                                 ?>
                                 <li>
-                                    <a class="btn navbar-btn btn-link"  href="<?php echo $global['webSiteRootURL']; ?>logoff">
+                                    <a class="btn navbar-btn btn-light"  href="<?php echo $global['webSiteRootURL']; ?>logoff">
                                         <i class="fas fa-sign-out-alt"></i> <?php echo __("Sign Out"); ?>
                                     </a>
                                 </li>
@@ -479,7 +479,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                             } else {
                                 ?>
                                 <li>
-                                    <a class="btn navbar-btn btn-link" href="<?php echo $global['webSiteRootURL']; ?>user" >
+                                    <a class="btn navbar-btn btn-light" href="<?php echo $global['webSiteRootURL']; ?>user" >
                                         <i class="fas fa-sign-in-alt"></i> <?php echo __("Sign In"); ?>
                                     </a>
                                 </li>
