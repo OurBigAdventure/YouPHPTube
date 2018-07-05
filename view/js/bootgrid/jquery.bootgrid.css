@@ -89,7 +89,6 @@
 }
 .bootgrid-table th > .column-header-anchor > .text {
   display: block;
-  margin: 0 16px 0 0;
   overflow: hidden;
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;

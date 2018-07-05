@@ -782,7 +782,7 @@
             {
                 var sortOrder = that.sortDictionary[column.id],
                     iconCss = ((sorting && sortOrder && sortOrder === "asc") ? css.iconUp :
-                        (sorting && sortOrder && sortOrder === "desc") ? css.iconDown : ""),
+                        (sorting && sortOrder && sortOrder === "desc") ? css.iconDown : "fa-minus"),
                     icon = tpl.icon.resolve(getParams.call(that, { iconCss: iconCss })),
                     align = column.headerAlign,
                     cssClass = (column.headerCssClass.length > 0) ? " " + column.headerCssClass : "";
@@ -837,14 +837,13 @@
             iconSelector = getCssSelector(css.icon),
             columnId = element.data("column-id") || element.parents("th").first().data("column-id"),
             sortOrder = this.sortDictionary[columnId],
-            icon = element.find(iconSelector);
+            icon = element.find(".svg-inline--fa");
 
         if (!this.options.multiSort)
         {
             element.parents("tr").first().find(iconSelector).removeClass(css.iconDown + " " + css.iconUp);
             this.sortDictionary = {};
         }
-
         if (sortOrder && sortOrder === "asc")
         {
             this.sortDictionary[columnId] = "desc";
@@ -1231,7 +1230,7 @@
             dropDownMenuText: "dropdown-text", // must be a unique class name or constellation of class names within the actionDropDown
             footer: "bootgrid-footer container-fluid",
             header: "bootgrid-header container-fluid",
-            icon: "fas",
+            icon: "fa",
             iconColumns: "fa-list",
             iconDown: "fa-chevron-down",
             iconRefresh: "fa-sync-alt",
@@ -1363,7 +1362,7 @@
             cell: "<td class=\"{{ctx.css}}\" style=\"{{ctx.style}}\">{{ctx.content}}</td>",
             footer: "<div id=\"{{ctx.id}}\" class=\"{{css.footer}}\"><div class=\"row\"><div class=\"col-sm-6\"><p class=\"{{css.pagination}}\"></p></div><div class=\"col-sm-6 infoBar\"><p class=\"{{css.infos}}\"></p></div></div></div>",
             header: "<div id=\"{{ctx.id}}\" class=\"{{css.header}}\"><div class=\"row\"><div class=\"col-sm-12 actionBar\"><p class=\"{{css.search}}\"></p><p class=\"{{css.actions}}\"></p></div></div></div>",
-            headerCell: "<th data-column-id=\"{{ctx.column.id}}\" class=\"{{ctx.css}}\" style=\"{{ctx.style}}\"><a href=\"javascript:void(0);\" class=\"{{css.columnHeaderAnchor}} {{ctx.sortable}}\"><span class=\"{{css.columnHeaderText}}\">{{ctx.column.text}}</span>{{ctx.icon}}</a></th>",
+            headerCell: "<th data-column-id=\"{{ctx.column.id}}\" class=\"{{ctx.css}}\" style=\"{{ctx.style}}\"><a href=\"javascript:void(0);\" class=\"{{css.columnHeaderAnchor}} {{ctx.sortable}}\"><span class=\"{{css.columnHeaderText}}\">{{ctx.column.text}} {{ctx.icon}}</span></a></th>",
             icon: "<span class=\"{{css.icon}} {{ctx.iconCss}}\"></span>",
             infos: "<div class=\"{{css.infos}}\">{{lbl.infos}}</div>",
             loading: "<tr><td colspan=\"{{ctx.columns}}\" class=\"loading\">{{lbl.loading}}</td></tr>",

@@ -68,7 +68,7 @@ if (!empty($_GET['video_id'])) {
                     </a>
                 <?php } ?>
                 <a href="<?php echo $global['webSiteRootURL']; ?>charts" class="btn btn-info">
-                    <span class="fa fa-bar-chart"></span>
+                    <span class="fas fa-tachometer-alt"></span>
                     <?php echo __("Video Chart"); ?>
                 </a>
                 <?php
