@@ -79,7 +79,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                             <div class="card border-top-0">
                                                 <div class="card-body">
                                                     <h1 class="alert alert-warning">
-                                                        <span class="fa fa-warning"></span>
+                                                        <span class="fas fa-exclamation-triangle"></span>
                                                         <?php echo __("Do not forget to save after choose your theme"); ?>
                                                     </h1>
                                                     <div class="alert alert-info">
