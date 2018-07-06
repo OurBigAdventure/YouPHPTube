@@ -121,13 +121,13 @@ $userGroups = UserGroups::getAllUsersGroups();
                                         </div>
                                     </li>
                                     <?php
-                                    print YouPHPTubePlugin::getUserOptions(); 
+                                    print YouPHPTubePlugin::getUserOptions();
                                     ?>
                                 </ul>
                                 <ul class="list-group">
                                     <li class="list-group-item active">
                                         <?php echo __("User Groups"); ?>
-                                        <a href="#" class="btn-info btn-sm float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By associating groups with this user, they will be able to see all the videos that are related to this group"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
+                                        <a href="#" class="btn btn-info btn-sm float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By associating groups with this user, they will be able to see all the videos that are related to this group"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                     </li>
                                     <?php
                                     foreach ($userGroups as $value) {
@@ -183,7 +183,7 @@ $userGroups = UserGroups::getAllUsersGroups();
                     url: "<?php echo $global['webSiteRootURL'] . "objects/users.json.php"; ?>",
                     formatters: {
                         "commands": function (column, row) {
-                            var editBtn = '<button type="button" class="btn-sm btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
+                            var editBtn = '<button type="button" class="btn btn-sm btn-light command-edit" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Edit"><span class="fas fa-edit" aria-hidden="true"></span></button>'
                             //var deleteBtn = '<button type="button" class="btn-light btn-sm command-delete"  data-row-id="' + row.id + '  data-toggle="tooltip" data-placement="left" title="Delete""><span class="glyphicon glyphicon-erase" aria-hidden="true"></span></button>';
                             //return editBtn + deleteBtn;
                             return editBtn;
