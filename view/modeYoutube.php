@@ -627,7 +627,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                         </label>
                                 </span>
                             </div>
-                                
+
                             </div>
                         <?php } else if (!empty($autoPlayVideo)) { ?>
                             <div class="row autoplay text-muted" style="display: none;">
@@ -646,7 +646,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                 </span>
                             </div>
                             <div class="col-lg-12 col-sm-12 col-12 bottom-border autoPlayVideo" itemscope itemtype="http://schema.org/VideoObject" style="display: none;" >
-                                <a href="<?php echo $global['webSiteRootURL'], $catLink; ?>video/<?php echo $autoPlayVideo['clean_title']; ?>" title="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" class="videoLink h6">
+                                <a href="<?php echo $global['webSiteRootURL'], $catLink; ?>video/<?php echo $autoPlayVideo['clean_title']; ?>" title="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" class="videoLink h6 row">
                                     <div class="col-lg-5 col-sm-5 col-5 nopadding thumbsImage">
                                         <?php
                                         $imgGif = "";
@@ -672,8 +672,8 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                         <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($autoPlayVideo['duration']); ?>"><?php echo Video::getCleanDuration($autoPlayVideo['duration']); ?></time>
                                     </div>
                                     <div class="col-lg-7 col-sm-7 col-7 videosDetails">
-                                        <div class="text-uppercase row"><strong itemprop="name" class="title"><?php echo $autoPlayVideo['title']; ?></strong></div>
-                                        <div class="details row text-muted" itemprop="description">
+                                        <div class="title"><strong itemprop="name" class="title"><?php echo $autoPlayVideo['title']; ?></strong></div>
+                                        <div class="details" itemprop="description">
                                             <div>
                                                 <strong><?php echo __("Category"); ?>: </strong>
                                                 <span class="<?php echo $autoPlayVideo['iconClass']; ?>"></span>
