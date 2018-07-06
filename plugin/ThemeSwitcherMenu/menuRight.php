@@ -19,7 +19,7 @@ $obj = ThemeSwitcherMenu::getCurrent();
             foreach ($firstPages as $value) {
                 ?>
                 <li class="dropdown-submenu" data-placement="left" data-toggle="tooltip" title="<img style='height: 100px; width: 100px;' class='img img-fluid  img-thumbnail' src='<?php echo $global['webSiteRootURL']; ?>plugin/ThemeSwitcherMenu/icons/<?php echo $value; ?>.png' />">
-                    <a class="test" tabindex="-1" href="#"><?php echo $value; ?> <span class="caret"></span></a>
+                    <a class="test dropdown-item" tabindex="-1" href="#"><?php echo $value; ?> <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-right dropdown-submenu-themes">
                         <li class="dropdown-header"><?php echo __("Theme for Style:") ?> <strong><?php echo $value; ?></strong></li>
                         <?php
@@ -29,7 +29,7 @@ $obj = ThemeSwitcherMenu::getCurrent();
                             $fileEx = basename($filename, ".css"); // $file is set to "index"
                             ?>
                             <li data-toggle="tooltip" title="<img style='height: 60px; width: 100px;' class='img img-fluid  img-thumbnail' src='<?php echo $global['webSiteRootURL']; ?>view/css/custom/<?php echo $fileEx; ?>.png' />">
-                                <a tabindex="-1" href="<?php echo strtok($_SERVER["REQUEST_URI"], '?'); ?>?firstPage=<?php echo $value; ?>&theme=<?php echo $fileEx; ?>"><?php echo ucfirst($fileEx); ?></a>
+                                <a tabindex="-1" class="dropdown-item" href="<?php echo strtok($_SERVER["REQUEST_URI"], '?'); ?>?firstPage=<?php echo $value; ?>&theme=<?php echo $fileEx; ?>"><?php echo ucfirst($fileEx); ?></a>
                             </li>
                             <?php
                         }
@@ -41,7 +41,7 @@ $obj = ThemeSwitcherMenu::getCurrent();
             ?>
             <li class="divider"></li>
             <li class="dropdown-submenu">
-                <a tabindex="-1" href="<?php echo $global['webSiteRootURL']; ?>plugin/ThemeSwitcherMenu/reset.php">
+                <a tabindex="-1" class="dropdown-item" href="<?php echo $global['webSiteRootURL']; ?>plugin/ThemeSwitcherMenu/reset.php">
                     <i class="fas fa-redo" aria-hidden="true"></i>
                     <?php echo __("Reset to Default"); ?>
                 </a>
