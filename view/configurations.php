@@ -42,38 +42,28 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
 
                             <div class="">
                                 <div class="">
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
+                                    <div class="nav">
                                             <a class="nav-link" href="#tabTheme" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
                                                 <?php echo __("Themes"); ?>
                                             </a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a class="nav-link " href="#tabCompatibility" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
                                                 <?php echo __("Compatibility Check"); ?>
                                             </a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a class="nav-link active" href="#tabRegular" id="tabRegularLink" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
                                                 <?php echo __("Regular Configuration"); ?>
                                             </a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a class="nav-link " href="#tabAdvanced" data-toggle="tab">
                                                 <span class="fa fa-cogs"></span>
                                                 <?php echo __("Advanced Configuration"); ?>
                                             </a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a class="nav-link " href="#tabHead" data-toggle="tab">
                                                 <span class="fa fa-code"></span>
                                                 <?php echo __("Script Code"); ?>
                                             </a>
-                                        </li>
-                                    </ul>
+                                    </div>
                                     <div class="tab-content">
                                         <div class="tab-pane fade" id="tabTheme">
                                             <div class="card border-top-0">
@@ -154,14 +144,14 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     if (isApache()) {
                                                         ?>
                                                         <div class="alert alert-success">
-                                                            <span class="glyphicon glyphicon-check"></span>
+                                                            <span class="fas fa-check-circle"></span>
                                                             <strong><?php echo $_SERVER['SERVER_SOFTWARE']; ?> is Present</strong>
                                                         </div>
                                                         <?php
                                                     } else {
                                                         ?>
                                                         <div class="alert alert-danger">
-                                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                                            <span class="fas fa-circle"></span>
                                                             <strong>Your server is <?php echo $_SERVER['SERVER_SOFTWARE']; ?>, you must install Apache</strong>
                                                         </div>
                                                         <?php
@@ -173,14 +163,14 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     if (isPHP("5.6")) {
                                                         ?>
                                                         <div class="alert alert-success">
-                                                            <span class="glyphicon glyphicon-check"></span>
+                                                            <span class="fas fa-check-circle"></span>
                                                             <strong>PHP <?php echo PHP_VERSION; ?> is Present</strong>
                                                         </div>
                                                         <?php
                                                     } else {
                                                         ?>
                                                         <div class="alert alert-danger">
-                                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                                            <span class="fas fa-circle"></span>
                                                             <strong>Your PHP version is <?php echo PHP_VERSION; ?>, you must install PHP 5.6.x or greater</strong>
                                                         </div>
                                                         <?php
@@ -191,14 +181,14 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     if (checkVideosDir()) {
                                                         ?>
                                                         <div class="alert alert-success">
-                                                            <span class="glyphicon glyphicon-check"></span>
+                                                            <span class="fas fa-check-circle"></span>
                                                             <strong>Your videos directory is writable</strong>
                                                         </div>
                                                         <?php
                                                     } else {
                                                         ?>
                                                         <div class="alert alert-danger">
-                                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                                            <span class="fas fa-circle"></span>
                                                             <strong>Your videos directory must be writable</strong>
                                                             <details>
                                                                 <?php
@@ -229,14 +219,14 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     if (check_post_max_size()) {
                                                         ?>
                                                         <div class="alert alert-success">
-                                                            <span class="glyphicon glyphicon-check"></span>
+                                                            <span class="fas fa-check-circle"></span>
                                                             <strong>Your post_max_size is <?php echo ini_get('post_max_size'); ?></strong>
                                                         </div>
                                                         <?php
                                                     } else {
                                                         ?>
                                                         <div class="alert alert-danger">
-                                                            <span class="glyphicon glyphicon-unchecked"></span>
+                                                            <span class="fas fa-circle"></span>
                                                             <strong>Your post_max_size is <?php echo ini_get('post_max_size'); ?>, it must be at least 100M</strong>
 
                                                             <details>
@@ -313,7 +303,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Web site title"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                                                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-globe"></i></div></span>
                                                                 <input  id="inputWebSiteTitle" placeholder="<?php echo __("Web site title"); ?>" class="form-control"  type="text"  value="<?php echo $config->getWebSiteTitle(); ?>" >
                                                             </div>
                                                         </div>
@@ -322,7 +312,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Language"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
+                                                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-flag"></i></div></span>
                                                                 <input  id="inputLanguage" placeholder="<?php echo __("Language"); ?>" class="form-control"  type="text"  value="<?php echo $config->getLanguage(); ?>" >
                                                             </div>
                                                             <small class="form-text text-muted"><?php echo __("This value must match with the language files on"); ?><code><?php echo $global['systemRootPath']; ?>locale</code></small>
@@ -332,7 +322,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("E-mail"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-envelope"></i></div></span>
                                                                 <input  id="inputEmail" placeholder="<?php echo __("E-mail"); ?>" class="form-control"  type="email"  value="<?php echo $config->getContactEmail(); ?>" >
                                                             </div>
                                                             <small class="form-text text-muted"><?php echo __("This e-mail will be used for this web site notifications"); ?></small>
@@ -343,7 +333,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can upload videos"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
-                                                                <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
+                                                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-cloud-upload-alt"></i></div></span>
                                                                 <select class="form-control" id="authCanUploadVideos" >
                                                                     <option value="1" <?php echo ($config->getAuthCanUploadVideos() == 1) ? "selected" : ""; ?>><?php echo __("Yes"); ?></option>
                                                                     <option value="0" <?php echo ($config->getAuthCanUploadVideos() == 0) ? "selected" : ""; ?>><?php echo __("No"); ?></option>
@@ -356,7 +346,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can view chart"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
-                                                                <span class="input-group-addon"><i class="fa fa-cloud-upload"></i></span>
+                                                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-chart-line"></i></div></span>
                                                                 <select class="form-control" id="authCanViewChart" >
                                                                     <option value="0" <?php echo ($config->getAuthCanViewChart() == 0) ? "selected" : ""; ?>><?php echo __("For uploaders"); ?></option>
                                                                     <option value="1" <?php echo ($config->getAuthCanViewChart() == 1) ? "selected" : ""; ?>><?php echo __("For selected, admin view"); ?></option>
@@ -369,7 +359,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <label class="col-md-4  text-right font-weight-bold"><?php echo __("Authenticated users can comment videos"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
-                                                                <span class="input-group-addon"><i class="fa fa-commenting"></i></span>
+                                                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-comments"></i></div></span>
 
                                                                 <select class="form-control" id="authCanComment"  >
                                                                     <option value="1" <?php echo ($config->getAuthCanComment() == 1) ? "selected" : ""; ?>><?php echo __("Yes"); ?></option>
@@ -547,13 +537,13 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Test your email"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <div class="input-group-prepend">
-                                                                    <span class="btn-sm btn-success btn-large" id="btnReloadCapcha">
+                                                                    <div class="input-group-text"><span class="btn-sm btn-success btn-large" id="btnReloadCapcha">
                                                                         <span class="fas fa-sync-alt"></span>
-                                                                    </span>
+                                                                    </span></div>
                                                                 </div>
-                                                                <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha" height="48"></span>
+                                                                <span class="input-group-prepend"><div class="input-group-text"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha" height="48"</div></span>
                                                                 <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
-                                                                <span class="btn btn-warning btn-lg" id="testEmail" ><i class="fas fa-at"></i> <?php echo __("Test Email"); ?> <span class="glyphicon glyphicon-send"></span></span>
+                                                                <span class="btn btn-warning btn-lg" id="testEmail" ><i class="fas fa-at"></i> <?php echo __("Test Email"); ?> <span class="fas fa-share-square"></span></span>
                                                             </div>
                                                         </div>
 
@@ -567,6 +557,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="tab-pane fade" id="tabHead">
 
                                             <div class="card border-top-0">
@@ -596,7 +587,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                 <!-- Button -->
                                 <div class="row">
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-success btn-large btn-block" ><i class="fas fa-save"></i> <?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>
+                                        <button type="submit" class="btn btn-success btn-large btn-block" ><i class="fas fa-save"></i> <?php echo __("Save"); ?></button>
                                     </div>
                                 </div>
                             </div>
