@@ -423,40 +423,32 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                             <div class="row bgWhite border border-light rounded bg-light" id="shareDiv">
                                 <div class="tabbable-panel">
                                     <div class="tabbable-line text-muted">
-                                        <ul class="nav nav-tabs">
-                                            <li class="nav-item">
+                                        <div class="nav">
                                                 <a class="nav-link " href="#tabShare" data-toggle="tab">
                                                     <span class="fa fa-share"></span>
                                                     <?php echo __("Share"); ?>
                                                 </a>
-                                            </li>
 
                                             <?php
                                             if (empty($objSecure->disableEmbedMode)) {
                                                 ?>
-                                                <li class="nav-item">
                                                     <a class="nav-link " href="#tabEmbed" data-toggle="tab">
                                                         <span class="fa fa-code"></span>
                                                         <?php echo __("Embed"); ?>
                                                     </a>
-                                                </li>
                                                 <?php
                                             }
                                             ?>
 
-                                            <li class="nav-item">
                                                 <a class="nav-link" href="#tabEmail" data-toggle="tab">
                                                     <span class="fa fa-envelope"></span>
                                                     <?php echo __("E-mail"); ?>
                                                 </a>
-                                            </li>
-                                            <li class="nav-item">
                                                 <a class="nav-link" href="#tabPermaLink" data-toggle="tab">
                                                     <span class="fa fa-link"></span>
                                                     <?php echo __("Permanent Link"); ?>
                                                 </a>
-                                            </li>
-                                        </ul>
+                                        </div>
                                         <div class="tab-content clearfix">
                                             <div class="tab-pane active" id="tabShare">
                                                 <?php
@@ -486,11 +478,11 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                                     <form class="well " action="<?php echo $global['webSiteRootURL']; ?>sendEmail" method="post"  id="contact_form">
                                                         <fieldset>
                                                             <!-- Text input-->
-                                                            <div class=" ">
-                                                                <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
-                                                                <div class="col-md-8 inputGroupContainer">
+                                                            <div class="form-inline mt-1">
+                                                                <label class="col-4 col-form-label" for="email"><?php echo __("E-mail"); ?></label>
+                                                                <div class="col-8 inputGroupContainer">
                                                                     <div class="input-group">
-                                                                        <span class="input-group-addon"><i class="fas fa-envelope"></i></span>
+                                                                        <span class="input-group-prepend"><div class="input-group-text"><span class="fas fa-envelope"></span></div></span>
                                                                         <input name="email" placeholder="<?php echo __("E-mail Address"); ?>" class="form-control"  type="text">
                                                                     </div>
                                                                 </div>
@@ -498,29 +490,29 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
 
                                                             <!-- Text area -->
 
-                                                            <div class=" ">
+                                                            <div class="form-inline mt-1">
                                                                 <label class="col-md-4 col-form-label"><?php echo __("Message"); ?></label>
                                                                 <div class="col-md-8 inputGroupContainer">
                                                                     <div class="input-group">
-                                                                        <span class="input-group-addon"><i class="fas fa-pencil-alt"></i></span>
+                                                                        <span class="input-group-prepend"><div class="input-group-text"><span class="fas fa-pencil-alt"></span></div></span>
                                                                         <textarea class="form-control" name="comment" placeholder="<?php echo __("Message"); ?>"><?php echo __("I would like to share this video with you:"); ?> <?php echo Video::getLink($video['id'], $video['clean_title']); ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class=" ">
-                                                                <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
-                                                                <div class="col-md-8 inputGroupContainer">
+                                                            <div class="form-inline mt-1">
+                                                                <label class="col-4 col-form-label"><?php echo __("Type the code"); ?></label>
+                                                                <div class="col-8 inputGroupContainer">
                                                                     <div class="input-group">
-                                                                        <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                                                        <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="fas fa-sync"></span></span></span>
-                                                                        <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
+                                                                        <span class="input-group-prepend"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
+                                                                        <span class="input-group-prepend"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="fas fa-sync"></span></span></span>
+                                                                        <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Button -->
-                                                            <div class=" ">
-                                                                <label class="col-md-4 col-form-label"></label>
-                                                                <div class="col-md-8">
+                                                            <div class="form-inline mt-1">
+                                                                <label class="col-4 col-form-label"></label>
+                                                                <div class="col-8">
                                                                     <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="fas fa-share-square"></span></button>
                                                                 </div>
                                                             </div>
@@ -558,15 +550,15 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                             </div>
 
                                             <div class="tab-pane" id="tabPermaLink">
-                                                <div class=" ">
-                                                    <label class="col-form-label"><?php echo __("Permanent Link") ?></label>
-                                                    <div class="">
+                                                <div class="form-inline col-12">
+                                                    <label class="col-form-label col-4"><?php echo __("Permanent Link") ?></label>
+                                                    <div class="col-8">
                                                         <input value="<?php echo Video::getPermaLink($video['id']); ?>" class="form-control" readonly="readonly"/>
                                                     </div>
                                                 </div>
-                                                <div class=" ">
-                                                    <label class="col-form-label"><?php echo __("URL Friendly") ?> (SEO)</label>
-                                                    <div class="">
+                                                <div class="form-inline col-12">
+                                                    <label class="col-form-label col-4"><?php echo __("URL Friendly") ?> (SEO)</label>
+                                                    <div class="col-8">
                                                         <input value="<?php echo Video::getURLFriendly($video['id']); ?>" class="form-control" readonly="readonly"/>
                                                     </div>
                                                 </div>
