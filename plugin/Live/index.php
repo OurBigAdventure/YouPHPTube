@@ -85,7 +85,7 @@ if (empty($channelName)) {
                                             <i class="fa fa-camera"></i> <?php echo __("Enable WebCam Stream"); ?>
                                         </button>
                                         <div class="alert alert-warning">
-                                            <i class="fa fa-warning"><?php echo __("We will check if there is a stream conflict before stream"); ?></i>
+                                            <i class="fas fa-exclamation-triangle"><?php echo __("We will check if there is a stream conflict before stream"); ?></i>
                                         </div>
 
                                         <div class="alert alert-info">
@@ -121,7 +121,7 @@ if (empty($channelName)) {
                             <div class=" ">
                                 <label for="server"><i class="fa fa-server"></i> <?php echo __("Server URL"); ?>:</label>
                                 <input type="text" class="form-control" id="server" value="<?php echo $p->getServer(); ?>?p=<?php echo User::getUserPass(); ?>" readonly="readonly">
-                                <small class="badge badge-info"><i class="fa fa-warning"></i> <?php echo __("If you change your password the Server URL parameters will be changed too."); ?></small>
+                                <small class="badge badge-info"><i class="fas fa-exclamation-triangle"></i> <?php echo __("If you change your password the Server URL parameters will be changed too."); ?></small>
                             </div>
                             <div class=" ">
                                 <label for="streamkey"><i class="fa fa-key"></i> <?php echo __("Stream name/key"); ?>:</label>
@@ -131,7 +131,7 @@ if (empty($channelName)) {
                                         <a class="btn btn-light" href="<?php echo $global['webSiteRootURL']; ?>plugin/Live/?resetKey=1"><i class="fa fa-refresh"></i> <?php echo __("Reset Key"); ?></a>
                                     </span>
                                 </div>
-                                <span class="badge badge-warning"><i class="fa fa-warning"></i> <?php echo __("Anyone with this key can watch your live stream."); ?></span>
+                                <span class="badge badge-warning"><i class="fas fa-exclamation-triangle"></i> <?php echo __("Anyone with this key can watch your live stream."); ?></span>
                             </div>
                         </div>
                     </div>
