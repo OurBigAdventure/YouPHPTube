@@ -147,8 +147,10 @@ if (!User::isAdmin()) {
                 <div class="modal-dialog" role="document" style="width: 800px;">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title"><?php echo __("Video Form"); ?></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                         <div class="modal-body" style="max-height: 70vh; overflow-y: scroll;">
                             <div class="row">
@@ -203,8 +205,10 @@ if (!User::isAdmin()) {
                 <div class="modal-dialog" role="document" style="width: 800px;">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title"><?php echo __("Charts"); ?></h4>
+                          <h4 class="modal-title"><?php echo __("Charts"); ?></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                         <div class="modal-body" style="max-height: 70vh; overflow-y: scroll;">
                             <canvas id="canvas"></canvas>
