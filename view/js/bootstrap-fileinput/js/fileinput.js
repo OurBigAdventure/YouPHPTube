@@ -851,7 +851,7 @@
                     downloadIcon: '<i class="glyphicon glyphicon-download"></i>',
                     downloadClass: 'btn btn-kv btn-light btn-outline-secondary',
                     downloadTitle: 'Download file',
-                    zoomIcon: '<i class="glyphicon glyphicon-zoom-in"></i>',
+                    zoomIcon: '<i class="fas fa-search-plus"></i>',
                     zoomClass: 'btn btn-kv btn-light btn-outline-secondary',
                     zoomTitle: 'View Details',
                     dragIcon: '<i class="glyphicon glyphicon-move"></i>',
@@ -4138,10 +4138,10 @@
         previewZoomButtonIcons: {
             prev: '<i class="glyphicon glyphicon-triangle-left"></i>',
             next: '<i class="glyphicon glyphicon-triangle-right"></i>',
-            toggleheader: '<i class="glyphicon glyphicon-resize-vertical"></i>',
-            fullscreen: '<i class="glyphicon glyphicon-fullscreen"></i>',
+            toggleheader: '<i class="fas fa-arrows-alt-v"></i>',
+            fullscreen: '<i class="fas fa-expand-arrows-alt"></i>',
             borderless: '<i class="glyphicon glyphicon-resize-full"></i>',
-            close: '<i class="glyphicon glyphicon-remove"></i>'
+            close: '<i class="far fa-times-circle"></i>'
         },
         previewZoomButtonClasses: {
             prev: 'btn btn-navigate',

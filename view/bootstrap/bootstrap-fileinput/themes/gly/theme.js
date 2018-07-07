@@ -17,7 +17,7 @@
         fileActionSettings: {
             removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
             uploadIcon: '<i class="glyphicon glyphicon-upload"></i>',
-            zoomIcon: '<i class="glyphicon glyphicon-zoom-in"></i>',
+            zoomIcon: '<i class="fas fa-search-plus"></i>',
             dragIcon: '<i class="glyphicon glyphicon-move"></i>',
             indicatorNew: '<i class="glyphicon glyphicon-plus-sign text-warning"></i>',
             indicatorSuccess: '<i class="glyphicon glyphicon-ok-sign text-success"></i>',
@@ -30,10 +30,10 @@
         previewZoomButtonIcons: {
             prev: '<i class="glyphicon glyphicon-triangle-left"></i>',
             next: '<i class="glyphicon glyphicon-triangle-right"></i>',
-            toggleheader: '<i class="glyphicon glyphicon-resize-vertical"></i>',
-            fullscreen: '<i class="glyphicon glyphicon-fullscreen"></i>',
+            toggleheader: '<i class="fas fa-arrows-alt-v"></i>',
+            fullscreen: '<i class="fas fa-expand-arrows-alt"></i>',
             borderless: '<i class="glyphicon glyphicon-resize-full"></i>',
-            close: '<i class="glyphicon glyphicon-remove"></i>'
+            close: '<i class="far fa-times-circle"></i>'
         },
         previewFileIcon: '<i class="glyphicon glyphicon-file"></i>',
         browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>&nbsp;',

@@ -60,7 +60,7 @@
 				return '<a class="list-group-item well" href="#"><span>No Results</span></a>';
 			},
 			cancelNode: function() {
-				return '<span class="btn glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>';
+				return '<span class="btn far fa-times-circle form-control-feedback" aria-hidden="true"></span>';
 			},
 			loadingClass: 'bts-loading-list',
 			itemClassTmp: 'bts-dynamic-item',
