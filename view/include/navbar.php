@@ -366,7 +366,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                                         if ((isset($advancedCustom->onlyVerifiedEmailCanUpload) && $advancedCustom->onlyVerifiedEmailCanUpload && User::isVerified()) || (isset($advancedCustom->onlyVerifiedEmailCanUpload) && !$advancedCustom->onlyVerifiedEmailCanUpload) || !isset($advancedCustom->onlyVerifiedEmailCanUpload)
                                         ) {
                                             ?>
-                                            <div class="dropdown-menu dropdown-menu-right" role="menu" style="">
+                                            <div class="dropdown-menu dropdown-menu-right" role="menu" style="padding: 5px;">
                                                 <?php
                                                 if (!empty($advancedCustom->encoderNetwork)) {
                                                     ?>
