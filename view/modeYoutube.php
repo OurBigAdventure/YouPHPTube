@@ -638,60 +638,9 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                                 </span>
                             </div>
                             <div class="col-lg-12 col-sm-12 col-12 bottom-border autoPlayVideo" itemscope itemtype="http://schema.org/VideoObject" style="display: none;" >
-                                <a href="<?php echo $global['webSiteRootURL'], $catLink; ?>video/<?php echo $autoPlayVideo['clean_title']; ?>" title="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" class="videoLink h6 row">
-                                    <div class="col-lg-5 col-sm-5 col-5 nopadding thumbsImage">
-                                        <?php
-                                        $imgGif = "";
-                                        if (file_exists("{$global['systemRootPath']}videos/{$autoPlayVideo['filename']}.gif")) {
-                                            $imgGif = "{$global['webSiteRootURL']}videos/{$autoPlayVideo['filename']}.gif";
-                                        }
-                                        if (($autoPlayVideo['type'] !== "audio") && ($autoPlayVideo['type'] !== "linkAudio")) {
-                                            $img = "{$global['webSiteRootURL']}videos/{$autoPlayVideo['filename']}.jpg";
-                                            $img_portrait = ($autoPlayVideo['rotation'] === "90" || $autoPlayVideo['rotation'] === "270") ? "img-portrait" : "";
-                                        } else {
-                                            $img = "{$global['webSiteRootURL']}view/img/audio_wave.jpg";
-                                            $img_portrait = "";
-                                        }
-                                        ?>
-                                        <img src="<?php echo $img; ?>" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" class="img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" itemprop="thumbnail" />
-                                        <?php if (!empty($imgGif)) { ?>
-                                            <img src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none; width: 0; height: 0;" alt="<?php echo str_replace('"', '', $autoPlayVideo['title']); ?>" id="thumbsGIF<?php echo $autoPlayVideo['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $autoPlayVideo['rotation']; ?>" height="130" />
-                                        <?php } ?>
-                                        <meta itemprop="thumbnailUrl" content="<?php echo $img; ?>" />
-                                        <meta itemprop="contentURL" content="<?php echo Video::getLink($autoPlayVideo['id'], $autoPlayVideo['clean_title']); ?>" />
-                                        <meta itemprop="embedURL" content="<?php echo Video::getLink($autoPlayVideo['id'], $autoPlayVideo['clean_title'], true); ?>" />
-                                        <meta itemprop="uploadDate" content="<?php echo $autoPlayVideo['created']; ?>" />
-                                        <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($autoPlayVideo['duration']); ?>"><?php echo Video::getCleanDuration($autoPlayVideo['duration']); ?></time>
-                                    </div>
-                                    <div class="col-lg-7 col-sm-7 col-7 videosDetails">
-                                        <div class="title"><strong itemprop="name" class="title"><?php echo $autoPlayVideo['title']; ?></strong></div>
-                                        <div class="details" itemprop="description">
-                                            <div>
-                                                <strong><?php echo __("Category"); ?>: </strong>
-                                                <span class="<?php echo $autoPlayVideo['iconClass']; ?>"></span>
-                                                <?php echo $autoPlayVideo['category']; ?>
-                                            </div>
-                                            <div>
-                                                <strong class=""><?php echo number_format($autoPlayVideo['views_count'], 0); ?></strong>
-                                                <?php echo __("Views"); ?>
-                                            </div>
-                                            <div><?php echo $autoPlayVideo['creator']; ?></div>
-                                        </div>
-                                        <div class="row">
-                                            <?php
-                                            if (!empty($autoPlayVideo['tags'])) {
-                                                foreach ($autoPlayVideo['tags'] as $autoPlayVideo2) {
-                                                    if ($autoPlayVideo2->label === __("Group")) {
-                                                        ?>
-                                                        <span class="badge badge-<?php echo $autoPlayVideo2->type; ?>"><?php echo $autoPlayVideo2->text; ?></span>
-                                                        <?php
-                                                    }
-                                                }
-                                            }
-                                            ?>
-                                        </div>
-                                    </div>
-                                </a>
+                                <?php
+                                echo youtubeModeVideoItem($autoPlayVideo);
+                                ?>
                             </div>
                         <?php } if (!empty($advancedCustom->showAdsenseBannerOnLeft)) {
                             ?>

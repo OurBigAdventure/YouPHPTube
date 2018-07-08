@@ -22,7 +22,6 @@ $theme = $config->getTheme();
 $cssFiles = array();
 $cssFiles[] = "view/css/custom/{$theme}.css"; // I had to move it to be the first because the font load
 $cssFiles[] = "view/js/seetalert/sweetalert.css";
-$cssFiles[] = "view/bootstrap/bootstrapSelectPicker/css/bootstrap-select.min.css";
 $cssFiles[] = "view/js/bootgrid/jquery.bootgrid.css";
 $cssFiles[] = "view/css/main.css";
 $cssFiles = array_merge($cssFiles, YouPHPTubePlugin::getCSSFiles());

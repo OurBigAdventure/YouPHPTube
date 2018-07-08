@@ -10,9 +10,8 @@ require_once '../objects/functions.php';
     <head>
         <title>Install YouPHPTube</title>
         <link rel="icon" href="../view/img/favicon.png">
-<link href="../view/css/material/css/material.css" rel="stylesheet" type="text/css"/>
-<link href="../view/css/font-awesome-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../view/bootstrap/bootstrapSelectPicker/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../view/css/material/css/material.css" rel="stylesheet" type="text/css"/>
+        <link href="../view/css/font-awesome-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"/>
         <link href="../view/js/seetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
         <link href="../view/css/flagstrap/css/flags.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
@@ -95,13 +94,13 @@ require_once '../objects/functions.php';
                                 <strong>Your videos directory must be writable</strong>
                                 <details>
                                     <?php
-                                    $dir = getPathToApplication()."videos";
-                                    if(!file_exists($dir)){
-                                    ?>
-                                    The video directory does not exists, YouPHPTube had no permition to create it, you must create it manualy!
-                                    <br>
-                                    <pre><code>sudo mkdir <?php echo $dir; ?></code></pre>
-                                    <?php
+                                    $dir = getPathToApplication() . "videos";
+                                    if (!file_exists($dir)) {
+                                        ?>
+                                        The video directory does not exists, YouPHPTube had no permition to create it, you must create it manualy!
+                                        <br>
+                                        <pre><code>sudo mkdir <?php echo $dir; ?></code></pre>
+                                        <?php
                                     }
                                     ?>
                                     <br>
@@ -112,8 +111,8 @@ require_once '../objects/functions.php';
                             </div>
                             <?php
                         }
-                        $pathToPHPini= php_ini_loaded_file();
-                        if(empty($pathToPHPini)){
+                        $pathToPHPini = php_ini_loaded_file();
+                        if (empty($pathToPHPini)) {
                             $pathToPHPini = "/etc/php/7.0/cli/php.ini";
                         }
                         ?>
@@ -225,9 +224,9 @@ require_once '../objects/functions.php';
                                     });
                                 </script>
                                 <style>
-                                  #navBarFlagInstall ul {
-                                    background-color: white;
-                                  }
+                                    #navBarFlagInstall ul {
+                                        background-color: white;
+                                    }
                                 </style>
                                 <div id="navBarFlagInstall" class="dropdown bg-light" data-background-color="white" data-input-name="country" data-selected-country="us"></div>
 
@@ -252,79 +251,78 @@ require_once '../objects/functions.php';
         <script src="../view/bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
         <script src="../view/css/material/js/material.js" type="text/javascript"></script>
         <script src="../view/css/flagstrap/js/jquery.flagstrap.min.js" type="text/javascript"></script>
-        <script src="../view/bootstrap/bootstrapSelectPicker/js/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="../view/js/seetalert/sweetalert.min.js" type="text/javascript"></script>
         <script src="../view/js/jquery.lazy/jquery.lazy.min.js" type="text/javascript"></script>
         <script src="../view/js/jquery.lazy/jquery.lazy.plugins.min.js" type="text/javascript"></script>
         <script src="../view/js/script.js" type="text/javascript"></script>
 
         <script>
-            $(function () {
-                $('.selectpicker').selectpicker();
-                $('#configurationForm').submit(function (evt) {
-                    evt.preventDefault();
+                                $(function () {
+                                    //$('.selectpicker').selectpicker();
+                                    $('#configurationForm').submit(function (evt) {
+                                        evt.preventDefault();
 
-                    var systemAdminPass = $('#systemAdminPass').val();
-                    var confirmSystemAdminPass = $('#confirmSystemAdminPass').val();
+                                        var systemAdminPass = $('#systemAdminPass').val();
+                                        var confirmSystemAdminPass = $('#confirmSystemAdminPass').val();
 
-                    if (!systemAdminPass) {
-                        swal("Sorry!", "Your System Admin Password can not be blank!", "error");
-                        return false;
-                    }
-                    if (systemAdminPass != confirmSystemAdminPass) {
-                        swal("Sorry!", "Your System Admin Password must be confirmed!", "error");
-                        return false;
-                    }
+                                        if (!systemAdminPass) {
+                                            swal("Sorry!", "Your System Admin Password can not be blank!", "error");
+                                            return false;
+                                        }
+                                        if (systemAdminPass != confirmSystemAdminPass) {
+                                            swal("Sorry!", "Your System Admin Password must be confirmed!", "error");
+                                            return false;
+                                        }
 
-                    modal.showPleaseWait();
-                    var webSiteRootURL = $('#webSiteRootURL').val();
-                    var systemRootPath = $('#systemRootPath').val();
-                    var webSiteTitle = $('#webSiteTitle').val();
-                    var databaseHost = $('#databaseHost').val();
-                    var databasePort = $('#databasePort').val();
-                    var databaseUser = $('#databaseUser').val();
-                    var databasePass = $('#databasePass').val();
-                    var databaseName = $('#databaseName').val();
-                    var mainLanguage = $('#mainLanguage').val();
-                    var contactEmail = $('#contactEmail').val();
-                    var createTables = $('#createTables').val();
-                    $.ajax({
-                        url: webSiteRootURL + 'install/checkConfiguration.php',
-                        data: {
-                            webSiteRootURL: webSiteRootURL,
-                            systemRootPath: systemRootPath,
-                            webSiteTitle: webSiteTitle,
-                            databaseHost: databaseHost,
-                            databasePort: databasePort,
-                            databaseUser: databaseUser,
-                            databasePass: databasePass,
-                            databaseName: databaseName,
-                            mainLanguage: mainLanguage,
-                            systemAdminPass: systemAdminPass,
-                            contactEmail: contactEmail,
-                            createTables: createTables
-                        },
-                        type: 'post',
-                        success: function (response) {
-                            modal.hidePleaseWait();
-                            if (response.error) {
-                                swal("Sorry!", response.error, "error");
-                            } else {
-                                swal("Congratulations!", response.error, "success");
-                                window.location.reload(false);
-                            }
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            modal.hidePleaseWait();
-                            if (xhr.status == 404) {
-                                swal("Sorry!", "Your Site URL is wrong!", "error");
-                            }else{
-                                swal("Sorry!", "Unknow error!", "error");
-                            }
-                        }
-                    });
-                });
-            });
+                                        modal.showPleaseWait();
+                                        var webSiteRootURL = $('#webSiteRootURL').val();
+                                        var systemRootPath = $('#systemRootPath').val();
+                                        var webSiteTitle = $('#webSiteTitle').val();
+                                        var databaseHost = $('#databaseHost').val();
+                                        var databasePort = $('#databasePort').val();
+                                        var databaseUser = $('#databaseUser').val();
+                                        var databasePass = $('#databasePass').val();
+                                        var databaseName = $('#databaseName').val();
+                                        var mainLanguage = $('#mainLanguage').val();
+                                        var contactEmail = $('#contactEmail').val();
+                                        var createTables = $('#createTables').val();
+                                        $.ajax({
+                                            url: webSiteRootURL + 'install/checkConfiguration.php',
+                                            data: {
+                                                webSiteRootURL: webSiteRootURL,
+                                                systemRootPath: systemRootPath,
+                                                webSiteTitle: webSiteTitle,
+                                                databaseHost: databaseHost,
+                                                databasePort: databasePort,
+                                                databaseUser: databaseUser,
+                                                databasePass: databasePass,
+                                                databaseName: databaseName,
+                                                mainLanguage: mainLanguage,
+                                                systemAdminPass: systemAdminPass,
+                                                contactEmail: contactEmail,
+                                                createTables: createTables
+                                            },
+                                            type: 'post',
+                                            success: function (response) {
+                                                modal.hidePleaseWait();
+                                                if (response.error) {
+                                                    swal("Sorry!", response.error, "error");
+                                                } else {
+                                                    swal("Congratulations!", response.error, "success");
+                                                    window.location.reload(false);
+                                                }
+                                            },
+                                            error: function (xhr, ajaxOptions, thrownError) {
+                                                modal.hidePleaseWait();
+                                                if (xhr.status == 404) {
+                                                    swal("Sorry!", "Your Site URL is wrong!", "error");
+                                                } else {
+                                                    swal("Sorry!", "Unknow error!", "error");
+                                                }
+                                            }
+                                        });
+                                    });
+                                });
         </script>
     </body>
 </html>

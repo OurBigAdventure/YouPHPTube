@@ -1,6 +1,6 @@
 <?php
 global $global, $config;
-if(!isset($global['systemRootPath'])){
+if (!isset($global['systemRootPath'])) {
     require_once '../videos/configuration.php';
 }
 require_once $global['systemRootPath'] . 'objects/user.php';
@@ -54,89 +54,36 @@ if (!empty($video['clean_title'])) {
     $videoName = $_GET['videoName'];
 }
 ?>
-<div class="col-md-8 col-sm-12 " style="position: relative; z-index: 2;" >
-    <select class="form-control" id="sortBy" >
-        <option value="title" data-icon="glyphicon-text-height" value="desc" <?php echo (!empty($_POST['sort']['title']) && $_POST['sort']['title'] == 'asc') ? "selected='selected'" : "" ?>> <?php echo __("Title"); ?></option>
-        <option value="newest" data-icon="glyphicon-sort-by-attributes" value="desc" <?php echo (!empty($_POST['sort']['created']) && $_POST['sort']['created'] == 'desc') ? "selected='selected'" : "" ?>> <?php echo __("Date added (newest)"); ?></option>
-        <option value="oldest" data-icon="glyphicon-sort-by-attributes-alt" value="asc" <?php echo (!empty($_POST['sort']['created']) && $_POST['sort']['created'] == 'asc') ? "selected='selected'" : "" ?>> <?php echo __("Date added (oldest)"); ?></option>
-        <option value="popular" data-icon="glyphicon-thumbs-up"  <?php echo (!empty($_POST['sort']['likes'])) ? "selected='selected'" : "" ?>> <?php echo __("Most popular"); ?></option>
-        <option value="views_count" data-icon="glyphicon-eye-open"  <?php echo (!empty($_POST['sort']['views_count'])) ? "selected='selected'" : "" ?>> <?php echo __("Most watched"); ?></option>
-    </select>
+<div class="row mb-2">
+    <div class="col-md-8 col-sm-12 " style="position: relative; z-index: 2;" >
+        <select class="form-control" id="sortBy" >
+            <option value="title" data-icon="glyphicon-text-height" value="desc" <?php echo (!empty($_POST['sort']['title']) && $_POST['sort']['title'] == 'asc') ? "selected='selected'" : "" ?>> <?php echo __("Title"); ?></option>
+            <option value="newest" data-icon="glyphicon-sort-by-attributes" value="desc" <?php echo (!empty($_POST['sort']['created']) && $_POST['sort']['created'] == 'desc') ? "selected='selected'" : "" ?>> <?php echo __("Date added (newest)"); ?></option>
+            <option value="oldest" data-icon="glyphicon-sort-by-attributes-alt" value="asc" <?php echo (!empty($_POST['sort']['created']) && $_POST['sort']['created'] == 'asc') ? "selected='selected'" : "" ?>> <?php echo __("Date added (oldest)"); ?></option>
+            <option value="popular" data-icon="glyphicon-thumbs-up"  <?php echo (!empty($_POST['sort']['likes'])) ? "selected='selected'" : "" ?>> <?php echo __("Most popular"); ?></option>
+            <option value="views_count" data-icon="glyphicon-eye-open"  <?php echo (!empty($_POST['sort']['views_count'])) ? "selected='selected'" : "" ?>> <?php echo __("Most watched"); ?></option>
+        </select>
+    </div>
+    <div class="col-md-4 col-sm-12" style="position: relative; z-index: 2;">
+        <select class="form-control" id="rowCount">
+            <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '10') ? "selected='selected'" : "" ?>>10</option>
+            <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '20') ? "selected='selected'" : "" ?>>20</option>
+            <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '30') ? "selected='selected'" : "" ?>>30</option>
+            <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '40') ? "selected='selected'" : "" ?>>40</option>
+            <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '50') ? "selected='selected'" : "" ?>>50</option>
+        </select>
+    </div>
 </div>
-<div class="col-md-4 col-sm-12" style="position: relative; z-index: 2;">
-    <select class="form-control" id="rowCount">
-        <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '10') ? "selected='selected'" : "" ?>>10</option>
-        <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '20') ? "selected='selected'" : "" ?>>20</option>
-        <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '30') ? "selected='selected'" : "" ?>>30</option>
-        <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '40') ? "selected='selected'" : "" ?>>40</option>
-        <option <?php echo (!empty($_POST['rowCount']) && $_POST['rowCount'] == '50') ? "selected='selected'" : "" ?>>50</option>
-    </select>
-</div>
-
 <?php
 foreach ($videos as $key => $value) {
     if (!empty($video['id']) && $video['id'] == $value['id']) {
         continue; // skip video
     }
-    $name = User::getNameIdentificationById($value['users_id']);
-    $value['creator'] = '<div class="float-left"><img src="' . User::getPhoto($value['users_id']) . '" alt="" class="img img-fluid rounded-circle zoom" style="max-width: 20px;"/></div><div class="commentDetails" style="margin-left:25px;"><div class="commenterName text-muted"><strong>' . $name . '</strong> <small>' . humanTiming(strtotime($value['videoCreation'])) . '</small></div></div>';
     ?>
     <div class="col-lg-12 col-sm-12 col-12 bottom-border" id="divVideo-<?php echo $value['id']; ?>" itemscope itemtype="http://schema.org/VideoObject">
-        <a href="<?php echo $global['webSiteRootURL'], $catLink; ?>video/<?php
-        echo $value['clean_title'];
-        if (!empty($_GET['page']) && $_GET['page'] > 1) {
-            echo "/page/{$_GET['page']}";
-        }
-        ?>" title="<?php echo $value['title']; ?>" class="videoLink h6 row">
-            <div class="col-lg-5 col-sm-5 col-5 thumbsImage" style="padding-right: 0;" >
-                <?php
-                $images = Video::getImageFromFilename($value['filename'], $value['type']);
-
-                $imgGif = $images->thumbsGif;
-                $img = $images->thumbsJpg;
-                if (($value['type'] !== "audio")&&($value['type'] !== "linkAudio")) {
-                    $img_portrait = ($value['rotation'] === "90" || $value['rotation'] === "270") ? "img-portrait" : "";
-                } else {
-                    $img_portrait = "";
-                }
-                ?>
-                <img src="<?php echo $images->thumbsJpgSmall; ?>" data-src="<?php echo $img; ?>" alt="<?php echo $value['title']; ?>" class="thumbsJPG img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>  <?php echo ($img!=$images->thumbsJpgSmall)?"blur":""; ?>"  />
-                <?php
-                if (!empty($imgGif)) {
-                    ?>
-                    <img src="<?php echo $global['webSiteRootURL']; ?>view/img/loading-gif.png" data-src="<?php echo $imgGif; ?>" style="position: absolute; top: 0; display: none;" alt="<?php echo $value['title']; ?>" id="thumbsGIF<?php echo $value['id']; ?>" class="thumbsGIF img-fluid <?php echo $img_portrait; ?>  rotate<?php echo $value['rotation']; ?>" />
-                <?php } ?>
-                <meta itemprop="thumbnailUrl" content="<?php echo $img; ?>" />
-                <meta itemprop="uploadDate" content="<?php echo $value['created']; ?>" />
-                <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($value['duration']); ?>"><?php echo Video::getCleanDuration($value['duration']); ?></time>
-            </div>
-            <div class="col-lg-7 col-sm-7 col-7 videosDetails" style="padding-left: 5px;" >
-                <div class="text-uppercase"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
-                <div class="details" itemprop="description">
-                    <div>
-                        <strong><?php echo __("Category"); ?>: </strong>
-                        <span class="<?php echo $value['iconClass']; ?>"></span>
-                        <?php echo $value['category']; ?>
-                    </div>
-                    <div>
-                        <strong class="view-count<?php echo $value['id']; ?>"><?php echo number_format($value['views_count'], 0); ?></strong> <?php echo __("Views"); ?>
-                    </div>
-                    <div><?php echo $value['creator']; ?></div>
-
-                </div>
-                <div class="row">
-                    <?php
-                    foreach ($value['tags'] as $value2) {
-                        if ($value2->label === __("Group")) {
-                            ?>
-                            <span class="badge badge-<?php echo $value2->type; ?>"><?php echo $value2->text; ?></span>
-                            <?php
-                        }
-                    }
-                    ?>
-                </div>
-            </div>
-        </a>
+        <?php
+        echo youtubeModeVideoItem($value);
+        ?>
     </div>
     <?php
 }
@@ -210,20 +157,20 @@ foreach ($videos as $key => $value) {
                                 loadPage(num);
                             });
                             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                                $('#rowCount, #sortBy').selectpicker('mobile');
+                                //$('#rowCount, #sortBy').selectpicker('mobile');
                             } else {
-                                $('#rowCount, #sortBy').selectpicker();
+                                //$('#rowCount, #sortBy').selectpicker();
                             }
 
                             $('.thumbsJPG').lazy({
                                 effect: 'fadeIn',
                                 visibleOnly: true,
                                 // called after an element was successfully handled
-                                afterLoad: function(element) {
+                                afterLoad: function (element) {
                                     element.removeClass('blur');
                                     element.parent().find('.thumbsGIF').lazy({
                                         effect: 'fadeIn',
-                                        afterLoad: function(element) {
+                                        afterLoad: function (element) {
                                             $(element).hide();
                                         }
                                     });
