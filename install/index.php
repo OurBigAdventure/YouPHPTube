@@ -10,12 +10,10 @@ require_once '../objects/functions.php';
     <head>
         <title>Install YouPHPTube</title>
         <link rel="icon" href="../view/img/favicon.png">
-        <link href="../view/css/material/css/material.css" rel="stylesheet" type="text/css"/>
         <link href="../view/css/font-awesome-5.0.10/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="../view/js/seetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
         <link href="../view/css/flagstrap/css/flags.css" rel="stylesheet" type="text/css"/>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="../view/js/jquery-3.3.1.min.js" type="text/javascript"></script>
 
 
@@ -40,7 +38,7 @@ require_once '../objects/functions.php';
             <div class="container">
                 <img src="../view/img/logo.png" alt="Logo" class="img img-fluid mx-auto.d-block"/>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-6">
 
                         <?php
                         if (isApache()) {
@@ -166,7 +164,7 @@ require_once '../objects/functions.php';
                         ?>
 
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-6">
                         <form id="configurationForm">
                             <div class="form-group">
                                 <label for="webSiteRootURL">Your Site URL</label>
@@ -249,8 +247,7 @@ require_once '../objects/functions.php';
             </div>
         <?php } ?>
         <script src="../view/bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
-        <script src="../view/css/material/js/material.js" type="text/javascript"></script>
-        <script src="../view/css/flagstrap/js/jquery.flagstrap.min.js" type="text/javascript"></script>
+        <script src="../view/css/flagstrap/js/jquery.flagstrap.js" type="text/javascript"></script>
         <script src="../view/js/seetalert/sweetalert.min.js" type="text/javascript"></script>
         <script src="../view/js/jquery.lazy/jquery.lazy.min.js" type="text/javascript"></script>
         <script src="../view/js/jquery.lazy/jquery.lazy.plugins.min.js" type="text/javascript"></script>
