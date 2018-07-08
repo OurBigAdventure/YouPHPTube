@@ -224,7 +224,7 @@ if (!empty($_GET['video_id'])) {
                                 </div>
                             </div>
                             <div id="videoLinkContent">
-                                <label for="videoLink" class="sr-only"><?php echo __("Video Link"); ?></label>
+                                <label for="videoLink"><?php echo __("Video Link"); ?></label>
                                 <input type="text" id="videoLink" class="form-control first" placeholder="<?php echo __("Video Link"); ?> http://www.your-embed-link.com/video" required>
                                 <select class="form-control last" id="videoLinkType" required>
                                     <option value="embed"><?php echo __("Embeded"); ?></option>
@@ -236,58 +236,67 @@ if (!empty($_GET['video_id'])) {
                             <form class="form-compact"  id="updateCategoryForm" onsubmit="">
                                 <input type="hidden" id="inputVideoId"  >
                                 <div class="titles">
-                                    <label for="inputTitle" class="sr-only"><?php echo __("Title"); ?></label>
-                                    <input type="text" id="inputTitle" class="form-control first" placeholder="<?php echo __("Title"); ?>" required autofocus>
-                                    <label for="inputCleanTitle" class="sr-only"><?php echo __("Clean Title"); ?></label>
-                                    <input type="text" id="inputCleanTitle" class="form-control" placeholder="<?php echo __("Clean Title"); ?>" required>
+                                    <div class="mb-3">
+                                        <label for="inputTitle" ><?php echo __("Title"); ?></label>
+                                        <input type="text" id="inputTitle" class="form-control first" placeholder="<?php echo __("Title"); ?>" required autofocus>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputCleanTitle"><?php echo __("Clean Title"); ?></label>
+                                        <input type="text" id="inputCleanTitle" class="form-control" placeholder="<?php echo __("Clean Title"); ?>" required>
+                                    </div>
                                 </div>
-                                <label for="inputDescription" class="sr-only"><?php echo __("Description"); ?></label>
-                                <textarea id="inputDescription" class="form-control" placeholder="<?php echo __("Description"); ?>" required></textarea>
-                                <label for="inputCategory" class="sr-only"><?php echo __("Category"); ?></label>
-                                <select class="form-control last" id="inputCategory" required>
-                                    <?php
-                                    foreach ($categories as $value) {
-                                        echo "<option value='{$value['id']}'>{$value['name']}</option>";
-                                    }
-                                    ?>
-                                </select>
-
-                                <ul class="list-group">
-                                    <li class="bg-light">
-                                        <span class="fa fa-globe"></span> <?php echo __("Public Video"); ?>
-                                        <div class="material-switch float-right">
-                                            <input id="public" type="checkbox" value="0" class="userGroups"/>
-                                            <label for="public" class="badge-success"></label>
-                                        </div>
-                                    </li>
-                                    <li class="bg-light active non-public">
-                                        <?php echo __("Groups that can see this video"); ?>
-                                        <a href="#" class="btn btn-info btn-sm float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
-                                    </li>
-                                    <?php
-                                    foreach ($userGroups as $value) {
+                                <div class="mb-3">
+                                    <label for="inputDescription"><?php echo __("Description"); ?></label>
+                                    <textarea id="inputDescription" class="form-control" placeholder="<?php echo __("Description"); ?>" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputCategory"><?php echo __("Category"); ?></label>
+                                    <select class="form-control last" id="inputCategory" required>
+                                        <?php
+                                        foreach ($categories as $value) {
+                                            echo "<option value='{$value['id']}'>{$value['name']}</option>";
+                                        }
                                         ?>
-                                        <li class="bg-light non-public">
-                                            <span class="fa fa-lock"></span>
-                                            <?php echo $value['group_name']; ?>
-                                            <span class="badge badge-info"><?php echo $value['total_users']; ?> Users linked</span>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <span class="fa fa-globe"></span> <?php echo __("Public Video"); ?>
                                             <div class="material-switch float-right">
-                                                <input id="videoGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="videoGroups"/>
-                                                <label for="videoGroup<?php echo $value['id']; ?>" class="badge-warning"></label>
+                                                <input id="public" type="checkbox" value="0" class="userGroups"/>
+                                                <label for="public" class="badge-success"></label>
                                             </div>
                                         </li>
+                                        <li class="list-group-item active non-public">
+                                            <?php echo __("Groups that can see this video"); ?>
+                                            <a href="#" class="btn btn-info btn-sm float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
+                                        </li>
                                         <?php
-                                    }
-                                    ?>
-                                </ul>
+                                        foreach ($userGroups as $value) {
+                                            ?>
+                                            <li class="list-group-item non-public">
+                                                <span class="fa fa-lock"></span>
+                                                <?php echo $value['group_name']; ?>
+                                                <span class="badge badge-info"><?php echo $value['total_users']; ?> Users linked</span>
+                                                <div class="material-switch float-right">
+                                                    <input id="videoGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="videoGroups"/>
+                                                    <label for="videoGroup<?php echo $value['id']; ?>" class="badge-warning"></label>
+                                                </div>
+                                            </li>
+                                            <?php
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                                <div class="row mb-3">
 
-                                <div class="row">
                                     <h3><?php echo __("Autoplay Next Video"); ?> <button class="btn btn-danger btn-sm" id="removeAutoplay"><i class="fa fa-trash"></i> <?php echo __("Remove Autoplay Next Video"); ?></button></h3>
                                     <div class="col-md-4">
                                         <img id="inputNextVideo-poster" src="view/img/notfound.jpg" class="ui-state-default" alt="">
                                     </div>
                                     <div class="col-md-8">
-                                        <input id="inputNextVideo" placeholder="<?php echo __("Autoplay Next Video"); ?>" class="form-control">
+                                        <input id="inputNextVideo" placeholder="<?php echo __("Autoplay Next Video"); ?>" class="form-control mb-2">
                                         <input id="inputNextVideoClean" placeholder="<?php echo __("Autoplay Next Video URL"); ?>" class="form-control" readonly="readonly">
                                         <input type="hidden" id="inputNextVideo-id">
                                     </div>
@@ -837,9 +846,11 @@ if (User::isAdmin()) {
                                                         if (row.status == "d" || row.status == "e") {
                                                             yt = "";
                                                         }
-<?php } else {
+<?php
+} else {
     echo "yt='';";
-} ?>
+}
+?>
                                                     if (row.status !== "a") {
                                                         tags += '<div id="encodeProgress' + row.id + '"></div>';
                                                     }

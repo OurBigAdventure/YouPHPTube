@@ -147,7 +147,7 @@ foreach ($videos as $value) {
 //var_dump($videos);
         ?>
         <div class="container-fluid">
-            <div class="bg-light clear clearfix">
+            <div>
                 <ul class="nav nav-tabs">
                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="fas fa-tachometer-alt"></i> <?php echo __("Dashboard"); ?></a></li>
                     <li class="nav-item"><a class="nav-link" data-toggle="tab" id="viewperchannel" href="#menu1"><i class="fab fa-youtube"></i> <i class="fa fa-eye"></i> <?php echo __("Video views - per Channel"); ?></a></li>
@@ -157,22 +157,22 @@ foreach ($videos as $value) {
                 </ul>
 
                 <div class="tab-content">
-                    <div id="dashboard" class="tab-pane fade show active" style="padding: 10px;">
+                    <div id="dashboard" class="tab-pane fade show active bg-white border border-top-0" style="padding: 10px;">
                         <?php
                             include $global['systemRootPath'].'view/report0.php';
                         ?>
                     </div>
-                    <div id="menu1" class="tab-pane fade" style="padding: 10px;">
+                    <div id="menu1" class="tab-pane fade bg-white border border-top-0" style="padding: 10px;">
                         <?php
                             include $global['systemRootPath'].'view/report1.php';
                         ?>
                     </div>
-                    <div id="menu2" class="tab-pane fade" style="padding: 10px;">
+                    <div id="menu2" class="tab-pane fade bg-white border border-top-0" style="padding: 10px;">
                         <?php
                             include $global['systemRootPath'].'view/report2.php';
                         ?>
                     </div>
-                    <div id="menu3" class="tab-pane fade" style="padding: 10px;">
+                    <div id="menu3" class="tab-pane fade bg-white border border-top-0" style="padding: 10px;">
                         <?php
                             include $global['systemRootPath'].'view/report3.php';
                         ?>

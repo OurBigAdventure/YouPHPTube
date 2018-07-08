@@ -36,7 +36,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
             <?php
             if (User::isAdmin()) {
                 ?>
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-12">
                         <form class="form-compact well "  id="updateConfigForm" onsubmit="">
 
@@ -86,7 +86,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         <span class="fa fa-info-circle"></span>
                                                         <?php echo __("We would like to thanks http://bootswatch.com/"); ?>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <?php
                                                         foreach (glob("{$global['systemRootPath']}view/css/custom/*.css") as $filename) {
                                                             //echo "$filename size " . filesize($filename) . "\n";
@@ -281,7 +281,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
 
                                             <div class="card border-top-0">
                                                 <div class="card-body">
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <label class="ml-md-auto font-weight-bold mr-md-2">
                                                             <?php echo __("Your Logo"); ?>
                                                         </label>
@@ -295,7 +295,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <label class="ml-md-auto font-weight-bold mr-md-2">
                                                             <?php echo __("Your Small Logo"); ?>  (32x32)
                                                         </label>
@@ -309,7 +309,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Web site title"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
@@ -318,7 +318,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Language"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
@@ -339,7 +339,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can upload videos"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
@@ -352,7 +352,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class="row form-inline">
+                                                    <div class="row mb-3">
                                                         <label class="col-md-4 text-right font-weight-bold"><?php echo __("Authenticated users can view chart"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
@@ -365,7 +365,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class="row form-inline">
+                                                    <div class="row mb-3">
                                                         <label class="col-md-4  text-right font-weight-bold"><?php echo __("Authenticated users can comment videos"); ?></label>
                                                         <div class="col-md-8 inputGroupContainer">
                                                             <div class="input-group">
@@ -379,7 +379,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <label for="autoplay" class="col-md-4  font-weight-bold ">
                                                             <span>
                                                                 <?php echo __("Autoplay Video on Load Page"); ?>
@@ -407,13 +407,13 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                     <?php
                                                     if (empty($global['disableAdvancedConfigurations'])) {
                                                         ?>
-                                                        <div class="row">
+                                                        <div class="row mb-3">
                                                             <div class="col-12">
                                                                 <button class="btn btn-danger btn-block" id="clearCache"><i class="fa fa-trash"></i> <?php echo __("Clear Cache Directory"); ?></button>
                                                             </div>
                                                         </div>
                                                         <hr>
-                                                        <div class="form-inline">
+                                                        <div class="form-inline mb-3">
                                                             <label for="encoder_url" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Encoder URL"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <input id="encoder_url" aria-describedby="encoder_urlHelp" class="form-control"  type="url" value="<?php echo $config->getEncoderURL(); ?>" >
@@ -425,7 +425,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             </div>
                                                         </div>
 
-                                                        <div class="form-inline">
+                                                        <div class="form-inline mb-3">
                                                             <label for="session_timeout" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Session Timeout in seconds"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <input id="session_timeout" class="form-control"  type="number" value="<?php echo $config->getSession_timeout(); ?>" >
@@ -433,7 +433,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
                                                         <hr>
 
-                                                        <div class="row">
+                                                        <div class="row mb-3">
                                                             <label for="disable_analytics" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable YouPHPTube Google Analytics"); ?></label>
                                                             <div class="col-8">
                                                                 <div class="material-switch">
@@ -449,7 +449,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
 
 
-                                                        <div class="row">
+                                                        <div class="row mb-3">
                                                             <label for="disable_youtubeupload" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable Youtube-Upload"); ?></label>
                                                             <div class="col-8">
                                                                 <div class="material-switch">
@@ -464,7 +464,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                         </div>
 
 
-                                                        <div class="row">
+                                                        <div class="row mb-3">
                                                             <label for="disable_rightclick" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable right-click-prevention"); ?></label>
                                                             <div class="col-8">
                                                                 <div class="material-switch">
@@ -479,7 +479,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             </div>
                                                         </div>
 
-                                                        <div class="row">
+                                                        <div class="row mb-3">
                                                             <label for="enableSmtp" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Enable SMTP"); ?></label>
                                                             <div class="col-8">
                                                                 <div class="material-switch">
@@ -493,7 +493,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             </div>
                                                         </div>
 
-                                                        <div class="row">
+                                                        <div class="row mb-3">
                                                             <label for="enableSmtpAuth" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Enable SMTP Auth"); ?></label>
                                                             <div class="col-8">
                                                                 <div class="material-switch">
@@ -507,7 +507,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             </div>
                                                         </div>
 
-                                                        <div class="form-inline">
+                                                        <div class="form-inline mb-3">
                                                             <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Secure"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <input id="smtpSecure" class="form-control"  type="text" value="<?php echo $config->getSmtpSecure(); ?>" placeholder="tls OR ssl" aria-describedby="smtpSecureHelp"    >
@@ -515,7 +515,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             </div>
                                                         </div>
 
-                                                        <div class="form-inline">
+                                                        <div class="form-inline mb-3">
                                                             <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Port"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <input id="smtpPort" class="form-control"  type="number" value="<?php echo $config->getSmtpPort(); ?>" placeholder="465 OR 587" aria-describedby="smtpPortHelp"    >
@@ -523,27 +523,27 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             </div>
                                                         </div>
 
-                                                        <div class="form-inline">
+                                                        <div class="form-inline mb-3">
                                                             <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Host"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <input id="smtpHost" class="form-control"  type="text" value="<?php echo $config->getSmtpHost(); ?>" placeholder="smtp.gmail.com" >
                                                             </div>
                                                         </div>
 
-                                                        <div class="form-inline">
+                                                        <div class="form-inline mb-3">
                                                             <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Username"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <input id="smtpUsername" class="form-control"  type="text" value="<?php echo $config->getSmtpUsername(); ?>" placeholder="email@gmail.com" >
                                                             </div>
                                                         </div>
 
-                                                        <div class="form-inline">
+                                                        <div class="form-inline mb-3">
                                                             <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("SMTP Password"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <input id="smtpPassword" class="form-control"  type="password" value="<?php echo $config->getSmtpPassword(); ?>" >
                                                             </div>
                                                         </div>
-                                                        <div class="form-inline">
+                                                        <div class="form-inline mb-3">
                                                             <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Test your email"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <div class="input-group-prepend">
@@ -581,7 +581,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                             <div class="card border-top-0">
                                                 <div class="card-body">
 
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <label class="col-2"><?php echo __("Head Code"); ?></label>
                                                         <div class="col-10">
                                                             <textarea id="head" class="form-control" type="text" rows="20" ><?php echo $config->getHead(); ?></textarea>
@@ -589,7 +589,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             <small>Leave blank for native code</small>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row mb-3">
                                                         <label class="col-2"><?php echo __("Google Ad Sense"); ?></label>
                                                         <div class="col-10">
                                                             <textarea id="adsense" class="form-control" type="text" rows="20" ><?php echo $config->getAdsense(); ?></textarea>
@@ -603,7 +603,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                     </div>
                                 </div>
                                 <!-- Button -->
-                                <div class="row">
+                                <div class="row mb-3">
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-success btn-large btn-block" ><i class="fas fa-save"></i> <?php echo __("Save"); ?></button>
                                     </div>

@@ -76,7 +76,7 @@ if (empty($channelName)) {
                     <?php
                     if (!empty($obj->experimentalWebcam)) {
                         ?>
-                        <div class="card">
+                        <div class="card mb-3">
                             <div class="card-header"><?php echo __("WebCam Streaming"); ?></div>
                             <div class="card-body">
                                 <div class="embed-responsive embed-responsive-16by9">
@@ -98,7 +98,7 @@ if (empty($channelName)) {
                         <?php
                     }
                     ?>
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-header"><i class="fa fa-share"></i> <?php echo __("Share Info"); ?></div>
                         <div class="card-body">
                             <div class=" ">
@@ -115,7 +115,7 @@ if (empty($channelName)) {
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-header"><i class="fa fa-hdd-o"></i> <?php echo __("Devices Stream Info"); ?></div>
                         <div class="card-body">
                             <div class=" ">
@@ -140,7 +140,7 @@ if (empty($channelName)) {
                     ?>
                 </div>
                 <div class="col-md-6">
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-header">
                             <?php
                             $streamName = $trasnmition['key'];
@@ -157,7 +157,7 @@ if (empty($channelName)) {
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-header"><?php echo __("Stream Settings"); ?></div>
                         <div class="card-body">
                             <div class=" ">
@@ -180,7 +180,7 @@ if (empty($channelName)) {
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-header"><?php echo __("Groups That Can See This Stream"); ?><br><small><?php echo __("Uncheck all to make it public"); ?></small></div>
                         <div class="card-body">
                             <?php
