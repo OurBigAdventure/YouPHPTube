@@ -170,7 +170,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                 <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
                             </button>
                         </div>
-                        <div class="card-body">                                
+                        <div class="card-body">
                             <table id="grid" class="table table-sm table-hover table-striped">
                                 <thead>
                                     <tr>
@@ -233,8 +233,10 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                 ?>
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"><?php echo __("Upload a Plugin ZIP File"); ?></h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
                                     <div class="modal-body">
                                         <input id="input-b1" name="input-b1" type="file" class="">
