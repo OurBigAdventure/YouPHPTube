@@ -159,27 +159,31 @@ if (!empty($_GET['video_id'])) {
                     </button>
                 <?php } ?>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" id="catDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php echo __('Categories'); ?> <span class="caret"></span></button>
-                    <ul class="dropdown-menu" role="menu">
+                    <div class="dropdown-menu" aria-labelledby="catDropDown">
                         <?php
                         foreach ($categories as $value) {
-                            echo "<li><a href=\"#\"  onclick=\"changeCategory({$value['id']});return false;\" ><i class=\"{$value['iconClass']}\"></i> {$value['name']}</a></li>";
+                            echo "<a href=\"#\" class=\"dropdown-item\"  onclick=\"changeCategory({$value['id']});return false;\" ><i class=\"{$value['iconClass']}\"></i> {$value['name']}</a>";
                         }
                         ?>
-                    </ul>
+                    </div>
+                  </div>
                 </div>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
                         <?php echo __('Status'); ?> <span class="caret"></span></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#" onclick="changeStatus('a'); return false;"><i class="fas fa-eye"></i> <?php echo __('Active'); ?></a></li>
-                        <li><a href="#" onclick="changeStatus('i'); return false;"><i class="fas fa-eye-slash"></i></span> <?php echo __('Inactive'); ?></a></li>
-                        <li><a href="#" onclick="changeStatus('u'); return false;"><i class="fas fa-eye" style="color: #BBB;"></i> <?php echo __('Unlisted'); ?></a></li>
+                    <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#" onclick="changeStatus('a'); return false;"><i class="fas fa-eye"></i> <?php echo __('Active'); ?></a>
+                        <a class="dropdown-item" href="#" onclick="changeStatus('i'); return false;"><i class="fas fa-eye-slash"></i></span> <?php echo __('Inactive'); ?></a>
+                        <a class="dropdown-item" href="#" onclick="changeStatus('u'); return false;"><i class="fas fa-eye" style="color: #BBB;"></i> <?php echo __('Unlisted'); ?></a>
                         <!--
                         <li><a href="#" onclick="changeStatus('p'); return false;"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> <?php echo __('Private'); ?></a></li>
                         -->
-                    </ul>
+                    </div>
+                  </div>
                 </div>
                 <button class="btn btn-danger" id="deleteBtn">
                     <i class="fa fa-trash" aria-hidden="true"></i> <?php echo __('Delete'); ?>
