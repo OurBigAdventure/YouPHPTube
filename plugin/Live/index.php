@@ -128,7 +128,7 @@ if (empty($channelName)) {
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="streamkey" value="<?php echo $trasnmition['key']; ?>" readonly="readonly">
                                     <span class="input-group-btn">
-                                        <a class="btn btn-light" href="<?php echo $global['webSiteRootURL']; ?>plugin/Live/?resetKey=1"><i class="fa fa-refresh"></i> <?php echo __("Reset Key"); ?></a>
+                                        <a class="btn btn-light" href="<?php echo $global['webSiteRootURL']; ?>plugin/Live/?resetKey=1"><i class="fas fa-sync-alt"></i> <?php echo __("Reset Key"); ?></a>
                                     </span>
                                 </div>
                                 <span class="badge badge-warning"><i class="fas fa-exclamation-triangle"></i> <?php echo __("Anyone with this key can watch your live stream."); ?></span>

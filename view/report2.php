@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mb-3">
     <div class="  col-sm-3">
         <label for="datefrom2" class="col-sm-2 col-form-label"><?php echo __('From'); ?>:</label>
         <div class="col-sm-10">
@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="  col-sm-3">
-        <button class="btn btn-primary" id="refresh2"><i class="fa fa-refresh"></i> <?php echo __('Refresh'); ?></button>
+        <button class="btn btn-primary" id="refresh2"><i class="fas fa-sync-alt"></i> <?php echo __('Refresh'); ?></button>
     </div>
 </div>
 <table id="dt2" class="table table-striped table-bordered" style="width:100%">

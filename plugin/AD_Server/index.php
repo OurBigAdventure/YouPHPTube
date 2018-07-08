@@ -18,7 +18,7 @@ if (!User::isAdmin()) {
         <?php
         include $global['systemRootPath'] . 'view/include/head.php';
         ?>
-        <link rel="stylesheet" type="text/css" href="<?php echo $global['webSiteRootURL']; ?>view/js/datatables/css/dataTables.bootstrap.css"/>
+        <link href="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
 
@@ -245,8 +245,8 @@ if (!User::isAdmin()) {
         </div>
         <?php
         include $global['systemRootPath'] . 'view/include/footer.php';
-        ?>
-        <script type="text/javascript" src="<?php echo $global['webSiteRootURL']; ?>view/js/datatables/js/dataTables.bootstrap4.js"></script>
+        ?>        
+        <script src="<?php echo $global['webSiteRootURL']; ?>view/css/DataTables/datatables.min.js" type="text/javascript"></script>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/Chart.bundle.min.js"></script>

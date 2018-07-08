@@ -1,6 +1,6 @@
 <?php
 global $global, $config;
-if(!isset($global['systemRootPath'])){
+if (!isset($global['systemRootPath'])) {
     require_once '../videos/configuration.php';
 }
 require_once $global['systemRootPath'] . 'objects/user.php';
@@ -153,109 +153,111 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
         ?>
 
         <div class="container-fluid" style="margin-top:10px;">
-                    <?php
-        include $global['systemRootPath'] . 'view/include/updateCheck.php';
-        ?>
+            <?php
+            include $global['systemRootPath'] . 'view/include/updateCheck.php';
+            ?>
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu0"><i class="fa fa-plug"></i> Installed Plugins</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1"><i class="fa fa-cart-plus"></i> Plugins Store</a></li>
             </ul>
 
-            <div class="tab-content">
+            <div class="tab-content border border-top-0 p-3 bg-white">
                 <div id="menu0" class="tab-pane fade show active">
-                    <div class="bg-light">
-                        <div class="btn-group" >
-                            <button type="button" class="btn btn-light" id="upload">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <button type="button" class="btn btn-primary" id="upload">
                                 <span class="fas fa-plus" aria-hidden="true"></span> <?php echo __("Upload a Plugin"); ?>
                             </button>
                         </div>
-                        <table id="grid" class="table table-sm table-hover table-striped">
-                            <thead>
-                                <tr>
-                                    <th data-column-id="name" data-formatter="name" data-width="300px" ><?php echo __("Name"); ?></th>
-                                    <th data-column-id="description"><?php echo __("description"); ?></th>
-                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false" data-width="250px"></th>
-                                </tr>
-                            </thead>
-                        </table>
-                        <div id="pluginsFormModal" class="modal" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
+                        <div class="card-body">                                
+                            <table id="grid" class="table table-sm table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-column-id="name" data-formatter="name" data-width="300px" ><?php echo __("Name"); ?></th>
+                                        <th data-column-id="description"><?php echo __("description"); ?></th>
+                                        <th data-column-id="commands" data-formatter="commands" data-sortable="false" data-width="250px"></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="pluginsFormModal" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><?php echo __("Plugin Form"); ?></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#visual">Visual</a></li>
+                                        <li class="nav-item" ><a class="nav-link" data-toggle="tab" href="#code">Code</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="visual" class="tab-pane fade show active">
+                                            <div class="" id="jsonElements" style="padding: 10px;">Some content.</div>
+                                        </div>
+                                        <div id="code" class="tab-pane fade">
+                                            <form class="form-group"  id="updatePluginForm" onsubmit="">
+                                                <input type="hidden" id="inputPluginId"  >
+                                                <label for="inputData" class="sr-only">Object Data</label>
+                                                <textarea class="form-control" id="inputData"  rows="5"  placeholder="Object Data"></textarea>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
+                                    <button type="button" class="btn btn-primary" id="savePluginBtn"><?php echo __("Save changes"); ?></button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div>
+                    <div id="pluginsImportFormModal" class="modal fade" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <?php
+                            $dir = "{$global['systemRootPath']}plugin";
+                            if (!isUnzip()) {
+                                ?>
+                                <div class="alert alert-warning">
+                                    <?php echo __("Make sure you have the unzip app on your server"); ?>
+                                    <pre><code>sudo apt-get install unzip</code></pre>
+                                </div>
+                                <?php
+                            }
+                            if (is_writable($dir)) {
+                                ?>
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title"><?php echo __("Plugin Form"); ?></h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title"><?php echo __("Upload a Plugin ZIP File"); ?></h4>
                                     </div>
                                     <div class="modal-body">
-                                        <ul class="nav nav-tabs">
-                                            <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#visual">Visual</a></li>
-                                            <li class="nav-item" ><a class="nav-link" data-toggle="tab" href="#code">Code</a></li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div id="visual" class="tab-pane fade show active">
-                                                <div class="" id="jsonElements" style="padding: 10px;">Some content.</div>
-                                            </div>
-                                            <div id="code" class="tab-pane fade">
-                                                <form class="form-group"  id="updatePluginForm" onsubmit="">
-                                                    <input type="hidden" id="inputPluginId"  >
-                                                    <label for="inputData" class="sr-only">Object Data</label>
-                                                    <textarea class="form-control" id="inputData"  rows="5"  placeholder="Object Data"></textarea>
-                                                </form>
-                                            </div>
-                                        </div>
+                                        <input id="input-b1" name="input-b1" type="file" class="">
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo __("Close"); ?></button>
-                                        <button type="button" class="btn btn-primary" id="savePluginBtn"><?php echo __("Save changes"); ?></button>
-                                    </div>
-                                </div><!-- /.modal-content -->
-                            </div><!-- /.modal-dialog -->
-                        </div>
-                        <div id="pluginsImportFormModal" class="modal fade" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
+                                </div>
                                 <?php
-                                $dir = "{$global['systemRootPath']}plugin";
-                                if (!isUnzip()) {
-                                    ?>
-                                    <div class="alert alert-warning">
-                                        <?php echo __("Make sure you have the unzip app on your server"); ?>
-                                        <pre><code>sudo apt-get install unzip</code></pre>
-                                    </div>
-                                    <?php
-                                }
-                                if (is_writable($dir)) {
-                                    ?>
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title"><?php echo __("Upload a Plugin ZIP File"); ?></h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <input id="input-b1" name="input-b1" type="file" class="">
-                                        </div>
-                                    </div>
-                                    <?php
-                                } else {
-                                    ?>
-                                    <div class="alert alert-danger">
-                                        <?php echo __("You need to make the plugin dir writable before upload, run this command and refresh this page"); ?>
-                                        <pre><code>chown www-data:www-data <?php echo $dir; ?> && chmod 755 <?php echo $dir; ?></code></pre>
-                                    </div>
-                                    <?php
-                                }
+                            } else {
                                 ?>
-                            </div>
+                                <div class="alert alert-danger">
+                                    <?php echo __("You need to make the plugin dir writable before upload, run this command and refresh this page"); ?>
+                                    <pre><code>chown www-data:www-data <?php echo $dir; ?> && chmod 755 <?php echo $dir; ?></code></pre>
+                                </div>
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
                 <div id="menu1" class="tab-pane fade">
-                    <div class="bg-light">
-                        <div class="card">
-                            <div class="card-header"><a href="https://easytube.club/signUp" class="btn-light btn-sm"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
-                            <div class="card-body">
-                                <ul class="list-group" id="pluginStoreList">
-                                </ul>
+                    <div class="card">
+                        <div class="card-header"><a href="https://easytube.club/signUp" class="btn-light btn-sm"><i class="fa fa-plug"></i> Easy Club Plugin Store </a></div>
+                        <div class="card-body">
+                            <div class="row p-2" id="pluginStoreList">
                             </div>
                         </div>
                     </div>
@@ -263,9 +265,9 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
             </div>
 
 
-            <li class="bg-light d-none col-md-3" id="pluginStoreListModel">
+            <div class="d-none col-3 " id="pluginStoreListModel">
 
-                <div class="panel panel-warning panel-sm">
+                <div class="card mb-2" style="min-height: 160px;">
                     <div class="card-header">
                         <h3 class="card-title"></h3>
                     </div>
@@ -290,7 +292,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                         <a href="https://easytube.club/signUp" class="btn-success btn-sm" role="button"><i class="fa fa-cart-plus"></i> <?php echo __("Buy This Plugin"); ?> </a>
                     </div>
                 </div>
-            </li>
+            </div>
 
         </div><!--/.container-->
         <?php
@@ -307,12 +309,12 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                     if (typeof (val) === "object") {// checkbox
                         div = $('<div />', {"class": ' '});
                         label = $('<label />', {"text": i + ": "});
-                        if(val.type === 'textarea'){
-                            input = $('<textarea />', {"class": 'form-control jsonElement', "name": i, "pluginType":"object"});
+                        if (val.type === 'textarea') {
+                            input = $('<textarea />', {"class": 'form-control jsonElement', "name": i, "pluginType": "object"});
 
                             input.text(val.value);
-                        }else{
-                            input = $('<input />', {"class": 'form-control jsonElement', "type": val.type, "name": i, "value": val.value, "pluginType":"object"});
+                        } else {
+                            input = $('<input />', {"class": 'form-control jsonElement', "type": val.type, "name": i, "value": val.value, "pluginType": "object"});
                         }
                         div.append(label);
                         div.append(input);
@@ -331,7 +333,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                         div.append(input);
                     }
                     $('#jsonElements').append(div);
-                    $('.jsonElement').change(function(){
+                    $('.jsonElement').change(function () {
                         var json = formToJson();
                         json = JSON.stringify(json);
                         $('#inputData').val(json);
@@ -345,12 +347,12 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                     var name = $(this).attr("name");
                     var type = $(this).attr("type");
                     var pluginType = $(this).attr("pluginType");
-                    if(pluginType==='object'){
-                        if(typeof type === 'undefined'){
+                    if (pluginType === 'object') {
+                        if (typeof type === 'undefined') {
                             type = 'textarea';
                         }
-                        json [name] = {type:type, value:$(this).val()};
-                    }else if (type === 'checkbox') {
+                        json [name] = {type: type, value: $(this).val()};
+                    } else if (type === 'checkbox') {
                         json [name] = $(this).is(":checked");
                     } else {
                         json [name] = $(this).val();
@@ -364,7 +366,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                 var intPrice = Math.floor(price);
                 //var cents = Math.ceil((price - intPrice) * 100);
                 var $li = $('#pluginStoreListModel').clone();
-                $li.removeClass("hidden").attr("id", "");
+                $li.removeClass("d-none").attr("id", "");
                 $li.find('.card-title').text(name);
                 $li.find('.int').text(intPrice);
                 $li.find('.cents').text("99");
@@ -398,7 +400,7 @@ require_once $global['systemRootPath'] . 'objects/plugin.php';
                                 sqlBtn = '<button type="button" class="btn btn-sm btn-light command-sql" data-row-id="' + row.id + '" data-toggle="tooltip" data-placement="left" title="Run Database Script"><span class="fa fa-database" aria-hidden="true"></span> Install tables</button>';
                             }
                             menu = '';
-                            if(row.installedPlugin && row.installedPlugin.status == 'active'){
+                            if (row.installedPlugin && row.installedPlugin.status == 'active') {
                                 menu = row.pluginMenu;
                             }
                             return  editBtn + "<br>" + sqlBtn + "<br>" + menu;
