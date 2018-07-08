@@ -48,7 +48,7 @@ if (!User::canUpload()) {
         <?php
         include $global['systemRootPath'] . 'view/include/footer.php';
         ?>
-        <script src="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap3-wysiwyg/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <script src="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap3-wysiwyg/bootstrap3-wysihtml5.all.js" type="text/javascript"></script>
         <script>
             function _subscribe(email,user_id, id) {
                 $('#subscribe' + id + ' span').addClass("fa-spinner");
