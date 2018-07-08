@@ -42,28 +42,38 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
 
                             <div class="">
                                 <div class="">
-                                    <div class="nav">
+                                    <ul class="nav  nav-tabs" role="tablist">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="#tabTheme" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
                                                 <?php echo __("Themes"); ?>
                                             </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link " href="#tabCompatibility" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
                                                 <?php echo __("Compatibility Check"); ?>
                                             </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link active" href="#tabRegular" id="tabRegularLink" data-toggle="tab">
                                                 <span class="fa fa-cog"></span>
                                                 <?php echo __("Regular Configuration"); ?>
                                             </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link " href="#tabAdvanced" data-toggle="tab">
                                                 <span class="fa fa-cogs"></span>
                                                 <?php echo __("Advanced Configuration"); ?>
                                             </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link " href="#tabHead" data-toggle="tab">
                                                 <span class="fa fa-code"></span>
                                                 <?php echo __("Script Code"); ?>
                                             </a>
-                                    </div>
+                                        </li>
+                                    </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade" id="tabTheme">
                                             <div class="card border-top-0">
@@ -537,13 +547,22 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             <label class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Test your email"); ?></label>
                                                             <div class="input-group col-8">
                                                                 <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><span class="btn-sm btn-success btn-large" id="btnReloadCapcha">
-                                                                        <span class="fas fa-sync-alt"></span>
-                                                                    </span></div>
+                                                                    <div class="input-group-text">
+                                                                        <span class="btn-sm btn-success btn-large" id="btnReloadCapcha">
+                                                                            <span class="fas fa-sync-alt"></span>
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
-                                                                <span class="input-group-prepend"><div class="input-group-text"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha" height="48"</div></span>
+                                                                <span class="input-group-prepend">
+                                                                    <div class="input-group-text">
+                                                                        <img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"/>
+                                                                    </div>
+                                                                </span>
                                                                 <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
-                                                                <span class="btn btn-warning btn-lg" id="testEmail" ><i class="fas fa-at"></i> <?php echo __("Test Email"); ?> <span class="fas fa-share-square"></span></span>
+                                                                <button class="btn btn-warning" id="testEmail" >
+                                                                    <i class="fas fa-at"></i> <?php echo __("Test Email"); ?> 
+                                                                    <span class="fas fa-share-square"></span>
+                                                                </button>
                                                             </div>
                                                         </div>
 
@@ -557,7 +576,6 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="tab-pane fade" id="tabHead">
 
                                             <div class="card border-top-0">
