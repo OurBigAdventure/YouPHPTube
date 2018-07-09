@@ -13,10 +13,10 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
 }
 ?>
 <div class="row main-video" id="mvideo">
-    <div class="col-sm-2 col-md-2 firstC"></div>
-    <div class="col-sm-8 col-md-8 secC">
+    <div class="col-2 firstC"></div>
+    <div class="col-8 secC">
         <div id="videoContainer">
-            <div id="floatButtons" style="display: none;">
+            <div id="floatButtons" class="d-none">
                 <p class="btn btn-dark btn-sm float-right rounded-circle border border-secondary"
                         onclick="closeFloatVideo();floatClosed = 1;">
                     <i class="far fa-times-circle"></i>
@@ -28,8 +28,8 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
             <div id="main-video" class="embed-responsive <?php echo $embedResponsiveClass; ?>">
                 <video
                     <?php if ($config->getAutoplay() && false) { // disable it for now ?>
-                        autoplay="true" 
-                        muted="muted" 
+                        autoplay="true"
+                        muted="muted"
                     <?php } ?>
                     preload="auto"
                     poster="<?php echo $poster; ?>" controls class="embed-responsive-item video-js vjs-default-skin <?php echo $vjsClass; ?> vjs-big-play-centered" id="mainVideo" data-setup='{ "aspectRatio": "<?php echo $aspectRatio; ?>" }'>

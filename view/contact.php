@@ -24,12 +24,12 @@ if (User::isLogged()) {
         ?>
 
         <div class="container bg-light">
-            <div style="display: none;" id="messageSuccess">
+            <div class="d-none" id="messageSuccess">
                 <div class="alert alert-success clear clearfix">
-                    <div class="col-md-3">
-                        <i class="fa fa-5x fa-check-circle-o"></i>
+                    <div class="col-3">
+                        <i class="fas fa-5x fa-check-circle"></i>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-9">
                         <h1><?php echo __("Congratulations!"); ?></h1>
                         <h2><?php echo __("Your message has been sent!"); ?></h2>
                     </div>
@@ -44,11 +44,11 @@ if (User::isLogged()) {
 
                     <!-- Text input-->
 
-                    <div class=" ">
-                        <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
-                        <div class="col-md-4 inputGroupContainer">
+                    <div class="form-inline mb-2">
+                        <label class="col-4 col-form-label font-weight-bold"><?php echo __("Name"); ?></label>
+                        <div class="col-6 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-user"></i></div></span>
                                 <input  name="first_name" placeholder="<?php echo __("Name"); ?>" class="form-control"  type="text" required="true">
                             </div>
                         </div>
@@ -56,11 +56,11 @@ if (User::isLogged()) {
 
 
                     <!-- Text input-->
-                    <div class=" ">
-                        <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
-                        <div class="col-md-4 inputGroupContainer">
+                    <div class="form-inline mb-2">
+                        <label class="col-4 col-form-label font-weight-bold"><?php echo __("E-mail"); ?></label>
+                        <div class="col-6 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-envelope"></i></div></span>
                                 <input name="email" placeholder="<?php echo __("E-mail Address"); ?>" class="form-control" value="<?php echo $email; ?>"  type="email"  required="true">
                             </div>
                         </div>
@@ -68,43 +68,43 @@ if (User::isLogged()) {
 
 
                     <!-- Text input-->
-                    <div class="  <?php echo empty($advancedCustom->doNotShowWebsiteOnContactForm) ? "" : "hidden" ?>">
-                        <label class="col-md-4 col-form-label"><?php echo __("Website"); ?></label>
-                        <div class="col-md-4 inputGroupContainer">
+                    <div class="mb-2 form-inline <?php echo empty($advancedCustom->doNotShowWebsiteOnContactForm) ? "" : "hidden" ?>">
+                        <label class="col-4 col-form-label font-weight-bold"><?php echo __("Website"); ?></label>
+                        <div class="col-6 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-globe"></i></div></span>
                                 <input name="website" placeholder="<?php echo __("Website"); ?>" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
                     <!-- Text area -->
 
-                    <div class=" ">
-                        <label class="col-md-4 col-form-label"><?php echo __("Message"); ?></label>
-                        <div class="col-md-4 inputGroupContainer">
+                    <div class="form-inline mb-2">
+                        <label class="col-4 col-form-label font-weight-bold"><?php echo __("Message"); ?></label>
+                        <div class="col-6 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                <span class="input-group-prepend"><div class="input-group-text"><i class="fas fa-pencil-alt"></i></div></span>
                                 <textarea class="form-control" name="comment" placeholder="<?php echo __("Message"); ?>"></textarea>
                             </div>
                         </div>
                     </div>
 
 
-                    <div class=" ">
-                        <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
-                        <div class="col-md-4 inputGroupContainer">
+                    <div class="form-inline mb-2">
+                        <label class="col-4 font-weight-bold"><?php echo __("Type the code"); ?></label>
+                        <div class="col-6 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
+                                <span class="input-group-prepend"><div class="input-group-text"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></div></span>
+                                <span class="input-group-prepend"><div class="input-group-text"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="fas fa-sync"></span></span></div></span>
                                 <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
                             </div>
                         </div>
                     </div>
                     <!-- Button -->
-                    <div class=" ">
-                        <label class="col-md-4 col-form-label"></label>
-                        <div class="col-md-4">
-                            <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="glyphicon glyphicon-send"></span></button>
+                    <div class="form-inline mb-2">
+                        <label class="col-4 col-form-label"></label>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary" ><?php echo __("Send"); ?> <span class="fas fa-share-square"></span></button>
                         </div>
                     </div>
 

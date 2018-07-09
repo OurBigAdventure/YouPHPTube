@@ -80,7 +80,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
             <button class="float-left btn btn-light align-top" id="buttonMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="fas fa-bars"></span></button>
             <a class="navbar-brand" href="<?php echo $global['webSiteRootURL']; ?>"><img src="<?php echo $global['webSiteRootURL'], $config->getLogo(); ?>" alt="<?php echo $config->getWebSiteTitle(); ?>" class="img-fluid "></a>
             <div id="sidebar1" class="dropdown" style="position: absolute; height: 100%; top:0;">
-                <div id="sideBarContainer" class="dropdown-menu  dropdown-menu-left bg-light" style="" aria-labelledby="buttonMenu1" >
+                <ul id="sideBarContainer" class="dropdown-menu  dropdown-menu-left bg-light" style="" aria-labelledby="buttonMenu1" >
                     <?php
                     if (User::isLogged()) {
                         ?>
@@ -311,7 +311,7 @@ if (empty($advancedCustom->userMustBeLoggedIn) || User::isLogged()) {
                         <li style="height: 150px;">
                         </li>
                     </ul>
-                </div>
+                </ul>
             </div>
         </div>
 
