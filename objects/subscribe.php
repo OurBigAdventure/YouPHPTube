@@ -282,9 +282,9 @@ trigger: 'manual',
 
                     if(!empty($subs['notify'])){
                         $notify = '';
-                        $notNotify = 'hidden';
+                        $notNotify = 'd-none';
                     }else{
-                        $notify = 'hidden';
+                        $notify = 'd-none';
                         $notNotify = '';
                     }
                     $subscribe .= '<span class=" notify'.$user_id.' '.$notify.'"><button onclick="toogleNotify'.$user_id.'();" class="btn btn-light btn-sm " data-toggle="tooltip"
