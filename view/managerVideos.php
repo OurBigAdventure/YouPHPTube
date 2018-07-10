@@ -32,6 +32,7 @@ if (!empty($_GET['video_id'])) {
         <link href="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" type="text/css"/>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap-fileinput/js/fileinput.min.js" type="text/javascript"></script>
         <link href="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+          <!-- <link href="<?php echo $global['webSiteRootURL']; ?>view/js/simpletimerinput/timingfield.css" rel="stylesheet" type="text/css"/> -->
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
         <script>
             /*** Handle jQuery plugin naming conflict between jQuery UI and Bootstrap ***/
@@ -102,6 +103,7 @@ if (!empty($_GET['video_id'])) {
                     ) {
                         ?>
                         <button class="btn btn-light" id="linkExternalVideo">
+
                             <span class="fa fa-link"></span>
                             <?php echo __("Embed a video link"); ?>
                         </button>
@@ -229,12 +231,19 @@ if (!empty($_GET['video_id'])) {
                             </div>
                             <div id="videoLinkContent">
                                 <label for="videoLink"><?php echo __("Video Link"); ?></label>
+
                                 <input type="text" id="videoLink" class="form-control first" placeholder="<?php echo __("Video Link"); ?> http://www.your-embed-link.com/video" required>
                                 <select class="form-control last" id="videoLinkType" required>
                                     <option value="embed"><?php echo __("Embeded"); ?></option>
-                                    <option value="linkVideo"><?php echo __("Direct video-link (webm or mp4)"); ?></option>
+                                    <option value="linkVideo"><?php echo __("Direct video-link (mp4)"); ?></option>
                                     <option value="linkAudio"><?php echo __("Direct audio-link (mp3 or ogg)"); ?></option>
+                                    <option value="torrent"><?php echo __("Torrent (MP4-magnet-link)"); ?></option>
                                 </select>
+
+
+
+                                <label for="videoDuration" class="sr-only"><?php echo __("Video duration"); ?></label>
+                                <input type="text" id="videoDuration" class="form-control" placeholder="00:00:00" required>
                             </div>
                             <hr>
                             <form class="form-compact"  id="updateCategoryForm" onsubmit="">
@@ -301,6 +310,7 @@ if (!empty($_GET['video_id'])) {
                                     </div>
                                     <div class="col-md-8">
                                         <input id="inputNextVideo" placeholder="<?php echo __("Autoplay Next Video"); ?>" class="form-control mb-2">
+
                                         <input id="inputNextVideoClean" placeholder="<?php echo __("Autoplay Next Video URL"); ?>" class="form-control" readonly="readonly">
                                         <input type="hidden" id="inputNextVideo-id">
                                     </div>
@@ -389,7 +399,7 @@ if (!empty($_GET['video_id'])) {
         include $global['systemRootPath'] . 'view/include/footer.php';
         ?>
         <script src="<?php echo $global['webSiteRootURL']; ?>view/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-
+<!-- <script src="<?php echo $global['webSiteRootURL']; ?>view/js/simpletimerinput/timingfield.js" type="text/javascript"></script> -->
         <script>
                                     var timeOut;
                                     var encodingNowId = "";
@@ -518,9 +528,9 @@ if (!empty($_GET['video_id'])) {
 
                                     function editVideo(row) {
                                         waitToSubmit = true;
-                                        $('#postersImage, #videoIsAdControl, .titles').slideDown();
-                                        if ((row.type === 'embed') || (row.type === 'linkVideo') || (row.type === 'linkAudio')) {
-
+                                        // $('#postersImage, #videoIsAdControl, .titles').slideDown();
+                                        if ((row.type === 'embed') || (row.type === 'linkVideo') || (row.type === 'linkAudio') || (row.type === 'torrent')) {
+                                            $('#videoDuration').val(row.videoDuration);
                                             $('#videoLink').val(row.videoLink);
                                             $('#videoLinkType').val(row.type);
                                         } else {
@@ -607,6 +617,7 @@ if (!empty($_GET['video_id'])) {
                                         $('#encodeProgress' + id).html(item);
                                     }
                                     $(document).ready(function () {
+                                    //  $("#videoDuration").timingfield();
 <?php
 if (!empty($row)) {
     $json = json_encode($row);
@@ -633,9 +644,11 @@ if (!empty($row)) {
                                             $('#videoIsAd').prop('checked', false);
                                             $('#videoIsAd').trigger("change");
                                             $('#input-jpg, #input-gif').fileinput('destroy');
-                                            $('#postersImage, #videoIsAdControl, .titles').slideUp();
+                                            //$('#postersImage, #videoIsAdControl, .titles').slideUp();
+                                            $('#postersImage, #videoIsAdControl').slideUp();
                                             $('#videoLinkContent').slideDown();
                                             $('#videoLink').val('');
+                                            $('#videoDuration').val('00:00:00');
                                             setTimeout(function () {
                                                 waitToSubmit = false;
                                             }, 2000);
@@ -1109,6 +1122,7 @@ if (User::isAdmin()) {
                                                     "id": $('#inputVideoId').val(),
                                                     "title": $('#inputTitle').val(),
                                                     "videoLink": $('#videoLink').val(),
+                                                    "videoDuration": $('#videoDuration').val(),
                                                     "videoLinkType": $('#videoLinkType').val(),
                                                     "clean_title": $('#inputCleanTitle').val(),
                                                     "description": $('#inputDescription').val(),
