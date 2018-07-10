@@ -25,29 +25,43 @@ $obj->setClean_Title($_POST['clean_title']);
 if(!empty($_POST['videoLink'])){
     //var_dump($config->getEncoderURL()."getLinkInfo/". base64_encode($_POST['videoLink']));exit;
     if(empty($_POST['id'])){
-        $info = url_get_contents($config->getEncoderURL()."getLinkInfo/". base64_encode($_POST['videoLink']));
-        $infoObj = json_decode($info);
-        $filename = uniqid("_YPTuniqid_", true);
-        $obj->setFilename($filename);
-        if(!empty($_POST['title'])){
-          $obj->setTitle($_POST['title']);
-        } else {
-          $obj->setTitle($infoObj->title);
-        }
-        if(!empty($_POST['clean_title'])){
-          $obj->setTitle($_POST['clean_title']);
-        } else {
-          $obj->setTitle($infoObj->title);
-        }
-        $obj->setClean_title($infoObj->title);
-        if((!empty($_POST['videoDuration']))&&($_POST['videoDuration']!="00:00:00")){
-          $obj->setDuration($_POST['videoDuration']);
-        } else {
-          $obj->setDuration($infoObj->duration);
-        }
+        
+        $path_info = pathinfo($_POST['videoLink']);
+        if (!empty($path_info['extension']) && strtolower($path_info['extension']) === 'torrent') {
+            if(!empty($_POST['title'])){
+              $obj->setTitle($_POST['title']);
+            } else {
+                $obj->setTitle($path_info['filename']);
+            }
+            if(!empty($_POST['clean_title'])){
+              $obj->setClean_title($_POST['clean_title']);
+            } else {
+               $obj->setClean_title($path_info['filename']);
+            }
+        }else{
+            $info = url_get_contents($config->getEncoderURL()."getLinkInfo/". base64_encode($_POST['videoLink']));
+            $infoObj = json_decode($info);
+            $filename = uniqid("_YPTuniqid_", true);
+            $obj->setFilename($filename);
+            if(!empty($_POST['title'])){
+              $obj->setTitle($_POST['title']);
+            } else {
+              $obj->setTitle($infoObj->title);
+            }
+            if(!empty($_POST['clean_title'])){
+              $obj->setClean_title($_POST['clean_title']);
+            } else {
+              $obj->setClean_title($infoObj->title);
+            }
+            if((!empty($_POST['videoDuration']))&&($_POST['videoDuration']!="00:00:00")){
+              $obj->setDuration($_POST['videoDuration']);
+            } else {
+              $obj->setDuration($infoObj->duration);
+            }
 
-        $obj->setDescription($infoObj->description);
-        file_put_contents($global['systemRootPath'] . "videos/{$filename}.jpg", base64_decode($infoObj->thumbs64));
+            $obj->setDescription($infoObj->description);
+            file_put_contents($global['systemRootPath'] . "videos/{$filename}.jpg", base64_decode($infoObj->thumbs64));
+        }
     }
     $obj->setVideoLink($_POST['videoLink']);
     $obj->setType('embed');
