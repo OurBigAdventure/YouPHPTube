@@ -505,7 +505,7 @@ log_error($sql);
             }
             if (!empty($_SESSION['type'])) {
                 if ($_SESSION['type'] == 'video') {
-                    $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo')";
+                    $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo' OR  v.type = 'torrent')";
                 } else if ($_SESSION['type'] == 'audio') {
                     $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
                 } else {
@@ -632,7 +632,7 @@ log_error($sql);
             }
             if (!empty($_SESSION['type'])) {
                 if ($_SESSION['type'] == 'video') {
-                    $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo')";
+                    $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo'  OR  v.type = 'torrent')";
                 } else if ($_SESSION['type'] == 'audio') {
                     $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
                 } else {
@@ -787,7 +787,7 @@ log_error($sql);
             }
             if (!empty($_SESSION['type'])) {
                 if ($_SESSION['type'] == 'video') {
-                    $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo')";
+                    $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo'  OR  v.type = 'torrent')";
                 } else if ($_SESSION['type'] == 'audio') {
                     $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
                 } else {
