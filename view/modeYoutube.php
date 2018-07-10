@@ -75,6 +75,9 @@ if (!empty($_GET['playlist_id'])) {
     if (!empty($videosPlayList[$playlist_index + 1])) {
         $autoPlayVideo = Video::getVideo($videosPlayList[$playlist_index + 1]['id']);
         $autoPlayVideo['url'] = $global['webSiteRootURL'] . "playlist/{$playlist_id}/" . ($playlist_index + 1);
+    }else if (!empty($videosPlayList[0])) {
+        $autoPlayVideo = Video::getVideo($videosPlayList[0]['id']);
+        $autoPlayVideo['url'] = $global['webSiteRootURL'] . "playlist/{$playlist_id}/0";
     }
 
     unset($_GET['playlist_id']);
@@ -150,6 +153,15 @@ if (!empty($video)) {
 
 $objSecure = YouPHPTubePlugin::getObjectDataIfEnabled('SecureVideosDirectory');
 $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
+
+if(!empty($autoPlayVideo)){
+    $autoPlaySources = getSources($autoPlayVideo['filename'], true);
+    $autoPlayURL = $autoPlayVideo['url'];
+}else{
+    $autoPlaySources = array();
+    $autoPlayURL = '';
+}
+//var_dump($playlist_index, $sources, $autoPlayVideo['url']);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $_SESSION['language']; ?>">
@@ -209,7 +221,7 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
                 }
                 require "{$global['systemRootPath']}view/include/{$vType}.php";
                 ?>
-                <div class="row">
+                <div class="row" id="modeYoutubeBottom">
                     <div class="col-sm-1 col-md-1"></div>
                     <div class="col-sm-6 col-md-6">
                         <div class="row bgWhite border border-light rounded bg-light">
@@ -657,6 +669,8 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
 
                         <script>
                             var fading = false;
+                            var autoPlaySources = <?php echo json_encode($autoPlaySources); ?>;
+                            var autoPlayURL = '<?php echo $autoPlayURL; ?>';
                             $(document).ready(function () {
                                 $("input.saveCookie").each(function () {
                                     var mycookie = Cookies.get($(this).attr('name'));

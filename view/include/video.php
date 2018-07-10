@@ -146,11 +146,20 @@ if (!$config->getAllow_download()) {
 if (!empty($autoPlayVideo)) {
     ?>
                     if (Cookies.get('autoplay') && Cookies.get('autoplay') !== 'false') {
-                        document.location = '<?php echo $autoPlayVideo['url']; ?>';
+                        changeVideoSrc(player, autoPlaySources);
+                        history.pushState(null, null, autoPlayURL);
+                        $.ajax({
+                            url: autoPlayURL,
+                            success: function (response) {
+                                modeYoutubeBottom = $(response).find('#modeYoutubeBottom').html();
+                                $('#modeYoutubeBottom').html(modeYoutubeBottom);
+                            }
+                        });
                     }
 <?php } ?>
 
             });
+
         });
         player.persistvolume({
             namespace: "YouPHPTube"
