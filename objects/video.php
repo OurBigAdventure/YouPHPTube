@@ -508,6 +508,8 @@ log_error($sql);
                     $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo' OR  v.type = 'torrent')";
                 } else if ($_SESSION['type'] == 'audio') {
                     $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
+                } else if ($_SESSION['type'] == 'torrent') {
+                    $sql .= " AND (v.type = 'torrent')";
                 } else {
                     $sql .= " AND v.type = '{$_SESSION['type']}' ";
                 }
@@ -635,6 +637,8 @@ log_error($sql);
                     $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo'  OR  v.type = 'torrent')";
                 } else if ($_SESSION['type'] == 'audio') {
                     $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
+                } else if ($_SESSION['type'] == 'torrent') {
+                    $sql .= " AND (v.type = 'torrent')";
                 } else {
                     $sql .= " AND v.type = '{$_SESSION['type']}' ";
                 }
@@ -790,6 +794,8 @@ log_error($sql);
                     $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo'  OR  v.type = 'torrent')";
                 } else if ($_SESSION['type'] == 'audio') {
                     $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
+                } else if ($_SESSION['type'] == 'torrent') {
+                    $sql .= " AND (v.type = 'torrent')";
                 } else {
                     $sql .= " AND v.type = '{$_SESSION['type']}' ";
                 }

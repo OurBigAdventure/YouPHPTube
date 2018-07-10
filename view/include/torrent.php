@@ -58,12 +58,12 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
         </div>
         <?php if ($config->getAllow_download()) { ?>
             <?php if ($playNowVideo['type'] == "video") { ?>
-                <a class="btn btn-xs btn-default pull-right " role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
+                <a class="btn btn-xs btn-default pull-right d-none" id="downloadButton" role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>
             <?php } else { ?>
-                <a class="btn btn-xs btn-default pull-right " role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
+                <a class="btn btn-xs btn-default pull-right d-none" id="downloadButton" role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>
@@ -114,7 +114,13 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
         torrent.on('done', onDone);
         setInterval(onProgress, 500);
         onProgress();
-
+        file.getBlobURL(function (err, url) {
+          if (err){
+            console.log(err.message);
+          }
+          $("#downloadButton").attr("href",file.name);
+          $("#downloadButton").show();
+        });
         function onProgress () {
           // Peers
           $("#torrentSeeders").html(torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers'));
