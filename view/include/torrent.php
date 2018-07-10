@@ -118,7 +118,7 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
           if (err){
             console.log(err.message);
           }
-          $("#downloadButton").attr("href",file.name);
+          $("#downloadButton").attr("href",url);
           $("#downloadButton").show();
         });
         function onProgress () {

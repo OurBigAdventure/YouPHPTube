@@ -26,7 +26,7 @@ client.add('<?php echo $video['videoLink']; ?>', function (torrent) {
   var file = torrent.files.find(function (file) {
     return file.name.endsWith('.mp4');
   });
-  $("#tList").append("<li id='v<?php echo $video['id']; ?>'><?php echo $video['title']; ?><span class='ml-2' id='vseeders<?php echo $video['id']; ?>'></span><span class='ml-2' id='vdown<?php echo $video['id']; ?>'></span><span class='ml-2' id='vup<?php echo $video['id']; ?>'></span><span class='ml-2' id='vcomplete<?php echo $video['id']; ?>'></span></li>");
+  $("#tList").append("<li id='v<?php echo $video['id']; ?>'><?php echo $video['title']; ?> (<a href='<?php echo $video['videoLink']; ?>'>Magnet</a>)<span class='ml-2' id='vseeders<?php echo $video['id']; ?>'></span><span class='ml-2' id='vdown<?php echo $video['id']; ?>'></span><span class='ml-2' id='vup<?php echo $video['id']; ?>'></span><span class='ml-2' id='vcomplete<?php echo $video['id']; ?>'></span></li>");
 
 setInterval(onProgress, 500);
 function onProgress(){
@@ -49,7 +49,7 @@ function prettyBytes(num) {
     if (err){
       console.log(err.message);
     }
-    $("#v<?php echo $video['id']; ?>").append("<a href='"+file.name+"' >Download</a>");
+    $("#v<?php echo $video['id']; ?>").append("<a class='ml-1 btn btn-success-outline' download='<?php echo $video['title']; ?>.mp4' href='"+url+"' >Download</a>");
   });
 });
           <?php
