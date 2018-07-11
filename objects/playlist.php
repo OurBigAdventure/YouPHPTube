@@ -57,7 +57,7 @@ class PlayList extends ObjectYPT {
 
     static function getVideosFromPlaylist($playlists_id) {
         global $global;
-        $sql = "SELECT *, v.created as cre FROM  playlists_has_videos p "
+        $sql = "SELECT *,v.created as cre FROM  playlists_has_videos p "
                 . " LEFT JOIN videos as v ON videos_id = v.id "
                 . " LEFT JOIN users u ON u.id = v.users_id "
                 . " WHERE playlists_id = ? ORDER BY p.`order` ASC ";
@@ -68,8 +68,11 @@ class PlayList extends ObjectYPT {
         sqlDAL::close($res);
         $rows = array();
         if ($res!=false) {
+          global $isChannel;
             foreach ($fullData as $row) {
+              if(!empty($isChannel)){
                 $row['tags'] = Video::getTags($row['id']);
+              }
                 $row['humanCreate'] = humanTiming(strtotime($row['cre']));
                 $rows[] = $row;
             }

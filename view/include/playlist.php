@@ -3,17 +3,17 @@ require_once $global['systemRootPath'] . 'objects/playlist.php';
 $playlist = new PlayList($playlist_id);
 $playlistVideos = PlayList::getVideosFromPlaylist($playlist_id);
 ?>
-<div class="playlist-nav row">
-    <nav class="navbar navbar-inverse">
-        <ul class="nav navbar-nav">
+<div class="playlist-nav">
+    <nav class="navbar-inverse mb-1 bg-dark  text-secondary">
+        <ul class="navbar-nav">
             <li class="navbar-header">
                 <a>
-                    <h3 class="nopadding">
+                    <h3 class="">
                         <?php
                         echo $playlist->getName();
                         ?>
                     </h3>
-                    <small>
+                    <small class="ml-4">
                         <?php
                         echo ($playlist_index+1), "/", count($playlistVideos), " ", __("Videos");
                         ?>
@@ -22,19 +22,24 @@ $playlistVideos = PlayList::getVideosFromPlaylist($playlist_id);
             </li>
         </ul>
     </nav>
-    <nav class="navbar navbar-inverse playlistList">
-        <ul class="nav navbar-nav">
+    <style>
+      .active {
+        background-color: black;
+      }
+    </style>
+    <nav class="navbar-inverse playlistList bg-dark text-secondary">
+        <ul class=" navbar-nav">
             <?php
             $count = 0;
             foreach ($playlistVideos as $value) {
-                $class = "";
+                $class = "nav-item mb-2";
                 $indicator = $count+1;
                 if ($count==$playlist_index) {
-                    $class .= " active";
+                    $class .= " active text-black";
                     $indicator = '<span class="fa fa-play text-danger"></span>';
                 }
             ?>
-            <li class="<?php echo $class; ?>">
+            <li class="pl-1 <?php echo $class; ?>">
                     <a href="<?php echo $global['webSiteRootURL']; ?>playlist/<?php echo $playlist_id; ?>/<?php echo $count; ?>" title="<?php echo $value['title']; ?>" class="videoLink row">
                         <div class="col-md-1 col-sm-1 col-1">
                             <?php echo $indicator; ?>
@@ -58,9 +63,9 @@ $playlistVideos = PlayList::getVideosFromPlaylist($playlist_id);
 
                             <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($value['duration']); ?>"><?php echo Video::getCleanDuration($value['duration']); ?></time>
                         </div>
-                        <div class="col-md-8 col-sm-8 col-8 videosDetails">
-                            <div class="text-uppercase row"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
-                            <div class="details row" itemprop="description">
+                        <div class="col-md-8 col-sm-8 col-8 videosDetails  text-secondary">
+                            <div class="text-uppercase"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
+                            <div class="details" itemprop="description">
                                 <div>
                                     <span class="<?php echo $value['iconClass']; ?>"></span>
                                 </div>

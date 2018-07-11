@@ -499,6 +499,7 @@ log_error($sql);
                     . "LEFT JOIN users u ON v.users_id = u.id "
                     . "LEFT JOIN videos nv ON v.next_videos_id = nv.id "
                     . " WHERE 1=1 ";
+
             $sql .= static::getVideoQueryFileter();
             if (!$ignoreGroup) {
                 $sql .= self::getUserGroupsCanSeeSQL();
@@ -1175,6 +1176,12 @@ log_error($sql);
          * label Default Primary Success Info Warning Danger
          */
         static function getTags($video_id, $type = "") {
+          global $cachedTags;
+          $crc = crc32($video_id.$type);
+          if(empty($cachedTags)){
+            $cachedTags = array();
+          }
+          if(empty($cachedTags[$crc])){
             $video = new Video("", "", $video_id);
             $tags = array();
 
@@ -1296,8 +1303,9 @@ log_error($sql);
                     $tags[] = $obj;
                 }
             }
-
-            return $tags;
+            $cachedTags[$crc] = $tags;
+          }
+            return $cachedTags[$crc];
         }
 
         function getCategories_id() {
