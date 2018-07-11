@@ -278,13 +278,21 @@ function createGallerySection($videos,$crc="") {
                                                     },
                                                     success: function (response) {
 
-                                                      if($(this).is(":checked")==true){
+                                                    /*  if($(this).is(":checked")==true){
                                                         console.log("received success set false");
                                                         $(this).prop( "checked", false );
                                                       } else {
                                                         console.log("received success set true");
                                                         $(this).prop( "checked", true );
+                                                      }*/
+                                                      <?php
+                                                      global $isChannel;
+                                                      if(!empty($isChannel)){
+                                                        ?>
+                                                        refreshPlayLists('playlistContainer');
+                                                        <?php
                                                       }
+                                                       ?>
                                                         modal.hidePleaseWait();
 
                                                     }
