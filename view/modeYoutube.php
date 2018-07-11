@@ -298,10 +298,8 @@ if(!empty($autoPlayVideo)){
                                                     </div>
                                                 </div>
                                             <?php } else { ?>
-                                                <h5>Want to watch this again later?</h5>
-
-                                                Sign in to add this video to a playlist.
-
+                                              <h5><?php echo __("Want to watch this again later?"); ?></h5>
+                                                <?php echo __("Sign in to add this video to a playlist."); ?>
                                                 <a href="<?php echo $global['webSiteRootURL']; ?>user" class="btn btn-primary">
                                                     <span class="fas fa-sign-in-alt"></span>
                                                     <?php echo __("Login"); ?>
