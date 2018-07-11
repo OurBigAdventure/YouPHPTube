@@ -87,7 +87,7 @@ function createOrderInfo($getName, $mostWord, $lessWord, $orderString) {
             $tmpOrderString .= $getName . "=ASC";
         }
 
-        $upDown = "<span class='fa fa-arrow-up' >" . __("Up") . "</span>";
+        $upDown = "<i class='fas fa-arrow-up' >" . __("Up") . "</i>";
         $mostLess = $mostWord;
     } else {
         if (strpos($orderString, $getName . "=ASC")) {
@@ -96,7 +96,7 @@ function createOrderInfo($getName, $mostWord, $lessWord, $orderString) {
             $tmpOrderString .= $getName . "=DESC";
         }
 
-        $upDown = "<span class='fa fa-arrow-down'>" . __("Down") . "</span>";
+        $upDown = "<i class='fas fa-arrow-down'>" . __("Down") . "</i>";
         $mostLess = $lessWord;
     }
 
@@ -198,7 +198,7 @@ function createGallerySection($videos) {
                 ?>
                     <div class="">
                         <?php if ((($advancedCustom != false) && ($advancedCustom->disableShareAndPlaylist == false)) || ($advancedCustom == false)) { ?>
-                            <button class="btn-xs btn btn-default no-outline" style="float:right;" id="addBtn<?php echo $value['id']; ?>" data-placement="top">
+                            <button class="label label-sm no-outline" style="float:right;" id="addBtn<?php echo $value['id']; ?>" data-placement="top">
                                  <span class="fa fa-plus"></span> <?php echo __("Add to"); ?>
                             </button>
                             <div class="webui-popover-content" >
