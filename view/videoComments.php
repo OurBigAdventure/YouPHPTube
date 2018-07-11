@@ -3,7 +3,7 @@ if (User::canSeeCommentTextarea()) {
     if (!empty($video['id'])) {
         ?>
         <div class="input-group">
-            <textarea class="form-control custom-control" rows="3" style="resize:none" id="comment" maxlength="<?php echo empty($advancedCustom->commentsMaxLength)?"200":$advancedCustom->commentsMaxLength ?>" <?php
+            <textarea class="form-control custom-control col-12 col-md-8" rows="3" style="resize:none" id="comment" maxlength="<?php echo empty($advancedCustom->commentsMaxLength)?"200":$advancedCustom->commentsMaxLength ?>" <?php
             if (!User::canComment()) {
                 echo "disabled";
             }
@@ -17,9 +17,9 @@ if (User::canSeeCommentTextarea()) {
                 if (!User::canComment()) {
                     echo "disabled='disabled'";
                 }
-                ?>><span class="glyphicon glyphicon-comment"></span> <?php echo __("Comment"); ?></span>
+                ?>><span class="fas fa-comments"></span> <?php echo __("Comment"); ?></span>
                   <?php } else { ?>
-                <a class="input-group-addon btn btn-success" href="<?php echo $global['webSiteRootURL']; ?>user"><span class="glyphicon glyphicon-log-in"></span> <?php echo __("You must login to be able to comment on videos"); ?></a>
+                <a class="input-group-addon btn btn-success" href="<?php echo $global['webSiteRootURL']; ?>user"><span class="fas fa-sign-in-alt"></span> <?php echo __("Sign in to comment"); ?></a>
             <?php } ?>
         </div>
         <div class="float-right" id="count_message"></div>
@@ -37,7 +37,7 @@ if (User::canSeeCommentTextarea()) {
         <?php
     }
     ?>
-    <div class="replySet hidden" id="replyTemplate" comments_id="0">
+    <div class="replySet d-none" id="replyTemplate" comments_id="0">
         <div>
             <?php
             if (User::canComment()) {
@@ -70,14 +70,14 @@ if (User::canSeeCommentTextarea()) {
             </button>
         </div>
         <div style="padding-left: 50px;">
-            <div class="input-group formRepy" style="display: none;">
+            <div class="input-group formRepy d-none">
                 <textarea class="form-control custom-control" rows="2" style="resize:none" maxlength="<?php echo empty($advancedCustom->commentsMaxLength)?"200":$advancedCustom->commentsMaxLength ?>" ></textarea>
 
                 <span class="input-group-addon btn btn-success saveReplyBtn">
-                    <span class="glyphicon glyphicon-comment"></span> <?php echo __("Reply"); ?>
+                    <span class="fas fa-comments"></span> <?php echo __("Reply"); ?>
                 </span>
             </div>
-            <div class="replyGrid" style="display: none;">
+            <div class="replyGrid d-none">
                 <table class="table table-sm table-hover table-striped nowrapCell grid">
                     <thead>
                         <tr>
@@ -185,7 +185,7 @@ if (User::canSeeCommentTextarea()) {
 
                     function formatRow(row) {
                         var template = $("#replyTemplate").clone();
-                        template.removeClass("hidden").attr("id", "").attr("comments_id", row.id);
+                        template.removeClass("d-none").attr("id", "").attr("comments_id", row.id);
                         template.find('.total_replies').addClass("total_replies" + row.id);
                         if (row.total_replies) {
                             template.find('.total_replies').text(row.total_replies);
