@@ -70,7 +70,7 @@ require_once '../objects/functions.php';
                         } else {
                             ?>
                             <div class="alert alert-warning">
-                                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                <span class="fas fa-exclamation-triangle"></span>
                                 <strong>Your PHP version is <?php echo PHP_VERSION; ?>, we recommend install PHP 5.6.x or greater</strong>
                             </div>
                             <?php

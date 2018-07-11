@@ -81,40 +81,44 @@ if (!(!empty($_GET['user']) && !empty($_GET['recoverpass']))) {
                         <!-- Form Name -->
                         <legend><?php echo __("Recover password!"); ?></legend>
 
-                        <div class=" ">
+                        <div class="form-inline ">
                             <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                             <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-user"></i></div></div>
                                     <input name="user" class="form-control"  type="text" value="<?php echo $user->getUser(); ?>" readonly >
                                 </div>
                             </div>
                         </div>
-                        <div class=" ">
+                        <div class="form-inline ">
                             <label class="col-md-4 col-form-label"><?php echo __("Recover Password"); ?></label>
                             <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-lock"></i></div></div>
                                     <input name="recoverPassword" class="form-control"  type="text" value="<?php echo $user->getRecoverPass(); ?>" readonly >
                                 </div>
                             </div>
                         </div>
 
-                        <div class=" ">
+                        <div class="form-inline ">
                             <label class="col-md-4 col-form-label"><?php echo __("New Password"); ?></label>
                             <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-lock"></i></div></div>
                                     <input name="newPassword" placeholder="<?php echo __("New Password"); ?>" class="form-control"  type="password" value="" >
                                 </div>
                             </div>
                         </div>
 
-                        <div class=" ">
+                        <div class=" form-inline">
                             <label class="col-md-4 col-form-label"><?php echo __("Confirm New Password"); ?></label>
                             <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-lock"></i></div></div>
                                     <input  name="newPasswordConfirm" placeholder="<?php echo __("Confirm New Password"); ?>" class="form-control"  type="password" value="" >
                                 </div>
                             </div>
@@ -122,7 +126,7 @@ if (!(!empty($_GET['user']) && !empty($_GET['recoverpass']))) {
 
 
                         <!-- Button -->
-                        <div class=" ">
+                        <div class="form-inline ">
                             <label class="col-md-4 col-form-label"></label>
                             <div class="col-md-8">
                                 <button type="submit" class="btn btn-primary" ><?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>

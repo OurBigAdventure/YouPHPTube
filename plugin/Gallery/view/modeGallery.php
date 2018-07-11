@@ -154,7 +154,7 @@ $contentSearchFound = false;
                     if (!$contentSearchFound) {
                         ?>
                         <div class="alert alert-warning">
-                            <span class="glyphicon glyphicon-facetime-video"></span>
+                            <span class="fas fa-video"></span>
                             <strong><?php echo __("Warning"); ?>!</strong>
                         <?php echo __("We have not found any videos or audios to show"); ?>.
                         </div>
