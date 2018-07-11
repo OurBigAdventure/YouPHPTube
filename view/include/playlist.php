@@ -26,6 +26,9 @@ $playlistVideos = PlayList::getVideosFromPlaylist($playlist_id);
       .active {
         background-color: black;
       }
+      .playlistList{
+        overflow-y: scroll;
+      }
     </style>
     <nav class="navbar-inverse playlistList bg-dark text-secondary">
         <ul class=" navbar-nav">
