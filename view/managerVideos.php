@@ -150,11 +150,7 @@ if (!empty($_GET['video_id'])) {
                 <?php
             }
             ?>
-<<<<<<< HEAD
             <div class="float-left btn-group">
-=======
-            <div class="pull-left btn-group">
->>>>>>> master
                 <button class="btn btn-secondary" id="checkBtn">
                     <i class="far fa-square" aria-hidden="true" id="chk"></i>
                 </button>
@@ -173,12 +169,8 @@ if (!empty($_GET['video_id'])) {
                             echo "<a href=\"#\" class=\"dropdown-item\"  onclick=\"changeCategory({$value['id']});return false;\" ><i class=\"{$value['iconClass']}\"></i> {$value['name']}</a>";
                         }
                         ?>
-<<<<<<< HEAD
                     </div>
                   </div>
-=======
-                    </ul>
->>>>>>> master
                 </div>
                 <div class="btn-group">
                   <div class="dropdown">
@@ -237,12 +229,7 @@ if (!empty($_GET['video_id'])) {
                                 </div>
                             </div>
                             <div id="videoLinkContent">
-<<<<<<< HEAD
                                 <label for="videoLink"><?php echo __("Video Link"); ?></label>
-
-=======
-                                <label for="videoLink" class="sr-only"><?php echo __("Video Link"); ?></label>
->>>>>>> master
                                 <input type="text" id="videoLink" class="form-control first" placeholder="<?php echo __("Video Link"); ?> http://www.your-embed-link.com/video" required>
                                 <select class="form-control last" id="videoLinkType" required>
                                     <option value="embed"><?php echo __("Embeded"); ?></option>
@@ -297,27 +284,7 @@ if (!empty($_GET['video_id'])) {
                                             <a href="#" class="btn btn-info btn-sm float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                         </li>
                                         <?php
-<<<<<<< HEAD
-                                        foreach ($userGroups as $value) {
-                                            ?>
-                                            <li class="list-group-item non-public">
-                                                <span class="fa fa-lock"></span>
-                                                <?php echo $value['group_name']; ?>
-                                                <span class="badge badge-info"><?php echo $value['total_users']; ?> Users linked</span>
-                                                <div class="material-switch float-right">
-                                                    <input id="videoGroup<?php echo $value['id']; ?>" type="checkbox" value="<?php echo $value['id']; ?>" class="videoGroups"/>
-                                                    <label for="videoGroup<?php echo $value['id']; ?>" class="badge-warning"></label>
-                                                </div>
-                                            </li>
-                                            <?php
-                                        }
-                                        ?>
-                                    </ul>
-                                </div>
-                                <div class="row mb-3">
-
-=======
-                                    }
+                                    
                                     ?>
                                 </ul>
                                 <div class="row">
@@ -437,18 +404,13 @@ if (!empty($_GET['video_id'])) {
                                           </div>
                                 </div>
                                 <div class="row">
->>>>>>> master
                                     <h3><?php echo __("Autoplay Next Video"); ?> <button class="btn btn-danger btn-sm" id="removeAutoplay"><i class="fa fa-trash"></i> <?php echo __("Remove Autoplay Next Video"); ?></button></h3>
                                     <div class="col-md-4">
                                         <img id="inputNextVideo-poster" src="view/img/notfound.jpg" class="ui-state-default" alt="">
                                     </div>
                                     <div class="col-md-8">
-<<<<<<< HEAD
                                         <input id="inputNextVideo" placeholder="<?php echo __("Autoplay Next Video"); ?>" class="form-control mb-2">
 
-=======
-                                        <input id="inputNextVideo" placeholder="<?php echo __("Autoplay Next Video"); ?>" class="form-control">
->>>>>>> master
                                         <input id="inputNextVideoClean" placeholder="<?php echo __("Autoplay Next Video URL"); ?>" class="form-control" readonly="readonly">
                                         <input type="hidden" id="inputNextVideo-id">
                                     </div>
