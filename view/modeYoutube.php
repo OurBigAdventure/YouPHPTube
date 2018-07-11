@@ -49,9 +49,6 @@ if (empty($video)) {
 // add this because if you change the video category the video was not loading anymore
 $_GET['catName'] = $catName;
 
-if (empty($_GET['videoName'])) {
-    $_GET['videoName'] = $video['clean_title'];
-}
 $_GET['isMediaPlaySite'] = $video['id'];
 $obj = new Video("", "", $video['id']);
 
@@ -157,11 +154,18 @@ $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
 if(!empty($autoPlayVideo)){
     $autoPlaySources = getSources($autoPlayVideo['filename'], true);
     $autoPlayURL = $autoPlayVideo['url'];
+    $autoPlayPoster = "{$global['webSiteRootURL']}videos/{$autoPlayVideo['filename']}.jpg";
+    $autoPlayThumbsSprit = "{$global['webSiteRootURL']}videos/{$autoPlayVideo['filename']}_thumbsSprit.jpg";
 }else{
     $autoPlaySources = array();
     $autoPlayURL = '';
+    $autoPlayPoster = '';
+    $autoPlayThumbsSprit = "";
 }
-//var_dump($playlist_index, $sources, $autoPlayVideo['url']);
+
+if (empty($_GET['videoName'])) {
+    $_GET['videoName'] = $video['clean_title'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $_SESSION['language']; ?>">
@@ -668,6 +672,9 @@ if(!empty($autoPlayVideo)){
                             var fading = false;
                             var autoPlaySources = <?php echo json_encode($autoPlaySources); ?>;
                             var autoPlayURL = '<?php echo $autoPlayURL; ?>';
+                            var autoPlayPoster = '<?php echo $autoPlayPoster; ?>';
+                            var autoPlayThumbsSprit = '<?php echo $autoPlayThumbsSprit; ?>';
+                            
                             $(document).ready(function () {
                                 $("input.saveCookie").each(function () {
                                     var mycookie = Cookies.get($(this).attr('name'));

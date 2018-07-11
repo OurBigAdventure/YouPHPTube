@@ -164,20 +164,31 @@ function changeVideoSrc(vid_obj, source) {
     }
     vid_obj.src(srcs);
     setTimeout(function(){
-        vid_obj.load();
-        vid_obj.ready(function () {
-            var err = this.error();
-            if (err && err.code) {
-                setTimeout(function(){
-                    vid_obj.load();
-                    vid_obj.play();
-                },2000);
-            }else{
-                vid_obj.play();
-            }
-        });
+        changeVideoSrcLoad();
     },1000);
 }
+
+function changeVideoSrcLoad() {
+    console.log("changeVideoSrcLoad: Try to load player");
+    player.load();
+    player.ready(function () {
+        console.log("changeVideoSrcLoad: Player ready");
+        var err = this.error();
+        if (err && err.code) {
+            console.log("changeVideoSrcLoad: Load player Error");
+            setTimeout(function(){
+                changeVideoSrcLoad();
+            },1000);
+        }else{
+            console.log("changeVideoSrcLoad: Load player Success, Play");
+            setTimeout(function(){
+                player.load();
+                player.play();
+            },1000);
+        }
+    });;
+}
+
 
 /**
  *
