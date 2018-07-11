@@ -110,7 +110,6 @@ require_once $global['systemRootPath'] . 'objects/category.php'; ?>
   		                var tmpHtml = "<option value='0' ><?php echo __("None (Parent)"); ?></option>";
                         fullCatList = data;
                         $.each( data.rows, function( key, val ) {
-                            console.log(val.id+" "+val.name)
                             tmpHtml += "<option id='subcat"+val.id+"' value='"+val.id+"' >"+val.name+"</option>";
                         });
                         $("#inputParentId").html(tmpHtml);

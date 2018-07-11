@@ -38,51 +38,60 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                         <fieldset>
                             <legend><?php echo __("Sign Up"); ?></legend>
 
-                            <div class=" ">
+                            <div class="form-inline mb-2">
                                 <label class="col-md-4 col-form-label"><?php echo __("Name"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-pencil-alt"></i></div></div>
                                         <input  id="inputName" placeholder="<?php echo __("Name"); ?>" class="form-control"  type="text" value="" required >
                                     </div>
                                 </div>
                             </div>
 
-                            <div class=" ">
+                            <div class="form-inline mb-2">
                                 <label class="col-md-4 col-form-label"><?php echo __("User"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                      </div>
                                         <input  id="inputUser" placeholder="<?php echo __("User"); ?>" class="form-control"  type="text" value="" required >
                                     </div>
                                 </div>
                             </div>
 
-                            <div class=" ">
+                            <div class="form-inline mb-2">
                                 <label class="col-md-4 col-form-label"><?php echo __("E-mail"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                                      </div>
                                         <input  id="inputEmail" placeholder="<?php echo __("E-mail"); ?>" class="form-control"  type="email" value="" required >
                                     </div>
                                 </div>
                             </div>
 
-                            <div class=" ">
+                            <div class="form-inline mb-2">
                                 <label class="col-md-4 col-form-label"><?php echo __("New Password"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                                      </div>
                                         <input  id="inputPassword" placeholder="<?php echo __("New Password"); ?>" class="form-control"  type="password" value="" >
                                     </div>
                                 </div>
                             </div>
 
-                            <div class=" ">
+                            <div class="form-inline mb-2">
                                 <label class="col-md-4 col-form-label"><?php echo __("Confirm New Password"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                                      </div>
                                         <input  id="inputPasswordConfirm" placeholder="<?php echo __("Confirm New Password"); ?>" class="form-control"  type="password" value="" >
                                     </div>
                                 </div>
@@ -94,20 +103,22 @@ $agreement = YouPHPTubePlugin::loadPluginIfEnabled("SignUpAgreement");
                             }
                             ?>
 
-                            <div class=" ">
+                            <div class="form-inline mb-2">
                                 <label class="col-md-4 col-form-label"><?php echo __("Type the code"); ?></label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
-                                        <span class="input-group-addon"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="glyphicon glyphicon-refresh"></span></span></span>
-                                        <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" style="height: 60px;" maxlength="5" id="captchaText">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><img src="<?php echo $global['webSiteRootURL']; ?>captcha" id="captcha"></span>
+                                        <span class="input-group-text"><span class="btn-sm btn-success" id="btnReloadCapcha"><span class="fas fa-sync"></span></span></span>
+                                      </div>
+                                        <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
                                     </div>
                                 </div>
                             </div>
 
 
                             <!-- Button -->
-                            <div class=" ">
+                            <div class="form-inline">
                                 <label class="col-md-4 col-form-label"></label>
                                 <div class="col-md-8">
                                     <button type="submit" class="btn btn-primary" ><?php echo __("Save"); ?> <span class="glyphicon glyphicon-save"></span></button>
