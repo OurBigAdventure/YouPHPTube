@@ -146,13 +146,17 @@ if (!$config->getAllow_download()) {
 if (!empty($autoPlayVideo)) {
     ?>
                     if (Cookies.get('autoplay') && Cookies.get('autoplay') !== 'false') {
+                        $('video, #mainVideo').attr('poster', autoPlayPoster);
                         changeVideoSrc(player, autoPlaySources);
                         history.pushState(null, null, autoPlayURL);
+                        $('.vjs-thumbnail-holder, .vjs-thumbnail-holder img').attr('src',autoPlayThumbsSprit);
                         $.ajax({
                             url: autoPlayURL,
                             success: function (response) {
                                 modeYoutubeBottom = $(response).find('#modeYoutubeBottom').html();
                                 $('#modeYoutubeBottom').html(modeYoutubeBottom);
+                                //pluginFooterCode = $(response).filter('#pluginFooterCode').html();
+                                //$('#pluginFooterCode').html(pluginFooterCode);
                             }
                         });
                     }
