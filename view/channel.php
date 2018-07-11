@@ -127,6 +127,79 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                 </div>
 
                 <div class="col-md-12">
+                  <script>
+function refreshPlayLists(){
+
+
+  var html = '';
+  var isMyChannel = <?php if(empty($isMyChannel)){echo "false";}else{echo "true";} ?>;
+  $.ajax({url: "<?php echo $global['webSiteRootURL']; ?>objects/playlists.json.php", success: function(result){
+    var playlistBtns = '';
+    jQuery.each(result, function(i, val) {
+      html += '<div class="card card-default">';
+      html += '<div class="card-heading">';
+      html += '<strong style="font-size: 1em;" class="playlistName">'+val.name+'</strong>';
+      html += '<a href="<?php echo $global['webSiteRootURL']; ?>playlist/'+val.id+'" class="btn-sm btn-light playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a>';
+      html += playlistBtns;
+      if(isMyChannel){
+
+        // TODO: implement the JS
+
+        html += '<div class="float-right btn-group">';
+        html += '<button class="btn-sm btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>';
+        html += '<button class="btn-sm btn-danger deletePlaylist" playlist_id="'+val.id+'" ><span class="fa fa-trash-o"></span> <?php echo __("Delete"); ?></button>';
+        html += '<button class="btn-sm btn-primary renamePlaylist" playlist_id="'+val.id+'" ><span class="fa fa-pencil"></span> <?php echo __("Rename"); ?></button>';
+        html += '</div>';
+      }
+      html += '</div><div class="card-body">';
+      html += '<div id="sortable'+val.id+'" class="row" style="list-style: none;">';
+      jQuery.each(val.videos, function(ii, val2) {
+        html += '<li class="col-lg-2 col-md-4 col-sm-4 col-6 galleryVideo " id="'+val2.id+'">';
+
+        html += '<a class="aspectRatio16_9" href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'" style="margin: 0;" >';
+
+        html += '<img src="<?php echo $global['webSiteRootURL']; ?>videos/'+val2.filename+'_thumbsV2.jpg" alt="'+val2.title+'" class="img img-fluid   rotate'+val2.rotation+'" />';
+        html += '<span class="duration">'+val2.duration+'</span>';
+
+        html += '</a>';
+
+        if(isMyChannel){
+          html += '<button class="btn-sm btn-warning btn-block removeVideo" playlist_id="'+val.id+'" video_id="'+val2.id+'">';
+          html += '<span class="fa fa-trash-o"></span> <?php echo __("Remove"); ?></button>';
+        }
+
+        html += '<div class="text-muted galeryDetails"><div><!-- TODO: tags --></div><div>';
+
+        html += '<i class="fa fa-eye"></i><span itemprop="interactionCount">';
+        html += val2.views_count + ' <?php echo __("Views"); ?></span></div>';
+        html += '<div><i class="far fa-clock"></i>'+val2.created+'</div>';
+        html +=  '<div><i class="fa fa-user">'+val2.users_id+'</i></div>';
+
+
+
+        html += '</li>';
+
+      });
+      console.log(val.name);
+
+
+      html += '</div></div></div>';
+
+    });
+    return html;
+  }});
+
+
+}
+
+                  $( document ).ready(function() {
+                        $("#div1").append(refreshPlayLists());
+                  });
+
+                  </script>
+                  <div id="div1">
+
+                  </div>
                     <?php
                     foreach ($playlists as $playlist) {
                         $videosArrayId = PlayList::getVideosIdFromPlaylist($playlist['id']);
