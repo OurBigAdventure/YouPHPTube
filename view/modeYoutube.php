@@ -229,7 +229,7 @@ if (empty($_GET['videoName'])) {
                     <div class="col-sm-6 col-md-6">
                         <div class="row bgWhite border border-light rounded bg-light">
                             <div class="row divMainVideo">
-                                <div class="col-4 col-sm-4 col-md-4">
+                                <div class="col-12 col-md-4">
                                     <img src="<?php echo $poster; ?>" alt="<?php echo str_replace('"', '', $video['title']); ?>" class="img img-fluid <?php echo $img_portrait; ?> rotate<?php echo $video['rotation']; ?>" height="130" itemprop="thumbnail" />
                                     <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($video['duration']); ?>" ><?php echo Video::getCleanDuration($video['duration']); ?></time>
                                     <meta itemprop="thumbnailUrl" content="<?php echo $img; ?>" />
@@ -238,7 +238,7 @@ if (empty($_GET['videoName'])) {
                                     <meta itemprop="uploadDate" content="<?php echo $video['created']; ?>" />
                                     <meta itemprop="description" content="<?php echo str_replace('"', '', $video['title']); ?> - <?php echo htmlentities($video['description']); ?>" />
                                 </div>
-                                <div class="col-8 col-sm-8 col-md-8">
+                                <div class="col-12 col-md-8">
                                     <h1 itemprop="name">
                                         <?php
                                         echo $video['title'];
@@ -674,7 +674,7 @@ if (empty($_GET['videoName'])) {
                             var autoPlayURL = '<?php echo $autoPlayURL; ?>';
                             var autoPlayPoster = '<?php echo $autoPlayPoster; ?>';
                             var autoPlayThumbsSprit = '<?php echo $autoPlayThumbsSprit; ?>';
-                            
+
                             $(document).ready(function () {
                                 $("input.saveCookie").each(function () {
                                     var mycookie = Cookies.get($(this).attr('name'));
