@@ -144,7 +144,26 @@ function refreshPlayLists(){
       if(isMyChannel){
 
         // TODO: implement the JS
-
+        $(function () {
+            $("#sortable"+val.id).sortable({
+                stop: function (event, ui) {
+                    modal.showPleaseWait();
+                    var list = $(this).sortable("toArray");
+                    $.ajax({
+                        url: '<?php echo $global['webSiteRootURL']; ?>objects/playlistSort.php',
+                        data: {
+                            "list": list,
+                            "playlist_id": val.id
+                        },
+                        type: 'post',
+                        success: function (response) {
+                            modal.hidePleaseWait();
+                        }
+                    });
+                }
+            });
+            $("#sortable"+val.id).disableSelection();
+        });
         html += '<div class="float-right btn-group">';
         html += '<button class="btn-sm btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>';
         html += '<button class="btn-sm btn-danger deletePlaylist" playlist_id="'+val.id+'" ><span class="fa fa-trash-o"></span> <?php echo __("Delete"); ?></button>';
@@ -168,11 +187,19 @@ function refreshPlayLists(){
           html += '<span class="fa fa-trash-o"></span> <?php echo __("Remove"); ?></button>';
         }
 
-        html += '<div class="text-muted galeryDetails"><div><!-- TODO: tags --></div><div>';
+        html += '<div class="text-muted galeryDetails"><div><!-- TODO: tags -->';
+          jQuery.each(val2.tags, function(iii, tag) {
+            if(tag.label=="<?php echo __("Group"); ?>"){
+            html += '<span class="badge badge-'+tag.type+'">'+tag.text+'</span>';
+          }
+            html += '';
+            html += '';
+          });
+        html += '</div><div>';
 
         html += '<i class="fa fa-eye"></i><span itemprop="interactionCount">';
         html += val2.views_count + ' <?php echo __("Views"); ?></span></div>';
-        html += '<div><i class="far fa-clock"></i>'+val2.created+'</div>';
+        html += '<div><i class="far fa-clock"></i>'+val2.humanCreate+' ago</div>';
         html +=  '<div><i class="fa fa-user">'+val2.users_id+'</i></div>';
 
 
@@ -186,14 +213,15 @@ function refreshPlayLists(){
       html += '</div></div></div>';
 
     });
-    return html;
+    //return html;
+    $("#div1").append(html);
   }});
 
 
 }
 
                   $( document ).ready(function() {
-                        $("#div1").append(refreshPlayLists());
+                      refreshPlayLists();
                   });
 
                   </script>
