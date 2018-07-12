@@ -259,7 +259,7 @@ function createGallerySection($videos,$crc="") {
 
                                                 $("#searchlist<?php echo $value['id'].$crc; ?>").append('<a class="list-group-item"><i class="fa fa-' + icon + '"></i> <span>'
                                                         + response[i].name + '</span><div class="material-switch pull-right"><input id="someSwitchOptionDefault'
-                                                        + response[i].id + '<?php echo $value['id'].$crc; ?>" name="someSwitchOption' + response[i].id + '<?php echo $value['id'].$crc; ?>" class="playListsIds<?php echo $value['id'].$crc; ?>" type="checkbox" value="'
+                                                        + response[i].id + '<?php echo $value['id'].$crc; ?>" name="someSwitchOption' + response[i].id + '<?php echo $value['id'].$crc; ?>" class="playListsIds<?php echo $value['id'].$crc; ?> playListsIds<?php echo $value['id']; ?>" type="checkbox" value="'
                                                         + response[i].id + '" ' + checked + '/><label for="someSwitchOptionDefault'
                                                         + response[i].id + '<?php echo $value['id'].$crc; ?>" class="label-success"></label></div></a>');
                                             }

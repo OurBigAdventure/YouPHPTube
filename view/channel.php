@@ -243,6 +243,7 @@ $( document ).ready(function() {
                                 modal.showPleaseWait();
                                 var playlist_id = $(currentObject).attr('playlist_id');
                                 var video_id = $(currentObject).attr('video_id');
+
                                 $.ajax({
                                     url: '<?php echo $global['webSiteRootURL']; ?>objects/playlistRemoveVideo.php',
                                     data: {
@@ -251,6 +252,7 @@ $( document ).ready(function() {
                                     },
                                     type: 'post',
                                     success: function (response) {
+                                        $(".playListsIds"+video_id).prop( "checked", false );
                                         $(currentObject).closest('.galleryVideo').fadeOut();
                                         modal.hidePleaseWait();
                                     }
