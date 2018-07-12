@@ -173,7 +173,7 @@ function refreshPlayLists(container){
       html += '</div><div class="card-body">';
       html += '<div id="sortable'+val.id+'" class="row" style="list-style: none;">';
       jQuery.each(val.videos, function(ii, val2) {
-        html += '<li class="col-lg-2 col-md-4 col-sm-4 col-6 galleryVideo " id="'+val2.id+'">';
+        html += '<li class="col-lg-2 col-md-4 col-sm-4 col-6 galleryVideo " id="'+val2.videos_id+'">';
         html += '<a class="aspectRatio16_9" href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'" style="margin: 0;" >';
         html += '<img src="<?php echo $global['webSiteRootURL']; ?>videos/'+val2.filename+'_thumbsV2.jpg" alt="'+val2.title+'" class="img img-fluid   rotate'+val2.rotation+'" />';
         if(val2.duration==""){
@@ -183,7 +183,7 @@ function refreshPlayLists(container){
         html += '<a href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'">';
         html += '<h2>'+val2.title+'</h2></a>';
         if(isMyChannel){
-          html += '<button class="btn btn-sm btn-warning btn-block removeVideo" playlist_id="'+val.id+'" video_id="'+val2.id+'">';
+          html += '<button class="btn btn-sm btn-warning btn-block removeVideo" playlist_id="'+val.id+'" video_id="'+val2.videos_id+'">';
           html += '<span class="fas fa-trash"></span> <?php echo __("Remove"); ?></button>';
         }
         html += '<div class="text-muted galeryDetails"><div><!-- TODO: tags -->';
