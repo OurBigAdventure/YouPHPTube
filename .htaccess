@@ -202,8 +202,9 @@ Deny from all
     </IfModule>
 
     # if image do not exists
-    <FilesMatch "\.(jpg|jpeg|png|gif)$">
-    ErrorDocument 404 "/img/image404.php"
-    </FilesMatch>
+    RewriteCond %{REQUEST_URI} \.(jpg|jpeg|gif|png|ico)$ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule .*$ img/image404.php [NC,L]
 
 </IfModule>
