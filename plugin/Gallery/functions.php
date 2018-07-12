@@ -266,8 +266,6 @@ function createGallerySection($videos,$crc="") {
                                             $('#searchlist<?php echo $value['id'].$crc; ?>').btsListFilter('#searchinput<?php echo $value['id'].$crc; ?>', {itemChild: 'span'});
                                             $('.playListsIds<?php echo $value['id'].$crc; ?>').change(function () {
                                                 modal.showPleaseWait();
-                                                console.log($(this).is(":checked"));
-                                                console.log($(this).val());
                                                 $.ajax({
                                                     url: '<?php echo $global['webSiteRootURL']; ?>objects/playListAddVideo.json.php',
                                                     method: 'POST',
@@ -277,14 +275,6 @@ function createGallerySection($videos,$crc="") {
                                                         'playlists_id': $(this).val()
                                                     },
                                                     success: function (response) {
-
-                                                    /*  if($(this).is(":checked")==true){
-                                                        console.log("received success set false");
-                                                        $(this).prop( "checked", false );
-                                                      } else {
-                                                        console.log("received success set true");
-                                                        $(this).prop( "checked", true );
-                                                      }*/
                                                       <?php
                                                       global $isChannel;
                                                       if(!empty($isChannel)){

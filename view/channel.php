@@ -1,5 +1,6 @@
 <?php
-global $global, $config;
+global $global, $config, $isChannel;
+$isChannel = 1; // still workaround, for gallery-functions
 if(!isset($global['systemRootPath'])){
     require_once '../videos/configuration.php';
 }
@@ -97,8 +98,8 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                             if ($isMyChannel) {
                                 ?>
                                 <a href="<?php echo $global['webSiteRootURL']; ?>mvideos" class="btn btn-success ">
-                                    <span class="glyphicon glyphicon-film"></span>
-                                    <span class="glyphicon glyphicon-headphones"></span>
+                                    <span class="fas fa-film"></span>
+                                    <span class="fas fa-headphones"></span>
                                     <?php echo __("My videos"); ?>
                                 </a>
                                 <?php
