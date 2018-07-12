@@ -6,13 +6,13 @@ class YouPHPTubePlugin {
 
     public static function addRoutes()
     {
-        $plugins = Plugin::getAllEnabled(); 
+        $plugins = Plugin::getAllEnabled();
         foreach($plugins as $value)
         {
             $p=static::loadPlugin($value['dirName']);
             if(is_object($p))
             {
-                $p->addRoutes(); 
+                $p->addRoutes();
             }
         }
         return false;
@@ -423,8 +423,9 @@ class YouPHPTubePlugin {
     }
 
     public static function getPlayListButtons($playlist_id="") {
-        if(empty($playlist_id))
-        return "";
+        if(empty($playlist_id)){
+          return "";
+        }
         $plugins = Plugin::getAllEnabled();
         $str = "";
         foreach ($plugins as $value) {
@@ -435,20 +436,20 @@ class YouPHPTubePlugin {
         }
         return $str;
 
-    } 
-    
+    }
+
     public static function getPluginUserOptions() {
         $plugins = Plugin::getAllEnabled();
         $userOptions = array();
         foreach ($plugins as $value) {
             $p = static::loadPlugin($value['dirName']);
-            if (is_object($p)) {  
-                $userOptions=array_merge($userOptions, $p->getUserOptions()); 
+            if (is_object($p)) {
+                $userOptions=array_merge($userOptions, $p->getUserOptions());
             }
         }
         return $userOptions;
     }
-    
+
     public static function getUserOptions() {
         $userOptions = static::getPluginUserOptions();
         $str="";
@@ -464,8 +465,8 @@ class YouPHPTubePlugin {
             ";
         }
         return $str;
-    }  
-    
+    }
+
     public static function addUserBtnJS()
     {
         $userOptions = static::getPluginUserOptions();
@@ -476,7 +477,7 @@ class YouPHPTubePlugin {
             $js.="                    $('#$id').prop('checked', false);\n";
         }
         return $js;
-    
+
     }
 
     public static function updateUserFormJS()
@@ -489,7 +490,7 @@ class YouPHPTubePlugin {
         }
         return $js;
     }
-    
+
     public static function loadUsersFormJS()
     {
         $userOptions = static::getPluginUserOptions();
@@ -509,10 +510,10 @@ class YouPHPTubePlugin {
         $navBarButtons="";
         foreach ($plugins as $value) {
             $p = static::loadPlugin($value['dirName']);
-            if (is_object($p)) {  
-                $navBarButtons.=$p->navBarButtons(); 
+            if (is_object($p)) {
+                $navBarButtons.=$p->navBarButtons();
             }
         }
-        return $navBarButtons;    
+        return $navBarButtons;
     }
 }

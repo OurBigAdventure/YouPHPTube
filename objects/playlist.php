@@ -68,12 +68,13 @@ class PlayList extends ObjectYPT {
         sqlDAL::close($res);
         $rows = array();
         if ($res!=false) {
-          global $isChannel;
             foreach ($fullData as $row) {
-              if(!empty($isChannel)){
+              if(!empty($_GET['isChannel'])){
                 $row['tags'] = Video::getTags($row['id']);
+                $row['pluginBtns'] = YouPHPTubePlugin::getPlayListButtons($playlists_id);
+                $row['humancreate'] = humanTiming(strtotime($row['cre']));
               }
-                $row['humanCreate'] = humanTiming(strtotime($row['cre']));
+
                 $rows[] = $row;
             }
         } else {

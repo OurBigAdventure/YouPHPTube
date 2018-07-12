@@ -9,8 +9,7 @@ require_once $global['systemRootPath'] . 'objects/playlist.php';
 require_once $global['systemRootPath'] . 'objects/subscribe.php';
 require_once $global['systemRootPath'] . 'plugin/Gallery/functions.php';
 
-global $isChannel;
-$isChannel = 1; // workaround only
+
 
 if (empty($_GET['channelName'])) {
     if (User::isLogged()) {
@@ -136,14 +135,15 @@ function refreshPlayLists(container){
 
   var html = '';
   var isMyChannel = <?php if(empty($isMyChannel)){echo "false";}else{echo "true";} ?>;
-  $.ajax({url: "<?php echo $global['webSiteRootURL']; ?>objects/playlists.json.php", success: function(result){
-    var playlistBtns = '';
+  $.ajax({url: "<?php echo $global['webSiteRootURL']; ?>objects/playlists.json.php?isChannel=1", success: function(result){
     jQuery.each(result, function(i, val) {
       html += '<div class="card card-default">';
       html += '<div class="card-heading">';
       html += '<strong style="font-size: 1em;" class="playlistName">'+val.name+'</strong>';
       html += '<a href="<?php echo $global['webSiteRootURL']; ?>playlist/'+val.id+'" class="btn-sm btn-light playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a>';
-      html += playlistBtns;
+      if(val.pluginBtns!=undefined){
+        html += val.pluginBtns;
+      }
       if(isMyChannel){
 
         // TODO: implement the JS
@@ -191,8 +191,8 @@ function refreshPlayLists(container){
 
 
         if(isMyChannel){
-          html += '<button class="btn-sm btn-warning btn-block removeVideo" playlist_id="'+val.id+'" video_id="'+val2.id+'">';
-          html += '<span class="fa fa-trash-o"></span> <?php echo __("Remove"); ?></button>';
+          html += '<button class="btn btn-sm btn-warning btn-block removeVideo" playlist_id="'+val.id+'" video_id="'+val2.id+'">';
+          html += '<span class="fas fa-trash"></span> <?php echo __("Remove"); ?></button>';
         }
 
         html += '<div class="text-muted galeryDetails"><div><!-- TODO: tags -->';
@@ -206,7 +206,8 @@ function refreshPlayLists(container){
 
         html += '<i class="fa fa-eye"></i><span itemprop="interactionCount">';
         html += val2.views_count + ' <?php echo __("Views"); ?></span></div>';
-        html += '<div><i class="far fa-clock"></i>'+val2.humanCreate+' ago</div>';
+        console.log(val2);
+        html += '<div><i class="far fa-clock"></i>'+val2.humancreate+' ago</div>';
         html +=  '<div><i class="fa fa-user">'+val2.users_id+'</i></div>';
 
 
