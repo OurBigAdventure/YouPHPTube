@@ -57,23 +57,11 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
             </div>
         </div>
         <?php if ($config->getAllow_download()) { ?>
-            <?php if ($playNowVideo['type'] == "video") { ?>
-                <a class="btn btn-xs btn-default pull-right d-none" id="downloadButton" role="button" href="<?php echo $global['webSiteRootURL'] . "videos/" . $playNowVideo['filename']; ?>.mp4" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
-                    <i class="fa fa-download"></i>
-                    <?php echo __("Download video"); ?>
-                </a>
-            <?php } else { ?>
                 <a class="btn btn-xs btn-default pull-right d-none" id="downloadButton" role="button" href="<?php echo $video['videoLink']; ?>" download="<?php echo $playNowVideo['title'] . ".mp4"; ?>" >
                     <i class="fa fa-download"></i>
                     <?php echo __("Download video"); ?>
                 </a>
-
-                <?php
-            }
-        }
-        ?>
-
-
+        <?php } ?>
     </div>
     <div class="col-sm-2 col-md-2"></div>
 
@@ -83,7 +71,7 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
   <table class="table table-fluid bg-white col-10">
     <tbody>
     <tr class=" "><td id="torrentDownloaded"></td> <td id="torrentSeeders"></td><td class=""><?php echo __("Percent"); ?></td> <td id="torrentPercent"></td></tr>
-    <tr class=""><td><?php echo __("Download-speed"); ?> </td><td id="torrentDownloadSpeed"></td><td class="" ><?php echo __("Upload-speed"); ?> </td><td id="torrentUploadSpeed"></td></tr>
+    <tr class=""><td><a href="<?php echo $global['webSiteRootURL']; ?>view/seeder.php" target="torrentWindow"><?php echo __("Support us and seed all torrent-videos with your pc"); ?></a> </td><td ><a href="<?php echo $video['videoLink']; ?>"  ><?php echo __("Magnet-link"); ?></a></td><td id="torrentDownloadSpeed" > </td><td id="torrentUploadSpeed"></td></tr>
   </tbody>
   </table>
 </div>
@@ -98,17 +86,13 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
     var player;
 
     $(document).ready(function () {
-      //$("#mainVideo").hide();
-      client.add(torrentId, function (torrent) {
+        client.add(torrentId, function (torrent) {
         // Torrents can contain many files. Let's use the .mp4 file
         var file = torrent.files.find(function (file) {
           return file.name.endsWith('.mp4');
         });
 
         // Display the file by adding it to the DOM. Supports video, audio, image, etc. files
-
-        //file.appendTo('#main-video');
-        //file.appendTo('#mainVideo');
         file.renderTo('#mainVideo_html5_api');
         // Trigger statistics refresh
         torrent.on('done', onDone);
@@ -119,7 +103,7 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
             console.log(err.message);
           }
           $("#downloadButton").attr("href",url);
-          $("#downloadButton").show();
+          $("#downloadButton").removeClass("d-none");
         });
         function onProgress () {
           // Peers
@@ -127,28 +111,14 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
           // Progress
           var percent = Math.round(torrent.progress * 100 * 100) / 100
           $("#torrentPercent").html(percent + '%');
-        //  $downloaded.innerHTML = prettyBytes(torrent.downloaded)
-$("#torrentDownloaded").html(prettyBytes(torrent.downloaded) + " / " + prettyBytes(torrent.length));
-
-          //$total.innerHTML = prettyBytes(torrent.length)
-
-          // Remaining time
-          var remaining
-          if (torrent.done) {
-            remaining = 'Done.'
-          } else {
-            //remaining = moment.duration(torrent.timeRemaining / 1000, 'seconds').humanize()
-            //remaining = remaining[0].toUpperCase() + remaining.substring(1) + ' remaining.'
-          }
-          //$remaining.innerHTML = remaining
+          $("#torrentDownloaded").html(prettyBytes(torrent.downloaded) + " / " + prettyBytes(torrent.length));
 
           // Speed rates
-          $("#torrentDownloadSpeed").html(prettyBytes(torrent.downloadSpeed) + '/s');
-          $("#torrentUploadSpeed").html(prettyBytes(torrent.uploadSpeed) + '/s');
+          $("#torrentDownloadSpeed").html(prettyBytes(torrent.downloadSpeed) + '/s (down)');
+          $("#torrentUploadSpeed").html(prettyBytes(torrent.uploadSpeed) + '/s (up)');
         }
         function onDone () {
-          //$body.className += ' is-seed'
-          onProgress()
+          onProgress();
         }
         function prettyBytes(num) {
           var exponent, unit, neg = num < 0, units = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
@@ -159,11 +129,7 @@ $("#torrentDownloaded").html(prettyBytes(torrent.downloaded) + " / " + prettyByt
           unit = units[exponent];
           return (neg ? '-' : '') + num + ' ' + unit;
         }
-
-        //$("#mainVideo").show();
       });
-      // workaround until integration into videojs works
-      //$("#mainVideo").hide();
 <?php
 if (!$config->getAllow_download()) {
     ?>
