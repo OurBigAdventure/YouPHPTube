@@ -129,10 +129,8 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                 </div>
 
                 <div class="col-md-12">
-                  <script>
+<script>
 function refreshPlayLists(container){
-
-
   var html = '';
   var isMyChannel = <?php if(empty($isMyChannel)){echo "false";}else{echo "true";} ?>;
   $.ajax({url: "<?php echo $global['webSiteRootURL']; ?>objects/playlists.json.php?isChannel=1", success: function(result){
@@ -145,8 +143,6 @@ function refreshPlayLists(container){
         html += val.pluginBtns;
       }
       if(isMyChannel){
-
-        // TODO: implement the JS
         $(function () {
             $("#sortable"+val.id).sortable({
                 stop: function (event, ui) {
@@ -177,47 +173,31 @@ function refreshPlayLists(container){
       html += '<div id="sortable'+val.id+'" class="row" style="list-style: none;">';
       jQuery.each(val.videos, function(ii, val2) {
         html += '<li class="col-lg-2 col-md-4 col-sm-4 col-6 galleryVideo " id="'+val2.id+'">';
-
         html += '<a class="aspectRatio16_9" href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'" style="margin: 0;" >';
-
         html += '<img src="<?php echo $global['webSiteRootURL']; ?>videos/'+val2.filename+'_thumbsV2.jpg" alt="'+val2.title+'" class="img img-fluid   rotate'+val2.rotation+'" />';
         if(val2.duration==""){
           val2.duration = "00:00:00";
         }
         html += '<span class="duration">'+val2.duration+'</span></a>';
-
         html += '<a href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'">';
         html += '<h2>'+val2.title+'</h2></a>';
-
-
         if(isMyChannel){
           html += '<button class="btn btn-sm btn-warning btn-block removeVideo" playlist_id="'+val.id+'" video_id="'+val2.id+'">';
           html += '<span class="fas fa-trash"></span> <?php echo __("Remove"); ?></button>';
         }
-
         html += '<div class="text-muted galeryDetails"><div><!-- TODO: tags -->';
-          jQuery.each(val2.tags, function(iii, tag) {
-            if(tag.label=="<?php echo __("Group"); ?>"){
+        jQuery.each(val2.tags, function(iii, tag) {
+          if(tag.label=="<?php echo __("Group"); ?>"){
             html += '<span class="badge badge-'+tag.type+'">'+tag.text+'</span>';
           }
-
-          });
+        });
         html += '</div><div>';
-
         html += '<i class="fa fa-eye"></i><span itemprop="interactionCount">';
         html += val2.views_count + ' <?php echo __("Views"); ?></span></div>';
-        console.log(val2);
         html += '<div><i class="far fa-clock"></i>'+val2.humancreate+' ago</div>';
         html +=  '<div><i class="fa fa-user">'+val2.users_id+'</i></div>';
-
-
-
         html += '</li>';
-
       });
-      console.log(val.name);
-
-
       html += '</div></div></div>';
 
     });
@@ -229,11 +209,10 @@ function refreshPlayLists(container){
 
 }
 
-                  $( document ).ready(function() {
-                      refreshPlayLists('playlistContainer');
-                  });
-
-                  </script>
+$( document ).ready(function() {
+    refreshPlayLists('playlistContainer');
+});
+</script>
                   <div id="playlistContainer">
 
                   </div>
@@ -292,7 +271,6 @@ function refreshPlayLists(container){
                             function () {
                                 modal.showPleaseWait();
                                 var playlist_id = $(currentObject).attr('playlist_id');
-                                console.log(playlist_id);
                                 $.ajax({
                                     url: '<?php echo $global['webSiteRootURL']; ?>objects/playlistRemove.php',
                                     data: {
@@ -329,7 +307,6 @@ function refreshPlayLists(container){
 
                                 modal.showPleaseWait();
                                 var playlist_id = $(currentObject).attr('playlist_id');
-                                console.log(playlist_id);
                                 $.ajax({
                                     url: '<?php echo $global['webSiteRootURL']; ?>objects/playlistRename.php',
                                     data: {
