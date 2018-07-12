@@ -165,8 +165,8 @@ function refreshPlayLists(container){
         });
         html += '<div class="float-right btn-group">';
         html += '<button class="btn-sm btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>';
-        html += '<button class="btn-sm btn-danger deletePlaylist" playlist_id="'+val.id+'" ><span class="fa fa-trash-o"></span> <?php echo __("Delete"); ?></button>';
-        html += '<button class="btn-sm btn-primary renamePlaylist" playlist_id="'+val.id+'" ><span class="fa fa-pencil"></span> <?php echo __("Rename"); ?></button>';
+        html += '<button class="btn-sm btn-danger deletePlaylist" playlist_id="'+val.id+'" ><span class="fas fa-trash"></span> <?php echo __("Delete"); ?></button>';
+        html += '<button class="btn-sm btn-primary renamePlaylist" playlist_id="'+val.id+'" ><span class="fas fa-edit"></span> <?php echo __("Rename"); ?></button>';
         html += '</div>';
       }
       html += '</div><div class="card-body">';
