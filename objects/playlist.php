@@ -61,7 +61,6 @@ class PlayList extends ObjectYPT {
                 . " LEFT JOIN videos as v ON videos_id = v.id "
                 . " LEFT JOIN users u ON u.id = v.users_id "
                 . " WHERE playlists_id = ? ORDER BY p.`order` ASC ";
-
         $sql .= self::getSqlFromPost();
         $res = sqlDAL::readSql($sql,"i",array($playlists_id));
         $fullData = sqlDAL::fetchAllAssoc($res);
@@ -74,7 +73,6 @@ class PlayList extends ObjectYPT {
                 $row['pluginBtns'] = YouPHPTubePlugin::getPlayListButtons($playlists_id);
                 $row['humancreate'] = humanTiming(strtotime($row['cre']));
               }
-
                 $rows[] = $row;
             }
         } else {
@@ -82,6 +80,7 @@ class PlayList extends ObjectYPT {
         }
         return $rows;
     }
+
 
     static function getVideosIdFromPlaylist($playlists_id) {
         $videosId = array();

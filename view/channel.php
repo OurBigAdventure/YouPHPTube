@@ -130,92 +130,87 @@ $playlists = PlayList::getAllFromUser($user_id, $publicOnly);
                 </div>
 
                 <div class="col-md-12">
-<script>
-function refreshPlayLists(container){
-  var html = '';
-  var isMyChannel = <?php if(empty($isMyChannel)){echo "false";}else{echo "true";} ?>;
-  $.ajax({url: "<?php echo $global['webSiteRootURL']; ?>objects/playlists.json.php?isChannel=1", success: function(result){
-    jQuery.each(result, function(i, val) {
-      html += '<div class="card card-default">';
-      html += '<div class="card-heading">';
-      html += '<strong style="font-size: 1em;" class="playlistName">'+val.name+'</strong>';
-      html += '<a href="<?php echo $global['webSiteRootURL']; ?>playlist/'+val.id+'" class="btn-sm btn-light playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a>';
-      if(val.pluginBtns!=undefined){
-        html += val.pluginBtns;
-      }
-      if(isMyChannel){
-        $(function () {
-            $("#sortable"+val.id).sortable({
-                stop: function (event, ui) {
-                    modal.showPleaseWait();
-                    var list = $(this).sortable("toArray");
-                    $.ajax({
-                        url: '<?php echo $global['webSiteRootURL']; ?>objects/playlistSort.php',
-                        data: {
-                            "list": list,
-                            "playlist_id": val.id
-                        },
-                        type: 'post',
-                        success: function (response) {
-                            modal.hidePleaseWait();
+                  <script>
+                  function refreshPlayLists(container){
+                    var html = '';
+                    var isMyChannel = <?php if(empty($isMyChannel)){echo "false";}else{echo "true";} ?>;
+                    $.ajax({url: "<?php echo $global['webSiteRootURL']; ?>objects/playlists.json.php?isChannel=1", success: function(result){
+                      jQuery.each(result, function(i, val) {
+                        html += '<div class="card card-default">';
+                        html += '<div class="card-heading">';
+                        html += '<strong style="font-size: 1em;" class="playlistName">'+val.name+'</strong>';
+                        html += '<a href="<?php echo $global['webSiteRootURL']; ?>playlist/'+val.id+'" class="btn-sm btn-light playAll"><span class="fa fa-play"></span> <?php echo __("Play All"); ?></a>';
+                        if(val.pluginBtns!=undefined){
+                          html += val.pluginBtns;
                         }
-                    });
-                }
-            });
-            $("#sortable"+val.id).disableSelection();
-        });
-        html += '<div class="float-right btn-group">';
-        html += '<button class="btn-sm btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>';
-        html += '<button class="btn-sm btn-danger deletePlaylist" playlist_id="'+val.id+'" ><span class="fas fa-trash"></span> <?php echo __("Delete"); ?></button>';
-        html += '<button class="btn-sm btn-primary renamePlaylist" playlist_id="'+val.id+'" ><span class="fas fa-edit"></span> <?php echo __("Rename"); ?></button>';
-        html += '</div>';
-      }
-      html += '</div><div class="card-body">';
-      html += '<div id="sortable'+val.id+'" class="row" style="list-style: none;">';
-      jQuery.each(val.videos, function(ii, val2) {
-        html += '<li class="col-lg-2 col-md-4 col-sm-4 col-6 galleryVideo " id="'+val2.videos_id+'">';
-        html += '<a class="aspectRatio16_9" href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'" style="margin: 0;" >';
-        html += '<img src="<?php echo $global['webSiteRootURL']; ?>videos/'+val2.filename+'_thumbsV2.jpg" alt="'+val2.title+'" class="img img-fluid   rotate'+val2.rotation+'" />';
-        if(val2.duration==""){
-          val2.duration = "00:00:00";
-        }
-        html += '<span class="duration">'+val2.duration+'</span></a>';
-        html += '<a href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'">';
-        html += '<h2>'+val2.title+'</h2></a>';
-        if(isMyChannel){
-          html += '<button class="btn btn-sm btn-warning btn-block removeVideo" playlist_id="'+val.id+'" video_id="'+val2.videos_id+'">';
-          html += '<span class="fas fa-trash"></span> <?php echo __("Remove"); ?></button>';
-        }
-        html += '<div class="text-muted galeryDetails"><div><!-- TODO: tags -->';
-        jQuery.each(val2.tags, function(iii, tag) {
-          if(tag.label=="<?php echo __("Group"); ?>"){
-            html += '<span class="badge badge-'+tag.type+'">'+tag.text+'</span>';
-          }
-        });
-        html += '</div><div>';
-        html += '<i class="fa fa-eye"></i><span itemprop="interactionCount">';
-        html += val2.views_count + ' <?php echo __("Views"); ?></span></div>';
-        html += '<div><i class="far fa-clock"></i>'+val2.humancreate+' ago</div>';
-        html +=  '<div><i class="fa fa-user">'+val2.users_id+'</i></div>';
-        html += '</li>';
-      });
-      html += '</div></div></div>';
-
-    });
-    //return html;
-    $("#"+container).html(html);
-    initListeners();
-  }});
-
-
-}
-
-$( document ).ready(function() {
-    refreshPlayLists('playlistContainer');
-});
-</script>
+                        if(isMyChannel){
+                          $(function () {
+                              $("#sortable"+val.id).sortable({
+                                  stop: function (event, ui) {
+                                      modal.showPleaseWait();
+                                      var list = $(this).sortable("toArray");
+                                      $.ajax({
+                                          url: '<?php echo $global['webSiteRootURL']; ?>objects/playlistSort.php',
+                                          data: {
+                                              "list": list,
+                                              "playlist_id": val.id
+                                          },
+                                          type: 'post',
+                                          success: function (response) {
+                                              modal.hidePleaseWait();
+                                          }
+                                      });
+                                  }
+                              });
+                              $("#sortable"+val.id).disableSelection();
+                          });
+                          html += '<div class="float-right btn-group">';
+                          html += '<button class="btn-sm btn-info" ><i class="fa fa-info-circle"></i> <?php echo __("Drag and drop to sort"); ?></button>';
+                          html += '<button class="btn-sm btn-danger deletePlaylist" playlist_id="'+val.id+'" ><span class="fas fa-trash"></span> <?php echo __("Delete"); ?></button>';
+                          html += '<button class="btn-sm btn-primary renamePlaylist" playlist_id="'+val.id+'" ><span class="fas fa-edit"></span> <?php echo __("Rename"); ?></button>';
+                          html += '</div>';
+                        }
+                        html += '</div><div class="card-body">';
+                        html += '<div id="sortable'+val.id+'" class="row" style="list-style: none;">';
+                        jQuery.each(val.videos, function(ii, val2) {
+                          html += '<li class="col-lg-2 col-md-4 col-sm-4 col-6 galleryVideo " id="'+val2.videos_id+'">';
+                          html += '<a class="aspectRatio16_9" href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'" style="margin: 0;" >';
+                          html += '<img src="<?php echo $global['webSiteRootURL']; ?>videos/'+val2.filename+'_thumbsV2.jpg" alt="'+val2.title+'" class="img img-fluid   rotate'+val2.rotation+'" />';
+                          if(val2.duration==""){
+                            val2.duration = "00:00:00";
+                          }
+                          html += '<span class="duration">'+val2.duration+'</span></a>';
+                          html += '<a href="<?php echo $global['webSiteRootURL']; ?>video/'+val2.clean_title+'" title="'+val2.title+'">';
+                          html += '<h2>'+val2.title+'</h2></a>';
+                          if(isMyChannel){
+                            html += '<button class="btn btn-sm btn-warning btn-block removeVideo" playlist_id="'+val.id+'" video_id="'+val2.videos_id+'">';
+                            html += '<span class="fas fa-trash"></span> <?php echo __("Remove"); ?></button>';
+                          }
+                          html += '<div class="text-muted galeryDetails"><div>';
+                          jQuery.each(val2.tags, function(iii, tag) {
+                            if(tag.label=="<?php echo __("Group"); ?>"){
+                              html += '<span class="badge badge-'+tag.type+'">'+tag.text+'</span>';
+                            }
+                          });
+                          html += '</div><div>';
+                          html += '<i class="fa fa-eye"></i><span itemprop="interactionCount">';
+                          html += val2.views_count + ' <?php echo __("Views"); ?></span></div>';
+                          html += '<div><i class="far fa-clock"></i>'+val2.humancreate+' ago</div>';
+                          html +=  '<div><i class="fa fa-user">'+val2.users_id+'</i></div>';
+                          html += '</li>';
+                        });
+                        html += '</div></div></div>';
+                      });
+                      //return html;
+                      $("#"+container).html(html);
+                      initListeners();
+                    }});
+                  }
+                  $( document ).ready(function() {
+                      refreshPlayLists('playlistContainer');
+                  });
+                  </script>
                   <div id="playlistContainer">
-
                   </div>
                 </div>
             </div>
@@ -254,12 +249,12 @@ $( document ).ready(function() {
                                     success: function (response) {
                                         $(".playListsIds"+video_id).prop( "checked", false );
                                         $(currentObject).closest('.galleryVideo').fadeOut();
+                                        refreshPlayLists('playlistContainer');
                                         modal.hidePleaseWait();
                                     }
                                 });
                             });
                 });
-
                 $('.deletePlaylist').click(function () {
                     currentObject = this;
                     swal({
@@ -282,13 +277,12 @@ $( document ).ready(function() {
                                     type: 'post',
                                     success: function (response) {
                                         $(currentObject).closest('.playList').slideUp();
+                                        refreshPlayLists('playlistContainer');
                                         modal.hidePleaseWait();
                                     }
                                 });
                             });
-
                 });
-
                 $('.renamePlaylist').click(function () {
                     currentObject = this;
                     swal({
@@ -302,12 +296,10 @@ $( document ).ready(function() {
                             function (inputValue) {
                                 if (inputValue === false)
                                     return false;
-
                                 if (inputValue === "") {
                                     swal.showInputError("<?php echo __("You need to tell us the new name?"); ?>");
                                     return false
                                 }
-
                                 modal.showPleaseWait();
                                 var playlist_id = $(currentObject).attr('playlist_id');
                                 $.ajax({
@@ -319,12 +311,12 @@ $( document ).ready(function() {
                                     type: 'post',
                                     success: function (response) {
                                         $(currentObject).closest('.playList').find('.playlistName').text(inputValue);
+                                        refreshPlayLists('playlistContainer');
                                         modal.hidePleaseWait();
                                     }
                                 });
                                 return false;
                             });
-
                 });
             });
           };

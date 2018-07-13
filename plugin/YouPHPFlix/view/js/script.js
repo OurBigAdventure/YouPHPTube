@@ -3,9 +3,9 @@ var cat;
 var videos_id;
 var $carousel;
 
-function isFlickityEnabled(selector){
+function isFlickityEnabled(selector) {
     var isEnabled = $(selector).hasClass('flickity-enabled');
-    if(isEnabled){
+    if (isEnabled) {
         $('#loading').fadeOut();
         $('.container-fluid').fadeIn('slow', function () {
             $carousel.flickity('resize');
@@ -108,16 +108,19 @@ $(function () {
 
             $(row).find('.infoText, .infoTitle, .infoDetails').fadeIn('slow');
         });
-        video = $(this).attr('video');
-        cat = $(this).attr('cat');
-        if(typeof cat == 'undefined'){
-            cat = $(this).find('.tile__cat').attr('cat');
-        }
-        var href = 'video/' + video;
-        if ((cat && typeof cat != 'undefined')||(forceCatLinks)) {
-            href = 'cat/' + cat + '/' + href;
-        }
-        $('.playBtn').attr('href', webSiteRootURL + href);
+        /*
+         video = $(this).attr('video');
+         cat = $(this).attr('cat');
+         if(typeof cat == 'undefined'){
+         cat = $(this).find('.tile__cat').attr('cat');
+         }
+         var href = 'video/' + video;
+         if ((cat && typeof cat != 'undefined')||(forceCatLinks)) {
+         href = 'cat/' + cat + '/' + href;
+         }
+         */
+        href = $(this).attr('href');
+        $('.playBtn').attr('href', href);
         loadPlayLists();
     });
 
