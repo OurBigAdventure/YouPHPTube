@@ -25,7 +25,7 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
                     <h1 class="text-primary"><?php echo $video['title']; ?></h1>
                 </a>
                 <div class="mainAreaDescriptionContainer">
-                    <h4 class="mainAreaDescription" itemprop="description"><?php echo nl2br(textToLink($video['description'])); ?></h4>
+                    <h4 class="mainAreaDescription text-secondary" itemprop="description"><?php echo nl2br(textToLink($video['description'])); ?></h4>
                 </div>
                 <div class="text-muted galeryDetails">
                     <div>
