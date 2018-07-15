@@ -8,6 +8,12 @@ I would humbly like to thank God for giving me the necessary knowledge, motivati
 
 # This Software must be used for Good, never Evil. It is expressly forbidden to use YouPHPTube to build porn sites, violence, racism or anything else that affects human integrity or denigrates the image of anyone.
 
+### Draft
+
+## Explicit excepted from violence is legal and serious journalism and explicit faked violence by movie-performers (James Bond for example).
+
+### Draft end
+
 # Now you can read the rest...
 
 ## Important Information
