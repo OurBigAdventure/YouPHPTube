@@ -468,7 +468,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                             <label for="disable_rightclick" class="ml-md-auto font-weight-bold mr-md-2"><?php echo __("Disable right-click-prevention"); ?></label>
                                                             <div class="col-8">
                                                                 <div class="material-switch">
-                                                                    <input name="disable_rightclick" id="disable_rightclick" type="checkbox" value="1" class="pluginSwitch" <?php
+                                                                    <input name="disable_rightclick" id="allow_download" type="checkbox" value="1" class="pluginSwitch" <?php
                                                                     if (!empty($config->getAllow_download())) {
                                                                         echo "checked";
                                                                     }
@@ -560,7 +560,7 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                                                                 </span>
                                                                 <input name="captcha" placeholder="<?php echo __("Type the code"); ?>" class="form-control" type="text" maxlength="5" id="captchaText">
                                                                 <button class="btn btn-warning" id="testEmail" >
-                                                                    <i class="fas fa-at"></i> <?php echo __("Test Email"); ?> 
+                                                                    <i class="fas fa-at"></i> <?php echo __("Test Email"); ?>
                                                                     <span class="fas fa-share-square"></span>
                                                                 </button>
                                                             </div>
@@ -768,6 +768,44 @@ require_once $global['systemRootPath'] . 'objects/functions.php';
                             evt.preventDefault();
                             modal.showPleaseWait();
                             $('#tabRegularLink').tab('show');
+                            // workaround: always send, but withouth logo. if logo set and crop work, send again with logo.
+                            $.ajax({
+                                url: '<?php echo $global['webSiteRootURL']; ?>objects/configurationUpdate.json.php',
+                                data: {
+                                    "video_resolution": $('#inputVideoResolution').val(),
+                                    "webSiteTitle": $('#inputWebSiteTitle').val(),
+                                    "language": $('#inputLanguage').val(),
+                                    "contactEmail": $('#inputEmail').val(),
+                                    "authCanUploadVideos": $('#authCanUploadVideos').val(),
+                                    "authCanViewChart": $('#authCanViewChart').val(),
+                                    "authCanComment": $('#authCanComment').val(),
+                                    "head": $('#head').val(),
+                                    "adsense": $('#adsense').val(),
+                                    "disable_analytics": $('#disable_analytics').prop("checked"),
+                                    "disable_youtubeupload": $('#disable_youtubeupload').prop("checked"),
+                                    "allow_download": $("#allow_download").prop("checked"),
+                                    "session_timeout": $('#session_timeout').val(),
+                                    "autoplay": $('#autoplay').prop("checked"),
+                                    "theme": theme,
+                                    "smtp": $('#enableSmtp').prop("checked"),
+                                    "smtpAuth": $('#enableSmtpAuth').prop("checked"),
+                                    "smtpSecure": $('#smtpSecure').val(),
+                                    "smtpHost": $('#smtpHost').val(),
+                                    "smtpUsername": $('#smtpUsername').val(),
+                                    "smtpPassword": $('#smtpPassword').val(),
+                                    "smtpPort": $('#smtpPort').val(),
+                                    "encoder_url": $('#encoder_url').val(),
+                                },
+                                type: 'post',
+                                success: function (response) {
+                                    if (response.status === "1") {
+                                        swal("<?php echo __("Congratulations!"); ?>", "<?php echo __("Your configurations has been updated!"); ?>", "success");
+                                    } else {
+                                        swal("<?php echo __("Sorry!"); ?>", "<?php echo __("Your configurations has NOT been updated!"); ?>", "error");
+                                    }
+                                    modal.hidePleaseWait();
+                                }
+                            });
                             logoSmallCrop.croppie('result', {
                                 type: 'canvas',
                                 size: 'viewport'
