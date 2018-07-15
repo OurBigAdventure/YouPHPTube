@@ -137,7 +137,7 @@ function createGallerySection($videos,$crc="") {
                 <span class="duration"><?php echo Video::getCleanDuration($value['duration']); ?></span>
             </a>
             <a class="h6 galleryLink" videos_id="<?php echo $value['id']; ?>" href="<?php echo Video::getLink($value['id'], $value['clean_title']); ?>" title="<?php echo $value['title']; ?>">
-                <h2><?php echo $value['title']; ?></h2>
+                <h2 class=" text-primary"><?php echo $value['title']; ?></h2>
             </a>
 
             <div class="text-muted galeryDetails">

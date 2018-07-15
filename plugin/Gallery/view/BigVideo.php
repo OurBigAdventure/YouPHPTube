@@ -22,7 +22,7 @@ if ($obj->BigVideo && empty($_GET['showOnly'])) {
             </div>
             <div class="col-sm-6">
                 <a class="h6 galleryLink" videos_id="<?php echo $video['id']; ?>" href="<?php echo $global['webSiteRootURL']; ?>video/<?php echo $video['clean_title']; ?>" title="<?php echo $video['title']; ?>">
-                    <h1><?php echo $video['title']; ?></h1>
+                    <h1 class="text-primary"><?php echo $video['title']; ?></h1>
                 </a>
                 <div class="mainAreaDescriptionContainer">
                     <h4 class="mainAreaDescription" itemprop="description"><?php echo nl2br(textToLink($video['description'])); ?></h4>
