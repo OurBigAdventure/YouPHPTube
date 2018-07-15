@@ -284,7 +284,7 @@ if (!empty($_GET['video_id'])) {
                                             <a href="#" class="btn btn-info btn-sm float-right" data-toggle="popover" title="<?php echo __("What is User Groups"); ?>" data-placement="bottom"  data-content="<?php echo __("By linking groups to this video, it will no longer be public and only users in the same group will be able to watch this video"); ?>"><span class="fa fa-question-circle" aria-hidden="true"></span> <?php echo __("Help"); ?></a>
                                         </li>
                                         <?php
-                                    
+
                                     ?>
                                 </ul>
                                 <div class="row">
@@ -960,7 +960,7 @@ if (User::isAdmin()) {
                                                         if (row.youtubeId) {
                                                             //youTubeLink += '<a href=\'https://youtu.be/' + row.youtubeId + '\' target=\'_blank\'  class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="<?php echo str_replace("'", "\\'", __("Watch on YouTube")); ?>"><span class="fas fa-external-link-alt " aria-hidden="true"></span></a>';
                                                         }
-                                                        var yt = '<br><div class="btn btn-group" role="group" ><a class="btn btn-light btn-sm" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
+                                                        var yt = '<br><div class="btn btn-group" role="group" ><a class="btn btn-light btn-sm text-secondary" disabled><span class="fab fa-youtube" aria-hidden="true"></span> YouTube</a> ' + youTubeUpload + youTubeLink + ' </div>';
                                                         if (row.status == "d" || row.status == "e") {
                                                             yt = "";
                                                         }
