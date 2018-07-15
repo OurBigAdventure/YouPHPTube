@@ -239,6 +239,11 @@ if (empty($_GET['videoName'])) {
                                     <meta itemprop="description" content="<?php echo str_replace('"', '', $video['title']); ?> - <?php echo htmlentities($video['description']); ?>" />
                                 </div>
                                 <div class="col-12 col-md-8">
+                                  <?php if($vType=="torrent"){ ?>
+                                  <button type="button" class="btn-sm btn btn-primary" data-toggle="modal" data-target="#torrentDetails">
+                                    <?php echo __("Torrent-connection-details"); ?>
+                                  </button>
+                                <?php } ?>
                                     <h1 itemprop="name">
                                         <?php
                                         echo $video['title'];

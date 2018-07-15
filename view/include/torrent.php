@@ -67,13 +67,33 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
 
 </div>
 
+
+
+<div class="modal fade" id="torrentDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><?php echo __("Torrent-connection-details"); ?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 <div id="torrentInfo" class="ml-2">
-  <table class="table table-fluid bg-white col-10">
+  <table class="table table-fluid col-10 text-secondary">
     <tbody>
     <tr class=" "><td id="torrentDownloaded"></td> <td id="torrentSeeders"></td><td class=""><?php echo __("Percent"); ?></td> <td id="torrentPercent"></td></tr>
     <tr class=""><td><a href="<?php echo $global['webSiteRootURL']; ?>view/seeder.php" target="torrentWindow"><?php echo __("Support us and seed all torrent-videos with your pc"); ?></a> </td><td ><a href="<?php echo $video['videoLink']; ?>"  ><?php echo __("Magnet-link"); ?></a></td><td id="torrentDownloadSpeed" > </td><td id="torrentUploadSpeed"></td></tr>
   </tbody>
   </table>
+</div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo __("Close"); ?></button>
+</div>
+</div>
+</div>
 </div>
 <!--/row-->
 <script>
