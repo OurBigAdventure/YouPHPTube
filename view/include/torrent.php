@@ -69,7 +69,7 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
 
 
 
-<div class="modal fade" id="torrentDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="width: 60%;" id="torrentDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -82,8 +82,8 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
 <div id="torrentInfo" class="ml-2">
   <table class="table table-fluid col-10 text-secondary">
     <tbody>
-    <tr class=" "><td id="torrentDownloaded"></td> <td id="torrentSeeders"></td><td class=""><?php echo __("Percent"); ?></td> <td id="torrentPercent"></td></tr>
-    <tr class=""><td><a href="<?php echo $global['webSiteRootURL']; ?>view/seeder.php" target="torrentWindow"><?php echo __("Support us and seed all torrent-videos with your pc"); ?></a> </td><td ><a href="<?php echo $video['videoLink']; ?>"  ><?php echo __("Magnet-link"); ?></a></td><td id="torrentDownloadSpeed" > </td><td id="torrentUploadSpeed"></td></tr>
+    <tr class=" "> <td id="torrentSeeders"></td><td id="torrentDownloadSpeed" > </td><td id="torrentUploadSpeed"></td><td id="torrentDownloaded"></td></tr>
+    <tr class=""><td><a href="<?php echo $global['webSiteRootURL']; ?>view/seeder.php" target="torrentWindow"><?php echo __("Support us and seed all torrent-videos with your pc"); ?></a> </td><td ><a href="<?php echo $video['videoLink']; ?>"  ><?php echo __("Magnet-link"); ?></a></td><td class="" id="torrentDL"></td></tr>
   </tbody>
   </table>
 </div>
@@ -125,13 +125,13 @@ if ($video['rotation'] === "90" || $video['rotation'] === "270") {
           $("#downloadButton").attr("href",url);
           $("#downloadButton").removeClass("d-none");
         });
+        $("#torrentDL").html("<a href='"+torrent.torrentFileBlobURL+"' download='<?php echo $playNowVideo['title']; ?>.torrent'><?php echo __("Torrent-file"); ?></a>");
         function onProgress () {
           // Peers
           $("#torrentSeeders").html(torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers'));
           // Progress
-          var percent = Math.round(torrent.progress * 100 * 100) / 100
-          $("#torrentPercent").html(percent + '%');
-          $("#torrentDownloaded").html(prettyBytes(torrent.downloaded) + " / " + prettyBytes(torrent.length));
+          var percent = Math.round(torrent.progress * 100 * 100) / 100;
+          $("#torrentDownloaded").html(prettyBytes(torrent.downloaded) + " / " + prettyBytes(torrent.length) + " ("+percent+"%)");
 
           // Speed rates
           $("#torrentDownloadSpeed").html(prettyBytes(torrent.downloadSpeed) + '/s (down)');
