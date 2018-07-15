@@ -25,9 +25,8 @@ $obj->setClean_Title($_POST['clean_title']);
 if(!empty($_POST['videoLink'])){
     //var_dump($config->getEncoderURL()."getLinkInfo/". base64_encode($_POST['videoLink']));exit;
     if(empty($_POST['id'])){
-        
         $path_info = pathinfo($_POST['videoLink']);
-        if (!empty($path_info['extension']) && strtolower($path_info['extension']) === 'torrent') {
+        if (!empty($path_info['extension']) && substr(strtolower($path_info['basename']),0,6) == 'magnet') {
             if(!empty($_POST['title'])){
               $obj->setTitle($_POST['title']);
             } else {
