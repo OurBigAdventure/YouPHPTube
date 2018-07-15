@@ -1019,7 +1019,7 @@ function youtubeModeVideoItem($video){
     if (!empty($_GET['catName'])) {
         $catLink = "cat/{$_GET['catName']}/";
     }
-    
+
     $name = User::getNameIdentificationById($value['users_id']);
     $value['creator'] = '<div class="float-left"><img src="' . User::getPhoto($value['users_id']) . '" alt="" class="img img-fluid rounded-circle zoom" style="max-width: 20px;"/></div><div class="commentDetails" style="margin-left:25px;"><div class="commenterName text-muted"><strong>' . $name . '</strong> <small>' . humanTiming(strtotime($value['videoCreation'])) . '</small></div></div>';
     ?>
@@ -1052,20 +1052,20 @@ function youtubeModeVideoItem($video){
                 <time class="duration" itemprop="duration" datetime="<?php echo Video::getItemPropDuration($value['duration']); ?>"><?php echo Video::getCleanDuration($value['duration']); ?></time>
             </div>
             <div class="col-lg-7 col-sm-7 col-7 videosDetails" style="padding-left: 5px;" >
-                <div class="text-uppercase"><strong itemprop="name" class="title"><?php echo $value['title']; ?></strong></div>
+                <div class="text-uppercase"><strong itemprop="name" class="title text-secondary"><?php echo $value['title']; ?></strong></div>
                 <div class="details" itemprop="description">
-                    <div>
+                    <div class="text-secondary">
                         <strong><?php echo __("Category"); ?>: </strong>
                         <span class="<?php echo $value['iconClass']; ?>"></span>
                         <?php echo $value['category']; ?>
                     </div>
-                    <div>
-                        <strong class="view-count<?php echo $value['id']; ?>"><?php echo number_format($value['views_count'], 0); ?></strong> <?php echo __("Views"); ?>
+                    <div class="text-secondary">
+                        <strong class="view-count<?php echo $value['id']; ?> "><?php echo number_format($value['views_count'], 0); ?></strong> <?php echo __("Views"); ?>
                     </div>
-                    <div><?php echo $value['creator']; ?></div>
+                    <div class="text-secondary"><?php echo $value['creator']; ?></div>
 
                 </div>
-                <div class="row">
+                <div class="row text-secondary">
                     <?php
                     foreach ($value['tags'] as $value2) {
                         if ($value2->label === __("Group")) {

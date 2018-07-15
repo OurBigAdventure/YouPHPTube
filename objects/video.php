@@ -505,13 +505,11 @@ log_error($sql);
                 $sql .= self::getUserGroupsCanSeeSQL();
             }
             if (!empty($_SESSION['type'])) {
-                if ($_SESSION['type'] == 'video') {
+                if (($_SESSION['type'] == 'video')||($_SESSION['type'] == 'embed')||($_SESSION['type'] == 'linkVideo')||($_SESSION['type'] == 'torrent')) {
                     $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo' OR  v.type = 'torrent')";
-                } else if ($_SESSION['type'] == 'audio') {
+                } else if (($_SESSION['type'] == 'audio')||($_SESSION['type'] == 'linkAudio')) {
                     $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
-                } else if ($_SESSION['type'] == 'torrent') {
-                    $sql .= " AND (v.type = 'torrent')";
-                } else {
+                }  else {
                     $sql .= " AND v.type = '{$_SESSION['type']}' ";
                 }
             }
@@ -634,13 +632,11 @@ log_error($sql);
                 $sql .= self::getUserGroupsCanSeeSQL();
             }
             if (!empty($_SESSION['type'])) {
-                if ($_SESSION['type'] == 'video') {
-                    $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo'  OR  v.type = 'torrent')";
-                } else if ($_SESSION['type'] == 'audio') {
-                    $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
-                } else if ($_SESSION['type'] == 'torrent') {
-                    $sql .= " AND (v.type = 'torrent')";
-                } else {
+              if (($_SESSION['type'] == 'video')||($_SESSION['type'] == 'embed')||($_SESSION['type'] == 'linkVideo')||($_SESSION['type'] == 'torrent')) {
+                  $sql .= " AND (v.type = 'video' OR  v.type = 'embed' OR  v.type = 'linkVideo' OR  v.type = 'torrent')";
+              } else if (($_SESSION['type'] == 'audio')||($_SESSION['type'] == 'linkAudio')) {
+                  $sql .= " AND (v.type = 'audio' OR  v.type = 'linkAudio')";
+              } else {
                     $sql .= " AND v.type = '{$_SESSION['type']}' ";
                 }
             }

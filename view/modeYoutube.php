@@ -584,10 +584,10 @@ if (empty($_GET['videoName'])) {
                         <div class="row bgWhite border border-light rounded bg-light">
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-lg-12">
-                                    <div class="col-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Category"); ?>:</strong></div>
-                                    <div class="col-8 col-sm-10 col-lg-10"><a class="btn-sm btn-light"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
+                                    <div class="col-4 col-sm-2 col-lg-2 text-right text-secondary"><strong><?php echo __("Category"); ?>:</strong></div>
+                                    <div class="col-8 col-sm-10 col-lg-10 "><a class="btn-sm btn-light"  href="<?php echo $global['webSiteRootURL']; ?>cat/<?php echo $video['clean_category']; ?>"><span class="<?php echo $video['iconClass']; ?>"></span> <?php echo $video['category']; ?></a></div>
                                     <div class="col-4 col-sm-2 col-lg-2 text-right"><strong><?php echo __("Description"); ?>:</strong></div>
-                                    <div class="col-8 col-sm-10 col-lg-10" itemprop="description"><?php echo nl2br(textToLink(htmlentities($video['description']))); ?></div>
+                                    <div class="col-8 col-sm-10 col-lg-10 text-secondary" itemprop="description"><?php echo nl2br(textToLink(htmlentities($video['description']))); ?></div>
                                 </div>
                             </div>
 
