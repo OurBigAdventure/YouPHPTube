@@ -23,7 +23,6 @@ if(!empty($_POST['id'])){
 $obj = new Video($_POST['title'], "", @$_POST['id']);
 $obj->setClean_Title($_POST['clean_title']);
 if(!empty($_POST['videoLink'])){
-    //var_dump($config->getEncoderURL()."getLinkInfo/". base64_encode($_POST['videoLink']));exit;
     if(empty($_POST['id'])){
         $path_info = pathinfo($_POST['videoLink']);
         if (!empty($path_info['extension']) && substr(strtolower($path_info['basename']),0,6) == 'magnet') {
@@ -37,7 +36,8 @@ if(!empty($_POST['videoLink'])){
             } else {
                $obj->setClean_title($path_info['filename']);
             }
-        }else{
+            $obj->setFilename(crc32($_POST['videoLink']));
+        } else {
             $info = url_get_contents($config->getEncoderURL()."getLinkInfo/". base64_encode($_POST['videoLink']));
             $infoObj = json_decode($info);
             $filename = uniqid("_YPTuniqid_", true);
