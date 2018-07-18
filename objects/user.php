@@ -224,7 +224,7 @@ if (typeof gtag !== \"function\") {
      * @return String
      */
     static function getNameIdentification() {
-        $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
+        global $advancedCustom;
         if (self::isLogged()) {
             if (!empty(self::getName()) && empty($advancedCustom->doNotIndentifyByName)) {
                 return self::getName();
@@ -244,7 +244,7 @@ if (typeof gtag !== \"function\") {
      * @return String
      */
     function getNameIdentificationBd() {
-        $advancedCustom = YouPHPTubePlugin::getObjectDataIfEnabled("CustomizeAdvanced");
+        global $advancedCustom;
         if (!empty($this->name) && empty($advancedCustom->doNotIndentifyByName)) {
             return $this->name;
         }
@@ -337,7 +337,7 @@ if (typeof gtag !== \"function\") {
 
 
     function save($updateUserGroups = false) {
-        global $global, $config;
+        global $global, $config, $advancedCustom;
         if($config->currentVersionLowerThen('5.6')){
             // they dont have analytics code
             return false;
@@ -351,8 +351,7 @@ if (typeof gtag !== \"function\") {
         }
         if (empty($this->canStream)) {
             if (empty($this->id)) { // it is a new user
-                $obj = YouPHPTubePlugin::getObjectDataIfEnabled('CustomizeAdvanced');
-                if (empty($obj->newUsersCanStream)) {
+                if (empty($advancedCustom->newUsersCanStream)) {
                     $this->canStream = "false";
                 } else {
                     $this->canStream = "true";
@@ -406,8 +405,7 @@ if (typeof gtag !== \"function\") {
         if ($insert_row) {
             if (empty($this->id)) {
                 $id = $global['mysqli']->insert_id;
-                $obj = YouPHPTubePlugin::getObjectDataIfEnabled('CustomizeAdvanced');
-                if (!empty($obj->unverifiedEmailsCanNOTLogin)) {
+                if (!empty($advancedCustom->unverifiedEmailsCanNOTLogin)) {
                     self::sendVerificationLink($id);
                 }
             } else {
@@ -466,20 +464,28 @@ if (typeof gtag !== \"function\") {
     const USER_NOT_FOUND = 2;
 
     function login($noPass = false, $encodedPass = false) {
-        $obj = YouPHPTubePlugin::getObjectDataIfEnabled('CustomizeAdvanced');
         if ($noPass) {
             $user = $this->find($this->user, false, true);
         } else {
             $user = $this->find($this->user, $this->password, true, $encodedPass);
         }
         // if user is not verified
-        if (!empty($user) && empty($user['isAmin']) && empty($user['emailVerified']) && !empty($obj->unverifiedEmailsCanNOTLogin)) {
+        if (!empty($user) && empty($user['isAdmin']) && empty($user['emailVerified']) && !empty($advancedCustom->unverifiedEmailsCanNOTLogin)) {
             unset($_SESSION['user']);
             self::sendVerificationLink($user['id']);
             return self::USER_NOT_VERIFIED;
         } else if ($user) {
             $_SESSION['user'] = $user;
             $this->setLastLogin($_SESSION['user']['id']);
+            if(!empty($_POST['rememberme'])){
+              error_log("[INFO] Do login with cookie (log in for next 10 years)!");
+              global $global;
+        //      $url = parse_url($global['webSiteRootURL']);
+      //        setcookie("user", $this->user, time()+3600*24*30*12*10,$url['path'],$url['host']);
+      //        setcookie("pass", $encodedPass, time()+3600*24*30*12*10,$url['path'],$url['host']);
+              setcookie("user", $this->user, time()+3600*24*30*12*10,"/");
+              setcookie("pass", $encodedPass, time()+3600*24*30*12*10,"/");
+            }
             return self::USER_LOGGED;
         } else {
             unset($_SESSION['user']);
@@ -497,11 +503,43 @@ if (typeof gtag !== \"function\") {
     }
 
     static function logoff() {
-        unset($_SESSION['user']);
+      global $global;
+      //$url = parse_url($global['webSiteRootURL']);
+      unset($_COOKIE['user']);
+      unset($_COOKIE['pass']);
+    //  setcookie('user', null, -1,$url['path'],$url['host']);
+    //  setcookie('pass', null, -1,$url['path'],$url['host']);
+      setcookie('user', null, -1,"/");
+      setcookie('pass', null, -1,"/");
+      unset($_SESSION['user']);
     }
 
     static function isLogged() {
+    //  global $isLoggedBuffer; // to prevent being logged out after first cookie-request
+    //  if(empty($isLoggedBuffer)){
+        if(empty($_SESSION['user'])){
+          if((!empty($_COOKIE['user']))&&(!empty($_COOKIE['pass']))){
+            $user = new User(0, $_COOKIE['user'], false);
+          //  $dbuser = self::getUserDbFromUser($_COOKIE['user']);
+            $resp = $user->login(false, $_COOKIE['pass']);
+
+            error_log("[INFO] do cookie-login: ".$_COOKIE['user']."   ".$_COOKIE['pass']. "   result: ".$resp);
+            if(0==$resp){
+          //    $user->setLastLogin($dbuser['id']);
+          //    $_SESSION['user'] = $dbuser;
+              error_log("success ".$_SESSION['user']['id']);
+              //$isLoggedBuffer = true;
+            //  return true;
+            }
+          }
+        }
         return !empty($_SESSION['user']['id']);
+    /*  }
+      if(!empty($isLoggedBuffer)){
+        return true;
+      } else {
+        return false;
+      }*/
     }
 
     static function isVerified() {
